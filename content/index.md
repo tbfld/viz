@@ -1,6 +1,5 @@
 ---
-title: Welcome to Quartz
+title: what do facts look like?
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+This site is under heavy development. You’ll have more luck [at my main site, here](https://counter.ink).
