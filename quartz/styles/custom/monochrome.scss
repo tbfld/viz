@@ -5,9 +5,19 @@
     --callout-bg: rgba(38, 38, 38, 0.05) !important;
 }
 
-// Then override EVERY possible callout type with maximum specificity
+// Special handling for NOTE callout icons
+html body article blockquote.callout[data-callout="note"] {
+    .callout-title {
+        .callout-icon {
+            background-color: transparent !important;
+            background-image: var(--callout-icon-note) !important;
+            filter: brightness(0) !important;
+        }
+    }
+}
+
+// Then override all other callout types
 html body article blockquote.callout[data-callout],
-html body article blockquote.callout[data-callout="note"],
 html body article blockquote.callout[data-callout="abstract"],
 html body article blockquote.callout[data-callout="info"],
 html body article blockquote.callout[data-callout="todo"],
@@ -31,16 +41,12 @@ html body article blockquote.callout[data-callout="quote"] {
         color: #262626 !important;
         background: transparent !important;
 
-         > .callout-icon {
+        > .callout-icon {
             width: var(--icon-size) !important;
             height: var(--icon-size) !important;
             background-color: #262626 !important;
             -webkit-mask: var(--callout-icon) center/contain no-repeat !important;
             mask: var(--callout-icon) center/contain no-repeat !important;
-            
-            &::before {
-                background-color: #262626 !important;
-            }
         }
 
         > .callout-title-inner {
@@ -64,15 +70,4 @@ html body article blockquote.callout blockquote.callout {
 
 html body article blockquote.callout blockquote.callout blockquote.callout {
     background-color: rgba(38, 38, 38, 0.11) !important;
-}
-
-// NEW SECTION: Add this at the very end of the file
-// Specific override for NOTE callout icon
-html body article blockquote.callout[data-callout="note"] .callout-icon {
-    width: var(--icon-size) !important;
-    height: var(--icon-size) !important;
-    background-color: #262626 !important;
-    -webkit-mask: var(--callout-icon-note) center/contain no-repeat !important;
-    mask: var(--callout-icon-note) center/contain no-repeat !important;
-    flex: 0 0 var(--icon-size) !important;
 }
