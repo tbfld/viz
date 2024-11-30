@@ -5,15 +5,15 @@ tags:
 created: 2024-11-29 14:32
 aliases:
 ---
-# 1	H1
+# 1	H1—
 text
 - dash
 - dash (dash)
-## 1.1	H3
+## 1.1	H3—
 text
 1. num
 2. num
-### 1.1.1	H3
+### 1.1.1	H3—
 text
 ```
 code
