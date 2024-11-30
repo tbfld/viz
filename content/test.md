@@ -5,6 +5,13 @@ tags:
 created: 2024-11-29 14:32
 aliases:
 ---
+![NOTE]+ Hello title
+> hello content
+
+
+> [!NOTE] Title
+> Contents
+
 # 1	H1—
 text
 - dash
