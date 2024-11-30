@@ -31,17 +31,12 @@ html body article blockquote.callout[data-callout="quote"] {
         color: #262626 !important;
         background: transparent !important;
 
-        > .callout-icon {
+         > .callout-icon {
+            width: var(--icon-size) !important;
+            height: var(--icon-size) !important;
             background-color: #262626 !important;
-            color: #262626 !important;
-            mask-image: var(--callout-icon) !important;
-            -webkit-mask-image: var(--callout-icon) !important;
-            mask-size: var(--icon-size) var(--icon-size) !important;
-            -webkit-mask-size: var(--icon-size) var(--icon-size) !important;
-            mask-repeat: no-repeat !important;
-            -webkit-mask-repeat: no-repeat !important;
-            mask-position: center !important;
-            -webkit-mask-position: center !important;
+            -webkit-mask: var(--callout-icon) center/contain no-repeat !important;
+            mask: var(--callout-icon) center/contain no-repeat !important;
             
             &::before {
                 background-color: #262626 !important;
