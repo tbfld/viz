@@ -6,6 +6,10 @@ created: 2024-11-29 14:32
 aliases:
 ---
 
+# 1	yo
+## 1.1	yo yo
+### 1.1.1	yo yo yo
+#### yo yo yo yo
 
 > [!NOTE] Main callout title
 > Contents….
@@ -59,27 +63,27 @@ aliases:
 
 
 
-# 1	H1—
+# 2	H1—
 text
 - dash
 - dash (dash)
-## 1.1	H3—
+## 2.1	H3—
 text
 1. num
 2. num
-### 1.1.1	H3—
+### 2.1.1	H3—
 text
 ```
 code
 ```
-#### 1.1.1.1	H4
+#### 2.1.1.1	H4
 text
 > “quote”[^1]
 > 
-##### 1.1.1.1.1	H5
+##### 2.1.1.1.1	H5
 text[^2]
 
-###### 1.1.1.1.1.1	H6
+###### 2.1.1.1.1.1	H6
 
 ![[great-stamp.jpg|relative wmed|left]] text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
 
@@ -88,7 +92,7 @@ text[^2]
 ![[great-stamp.jpg|relative wmed|center]] text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
 
 
-###### 1.1.1.1.1.2	H6
+###### 2.1.1.1.1.2	H6
 text
 
 > quote
@@ -98,7 +102,7 @@ text
 > > > > quintuple quote
 
 ***
-# 2	notes
+# 3	notes
 
 [^1]: note
 [^2]: note
