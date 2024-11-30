@@ -1,0 +1,45 @@
+// Force monochrome colors
+:root {
+    --gray-0: #262626;  // Darkest text
+    --gray-1: #404040;
+    --gray-2: #595959;
+    --gray-3: #737373;
+    --gray-4: #808080;  // Mid gray
+    --gray-5: #a6a6a6;
+    --gray-6: #d9d9d9;
+    --gray-7: #f5f5f5;  // Lightest background
+    
+    // Override Quartz theme colors
+    --dark: var(--gray-0);
+    --light: var(--gray-7);
+    --secondary: var(--gray-4);
+    --tertiary: var(--gray-5);
+    
+    // Override link colors
+    --link-color: var(--gray-0);
+    --link-hover: var(--gray-0);
+}
+
+// Force callouts to be monochrome
+.callout {
+    border-color: var(--gray-4) !important;
+    background: rgba(38, 38, 38, 0.05) !important;
+
+    .callout-title {
+        color: var(--gray-0) !important;
+        background: transparent !important;
+    }
+
+    .callout-icon {
+        color: var(--gray-0) !important;
+    }
+}
+
+// Nested callouts
+.callout .callout {
+    background: rgba(38, 38, 38, 0.08) !important;
+}
+
+.callout .callout .callout {
+    background: rgba(38, 38, 38, 0.11) !important;
+}
