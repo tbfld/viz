@@ -25,14 +25,39 @@ aliases:
 
 > [!info] Info!
 > Contents
+> > > [!info] Info!
+> Contents
+>>> > [!info] Info!
+> Contents
+>>>>> [!info] Info!
+> Contents
+>>>>>> [!info] Info!
+> Contents
+>>>>>>> [!info] Info!
+> Contents
+
 
 
 > [!tip] Tip!
 > Contents
+> >[!tip] Tip!
+> Contents
+> > >[!tip] Tip!
+> Contents
+> >> [!tip] Tip!
+> Contents
+> 
+
+
 
 > [!faq] Faq!
 > Contents
-> 
+> > [!faq] Faq!
+> Contents
+> > > [!faq] Faq!
+> Contents
+
+
 
 # 1	H1—
 text
