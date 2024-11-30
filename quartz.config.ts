@@ -21,6 +21,7 @@ const config: QuartzConfig = {
         body: "Hoefler Text",
         code: "Inconsolata",
       },
+      defaultMode: "light",  // Added this line
       colors: {
         lightMode: {
           light: "#eff1f5",      // Base background
