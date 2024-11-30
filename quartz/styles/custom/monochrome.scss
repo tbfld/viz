@@ -20,26 +20,75 @@
     --link-hover: var(--gray-0);
 }
 
-// Force callouts to be monochrome
+// Force ALL callouts to be monochrome
 .callout {
     border-color: var(--gray-4) !important;
     background: rgba(38, 38, 38, 0.05) !important;
-
+    
+    // Title area
     .callout-title {
         color: var(--gray-0) !important;
         background: transparent !important;
+
+        // Icon
+        .callout-icon {
+            color: var(--gray-0) !important;
+            
+            svg {
+                color: var(--gray-0) !important;
+                fill: var(--gray-0) !important;
+                stroke: var(--gray-0) !important;
+            }
+        }
+        
+        // Title text
+        .callout-title-inner {
+            color: var(--gray-0) !important;
+        }
     }
 
-    .callout-icon {
+    // Content
+    .callout-content {
         color: var(--gray-0) !important;
     }
 }
 
-// Nested callouts
+// Override specific callout types
+.callout[data-callout="note"],
+.callout[data-callout="abstract"],
+.callout[data-callout="info"],
+.callout[data-callout="todo"],
+.callout[data-callout="tip"],
+.callout[data-callout="success"],
+.callout[data-callout="question"],
+.callout[data-callout="warning"],
+.callout[data-callout="failure"],
+.callout[data-callout="danger"],
+.callout[data-callout="bug"],
+.callout[data-callout="example"],
+.callout[data-callout="quote"],
+.callout[data-callout="faq"] {
+    background: rgba(38, 38, 38, 0.05) !important;
+    border-color: var(--gray-4) !important;
+}
+
+// Nested callouts with increasing tint
 .callout .callout {
     background: rgba(38, 38, 38, 0.08) !important;
 }
 
 .callout .callout .callout {
     background: rgba(38, 38, 38, 0.11) !important;
+}
+
+.callout .callout .callout .callout {
+    background: rgba(38, 38, 38, 0.14) !important;
+}
+
+.callout .callout .callout .callout .callout {
+    background: rgba(38, 38, 38, 0.17) !important;
+}
+
+.callout .callout .callout .callout .callout .callout {
+    background: rgba(38, 38, 38, 0.20) !important;
 }
