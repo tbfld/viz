@@ -1,28 +1,33 @@
-// Target all callouts and their components with maximum specificity
-html body article blockquote.callout[data-callout] {
-    background: rgba(38, 38, 38, 0.05) !important;
-    border: 1px solid #808080 !important;
-    border-left: 4px solid #808080 !important;
+// Force ALL callouts to be monochrome regardless of type
+.callout[data-callout],
+.callout[data-callout=abstract],
+.callout[data-callout=info],
+.callout[data-callout=todo],
+.callout[data-callout=tip],
+.callout[data-callout=success],
+.callout[data-callout=question],
+.callout[data-callout=warning],
+.callout[data-callout=failure],
+.callout[data-callout=danger],
+.callout[data-callout=bug],
+.callout[data-callout=example],
+.callout[data-callout=quote] {
+    --color: #262626 !important;
+    --border: #80808044 !important;
+    --bg: #26262610 !important;
+    
+    border-color: #808080 !important;
+    background-color: rgba(38, 38, 38, 0.05) !important;
 
-    // Title area
-    > .callout-title {
+    .callout-title {
+        color: #262626 !important;
         background: transparent !important;
-        
-        > .callout-icon {
-            color: #262626 !important;
-            
-            &::before {
-                background-color: #262626 !important;
-            }
-            
-            svg, svg * {
-                color: #262626 !important;
-                fill: #262626 !important;
-                stroke: #262626 !important;
-            }
+
+        .callout-icon {
+            background-color: #262626 !important;
         }
-        
-        > .callout-title-inner {
+
+        .callout-title-inner {
             color: #262626 !important;
             
             p {
@@ -31,21 +36,16 @@ html body article blockquote.callout[data-callout] {
         }
     }
 
-    // Content area
-    > .callout-content {
+    .callout-content {
         color: #262626 !important;
     }
 }
 
-// Nested callouts with increasing specificity
-html body article blockquote.callout blockquote.callout {
-    background: rgba(38, 38, 38, 0.08) !important;
+// Nested callouts with increasing background intensity
+.callout .callout {
+    background-color: rgba(38, 38, 38, 0.08) !important;
 }
 
-html body article blockquote.callout blockquote.callout blockquote.callout {
-    background: rgba(38, 38, 38, 0.11) !important;
-}
-
-html body article blockquote.callout blockquote.callout blockquote.callout blockquote.callout {
-    background: rgba(38, 38, 38, 0.14) !important;
+.callout .callout .callout {
+    background-color: rgba(38, 38, 38, 0.11) !important;
 }
