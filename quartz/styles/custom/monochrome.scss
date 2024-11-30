@@ -1,51 +1,64 @@
-// Force ALL callouts to be monochrome regardless of type
-.callout[data-callout],
-.callout[data-callout=abstract],
-.callout[data-callout=info],
-.callout[data-callout=todo],
-.callout[data-callout=tip],
-.callout[data-callout=success],
-.callout[data-callout=question],
-.callout[data-callout=warning],
-.callout[data-callout=failure],
-.callout[data-callout=danger],
-.callout[data-callout=bug],
-.callout[data-callout=example],
-.callout[data-callout=quote] {
+// First, override the root variables that define callout colors
+:root {
+    --callout-color: #262626 !important;
+    --callout-border: #808080 !important;
+    --callout-bg: rgba(38, 38, 38, 0.05) !important;
+}
+
+// Then override EVERY possible callout type with maximum specificity
+html body article blockquote.callout[data-callout],
+html body article blockquote.callout[data-callout="note"],
+html body article blockquote.callout[data-callout="abstract"],
+html body article blockquote.callout[data-callout="info"],
+html body article blockquote.callout[data-callout="todo"],
+html body article blockquote.callout[data-callout="tip"],
+html body article blockquote.callout[data-callout="success"],
+html body article blockquote.callout[data-callout="question"],
+html body article blockquote.callout[data-callout="warning"],
+html body article blockquote.callout[data-callout="failure"],
+html body article blockquote.callout[data-callout="danger"],
+html body article blockquote.callout[data-callout="bug"],
+html body article blockquote.callout[data-callout="example"],
+html body article blockquote.callout[data-callout="quote"] {
     --color: #262626 !important;
-    --border: #80808044 !important;
-    --bg: #26262610 !important;
+    --border: #808080 !important;
+    --bg: rgba(38, 38, 38, 0.05) !important;
     
-    border-color: #808080 !important;
+    border: 1px solid #808080 !important;
     background-color: rgba(38, 38, 38, 0.05) !important;
 
-    .callout-title {
+    > .callout-title {
         color: #262626 !important;
         background: transparent !important;
 
-        .callout-icon {
+        > .callout-icon {
             background-color: #262626 !important;
-        }
-
-        .callout-title-inner {
             color: #262626 !important;
             
-            p {
+            &::before {
+                background-color: #262626 !important;
+            }
+        }
+
+        > .callout-title-inner {
+            color: #262626 !important;
+            
+            > p {
                 color: #262626 !important;
             }
         }
     }
 
-    .callout-content {
+    > .callout-content {
         color: #262626 !important;
     }
 }
 
-// Nested callouts with increasing background intensity
-.callout .callout {
+// Nested callouts with maximum specificity
+html body article blockquote.callout blockquote.callout {
     background-color: rgba(38, 38, 38, 0.08) !important;
 }
 
-.callout .callout .callout {
+html body article blockquote.callout blockquote.callout blockquote.callout {
     background-color: rgba(38, 38, 38, 0.11) !important;
 }
