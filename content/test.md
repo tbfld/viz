@@ -21,6 +21,19 @@ aliases:
 > > > > > > > > > > > [!NOTE] 
 > 
 
+
+
+> [!info] Info!
+> Contents
+
+
+> [!tip] Tip!
+> Contents
+
+> [!faq] Faq!
+> Contents
+> 
+
 # 1	H1—
 text
 - dash
