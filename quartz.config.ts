@@ -1,14 +1,9 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
-/**
- * Quartz 4.0 Configuration
- *
- * See https://quartz.jzhao.xyz/configuration for more information.
- */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 counter.viz",
+    pageTitle: "viz.counter.ink",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -21,8 +16,6 @@ const config: QuartzConfig = {
     defaultDateType: "created",
     generateSocialImages: false,
     theme: {
-      fontOrigin: "googleFonts",
-      cdnCaching: true,
       typography: {
         header: "Atkinson Hyperlegible",
         body: "Hoefler Text",
@@ -30,26 +23,24 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#eff1f5",      // Catppuccin Latte base
-          lightgray: "#9ca0b0",  // Catppuccin Latte subtext0
-          gray: "#7c7f93",       // Catppuccin Latte overlay1
-          darkgray: "#4c4f69",   // Catppuccin Latte text
-          dark: "#179299",       // Catppuccin Latte teal
-          secondary: "#8839ef",  // Catppuccin Latte mauve
-          tertiary: "#40a02b",   // Catppuccin Latte green
-          highlight: "rgba(136, 57, 239, 0.15)",
-          textHighlight: "#ea76cb88", // Catppuccin Latte pink with opacity
+          light: "#262626",      // Darkest - H1
+          lightgray: "#404040",  // H2
+          gray: "#595959",       // H3
+          darkgray: "#737373",   // H4
+          dark: "#8C8C8C",       // H5
+          secondary: "#A6A6A6",  // Lightest - H6
+          tertiary: "#595959",   // Mid-range for other elements
+          highlight: "rgba(89, 89, 89, 0.15)",
         },
         darkMode: {
-          light: "#1e1e2e",      // Catppuccin Mocha base
-          lightgray: "#6c7086",  // Catppuccin Mocha subtext0
-          gray: "#7f849c",       // Catppuccin Mocha overlay1
-          darkgray: "#cdd6f4",   // Catppuccin Mocha text
-          dark: "#94e2d5",       // Catppuccin Mocha teal
-          secondary: "#cba6f7",  // Catppuccin Mocha mauve
-          tertiary: "#a6e3a1",   // Catppuccin Mocha green
-          highlight: "rgba(203, 166, 247, 0.15)",
-          textHighlight: "#f5c2e788", // Catppuccin Mocha pink with opacity
+          light: "#262626",      
+          lightgray: "#404040",  
+          gray: "#595959",       
+          darkgray: "#737373",   
+          dark: "#8C8C8C",       
+          secondary: "#A6A6A6",  
+          tertiary: "#595959",   
+          highlight: "rgba(89, 89, 89, 0.15)",
         },
       },
     },
