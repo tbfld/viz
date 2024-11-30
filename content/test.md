@@ -10,7 +10,7 @@ aliases:
 
 
 > [!NOTE] Title
-> Contents
+> Contents….
 
 # 1	H1—
 text
