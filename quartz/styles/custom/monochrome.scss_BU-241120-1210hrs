@@ -1,0 +1,94 @@
+// Force monochrome colors
+:root {
+    --gray-0: #262626;  // Darkest text
+    --gray-1: #404040;
+    --gray-2: #595959;
+    --gray-3: #737373;
+    --gray-4: #808080;  // Mid gray
+    --gray-5: #a6a6a6;
+    --gray-6: #d9d9d9;
+    --gray-7: #f5f5f5;  // Lightest background
+    
+    // Override Quartz theme colors
+    --dark: var(--gray-0);
+    --light: var(--gray-7);
+    --secondary: var(--gray-4);
+    --tertiary: var(--gray-5);
+    
+    // Override link colors
+    --link-color: var(--gray-0);
+    --link-hover: var(--gray-0);
+}
+
+// Force ALL callouts to be monochrome
+.callout {
+    border-color: var(--gray-4) !important;
+    background: rgba(38, 38, 38, 0.05) !important;
+    
+    // Title area
+    .callout-title {
+        color: var(--gray-0) !important;
+        background: transparent !important;
+
+        // Icon
+        .callout-icon {
+            color: var(--gray-0) !important;
+            
+            svg {
+                color: var(--gray-0) !important;
+                fill: var(--gray-0) !important;
+                stroke: var(--gray-0) !important;
+            }
+        }
+        
+        // Title text
+        .callout-title-inner {
+            color: var(--gray-0) !important;
+        }
+    }
+
+    // Content
+    .callout-content {
+        color: var(--gray-0) !important;
+    }
+}
+
+// Override specific callout types
+.callout[data-callout="note"],
+.callout[data-callout="abstract"],
+.callout[data-callout="info"],
+.callout[data-callout="todo"],
+.callout[data-callout="tip"],
+.callout[data-callout="success"],
+.callout[data-callout="question"],
+.callout[data-callout="warning"],
+.callout[data-callout="failure"],
+.callout[data-callout="danger"],
+.callout[data-callout="bug"],
+.callout[data-callout="example"],
+.callout[data-callout="quote"],
+.callout[data-callout="faq"] {
+    background: rgba(38, 38, 38, 0.05) !important;
+    border-color: var(--gray-4) !important;
+}
+
+// Nested callouts with increasing tint
+.callout .callout {
+    background: rgba(38, 38, 38, 0.08) !important;
+}
+
+.callout .callout .callout {
+    background: rgba(38, 38, 38, 0.11) !important;
+}
+
+.callout .callout .callout .callout {
+    background: rgba(38, 38, 38, 0.14) !important;
+}
+
+.callout .callout .callout .callout .callout {
+    background: rgba(38, 38, 38, 0.17) !important;
+}
+
+.callout .callout .callout .callout .callout .callout {
+    background: rgba(38, 38, 38, 0.20) !important;
+}
