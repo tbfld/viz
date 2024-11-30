@@ -23,70 +23,26 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#eff1f5",      // Base background
+          light: "#eff1f5",      // Catppuccin Latte (light) base
           lightgray: "#404040",  // H2
           gray: "#595959",       // H3
           darkgray: "#737373",   // H4
-          dark: "#262626",       // Darkest - for all text
-          secondary: "#808080",  // 50% gray for outlines
+          dark: "#8C8C8C",       // H5
+          secondary: "#A6A6A6",  // H6
           tertiary: "#595959",   // Mid-range
-          highlight: "rgba(38, 38, 38, 0.1)",  // 10% of dark color
-          textHighlight: "#262626", // H1 - Darkest
-          callouts: {
-            note: {
-              background: "rgba(38, 38, 38, 0.1)",  // 10% tint
-              border: "#808080"  // 50% gray
-            },
-            abstract: {
-              background: "rgba(38, 38, 38, 0.2)",  // 20% tint
-              border: "#808080"
-            },
-            info: {
-              background: "rgba(38, 38, 38, 0.3)",  // 30% tint
-              border: "#808080"
-            },
-            todo: {
-              background: "rgba(38, 38, 38, 0.4)",  // 40% tint
-              border: "#808080"
-            },
-            tip: {
-              background: "rgba(38, 38, 38, 0.5)",  // 50% tint
-              border: "#808080"
-            }
-          }
+          highlight: "rgba(89, 89, 89, 0.15)",
+          textHighlight: "#262626" // H1 - Darkest
         },
         darkMode: {
-          light: "#1e1e2e",      // Dark mode base
+          light: "#1e1e2e",      // Catppuccin Mocha (dark) base
           lightgray: "#404040",  // H2
           gray: "#595959",       // H3
           darkgray: "#737373",   // H4
-          dark: "#262626",       // Darkest - for all text
-          secondary: "#808080",  // 50% gray for outlines
+          dark: "#8C8C8C",       // H5
+          secondary: "#A6A6A6",  // H6
           tertiary: "#595959",   // Mid-range
-          highlight: "rgba(38, 38, 38, 0.1)",  // 10% of dark color
-          textHighlight: "#262626", // H1 - Darkest
-          callouts: {
-            note: {
-              background: "rgba(38, 38, 38, 0.1)",
-              border: "#808080"
-            },
-            abstract: {
-              background: "rgba(38, 38, 38, 0.2)",
-              border: "#808080"
-            },
-            info: {
-              background: "rgba(38, 38, 38, 0.3)",
-              border: "#808080"
-            },
-            todo: {
-              background: "rgba(38, 38, 38, 0.4)",
-              border: "#808080"
-            },
-            tip: {
-              background: "rgba(38, 38, 38, 0.5)",
-              border: "#808080"
-            }
-          }
+          highlight: "rgba(89, 89, 89, 0.15)",
+          textHighlight: "#262626" // H1 - Darkest
         }
       }
     }
