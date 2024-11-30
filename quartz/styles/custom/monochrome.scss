@@ -5,19 +5,18 @@
     --callout-bg: rgba(38, 38, 38, 0.05) !important;
 }
 
-// Special handling for NOTE callout icons
-html body article blockquote.callout[data-callout="note"] {
+// Hide ALL callout icons
+html body article blockquote.callout {
     .callout-title {
         .callout-icon {
-            background-color: transparent !important;
-            background-image: var(--callout-icon-note) !important;
-            filter: brightness(0) !important;
+            display: none !important;
         }
     }
 }
 
-// Then override all other callout types
+// Then override EVERY possible callout type with maximum specificity
 html body article blockquote.callout[data-callout],
+html body article blockquote.callout[data-callout="note"],
 html body article blockquote.callout[data-callout="abstract"],
 html body article blockquote.callout[data-callout="info"],
 html body article blockquote.callout[data-callout="todo"],
@@ -40,14 +39,6 @@ html body article blockquote.callout[data-callout="quote"] {
     > .callout-title {
         color: #262626 !important;
         background: transparent !important;
-
-        > .callout-icon {
-            width: var(--icon-size) !important;
-            height: var(--icon-size) !important;
-            background-color: #262626 !important;
-            -webkit-mask: var(--callout-icon) center/contain no-repeat !important;
-            mask: var(--callout-icon) center/contain no-repeat !important;
-        }
 
         > .callout-title-inner {
             color: #262626 !important;
