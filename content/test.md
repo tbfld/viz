@@ -5,12 +5,21 @@ tags:
 created: 2024-11-29 14:32
 aliases:
 ---
-![NOTE]+ Hello title
-> hello content
 
 
-> [!NOTE] Title
+> [!NOTE] Main callout title
 > Contents….
+> > [!NOTE] 
+> > > [!NOTE] 
+> > > > [!NOTE] 
+> > > > > [!NOTE] 
+> > > > > > [!NOTE] 
+> > > > > > > [!NOTE] 
+> > > > > > > > [!NOTE] 
+> > > > > > > > > [!NOTE] 
+> > > > > > > > > > [!NOTE] 
+> > > > > > > > > > > [!NOTE] 
+> 
 
 # 1	H1—
 text
