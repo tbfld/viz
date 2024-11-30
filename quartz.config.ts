@@ -16,34 +16,36 @@ const config: QuartzConfig = {
     defaultDateType: "created",
     generateSocialImages: false,
     theme: {
-      typography: {
-        header: "Atkinson Hyperlegible",
-        body: "Hoefler Text",
-        code: "Inconsolata",
-      },
-      colors: {
-        lightMode: {
-          light: "#262626",      // Darkest - H1
-          lightgray: "#404040",  // H2
-          gray: "#595959",       // H3
-          darkgray: "#737373",   // H4
-          dark: "#8C8C8C",       // H5
-          secondary: "#A6A6A6",  // Lightest - H6
-          tertiary: "#595959",   // Mid-range for other elements
-          highlight: "rgba(89, 89, 89, 0.15)",
-        },
-        darkMode: {
-          light: "#262626",      
-          lightgray: "#404040",  
-          gray: "#595959",       
-          darkgray: "#737373",   
-          dark: "#8C8C8C",       
-          secondary: "#A6A6A6",  
-          tertiary: "#595959",   
-          highlight: "rgba(89, 89, 89, 0.15)",
-        },
-      },
+  typography: {
+    header: "Atkinson Hyperlegible",
+    body: "Hoefler Text",
+    code: "Inconsolata",
+  },
+  colors: {
+    lightMode: {
+      light: "#eff1f5",      // Catppuccin Latte (light) base
+      lightgray: "#404040",  // H2
+      gray: "#595959",       // H3
+      darkgray: "#737373",   // H4
+      dark: "#8C8C8C",       // H5
+      secondary: "#A6A6A6",  // H6
+      tertiary: "#595959",   // Mid-range
+      highlight: "rgba(89, 89, 89, 0.15)",
+      textHighlight: "#262626", // H1 - Darkest
     },
+    darkMode: {
+      light: "#1e1e2e",      // Catppuccin Mocha (dark) base
+      lightgray: "#404040",  // H2
+      gray: "#595959",       // H3
+      darkgray: "#737373",   // H4
+      dark: "#8C8C8C",       // H5
+      secondary: "#A6A6A6",  // H6
+      tertiary: "#595959",   // Mid-range
+      highlight: "rgba(89, 89, 89, 0.15)",
+      textHighlight: "#262626", // H1 - Darkest
+    },
+  },
+},
   },
   plugins: {
     transformers: [
