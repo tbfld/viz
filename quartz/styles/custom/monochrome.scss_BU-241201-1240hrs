@@ -62,17 +62,3 @@ html body article blockquote.callout blockquote.callout {
 html body article blockquote.callout blockquote.callout blockquote.callout {
     background-color: rgba(38, 38, 38, 0.11) !important;
 }
-
-// Add this at the end of the file
-.darkmode {
-    display: none !important;
-}
-
-// Also try these alternative selectors in case the class name is different
-.theme-toggle,
-[data-theme-toggle],
-.theme-switch,
-button[aria-label*="theme"],
-button[aria-label*="Theme"] {
-    display: none !important;
-}
