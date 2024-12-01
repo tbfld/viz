@@ -1,0 +1,40 @@
+import { QuartzConfig } from "./quartz/cfg"
+import * as Plugin from "./quartz/plugins"
+
+const config: QuartzConfig = {
+  configuration: {
+    pageTitle: "viz.counter.ink",
+    pageTitleSuffix: "",
+    enableSPA: true,
+    enablePopovers: true,
+    analytics: {
+      provider: "plausible",
+    },
+    locale: "en-US",
+    baseUrl: "viz.counter.ink",
+    ignorePatterns: ["private", "templates", ".obsidian"],
+    defaultDateType: "created",
+    generateSocialImages: false,
+    theme: {
+      typography: {
+        header: "Atkinson Hyperlegible",
+        body: "Hoefler Text",
+        code: "Inconsolata",
+      },
+      defaultMode: "light",  // Only add this line
+      colors: {
+        lightMode: {
+          // ... keep your existing lightMode colors exactly as they were ...
+        },
+        darkMode: {
+          // ... keep your existing darkMode colors exactly as they were ...
+        }
+      }
+    }
+  },
+  plugins: {
+    // ... keep your existing plugins config exactly as it was ...
+  },
+}
+
+export default config
