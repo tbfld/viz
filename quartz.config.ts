@@ -7,6 +7,7 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
+    enableColorScheme: false,  // Added this line
     analytics: {
       provider: "plausible",
     },
