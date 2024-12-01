@@ -16,8 +16,6 @@ const config: QuartzConfig = {
     defaultDateType: "created",
     generateSocialImages: false,
     theme: {
-      fontOrigin: "local", // Changed from googleFonts
-      cdnCaching: true,
       typography: {
         header: "Atkinson Hyperlegible",
         body: "Hoefler Text",
@@ -34,6 +32,28 @@ const config: QuartzConfig = {
           tertiary: "#595959",   // Mid-range
           highlight: "rgba(38, 38, 38, 0.1)",  // 10% of dark color
           textHighlight: "#262626", // H1 - Darkest
+          callouts: {
+            note: {
+              background: "rgba(38, 38, 38, 0.1)",  // 10% tint
+              border: "#808080"  // 50% gray
+            },
+            abstract: {
+              background: "rgba(38, 38, 38, 0.2)",  // 20% tint
+              border: "#808080"
+            },
+            info: {
+              background: "rgba(38, 38, 38, 0.3)",  // 30% tint
+              border: "#808080"
+            },
+            todo: {
+              background: "rgba(38, 38, 38, 0.4)",  // 40% tint
+              border: "#808080"
+            },
+            tip: {
+              background: "rgba(38, 38, 38, 0.5)",  // 50% tint
+              border: "#808080"
+            }
+          }
         },
         darkMode: {
           light: "#1e1e2e",      // Dark mode base
@@ -45,9 +65,31 @@ const config: QuartzConfig = {
           tertiary: "#595959",   // Mid-range
           highlight: "rgba(38, 38, 38, 0.1)",  // 10% of dark color
           textHighlight: "#262626", // H1 - Darkest
-        },
-      },
-    },
+          callouts: {
+            note: {
+              background: "rgba(38, 38, 38, 0.1)",
+              border: "#808080"
+            },
+            abstract: {
+              background: "rgba(38, 38, 38, 0.2)",
+              border: "#808080"
+            },
+            info: {
+              background: "rgba(38, 38, 38, 0.3)",
+              border: "#808080"
+            },
+            todo: {
+              background: "rgba(38, 38, 38, 0.4)",
+              border: "#808080"
+            },
+            tip: {
+              background: "rgba(38, 38, 38, 0.5)",
+              border: "#808080"
+            }
+          }
+        }
+      }
+    }
   },
   plugins: {
     transformers: [
