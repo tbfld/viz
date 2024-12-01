@@ -76,3 +76,17 @@ button[aria-label*="theme"],
 button[aria-label*="Theme"] {
     display: none !important;
 }
+
+// Hide theme toggle
+#nightIcon,
+svg[aria-label="Light mode"],
+svg[aria-label="Dark mode"] {
+    display: none !important;
+}
+
+// Also hide the parent button if needed
+button:has(#nightIcon),
+button:has(svg[aria-label="Light mode"]),
+button:has(svg[aria-label="Dark mode"]) {
+    display: none !important;
+}
