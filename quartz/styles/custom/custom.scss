@@ -1,2 +1,5 @@
+@import "./custom/fixes.css";
+@use "./base.scss";
 @use "./custom/monochrome";
-@import "./custom/force-light.css";
+
+// Any other custom CSS can go here

@@ -1,0 +1,32 @@
+// Force light mode with maximum specificity
+html[data-theme="dark"],
+html[data-theme="light"],
+html {
+    color-scheme: light !important;
+}
+
+// Force light mode colors
+:root {
+    --light: #eff1f5 !important;
+    --dark: #262626 !important;
+}
+
+body,
+body[data-theme="dark"],
+body[data-theme="light"] {
+    background-color: var(--light) !important;
+    color: var(--dark) !important;
+}
+
+// Fix NOTE callout icon
+.callout[data-callout="note"] .callout-icon {
+    background-color: var(--color) !important;
+    -webkit-mask-image: var(--callout-icon-note) !important;
+    mask-image: var(--callout-icon-note) !important;
+    -webkit-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-size: contain !important;
+    mask-size: contain !important;
+    -webkit-mask-position: center !important;
+    mask-position: center !important;
+}
