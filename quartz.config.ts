@@ -92,6 +92,17 @@ const config: QuartzConfig = {
       }
     }
   },
+    components: {
+      sidebar: {
+        components: [
+          "search",
+          "explorer",
+          "toc",
+          "tags",
+          "graph",
+        ],
+      },
+    },
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
