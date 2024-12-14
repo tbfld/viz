@@ -29,6 +29,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer({
       sortFn: (a, b) => {
+    // Add these logging lines at the start of the sortFn
+    console.log("Item A:", a.file?.slug || a.name)
+    console.log("Item B:", b.file?.slug || b.name)
         const nameOrderMap: Record<string, number> = {
           "home": 100,
           "about": 200,
