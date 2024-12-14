@@ -29,16 +29,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer({
       sortFn: (a, b) => {
-    // Add these logging lines at the start of the sortFn
-    console.log("Item A:", a.file?.slug || a.name)
-    console.log("Item B:", b.file?.slug || b.name)
         const nameOrderMap: Record<string, number> = {
-          "home": 100,
-          "about": 200,
-          "projects": 300,
-          "blog": 400,
-          "contact": 500
-          // Add more items as needed
+          "issues": 100,
+          "minima": 200,
+          "methods": 300,
+          "maxima": 400,
+          "images": 500,
+          "glossary": 600,
+          "bibliography": 800
         }
 
         let orderA = 0
@@ -85,7 +83,6 @@ export const defaultListPageLayout: PageLayout = {
           "images": 500,
           "glossary": 600,
           "bibliography": 800
-          // Add more items as needed
         }
 
         let orderA = 0
