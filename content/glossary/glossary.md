@@ -1,8 +1,7 @@
 ---
-title: "glossary"
+title: glossary
 draft: false
-tags:
-- 
-order: 
+tags: 
+order: "800"
 created: 2024-12-14 05:19
 ---
