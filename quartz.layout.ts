@@ -27,7 +27,35 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      sortFn: (a, b) => {
+        const nameOrderMap: Record<string, number> = {
+          "home": 100,
+          "about": 200,
+          "projects": 300,
+          "blog": 400,
+          "contact": 500
+          // Add more items as needed
+        }
+
+        let orderA = 0
+        let orderB = 0
+
+        if (a.file && a.file.slug) {
+          orderA = nameOrderMap[a.file.slug] || 0
+        } else if (a.name) {
+          orderA = nameOrderMap[a.name] || 0
+        }
+
+        if (b.file && b.file.slug) {
+          orderB = nameOrderMap[b.file.slug] || 0
+        } else if (b.name) {
+          orderB = nameOrderMap[b.name] || 0
+        }
+
+        return orderA - orderB
+      }
+    })),
   ],
   right: [
     Component.Graph(),
@@ -36,7 +64,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
 }
 
-// components for pages that display lists of pages  (e.g. tags or folders)
+// components for pages that display lists of pages (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
@@ -44,7 +72,37 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      sortFn: (a, b) => {
+        const nameOrderMap: Record<string, number> = {
+          "issues": 100,
+          "minima": 200,
+          "methods": 300,
+          "maxima": 400,
+          "images": 500,
+          "glossary": 600,
+          "bibliography": 800
+          // Add more items as needed
+        }
+
+        let orderA = 0
+        let orderB = 0
+
+        if (a.file && a.file.slug) {
+          orderA = nameOrderMap[a.file.slug] || 0
+        } else if (a.name) {
+          orderA = nameOrderMap[a.name] || 0
+        }
+
+        if (b.file && b.file.slug) {
+          orderB = nameOrderMap[b.file.slug] || 0
+        } else if (b.name) {
+          orderB = nameOrderMap[b.name] || 0
+        }
+
+        return orderA - orderB
+      }
+    })),
   ],
   right: [],
 }
