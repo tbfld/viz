@@ -1,16 +1,18 @@
 ---
-title: 
-description: 
+title: recent posts (index)
+description: index page of recent posts
 extract: 
-created: 2025-01-20:13-21
-updated: 2025-01-27T10:30
+created: 2025-02-01 11:02
+updated: 2025-02-01 11:02
 author: 
 images: 
-tags: 
 order: 
 aliases: 
-draft: false
-publish: 
+draft: true
+publish: false
+tags:
+  - index
+  - recent-posts
 ---
 ```dataview
 LIST without ID 

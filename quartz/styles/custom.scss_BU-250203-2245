@@ -26,27 +26,3 @@
 //  z-index: 100 !important; // Make sure it's above other elements
 //  box-shadow: -2px 0 5px rgba(0,0,0,0.1) !important;
 //}
-
-// TB ADDED 25-02-03 22:46
-// ADD TOOLTIPS TO EXPLORER ITEMS
-//.explorer-item {
-//  position: relative;
-//}
-//
-//.explorer-item a {
-//  &:hover::after {
-//    content: attr(title);
-//    position: absolute;
-//    left: 100%;
-//    top: 50%;
-//    transform: translateY(-50%);
-//    background: var(--bg);
-//    padding: 0.5rem;
-//    border: 1px solid var(--border);
-//    border-radius: 4px;
-//    font-size: 0.9em;
-//    white-space: nowrap;
-//    z-index: 1000;
-//    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-//  }
-//}
