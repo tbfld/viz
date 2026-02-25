@@ -14,8 +14,12 @@ tags:
 
 <script>
   async function loadChangelog() {
+    // Dynamically determine base path
+    const basePath = window.location.pathname.replace(/\/[^/]*$/, '');
+    const changelogPath = basePath + '/changelog.json';
+    
     try {
-      const response = await fetch('/changelog.json');
+      const response = await fetch(changelogPath);
       const entries = await response.json();
       
       const container = document.getElementById('changelog-entries');
@@ -51,9 +55,9 @@ tags:
       console.error('Failed to load changelog:', error);
       let errorMsg = 'Failed to load changelog.';
       
-      // Try to get more details
+        // Try to get more details
       try {
-        const testResponse = await fetch('/changelog.json', { method: 'HEAD' });
+        const testResponse = await fetch(changelogPath, { method: 'HEAD' });
         errorMsg += '<br>Status: ' + testResponse.status + ' ' + testResponse.statusText;
       } catch (e) {
         errorMsg += '<br>Could not reach changelog.json';
