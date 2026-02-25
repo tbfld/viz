@@ -55,7 +55,17 @@ tags:
         
         const meta = document.createElement('div');
         meta.className = 'changelog-meta';
-        meta.innerHTML = `<span>Created: ${entry.created ? new Date(entry.created).toLocaleDateString() : 'N/A'}</span><span>Updated: ${dateStr}</span><span>${entry.wordCount} words</span>`;
+        
+        const createdSpan = document.createElement('span');
+        createdSpan.textContent = `Created: ${entry.created ? new Date(entry.created).toLocaleDateString() : 'N/A'}`;
+        const updatedSpan = document.createElement('span');
+        updatedSpan.textContent = `Updated: ${dateStr}`;
+        const wordsSpan = document.createElement('span');
+        wordsSpan.textContent = `${entry.wordCount} words`;
+        
+        meta.appendChild(createdSpan);
+        meta.appendChild(updatedSpan);
+        meta.appendChild(wordsSpan);
         div.appendChild(meta);
         
         if (entry.firstParagraph) {
