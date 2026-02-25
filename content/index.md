@@ -49,7 +49,17 @@ tags:
       });
     } catch (error) {
       console.error('Failed to load changelog:', error);
-      document.getElementById('changelog-entries').innerHTML = '<p>Failed to load changelog.</p>';
+      let errorMsg = 'Failed to load changelog.';
+      
+      // Try to get more details
+      try {
+        const testResponse = await fetch('/changelog.json', { method: 'HEAD' });
+        errorMsg += '<br>Status: ' + testResponse.status + ' ' + testResponse.statusText;
+      } catch (e) {
+        errorMsg += '<br>Could not reach changelog.json';
+      }
+      
+      document.getElementById('changelog-entries').innerHTML = '<p>' + errorMsg + '</p>';
     }
   }
   
