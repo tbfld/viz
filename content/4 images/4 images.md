@@ -1,13 +1,13 @@
 ---
 title: images
 description:
-created:: 
-updated::
+"created:":
+"updated:":
 author: Ted Byfield
-order: 
-aliases: 
+order:
+aliases:
 draft: false
-publish: true
+publish: false
 ---
 
 
