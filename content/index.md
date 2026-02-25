@@ -32,29 +32,23 @@ tags:
           day: 'numeric' 
         });
         
-        const type = entry.isNew ? '🆕 New' : '✏️ Edit';
+        const type = entry.isNew ? '[new]' : '[edit]';
         
         const div = document.createElement('div');
         div.className = 'changelog-entry';
-        
-        const header = document.createElement('div');
-        header.className = 'changelog-header';
         
         const link = document.createElement('a');
         link.href = basePath + '/' + entry.slug;
         link.className = 'changelog-title';
         link.textContent = entry.title;
-        
-        const badge = document.createElement('span');
-        badge.className = 'changelog-type';
-        badge.textContent = type;
-        
-        header.appendChild(link);
-        header.appendChild(badge);
-        div.appendChild(header);
+        div.appendChild(link);
         
         const meta = document.createElement('div');
         meta.className = 'changelog-meta';
+        
+        const typeSpan = document.createElement('span');
+        typeSpan.className = 'changelog-type';
+        typeSpan.textContent = type;
         
         const createdSpan = document.createElement('span');
         createdSpan.textContent = `Created: ${entry.created ? new Date(entry.created).toLocaleDateString() : 'N/A'}`;
@@ -63,6 +57,7 @@ tags:
         const wordsSpan = document.createElement('span');
         wordsSpan.textContent = `${entry.wordCount} words`;
         
+        meta.appendChild(typeSpan);
         meta.appendChild(createdSpan);
         meta.appendChild(updatedSpan);
         meta.appendChild(wordsSpan);
