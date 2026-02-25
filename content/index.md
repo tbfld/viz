@@ -34,36 +34,42 @@ tags:
         
         const type = entry.isNew ? '🆕 New' : '✏️ Edit';
         
-        const html = `
-          <div class="changelog-entry">
-            <div class="changelog-header">
-              <a href="/${entry.slug}" class="changelog-title">${entry.title}</a>
-              <span class="changelog-type">${type}</span>
-            </div>
-            <div class="changelog-meta">
-              <span>Created: ${entry.created ? new Date(entry.created).toLocaleDateString() : 'N/A'}</span>
-              <span>Updated: ${dateStr}</span>
-              <span>${entry.wordCount} words</span>
-            </div>
-            ${entry.firstParagraph ? `<p class="changelog-preview">${entry.firstParagraph}</p>` : ''}
-          </div>
-        `;
+        const div = document.createElement('div');
+        div.className = 'changelog-entry';
         
-        container.innerHTML += html;
+        const header = document.createElement('div');
+        header.className = 'changelog-header';
+        
+        const link = document.createElement('a');
+        link.href = basePath + '/' + entry.slug;
+        link.className = 'changelog-title';
+        link.textContent = entry.title;
+        
+        const badge = document.createElement('span');
+        badge.className = 'changelog-type';
+        badge.textContent = type;
+        
+        header.appendChild(link);
+        header.appendChild(badge);
+        div.appendChild(header);
+        
+        const meta = document.createElement('div');
+        meta.className = 'changelog-meta';
+        meta.innerHTML = `<span>Created: ${entry.created ? new Date(entry.created).toLocaleDateString() : 'N/A'}</span><span>Updated: ${dateStr}</span><span>${entry.wordCount} words</span>`;
+        div.appendChild(meta);
+        
+        if (entry.firstParagraph) {
+          const preview = document.createElement('p');
+          preview.className = 'changelog-preview';
+          preview.textContent = entry.firstParagraph;
+          div.appendChild(preview);
+        }
+        
+        container.appendChild(div);
       });
     } catch (error) {
       console.error('Failed to load changelog:', error);
-      let errorMsg = 'Failed to load changelog.';
-      
-        // Try to get more details
-      try {
-        const testResponse = await fetch(changelogPath, { method: 'HEAD' });
-        errorMsg += '<br>Status: ' + testResponse.status + ' ' + testResponse.statusText;
-      } catch (e) {
-        errorMsg += '<br>Could not reach changelog.json';
-      }
-      
-      document.getElementById('changelog-entries').innerHTML = '<p>' + errorMsg + '</p>';
+      document.getElementById('changelog-entries').innerHTML = '<p>Failed to load changelog.</p>';
     }
   }
   
