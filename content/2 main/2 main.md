@@ -1,5 +1,5 @@
 ---
-title: index
+title: main
 description:
 extract:
 created: 2025-02-01 11:02
