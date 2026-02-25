@@ -1,15 +1,15 @@
 ---
 title: changelog
-description:
-created:
-updated::
-author:
-images:
-order:
-aliases:
+aliases: 
+description: 
+extract: 
+images: 
+created: 
+updated: 
+order: 
+author: 
 draft: false
 publish: true
-tags:
 ---
 
 <script>

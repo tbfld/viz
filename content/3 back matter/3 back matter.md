@@ -1,13 +1,14 @@
 ---
-title: backmatter
-description:
+title: back matter
+aliases: 
+description: 
+extract: 
+images: 
 created: 2026-02-25 00:03
-"updated:":
+updated: 
+order: "3000"
 author: Ted Byfield
-order:
-aliases:
 draft: false
 publish: false
-tags:
 ---
 

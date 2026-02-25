@@ -1,13 +1,13 @@
 ---
 title: main
-description:
-extract:
+aliases: 
+description: 
+extract: 
+images: 
 created: 2025-02-01 11:02
-"updated:":
-author:
-images:
-order:
-aliases:
+updated: 
+order: "2000"
+author: 
 draft: false
 publish: false
 ---

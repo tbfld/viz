@@ -1,13 +1,13 @@
 ---
 title: recent posts (index)
-description:
-extract: 
-created: 2025-02-01 11:02
-updated::
-author: 
-images: 
-order: 
 aliases: 
+description: 
+extract: 
+images: 
+created: 2025-02-01 11:02
+updated: 
+order: 
+author: 
 draft: true
 publish: false
 ---

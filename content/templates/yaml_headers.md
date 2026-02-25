@@ -1,13 +1,13 @@
 ---
 title: 
-description: 
-created: <% tp.file.creation_date() %>
+aliases:
+description:
+extract:
+images:
+created:
 updated::
+order:
 author: Ted Byfield
-order: 
-aliases: 
-draft: false
-publish: true
-tags:
+draft: 
+publish: 
 ---
-
