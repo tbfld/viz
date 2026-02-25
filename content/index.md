@@ -98,6 +98,8 @@ tags:
   .changelog-title {
     font-size: 1.25rem;
     font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
   }
   
   .changelog-type {
