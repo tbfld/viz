@@ -102,9 +102,6 @@ tags:
   
   .changelog-type {
     font-size: 0.875rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    background: var(--highlight);
   }
   
   .changelog-meta {

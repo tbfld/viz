@@ -1,14 +1,13 @@
 ---
-title: index
+title: backmatter
 description:
-extract:
-created: 2025-02-01 11:02
+created: 2026-02-25 00:03
 "updated:":
-author:
-images:
+author: Ted Byfield
 order:
 aliases:
 draft: false
 publish: false
+tags:
 ---
 
