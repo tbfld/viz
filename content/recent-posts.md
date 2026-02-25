@@ -3,7 +3,7 @@ title: recent posts (index)
 description: index page of recent posts
 extract: 
 created: 2025-02-01 11:02
-updated: 2025-02-01 11:02
+updated::
 author: 
 images: 
 order: 

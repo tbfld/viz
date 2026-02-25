@@ -1,11 +1,9 @@
 ---
 title: 
 description: 
-extract: 
 created: <% tp.file.creation_date() %>
-updated: <% tp.file.last_modified_date() %>
-author: 
-images: 
+updated::
+author: Ted Byfield
 order: 
 aliases: 
 draft: false
