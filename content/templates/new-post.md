@@ -1,6 +1,6 @@
 ---
 title: <% tp.file.title %>
-publish: true
+publish: false
 tags: []
 ---
 
