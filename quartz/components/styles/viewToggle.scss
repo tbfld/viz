@@ -1,0 +1,25 @@
+.view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+
+  a {
+    color: var(--gray);
+    text-decoration: none;
+
+    &.active {
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  .view-toggle-sep {
+    color: var(--lightgray);
+  }
+}

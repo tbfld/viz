@@ -20,6 +20,9 @@ import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
+import BookToc from "./BookToc"
+import ViewToggle from "./ViewToggle"
+import BookAwareLeft from "./BookAwareLeft"
 
 export {
   ArticleTitle,
@@ -44,4 +47,7 @@ export {
   NotFound,
   Breadcrumbs,
   Comments,
+  BookToc,
+  ViewToggle,
+  BookAwareLeft,
 }

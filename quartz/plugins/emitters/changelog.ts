@@ -54,8 +54,8 @@ export const Changelog: QuartzEmitterPlugin = () => {
       const entries: ChangelogEntry[] = []
 
       for (const [_, file] of content) {
-        // Skip the index page itself
-        if (file.data.slug === "index") {
+        // Skip the index (blog) and changelog pages themselves
+        if (file.data.slug === "index" || file.data.slug === "changelog") {
           continue
         }
         
