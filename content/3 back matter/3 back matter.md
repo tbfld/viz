@@ -9,6 +9,8 @@ updated:
 order: "3000"
 author: Ted Byfield
 draft: false
-publish: false
+publish: true
+book: true
+book_position: "4000"
 ---
 

@@ -9,6 +9,8 @@ updated:
 order: "1000"
 author:
 draft: 
-publish: false
+publish: true
+book: true
+book_position: "0"
 ---
 

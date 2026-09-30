@@ -4,27 +4,14 @@ import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
 import style from "./styles/bookToc.scss"
 
-// Human labels for the first two segments of a book_position path, matching
-// the section folders already under `content/2 main/` (and their `order`
-// frontmatter: 2100..2800). Anything deeper than this is an individual
-// entry, labeled by its own title -- no lookup needed.
-const KNOWN_NAMES: Record<string, string> = {
-  "1": "front matter",
-  "2": "main",
-  "2.1": "anecdata",
-  "2.2": "isotype",
-  "2.3": "spaces",
-  "2.4": "fields",
-  "2.5": "bodies",
-  "2.6": "worlds",
-  "2.7": "interiors",
-  "2.8": "ends",
-  "3": "back matter",
-}
-
-// A book_position is a dot-separated path of integers, e.g. "2.3.400".
+// A book_position is a dot-separated path of integers, e.g. "2000.100.400".
+// Depth has no fixed meaning -- it's just nesting. A node's label always
+// comes from its own page's title; there is no hardcoded name/number
+// lookup here, so renaming, regrouping, or adding a new level (a "Part",
+// say) is purely a frontmatter edit, never a code change.
+//
 // YAML may hand this to us as a string (the normal case) or, for a bare
-// two-segment value like `2.3`, as a number -- handle both.
+// value like `2000`, as a number -- handle both.
 function parsePosition(raw: unknown): number[] | null {
   if (typeof raw !== "string" && typeof raw !== "number") return null
   const str = String(raw).trim()
@@ -57,10 +44,11 @@ function renderNode(node: BookNode, fileData: QuartzPluginData) {
   return (
     <ul>
       {sortedChildren.map((child) => {
-        const key = child.path.join(".")
-        const name = KNOWN_NAMES[key]
         const title = child.page?.frontmatter?.title as string | undefined
-        const label = title ?? name ?? key
+        // Fallback for a grouping node with no page of its own yet: show
+        // the raw path rather than nothing, so a gap in the structure is
+        // visible (and fixable) rather than silently swallowed.
+        const label = title ?? child.path.join(".")
         const active = child.page?.slug === fileData.slug
 
         return (

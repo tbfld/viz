@@ -1,16 +1,15 @@
 ---
-title: worlds
+title: Part III
 aliases:
 description:
 extract:
 images:
-created: 2025-02-01 11:02
+created:
 updated:
-order: "2600"
+order:
 author:
 draft: false
 publish: true
 book: true
-book_position: "3000.100"
+book_position: "3000"
 ---
-
