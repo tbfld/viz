@@ -5,9 +5,11 @@ description:
 extract:
 images:
 created:
-updated::
+updated:
 order:
 author: Ted Byfield
 draft: 
 publish: 
+book: false
+book_position: 
 ---

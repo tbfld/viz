@@ -12,6 +12,8 @@ By default a post only shows up here, in the reverse-chronological feed. To also
 - `book: true` — includes it in the book.
 - `book_position: "<path>"` — a dot-separated position, e.g. `"2000.100.400"`.
 
+Note: the default template's `order:` field is an old, unused leftover — it is **not** the book position and the book code never reads it. Use `book_position` (and quote it, since something like `2.1.1` isn't valid YAML as a bare number).
+
 There is no fixed meaning per segment, and nothing hardcoded anywhere (not even in the site's code) — a book_position just nests however deep you want, and every node's label is simply that page's own title. So the structure below is today's content, not a rule:
 
 | Position | Page |
