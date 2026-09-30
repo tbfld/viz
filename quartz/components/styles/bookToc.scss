@@ -29,38 +29,36 @@
     padding: 0;
   }
 
-  .book-toc-section {
-    margin-bottom: 0.75rem;
+  // nested lists (sections within sections, entries within sections) get
+  // indented and gain a rule to show depth
+  ul ul {
+    padding-left: 0.75rem;
+    margin-top: 0.15rem;
+    border-left: 1px solid var(--lightgray);
   }
 
-  .book-toc-section-title {
+  li {
+    padding: 0.15rem 0;
+  }
+
+  .book-toc-heading {
     display: block;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     color: var(--gray);
-    margin-bottom: 0.25rem;
   }
 
-  .book-toc-entries {
-    padding-left: 0.75rem;
-    border-left: 1px solid var(--lightgray);
+  li.active > a {
+    color: var(--secondary);
+    font-weight: 600;
+  }
 
-    li {
-      padding: 0.15rem 0;
-    }
+  a {
+    color: var(--darkgray);
 
-    li.active > a {
+    &:hover {
       color: var(--secondary);
-      font-weight: 600;
-    }
-
-    a {
-      color: var(--darkgray);
-
-      &:hover {
-        color: var(--secondary);
-      }
     }
   }
 }
