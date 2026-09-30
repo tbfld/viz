@@ -18,6 +18,7 @@ run so it doesn't overload the API or create one giant commit.
 3. Name it something like "viz-counter-ink-import". You don't need a
    business, a privacy policy URL, or anything public-facing — this app
    will only ever access your own account.
+		👉🏼 IG2VCI
 
 ### 2. Add the Instagram product
 
