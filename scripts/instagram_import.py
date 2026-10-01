@@ -57,6 +57,10 @@ def fetch_all_media(access_token: str, user_id: str) -> list[dict]:
     )
     while url:
         resp = requests.get(url, timeout=30)
+        if not resp.ok:
+            # Print Instagram's actual error body - the status code alone
+            # (what raise_for_status() gives) isn't enough to diagnose.
+            print(f"Instagram API error {resp.status_code}: {resp.text}", file=sys.stderr)
         resp.raise_for_status()
         data = resp.json()
         items.extend(data.get("data", []))
