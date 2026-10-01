@@ -14,7 +14,7 @@ export default ((opts?: Options) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
         <p>
-       <a href="https://viz.counter.ink/index.xml">RSS</a> ~ made w/ <a href="https://obsidian.md/">obsidian</a>+<a href="https://quartz.jzhao.xyz/">quartz</a> ~ © <a href="https://counter.ink/">tbfld</a> {year}
+       <a href="https://viz.counter.ink/index.xml">RSS</a> ~ made w/ <a href="https://quartz.jzhao.xyz/">quartz</a> ~ © <a href="https://counter.ink/">tbfld</a> {year}, images © their respective owners
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
