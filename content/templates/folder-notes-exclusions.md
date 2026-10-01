@@ -26,8 +26,8 @@ Auto-create is genuinely useful for the handful of real section folders (`2.1 an
 
 ## Current exclusions
 
-| Path | Type | Why |
-| --- | --- | --- |
+| Path           | Type                      | Why                                                                                                  |
+| -------------- | ------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `posts/ig-img` | Pattern (with subfolders) | One new per-media-ID folder every Instagram import, forever. Never meant to have a real folder note. |
 
 **When the site grows a new folder like this** — storage-only, auto-populated by a script or a plugin, never meant to be a real page — add a row here, then add the matching entry in the plugin's Exclude Folders tab using the steps above. This table is the readable map of what's excluded and why; the plugin's own settings (stored in `.obsidian/plugins/folder-notes/data.json`, not tracked in git) are what actually enforce it, so the two have to be kept in sync by hand — there's no way to make the plugin read its exclusion list from this doc automatically.
