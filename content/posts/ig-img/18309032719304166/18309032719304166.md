@@ -9,7 +9,7 @@ updated:
 order:
 author: Ted Byfield
 draft: 
-publish: 
+publish: false
 book: false
 book_position: 
 ---

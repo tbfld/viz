@@ -7,6 +7,6 @@ tags:
 order: 
 alias: 
 draft: false
-publish: 
+publish: false
 ---
 
