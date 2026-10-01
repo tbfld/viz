@@ -50,8 +50,18 @@ https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_sec
 (App secret is on the app dashboard's **App Settings → Basic** page.) The
 response is JSON with `access_token` — that's your long-lived token.
 
-While you're on that setup page, also note your **Instagram User ID**
-(sometimes shown as `user_id` or `ig_id` right next to the token tool).
+**Don't trust a number you see elsewhere on the dashboard for this.**
+Get the ID directly from the token itself instead - paste this into a
+browser (safe, read-only) with your actual token:
+
+```
+https://graph.instagram.com/v21.0/me?fields=id,username&access_token=<YOUR_TOKEN>
+```
+
+The `id` in that response is the one to use. (First time through this,
+a different-looking 17-digit number shown nearby on the dashboard turned
+out to be some other ID - not this token's own Instagram-scoped user ID -
+and cost a round of 400 errors to track down.)
 
 ### 4. Create a GitHub PAT for secret rotation
 
