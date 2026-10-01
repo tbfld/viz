@@ -58,7 +58,15 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "filesystem"],
+        // "git" sits between frontmatter and filesystem: if a page's own
+        // created/updated frontmatter is ever missing or stale, fall back
+        // to the real last-commit date from git history rather than the
+        // raw file mtime - a GitHub Actions checkout resets every file's
+        // mtime to the moment of checkout, so "filesystem" alone would
+        // show the same wrong date for every page in that case. This
+        // needs full git history, which deploy.yml already fetches
+        // (fetch-depth: 0).
+        priority: ["frontmatter", "git", "filesystem"],
       }),
       Plugin.SyntaxHighlighting({
         theme: {
