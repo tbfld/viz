@@ -18,6 +18,6 @@ ig_permalink: "https://www.instagram.com/p/DcbpomFICeX/"
 
 substantially
 
-![substantially](ig-img/18119401397510732/img-1.jpg)
+![substantially](posts/ig-img/18119401397510732/img-1.jpg)
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DcbpomFICeX/).*

@@ -119,7 +119,7 @@ def build_post(item: dict) -> tuple[str, str]:
         if thumb:
             img_path = post_img_dir / "thumb.jpg"
             download(thumb, img_path)
-            rel = f"ig-img/{media_id}/thumb.jpg"
+            rel = f"posts/ig-img/{media_id}/thumb.jpg"
             body_media_lines.append(f"![{yaml_escape(title)}]({rel})")
         body_media_lines.append(f"\n🎥 Video — [view on Instagram]({permalink})")
     else:
@@ -133,7 +133,7 @@ def build_post(item: dict) -> tuple[str, str]:
                 continue
             img_path = post_img_dir / f"img-{i}.jpg"
             download(media_url, img_path)
-            rel = f"ig-img/{media_id}/img-{i}.jpg"
+            rel = f"posts/ig-img/{media_id}/img-{i}.jpg"
             body_media_lines.append(f"![{yaml_escape(title)}]({rel})")
 
     body = "\n\n".join(body_media_lines)
@@ -163,12 +163,39 @@ ig_permalink: "{permalink}"
     return filename, frontmatter + body
 
 
+def fix_legacy_image_paths() -> int:
+    """
+    One-time self-heal: early posts had their image markdown written as
+    `ig-img/<id>/img-N.jpg` (relative to the post file), but Quartz's
+    `CrawlLinks` resolver treats un-dotted relative paths as already being
+    full vault-root slugs, not paths relative to the source file's folder.
+    That silently resolved to `/ig-img/...` instead of `/posts/ig-img/...`,
+    so the images 404'd even though everything else (text, dates) worked.
+    Fix: prefix with `posts/` so it resolves as the correct vault-root slug.
+    Safe to run every time - a no-op once all posts are fixed.
+    """
+    fixed = 0
+    if not POSTS_DIR.exists():
+        return fixed
+    for md_path in POSTS_DIR.glob("*.md"):
+        text = md_path.read_text()
+        new_text = text.replace("](ig-img/", "](posts/ig-img/")
+        if new_text != text:
+            md_path.write_text(new_text)
+            fixed += 1
+    return fixed
+
+
 def main() -> int:
     access_token = os.environ.get("IG_ACCESS_TOKEN")
     user_id = os.environ.get("IG_USER_ID")
     if not access_token or not user_id:
         print("IG_ACCESS_TOKEN and IG_USER_ID must be set", file=sys.stderr)
         return 1
+
+    fixed = fix_legacy_image_paths()
+    if fixed:
+        print(f"Self-heal: fixed image paths in {fixed} existing post(s).")
 
     state = load_state()
     imported = set(state["imported_ids"])
@@ -181,6 +208,11 @@ def main() -> int:
     batch = new_items[:MAX_PER_RUN]
     if not batch:
         print("Nothing new to import.")
+        gh_output = os.environ.get("GITHUB_OUTPUT")
+        if gh_output:
+            with open(gh_output, "a") as f:
+                f.write("count=0\n")
+                f.write(f"fixed={fixed}\n")
         return 0
 
     POSTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -209,6 +241,7 @@ def main() -> int:
     if gh_output:
         with open(gh_output, "a") as f:
             f.write(f"count={len(created_files)}\n")
+            f.write(f"fixed={fixed}\n")
     return 0
 
 

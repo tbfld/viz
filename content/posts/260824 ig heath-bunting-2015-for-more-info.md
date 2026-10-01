@@ -18,6 +18,6 @@ ig_permalink: "https://www.instagram.com/p/DcbqO8KIK2Z/"
 
 Heath Bunting (2015), for more info 👉🏼 https://www.facebook.com/permalink.php?story_fbid=pfbid028FjgAcGmmmapQC6CYvwJYFUu21VtXE4uq9i4j95k19sJBHZUqxdH7HS2RGZiYk8wl&id=61571660821213
 
-![Heath Bunting (2015), for more info 👉🏼 https://www.facebook.com/permal…](ig-img/17986697252858110/img-1.jpg)
+![Heath Bunting (2015), for more info 👉🏼 https://www.facebook.com/permal…](posts/ig-img/17986697252858110/img-1.jpg)
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DcbqO8KIK2Z/).*

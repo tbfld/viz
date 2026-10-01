@@ -45,6 +45,11 @@ jobs:
             echo "Nothing to commit."
           else
             count="${{ steps.import.outputs.count }}"
-            git commit -m "Instagram import: ${count:-0} new post(s)"
+            fixed="${{ steps.import.outputs.fixed }}"
+            msg="Instagram import: ${count:-0} new post(s)"
+            if [ "${fixed:-0}" != "0" ]; then
+              msg="${msg}, fixed image paths in ${fixed} post(s)"
+            fi
+            git commit -m "$msg"
             git push
           fi

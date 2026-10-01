@@ -18,6 +18,6 @@ ig_permalink: "https://www.instagram.com/p/DcbjTknIJtv/"
 
 Widely shared as a “topology joke mug” and available on ebay
 
-![Widely shared as a “topology joke mug” and available on ebay](ig-img/17880023775623689/img-1.jpg)
+![Widely shared as a “topology joke mug” and available on ebay](posts/ig-img/17880023775623689/img-1.jpg)
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DcbjTknIJtv/).*
