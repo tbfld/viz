@@ -30,7 +30,12 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Fetch Quartz Theme
-        run: curl -s -S https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
+        # Pinned to a commit SHA, not `master` - this script runs with
+        # write access to what gets deployed, so it shouldn't be able to
+        # change under us without a deliberate bump. To pick up a theme
+        # update later, check https://github.com/saberzero1/quartz-themes
+        # for a newer commit and swap the SHA below on purpose.
+        run: curl -s -S https://raw.githubusercontent.com/saberzero1/quartz-themes/44dd81094c0dd982b67f93d91ef8c80da3f583e6/action.sh | bash -s -- $THEME_NAME
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
