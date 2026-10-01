@@ -29,7 +29,15 @@ def refresh_token(current_token: str) -> str:
         params={"grant_type": "ig_refresh_token", "access_token": current_token},
         timeout=30,
     )
-    resp.raise_for_status()
+    if not resp.ok:
+        # This repo is public. The request URL carries the current token as
+        # a query param, and resp.raise_for_status()'s default message
+        # embeds resp.url - so never let that hit a log line unredacted.
+        print(f"Instagram token-refresh error {resp.status_code}: {resp.text}", file=sys.stderr)
+        raise requests.exceptions.HTTPError(
+            f"{resp.status_code} Client Error refreshing Instagram token",
+            response=resp,
+        )
     data = resp.json()
     new_token = data["access_token"]
     print(f"Refreshed token; new one expires in {data.get('expires_in')} seconds.")

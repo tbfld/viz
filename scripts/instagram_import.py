@@ -48,6 +48,14 @@ def save_state(state: dict) -> None:
     STATE_PATH.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
 
 
+def _redact_token(url: str, token: str) -> str:
+    """Never let the access token reach a log line. This repo is public, so
+    anything printed here is visible to anyone - not just via GitHub's
+    secret-masking (which only catches an exact literal match and isn't a
+    safety net to rely on)."""
+    return url.replace(token, "***") if token else url
+
+
 def fetch_all_media(access_token: str, user_id: str) -> list[dict]:
     """Fetch every media item for the account, oldest-last (IG returns newest-first);
     we reverse so posts are created in chronological order."""
@@ -60,8 +68,21 @@ def fetch_all_media(access_token: str, user_id: str) -> list[dict]:
         if not resp.ok:
             # Print Instagram's actual error body - the status code alone
             # (what raise_for_status() gives) isn't enough to diagnose.
-            print(f"Instagram API error {resp.status_code}: {resp.text}", file=sys.stderr)
-        resp.raise_for_status()
+            # The request URL contains the access token as a query param,
+            # so scrub it before anything touches stdout/stderr - a bare
+            # resp.raise_for_status() call would otherwise embed the raw
+            # token in its exception message (which includes resp.url).
+            print(
+                f"Instagram API error {resp.status_code} for "
+                f"{_redact_token(resp.url, access_token)}: {resp.text}",
+                file=sys.stderr,
+            )
+            resp.reason = _redact_token(resp.reason or "", access_token)
+            raise requests.exceptions.HTTPError(
+                f"{resp.status_code} Client Error for url: "
+                f"{_redact_token(resp.url, access_token)}",
+                response=resp,
+            )
         data = resp.json()
         items.extend(data.get("data", []))
         url = data.get("paging", {}).get("next")
@@ -86,7 +107,15 @@ def ig_timestamp_to_quartz(ts: str) -> str:
 def download(url: str, dest: Path) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
     resp = requests.get(url, timeout=60)
-    resp.raise_for_status()
+    if not resp.ok:
+        # media_url is a Facebook-CDN URL with a short-lived signed query
+        # string, not a long-lived secret, but there's no reason to print
+        # it either - keep the error to just the host.
+        host = url.split("/")[2] if "://" in url else url
+        raise requests.exceptions.HTTPError(
+            f"{resp.status_code} Client Error downloading image from {host}",
+            response=resp,
+        )
     dest.write_bytes(resp.content)
 
 
