@@ -71,11 +71,12 @@ the default Actions token isn't allowed to do. Create a narrow one:
 In this repo: **Settings → Secrets and variables → Actions → New repository
 secret**, add:
 
-| Name | Value |
-| --- | --- |
-| `IG_ACCESS_TOKEN` | the long-lived token from step 3 |
-| `IG_USER_ID` | the Instagram user ID from step 3 |
-| `GH_SECRETS_PAT` | the fine-grained PAT from step 4 |
+| Name              | Value                             |
+| ----------------- | --------------------------------- |
+| `IG_ACCESS_TOKEN` | the long-lived token from step 3  |
+| `IG_USER_ID`      | the Instagram user ID from step 3 |
+| `GH_SECRETS_PAT`  | the fine-grained PAT from step 4  |
+|                   |                                   |
 
 ### 6. Kick it off
 
