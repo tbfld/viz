@@ -1,0 +1,36 @@
+.changelog-entry {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+.changelog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.changelog-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.changelog-type {
+  font-size: 0.875rem;
+}
+
+.changelog-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+
+.changelog-preview {
+  font-size: 0.9rem;
+  color: var(--darkgray);
+}

@@ -1,0 +1,23 @@
+.post-entry {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+
+.post-preview {
+  font-size: 0.9rem;
+  color: var(--darkgray);
+}
