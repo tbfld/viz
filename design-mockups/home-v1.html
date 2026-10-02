@@ -12,8 +12,8 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-body);
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.4;
   }
 
   .wrap {
@@ -24,7 +24,7 @@
 
   /* ---- site header ---- */
   header.site {
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
     padding: 2.5rem 0 1.25rem;
   }
   header.site .wrap {
@@ -36,15 +36,17 @@
   }
   .site-title {
     font-family: var(--font-presentation);
-    font-size: clamp(2rem, 6vw, 3.25rem);
-    letter-spacing: 0.02em;
+    font-weight: var(--font-presentation-weight);
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     line-height: 1;
   }
   nav.site-nav {
     font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
     font-size: 0.95rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     display: flex;
     gap: 1.5rem;
@@ -85,8 +87,9 @@
     align-items: center;
     justify-content: center;
     font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
     font-size: 0.7rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.16em;
     color: var(--muted);
     text-transform: uppercase;
   }
@@ -95,8 +98,9 @@
 
   .post-meta {
     font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
     font-size: 0.72rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
     margin-bottom: 0.35rem;
@@ -109,11 +113,12 @@
 
   .post-title {
     font-family: var(--font-presentation);
-    font-size: 1.4rem;
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.05rem;
     text-transform: uppercase;
-    letter-spacing: 0.01em;
-    line-height: 1.15;
-    margin: 0 0 0.5rem;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+    margin: 0 0 0.4rem;
   }
   .post-title a {
     color: var(--ink);
@@ -129,11 +134,12 @@
   .post-excerpt em { font-style: italic; }
 
   footer.site {
-    border-top: 3px solid var(--ink);
+    border-top: 1px solid var(--ink);
     padding: 1.5rem 0 3rem;
     font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
     font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--muted);
   }
@@ -142,7 +148,6 @@
   @media (max-width: 480px) {
     .post-entry { flex-direction: column; }
     .post-thumb { width: 100%; height: auto; aspect-ratio: 1 / 1; }
-    .site-title { font-size: 2rem; }
     nav.site-nav { font-size: 0.8rem; gap: 1rem; }
   }
 
@@ -231,7 +236,7 @@
   <div class="wrap">viz.counter.ink — all images © the author unless noted</div>
 </footer>
 
-<p class="devnote">mockup v1 · resize the window to check the mobile breakpoint</p>
+<p class="devnote">mockup v1c · smaller/modest logo &amp; titles, tighter body, 1px rule · resize the window to check the mobile breakpoint</p>
 
 </body>
 </html>
