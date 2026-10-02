@@ -135,7 +135,7 @@ def build_post(item: dict) -> tuple[str, str]:
     title = (first_line[:70] + "…") if len(first_line) > 70 else first_line
     title = title or f"Instagram post {created[:10]}"
     slug = slugify(first_line) or media_id[-8:]
-    filename = f"{date_prefix} ig {slug}.md"
+    filename = f"{date_prefix}-ig-{slug}.md"
 
     media_type = item.get("media_type", "IMAGE")
     post_img_dir = IMG_DIR / media_id

@@ -33,4 +33,4 @@ Auto-create is genuinely useful for the handful of real section folders (`2.1 an
 | ------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------ |
 | `posts/ig-img`     | Folder (with subfolders)  | One new per-media-ID folder every Instagram import, forever. Never meant to have a real folder note.  |
 | `posts/img`        | Folder (with subfolders)  | One new per-manual-post image folder every time you write an illustrated post (see image-conventions.md). Same reasoning as ig-img. |
-| `4 images`         | Folder (with subfolders)  | Shared/thematic image library (see image-conventions.md) — theme subfolders (`isotype/`, `marey/`, etc.) are storage, not pages. |
+| `4-images`         | Folder (with subfolders)  | Shared/thematic image library (see image-conventions.md) — theme subfolders (`isotype/`, `marey/`, etc.) are storage, not pages. |

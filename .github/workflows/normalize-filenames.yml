@@ -1,0 +1,40 @@
+name: Normalize filenames
+
+# Ongoing backstop for the "no spaces in content/ paths" rule (see
+# scripts/normalize_filenames.py). Catches anything that slips through --
+# a manual save from Obsidian on iOS/Mac, a future script -- regardless of
+# how it was added. instagram_import.py already generates hyphenated
+# filenames directly, so this should rarely find anything to do.
+
+on:
+  push:
+    branches: [v4]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: normalize-filenames
+  cancel-in-progress: false
+
+jobs:
+  normalize:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace spaces with hyphens under content/
+        run: python3 scripts/normalize_filenames.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "normalize-filenames-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "Normalize filenames: replace spaces with hyphens"
+            git push
+          fi
