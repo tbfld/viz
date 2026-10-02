@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>home mockup v1 — viz.counter.ink</title>
+<link rel="stylesheet" href="mockup-fonts.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  /* ---- site header ---- */
+  header.site {
+    border-bottom: 3px solid var(--ink);
+    padding: 2.5rem 0 1.25rem;
+  }
+  header.site .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .site-title {
+    font-family: var(--font-presentation);
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  nav.site-nav {
+    font-family: var(--font-presentation);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav.site-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+  }
+  nav.site-nav a:hover,
+  nav.site-nav a.current {
+    border-bottom-color: var(--ink);
+  }
+
+  /* ---- feed ---- */
+  main.feed {
+    padding: 2rem 0 4rem;
+  }
+  .post-entry {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .post-entry:first-child { padding-top: 0; }
+
+  .post-thumb {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    background: var(--rule);
+    display: block;
+  }
+  .post-thumb.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-presentation);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .post-body { flex: 1 1 auto; min-width: 0; }
+
+  .post-meta {
+    font-family: var(--font-presentation);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+  .post-meta .tag {
+    border: 1px solid var(--rule);
+    padding: 0.1rem 0.45rem;
+    margin-left: 0.5rem;
+  }
+
+  .post-title {
+    font-family: var(--font-presentation);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+    margin: 0 0 0.5rem;
+  }
+  .post-title a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .post-excerpt {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--ink);
+    margin: 0;
+  }
+  .post-excerpt em { font-style: italic; }
+
+  footer.site {
+    border-top: 3px solid var(--ink);
+    padding: 1.5rem 0 3rem;
+    font-family: var(--font-presentation);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---- mobile check ---- */
+  @media (max-width: 480px) {
+    .post-entry { flex-direction: column; }
+    .post-thumb { width: 100%; height: auto; aspect-ratio: 1 / 1; }
+    .site-title { font-size: 2rem; }
+    nav.site-nav { font-size: 0.8rem; gap: 1rem; }
+  }
+
+  /* visible-at-a-glance ruler so you can judge widths while reviewing */
+  .devnote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+    padding: 0.5rem 0 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="site-title">Counter.Ink</div>
+    <nav class="site-nav">
+      <a href="#" class="current">Blog</a>
+      <a href="#">Book</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="feed">
+  <div class="wrap">
+
+    <article class="post-entry">
+      <img class="post-thumb" src="https://picsum.photos/seed/viz1/240/240" alt="">
+      <div class="post-body">
+        <div class="post-meta">02 Oct 2026 <span class="tag">studio</span> <span class="tag">process</span></div>
+        <h2 class="post-title"><a href="#">Notes on a found object, reassembled</a></h2>
+        <p class="post-excerpt">A short run of working photos from this week — mostly scrap, mostly
+        wrong, which is usually when something starts to happen. <em>More below.</em></p>
+      </div>
+    </article>
+
+    <article class="post-entry">
+      <img class="post-thumb" src="https://picsum.photos/seed/viz2/240/240" alt="">
+      <div class="post-body">
+        <div class="post-meta">28 Sep 2026 <span class="tag">ig</span></div>
+        <h2 class="post-title"><a href="#">Untitled (window, late light)</a></h2>
+        <p class="post-excerpt">Imported from Instagram. Original caption preserved below the fold,
+        with the usual hashtags trimmed.</p>
+      </div>
+    </article>
+
+    <!-- deliberately long title, to stress-test wrapping -->
+    <article class="post-entry">
+      <img class="post-thumb" src="https://picsum.photos/seed/viz3/240/240" alt="">
+      <div class="post-body">
+        <div class="post-meta">24 Sep 2026 <span class="tag">book</span> <span class="tag">excerpt</span></div>
+        <h2 class="post-title"><a href="#">A longer title to see how the presentation face wraps across two lines at this width</a></h2>
+        <p class="post-excerpt">Testing a long headline against the Anton/uppercase treatment —
+        does it stay readable, or does it start to feel shouty at two lines?</p>
+      </div>
+    </article>
+
+    <!-- post with no image: confirms the layout survives a text-only entry -->
+    <article class="post-entry">
+      <div class="post-thumb placeholder">no&nbsp;image</div>
+      <div class="post-body">
+        <div class="post-meta">19 Sep 2026 <span class="tag">note</span></div>
+        <h2 class="post-title"><a href="#">A text-only post, no image at all</a></h2>
+        <p class="post-excerpt">Some entries won't have a lead image — the layout needs to hold up
+        even then, without an awkward empty box.</p>
+      </div>
+    </article>
+
+    <article class="post-entry">
+      <img class="post-thumb" src="https://picsum.photos/seed/viz5/240/240" alt="">
+      <div class="post-body">
+        <div class="post-meta">15 Sep 2026 <span class="tag">ig</span></div>
+        <h2 class="post-title"><a href="#">Scaffolding, corner of 4th</a></h2>
+        <p class="post-excerpt">Another IG import, short caption, single image.</p>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">viz.counter.ink — all images © the author unless noted</div>
+</footer>
+
+<p class="devnote">mockup v1 · resize the window to check the mobile breakpoint</p>
+
+</body>
+</html>

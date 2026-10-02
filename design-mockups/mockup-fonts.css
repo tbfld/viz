@@ -1,0 +1,40 @@
+/* ------------------------------------------------------------------
+   Shared type foundation for design mockups.
+   Self-hosted: Anton (presentation/headline) + Libre Baskerville (body).
+   Files live in quartz/static/fonts/ — same files the real site will use.
+   ------------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Anton";
+  src: url("../quartz/static/fonts/Anton-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("../quartz/static/fonts/LibreBaskerville-Variable.woff2") format("woff2-variations");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("../quartz/static/fonts/LibreBaskerville-Italic-Variable.woff2") format("woff2-variations");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-presentation: "Anton", sans-serif;
+  --font-body: "Libre Baskerville", Georgia, serif;
+
+  /* Placeholder neutrals only — color comes later in the process. */
+  --ink: #1a1a1a;
+  --paper: #fdfcf9;
+  --rule: #d8d4cc;
+  --muted: #7a7670;
+}
