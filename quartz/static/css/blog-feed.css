@@ -1,7 +1,24 @@
 .post-entry {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
   padding: 1rem 0;
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--lightgray);
+}
+
+.post-thumb {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--lightgray);
+}
+
+.post-body {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .post-title {
@@ -20,4 +37,16 @@
 .post-preview {
   font-size: 0.9rem;
   color: var(--darkgray);
+}
+
+@media (max-width: 480px) {
+  .post-entry {
+    flex-direction: column;
+  }
+
+  .post-thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
 }

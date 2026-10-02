@@ -14,5 +14,9 @@ publish:
 disabled rules: [yaml-title]
 ---
 
+<%* tp.file.cursor() %>
 
-![[img/{{FULLNAME}}]]
+<!-- Images for this post live in content/posts/img/{{FULLNAME}}/ — see
+     content/templates/image-conventions.md for the YYMMDD-name[-fpo].ext
+     naming pattern. Embed one with, e.g.:
+     ![[posts/img/{{FULLNAME}}/261002-descriptive-name.jpg]] -->

@@ -98,6 +98,7 @@ const config: QuartzConfig = {
         rssFullHtml: true,
       }),
       Plugin.Assets(),
+      Plugin.Thumbnails(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
     ],

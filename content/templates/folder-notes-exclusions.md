@@ -2,7 +2,7 @@
 title: Folder note exclusions
 publish: false
 created: 2026-10-01-Thu-5:37pm
-updated: 2026-10-02-Fri-11:11am
+updated: 2026-10-02
 disabled rules: [yaml-title]
 ---
 This note lives only in the vault — it's in `content/templates/`, which Quartz is configured to skip entirely (`ignorePatterns` in `quartz.config.ts`), and it's also marked `publish: false` like every folder note. It will never appear on the live site. It's a reference for future-you, not content.
@@ -29,8 +29,8 @@ Auto-create is genuinely useful for the handful of real section folders (`2.1 an
 
 ## Current exclusions
 
-| Path           | Type                      | Why                                                                                                  |
-| -------------- | ------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `posts/ig-img` | Pattern (with subfolders) | One new per-media-ID folder every Instagram import, forever. Never meant to have a real folder note. |
-
-**When the site grows a new folder like this** — storage-only, auto-populated by a script or a plugin, never meant to be a real page — add a row here, then add the matching entry in the plugin's Exclude Folders tab using the steps above. This table is the readable map of what's excluded and why; the plugin's own settings (stored in `.obsidian/plugins/folder-notes/data.json`, not tracked in git) are what actually enforce it, so the two have to be kept in sync by hand — there's no way to make the plugin read its exclusion list from this doc automatically.
+| Path              | Type                      | Why                                                                                                   |
+| ------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `posts/ig-img`     | Folder (with subfolders)  | One new per-media-ID folder every Instagram import, forever. Never meant to have a real folder note.  |
+| `posts/img`        | Folder (with subfolders)  | One new per-manual-post image folder every time you write an illustrated post (see image-conventions.md). Same reasoning as ig-img. |
+| `4 images`         | Folder (with subfolders)  | Shared/thematic image library (see image-conventions.md) — theme subfolders (`isotype/`, `marey/`, etc.) are storage, not pages. |

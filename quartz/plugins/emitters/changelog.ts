@@ -1,8 +1,11 @@
+import { Root } from "hast"
+import { visit } from "unist-util-visit"
 import { QuartzEmitterPlugin } from "../types"
 import { FilePath, FullSlug, joinSegments } from "../../util/path"
 import { write } from "./helpers"
 import { getDate } from "../../components/Date"
 import DepGraph from "../../depgraph"
+import { THUMBNAIL_SIZES, thumbnailDestName, isThumbnailableImage } from "../../util/thumbnails"
 
 interface ChangelogEntry {
   title: string
@@ -12,6 +15,11 @@ interface ChangelogEntry {
   wordCount: number
   isNew: boolean
   firstParagraph: string
+  // URLs of the first image in the post, resized by the Thumbnails emitter
+  // (see util/thumbnails.ts). null when the post has no image. Keyed by
+  // pixel size so any consumer (the blog index today, something else later)
+  // can pick the size it wants without a second build-time change.
+  thumbnails: Record<number, string> | null
 }
 
 function countWords(text: string): number {
@@ -36,6 +44,30 @@ function getFirstParagraph(text: string): string {
   return ""
 }
 
+/** Find the `src` of the first <img> in a rendered post, if any. By the time
+ * emitters run, CrawlLinks has already resolved it to the final browser-
+ * facing URL (handles the vault-root-relative-slug quirk, "shortest" link
+ * resolution, etc.), so we can use it as-is. */
+function getFirstImageSrc(tree: Root): string | null {
+  let found: string | null = null
+  visit(tree, "element", (node) => {
+    if (found) return
+    if (node.tagName === "img" && typeof node.properties?.src === "string") {
+      found = node.properties.src
+    }
+  })
+  return found
+}
+
+function getThumbnails(firstImageSrc: string | null): Record<number, string> | null {
+  if (!firstImageSrc || !isThumbnailableImage(firstImageSrc)) return null
+  const thumbs: Record<number, string> = {}
+  for (const size of THUMBNAIL_SIZES) {
+    thumbs[size] = thumbnailDestName(firstImageSrc, size)
+  }
+  return thumbs
+}
+
 export const Changelog: QuartzEmitterPlugin = () => {
   return {
     name: "Changelog",
@@ -53,28 +85,30 @@ export const Changelog: QuartzEmitterPlugin = () => {
     async emit(ctx, content, _resources) {
       const entries: ChangelogEntry[] = []
 
-      for (const [_, file] of content) {
+      for (const [tree, file] of content) {
         // Skip the index (blog) and changelog pages themselves
         if (file.data.slug === "index" || file.data.slug === "changelog") {
           continue
         }
-        
+
         const text = file.data.text ?? ""
         const frontmatter = file.data.frontmatter
         const slug = file.data.slug!
         const title = frontmatter?.title ?? file.data.filename ?? "Untitled"
 
         // Get dates
-        const createdDate = frontmatter?.created 
+        const createdDate = frontmatter?.created
           ? new Date(frontmatter.created as string)
           : null
         const updatedDate = getDate(ctx.cfg.configuration, file.data) ?? new Date()
 
         // Determine if new (created within last 24 hours)
         const now = new Date()
-        const isNew = createdDate 
+        const isNew = createdDate
           ? (now.getTime() - createdDate.getTime()) < 24 * 60 * 60 * 1000
           : false
+
+        const firstImageSrc = getFirstImageSrc(tree)
 
         entries.push({
           title,
@@ -84,6 +118,7 @@ export const Changelog: QuartzEmitterPlugin = () => {
           wordCount: countWords(text),
           isNew,
           firstParagraph: getFirstParagraph(text),
+          thumbnails: getThumbnails(firstImageSrc),
         })
       }
 
