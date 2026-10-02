@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "17880023775623689"
 ig_permalink: "https://www.instagram.com/p/DcbjTknIJtv/"
+disabled rules: [yaml-title]
 ---
 
 Widely shared as a “topology joke mug” and available on ebay

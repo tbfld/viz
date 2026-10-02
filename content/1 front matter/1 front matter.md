@@ -12,5 +12,6 @@ draft:
 publish: true
 book: true
 book_position: "0"
+disabled rules: [yaml-title]
 ---
 

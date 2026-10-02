@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18369072001211900"
 ig_permalink: "https://www.instagram.com/p/DcpMK8Vxpg5/"
+disabled rules: [yaml-title]
 ---
 
 From XKCD

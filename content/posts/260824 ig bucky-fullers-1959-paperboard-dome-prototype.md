@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18127757443601515"
 ig_permalink: "https://www.instagram.com/p/DcbU2WmEV99/"
+disabled rules: [yaml-title]
 ---
 
 Bucky Fuller’s 1959 Paperboard Dome prototype, made entirely from folded cardboard

@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18094251575387221"
 ig_permalink: "https://www.instagram.com/p/Dc30qJXICHO/"
+disabled rules: [yaml-title]
 ---
 
 From https://digitalculturesandarts.ch/simon-strick-faschisierung-fluchtlinie-des-digitalen-buchvorstellung-diskussion/ ( 🎩 @bildoperationen )

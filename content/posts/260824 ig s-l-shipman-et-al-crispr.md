@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18098465069018600"
 ig_permalink: "https://www.instagram.com/p/DcbVYjdka_h/"
+disabled rules: [yaml-title]
 ---
 
 S. L. Shipman et al., "CRISPR-Cas encoding of a digital movie into the genomes of a population of living bacteria,” Nature 547 (2017), pp. 345-349 ( https://doi. org/10.1038/nature23017 )

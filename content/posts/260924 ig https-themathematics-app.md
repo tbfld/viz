@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18104805809206968"
 ig_permalink: "https://www.instagram.com/p/DdpnRQrIBjb/"
+disabled rules: [yaml-title]
 ---
 
 https://themathematics.app/

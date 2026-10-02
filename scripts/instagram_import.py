@@ -170,6 +170,9 @@ def build_post(item: dict) -> tuple[str, str]:
         body = f"{caption}\n\n{body}" if body else caption
     body += f"\n\n*Originally posted on [Instagram]({permalink}).*\n"
 
+    # `disabled rules: [yaml-title]` keeps Obsidian Linter's YAML Title rule
+    # (enabled vault-wide 2026-10-02) from overwriting this caption-derived
+    # title with the filename-derived slug on the next lint pass.
     frontmatter = f"""---
 title: "{yaml_escape(title)}"
 aliases:
@@ -186,6 +189,7 @@ book: false
 book_position:
 ig_media_id: "{media_id}"
 ig_permalink: "{permalink}"
+disabled rules: [yaml-title]
 ---
 
 """

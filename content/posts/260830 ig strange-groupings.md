@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18109886882609759"
 ig_permalink: "https://www.instagram.com/p/DcpMXjSR_Qf/"
+disabled rules: [yaml-title]
 ---
 
 Strange groupings

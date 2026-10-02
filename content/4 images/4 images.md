@@ -10,6 +10,7 @@ order: "4000"
 author: Ted Byfield
 draft: false
 publish: false
+disabled rules: [yaml-title]
 ---
 
 

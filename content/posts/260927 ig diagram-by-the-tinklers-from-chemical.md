@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "17874087591582576"
 ig_permalink: "https://www.instagram.com/p/Ddy85K4oC4I/"
+disabled rules: [yaml-title]
 ---
 
 Diagram by The Tinklers, from Chemical Imabalnce, 🎩 @_futuredays — for more, see https://rollo-press.com/#the-tinklers-charts-and-stories

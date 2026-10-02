@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18408635935080415"
 ig_permalink: "https://www.instagram.com/p/DdVnEoJR3v9/"
+disabled rules: [yaml-title]
 ---
 
 https://www.reddit.com/r/interestingasfuck/s/gf7mHjPbMO

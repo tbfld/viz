@@ -12,6 +12,7 @@ draft:
 publish: true
 book: true
 book_position: "1000.100.100"
+disabled rules: [yaml-title]
 ---
 anecdata test 001 body
 

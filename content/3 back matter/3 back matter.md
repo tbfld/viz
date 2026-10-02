@@ -12,5 +12,6 @@ draft: false
 publish: true
 book: true
 book_position: "4000"
+disabled rules: [yaml-title]
 ---
 

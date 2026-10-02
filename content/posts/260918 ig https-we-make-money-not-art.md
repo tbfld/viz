@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18070764809757342"
 ig_permalink: "https://www.instagram.com/p/DdaWQISoOqQ/"
+disabled rules: [yaml-title]
 ---
 
 https://we-make-money-not-art.com/conspiratorial-design-information-design-for-the-bigger-picture/

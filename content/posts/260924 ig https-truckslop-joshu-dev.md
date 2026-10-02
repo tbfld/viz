@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18190788682395267"
 ig_permalink: "https://www.instagram.com/p/DdpnGvMIDQ4/"
+disabled rules: [yaml-title]
 ---
 
 https://truckslop.joshu.dev/

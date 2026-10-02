@@ -1,6 +1,7 @@
 ---
 title: Posts
 publish: false
+disabled rules: [yaml-title]
 ---
 Quick, dated entries — the reverse-chronological blog view of this project. Anything can start here: a short note, an image, a fragment. Filing a post into the book structure (adding it to a `2.x` section, indexing it) is a separate, later, optional step — never required to post.
 

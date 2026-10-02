@@ -1,6 +1,7 @@
 ---
 title: Auto timestamps (created / updated)
 publish: false
+disabled rules: [yaml-title]
 ---
 Like the folder-note exclusions, this is vault-only reference — `content/templates/` is skipped by Quartz's build (`ignorePatterns`) and this note is `publish: false` besides.
 

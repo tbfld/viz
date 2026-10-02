@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18483876997097772"
 ig_permalink: "https://www.instagram.com/p/DcbVDckkR8g/"
+disabled rules: [yaml-title]
 ---
 
 David Lynch, “RONNIE ROCKET: The Absurd Mystery of the Strange Forces of Existence” (rev draft 1991)

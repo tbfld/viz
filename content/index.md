@@ -10,6 +10,7 @@ order:
 author:
 draft: false
 publish: true
+disabled rules: [yaml-title]
 ---
 
 <link rel="stylesheet" href="/static/css/blog-feed.css">

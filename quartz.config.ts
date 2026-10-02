@@ -9,6 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "viz.counter.ink",
+    pageTitlePrefix: "ted byfield > dataviz + its discontents > ",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,

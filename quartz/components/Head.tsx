@@ -75,9 +75,12 @@ export default (() => {
     // Get file description (priority: frontmatter > fileData > default)
     const fdDescription =
       fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description
+    const titlePrefix = cfg.pageTitlePrefix ?? ""
     const titleSuffix = cfg.pageTitleSuffix ?? ""
     const title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+      titlePrefix +
+      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) +
+      titleSuffix
     let description = ""
     if (fdDescription) {
       description = unescapeHTML(fdDescription)
@@ -122,6 +125,7 @@ export default (() => {
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
 
     const iconPath = joinSegments(baseDir, "static/icon.png")
+    const appleTouchIconPath = joinSegments(baseDir, "static/apple-touch-icon.png")
 
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
     // "static/social-images/slug-filename.md.webp"
@@ -195,6 +199,7 @@ export default (() => {
           </>
         )}
         <link rel="icon" href={iconPath} />
+        <link rel="apple-touch-icon" href={appleTouchIconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}

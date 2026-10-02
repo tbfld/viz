@@ -10,6 +10,7 @@ order:
 author: 
 draft: true
 publish: false
+disabled rules: [yaml-title]
 ---
 ```dataview
 LIST without ID 

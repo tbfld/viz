@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18099536480102980"
 ig_permalink: "https://www.instagram.com/p/DcbiqBkoEeD/"
+disabled rules: [yaml-title]
 ---
 
 cyanometer for measuring the intensity of a blue sky, invention credited to Horace Bénédict de Saussure in the 1760s

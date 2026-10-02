@@ -11,6 +11,7 @@ draft: false
 order: 
 aliases: 
 publish: 
+disabled rules: [yaml-title]
 ---
 
 

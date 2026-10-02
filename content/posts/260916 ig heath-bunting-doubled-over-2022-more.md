@@ -14,6 +14,7 @@ book: false
 book_position:
 ig_media_id: "18131688673580973"
 ig_permalink: "https://www.instagram.com/p/DdWiIPPIKSb/"
+disabled rules: [yaml-title]
 ---
 
 Heath Bunting, “Doubled Over” (2022). More info: https://www.facebook.com/photo/?fbid=122180568014722027&set=a.122153301230722027

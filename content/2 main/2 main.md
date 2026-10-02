@@ -10,5 +10,6 @@ order: "2000"
 author: 
 draft: false
 publish: false
+disabled rules: [yaml-title]
 ---
 
