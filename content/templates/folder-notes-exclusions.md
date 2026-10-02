@@ -1,6 +1,8 @@
 ---
 title: Folder note exclusions
 publish: false
+created: 2026-10-01-Thu-5:37pm
+updated: 2026-10-02-Fri-11:11am
 ---
 This note lives only in the vault — it's in `content/templates/`, which Quartz is configured to skip entirely (`ignorePatterns` in `quartz.config.ts`), and it's also marked `publish: false` like every folder note. It will never appear on the live site. It's a reference for future-you, not content.
 
