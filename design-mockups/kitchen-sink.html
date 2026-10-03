@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kitchen sink — single post typography (viz.counter.ink)</title>
+<link rel="stylesheet" href="mockup-fonts.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.3;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ================= SIDEBAR (identical to home-v2-sidebar.html,
+     kept in sync deliberately — same component, same page) ================= */
+  .sidebar {
+    flex: 0 0 260px;
+    width: 260px;
+    border-right: 1px solid var(--ink);
+    padding: 1.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .sidebar-logo {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .sidebar-label {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-label-strong {
+    font-family: var(--font-presentation);
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .graph-placeholder {
+    border: 1px solid var(--rule);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-style: italic;
+    position: relative;
+    overflow: hidden;
+  }
+  .graph-placeholder svg { position: absolute; inset: 0; opacity: 0.35; }
+  .search-field {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.4rem 0.1rem;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+  }
+  .search-field::placeholder { color: var(--muted); font-style: italic; }
+  .search-field:focus { outline: none; border-bottom-width: 2px; }
+  .mode-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--ink);
+  }
+  .mode-widget .cell {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0.6rem;
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    cursor: pointer;
+  }
+  .mode-widget .cell:nth-child(1),
+  .mode-widget .cell:nth-child(2) { border-bottom: 1px solid var(--ink); }
+  .mode-widget .cell:nth-child(odd) { border-right: 1px solid var(--ink); }
+  .mode-widget .cell:hover { background: var(--rule); }
+  .mode-widget .cell.active { background: var(--ink); color: var(--paper); }
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .toc-list a { color: var(--muted); text-decoration: none; }
+  .toc-list a:hover { color: var(--ink); }
+  .toc-list .toc-sub { padding-left: 1rem; font-size: 0.8rem; }
+
+  .sidebar-toggle { display: none; }
+  @media (max-width: 720px) {
+    body { flex-direction: column; }
+    .sidebar {
+      position: static; height: auto; width: 100%; flex: none;
+      border-right: none; border-bottom: 1px solid var(--ink); display: none;
+    }
+    .sidebar.open { display: flex; }
+    .sidebar-toggle {
+      display: block;
+      font-family: var(--font-presentation);
+      font-weight: var(--font-presentation-weight);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: left;
+      width: 100%;
+      padding: 0.9rem 1.25rem;
+      border: none;
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+    }
+  }
+
+  /* ================= ARTICLE ================= */
+  .main-col { flex: 1 1 auto; min-width: 0; }
+
+  /* Wider than the index page's content-wrap (700px) on purpose: this
+     width needs to hold BOTH the reading column and the margin-note
+     gutter. Below the sidenote-float breakpoint, the extra width just
+     stops mattering — notes switch to inline toggles. */
+  .article-wrap {
+    max-width: 920px;
+    padding: 2.5rem 1.75rem 4rem;
+  }
+
+  .post-kicker {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .post-kicker .tag {
+    font-style: italic;
+    color: var(--muted);
+    margin-left: 0.6rem;
+  }
+  .post-kicker .tag::before { content: "#"; }
+
+  h1.post-h1 {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    text-transform: uppercase;
+    letter-spacing: 0.015em;
+    line-height: 1.25;
+    margin: 0 0 1rem;
+  }
+
+  .backlinks-line {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .backlinks-line a { color: var(--muted); text-decoration: underline; }
+  .backlinks-line a:hover { color: var(--ink); }
+
+  /* ---- the reading column + margin gutter ---- */
+  article.post-article {
+    counter-reset: sidenote-counter;
+    width: 66%;
+  }
+
+  h2.post-h2 {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    margin: 2.25rem 0 1rem;
+  }
+  h3.post-h3 {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    color: var(--muted);
+    margin: 1.75rem 0 0.75rem;
+  }
+
+  article.post-article p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 0 1.1rem;
+  }
+
+  article.post-article blockquote {
+    margin: 1.5rem 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 2px solid var(--ink);
+    font-style: italic;
+    color: var(--ink);
+  }
+  article.post-article blockquote cite {
+    display: block;
+    margin-top: 0.4rem;
+    font-style: normal;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  article.post-article code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.88em;
+    background: var(--rule);
+    padding: 0.08em 0.35em;
+    border-radius: 2px;
+  }
+  article.post-article pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    background: #f1efe9;
+    border: 1px solid var(--rule);
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  article.post-article pre code { background: none; padding: 0; }
+
+  article.post-article ul,
+  article.post-article ol {
+    margin: 0 0 1.25rem;
+    padding-left: 1.4rem;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  article.post-article li { margin-bottom: 0.4rem; }
+
+  article.post-article hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2.5rem 0;
+  }
+
+  article.post-article a { color: var(--ink); text-decoration-color: var(--muted); }
+
+  figure.post-figure {
+    margin: 2rem 0;
+  }
+  figure.post-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  figcaption.post-caption {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  figcaption.post-caption .credit {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  /* ---- margin notes ----
+     Pure-CSS sidenotes, Tufte-CSS-style. The reading column above is
+     fixed at 66% of .article-wrap; these floats are pulled into the
+     remaining ~34% via a negative right margin, so they land roughly
+     level with the paragraph that contains them. "Roughly" is the
+     honest word — see the devnote at the bottom of the page. */
+  .margin-toggle-input { display: none; }
+
+  .sidenote-number { cursor: default; }
+  .sidenote-number::after {
+    content: counter(sidenote-counter);
+    counter-increment: sidenote-counter;
+    font-family: var(--font-presentation);
+    font-size: 0.62rem;
+    vertical-align: super;
+    line-height: 1;
+    margin-left: 0.12em;
+    color: var(--ink);
+  }
+
+  .sidenote {
+    float: right;
+    clear: right;
+    width: 27%;
+    margin-right: -40%;
+    margin-top: 0.1rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .sidenote::before {
+    content: counter(sidenote-counter) "  ";
+    font-family: var(--font-presentation);
+    font-size: 0.62rem;
+    vertical-align: super;
+    color: var(--muted);
+  }
+
+  /* Below this width there's no real margin left to float into —
+     switch to tap-to-reveal, inline, right where the reference is. */
+  @media (max-width: 1180px) {
+    article.post-article { width: 100%; }
+    .sidenote-number { cursor: pointer; }
+    .sidenote-number::after { text-decoration: underline; }
+    .sidenote {
+      float: none;
+      display: none;
+      width: auto;
+      margin: 0.6rem 0 1rem;
+      padding: 0.6rem 0.9rem;
+      border-left: 2px solid var(--rule);
+      background: transparent;
+    }
+    .sidenote::before { display: none; }
+    .margin-toggle-input:checked ~ .sidenote { display: block; }
+  }
+
+  @media (max-width: 480px) {
+    .article-wrap { padding: 2rem 1.25rem 3rem; }
+  }
+
+  .devnote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .devnote p { margin: 0 0 0.6rem; font-size: 0.8rem !important; line-height: 1.5 !important; }
+</style>
+</head>
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle">&#9776;&nbsp; Menu</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">VIZ.COUNTER.INK</div>
+
+  <div class="sidebar-section">
+    <div class="graph-placeholder">
+      <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="3" fill="currentColor"/>
+        <circle cx="70" cy="45" r="3" fill="currentColor"/>
+        <circle cx="50" cy="75" r="3" fill="currentColor"/>
+        <line x1="30" y1="30" x2="70" y2="45" stroke="currentColor" stroke-width="0.5"/>
+        <line x1="70" y1="45" x2="50" y2="75" stroke="currentColor" stroke-width="0.5"/>
+      </svg>
+      <span>placeholder</span>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <input class="search-field" type="text" placeholder="Search…" disabled>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="mode-widget">
+      <button class="cell active" data-group="section" data-value="blog">Blog</button>
+      <button class="cell" data-group="section" data-value="book">Book</button>
+      <button class="cell active" data-group="theme" data-value="light">Light</button>
+      <button class="cell" data-group="theme" data-value="dark">Dark</button>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label-strong">On this page</div>
+    <ul class="toc-list">
+      <li><a href="#typescale">Type &amp; scale</a></li>
+      <li><a href="#notes-demo">A paragraph with notes</a>
+        <ul class="toc-sub" style="list-style:none;padding-left:1rem;margin-top:0.4rem;">
+          <li><a href="#quote">Quotes &amp; code</a></li>
+        </ul>
+      </li>
+      <li><a href="#lists">Lists &amp; rule</a></li>
+      <li><a href="#image">Image, caption, credit</a></li>
+    </ul>
+    <p class="toc-note" style="font-size:0.75rem;font-style:italic;color:var(--muted);margin-top:0.5rem;">Real headings from this page — not placeholder titles, since this is a single post.</p>
+  </div>
+</aside>
+
+<div class="main-col">
+  <div class="article-wrap">
+
+    <div class="post-kicker">02 OCT 2026 <span class="tag">studio</span> <span class="tag">process</span> <span class="tag">type</span></div>
+    <h1 class="post-h1">Kitchen sink: typography, margin notes, and the stuff Obsidian hands us for free</h1>
+    <p class="backlinks-line">Also linked from: <a href="#">Notes on a found object, reassembled</a> &middot; <a href="#">Studio notes, late September</a></p>
+
+    <article class="post-article">
+
+      <h2 class="post-h2" id="typescale">Type &amp; scale</h2>
+      <p>This page exists to stress-test every typographic element a real post will eventually need, in one place, so the Gorton/Bitter system gets checked against more than a feed of titles and excerpts. Body copy sits here, in Bitter, at a size and line-height meant for sustained reading rather than a dateline or a label.</p>
+
+      <h3 class="post-h3">A smaller sub-heading</h3>
+      <p>Headings step down through Gorton Heavy at decreasing sizes rather than switching weight — there's only one weight in the self-hosted set, so hierarchy has to come from size, spacing, and the sans/serif contrast with Bitter body text.</p>
+
+      <h2 class="post-h2" id="notes-demo">A paragraph with notes</h2>
+      <p>Here is a sentence that wants a quick aside without derailing the main line of thought<label for="sn-1" class="margin-toggle sidenote-number" aria-label="Note 1"></label><input type="checkbox" id="sn-1" class="margin-toggle-input"><span class="sidenote">This is the margin note itself — on a wide screen it floats into the right-hand gutter, roughly level with its reference mark. On a narrow screen the superscript becomes tappable and the note unfolds right here instead.</span>, the kind of thing a footnote would normally bury at the bottom of the page.</p>
+      <p>And here's a second one close behind it, on purpose<label for="sn-2" class="margin-toggle sidenote-number" aria-label="Note 2"></label><input type="checkbox" id="sn-2" class="margin-toggle-input"><span class="sidenote">Two notes close together is the honest stress-test: pure-CSS floats stack in document order rather than snapping to an exact pixel, so this one sits just below the first rather than precisely beside its own sentence.</span> — to see what happens when two references land within a line or two of each other.</p>
+
+      <h3 class="post-h3" id="quote">Quotes &amp; code</h3>
+      <blockquote>
+        A blockquote reads a size up from body text, set in italic Bitter, with a single rule on the left rather than a box — quieter than the boxed treatment we dropped from the tag styling.
+        <cite>— attribution line, set small and in Gorton</cite>
+      </blockquote>
+      <p>Inline code like <code>npx quartz build</code> sits in a system monospace stack for now — no monospace typeface has been chosen yet, so treat this as a placeholder, not a decision.</p>
+      <pre><code>// a fenced code block, same placeholder monospace
+function buildThumbnail(src) {
+  return resize(src, { width: 160, height: 160, fit: "cover" });
+}</code></pre>
+
+      <h2 class="post-h2" id="lists">Lists &amp; rule</h2>
+      <p>An unordered list:</p>
+      <ul>
+        <li>Mostly scrap, mostly wrong</li>
+        <li>Which is usually when something starts to happen</li>
+        <li>More below</li>
+      </ul>
+      <p>And an ordered one:</p>
+      <ol>
+        <li>Shoot</li>
+        <li>Sort</li>
+        <li>Caption, credit, publish</li>
+      </ol>
+      <hr>
+      <p>Text resumes after a horizontal rule, the same 1px treatment used under the site header.</p>
+
+      <h2 class="post-h2" id="image">Image, caption, credit</h2>
+      <figure class="post-figure">
+        <img src="https://picsum.photos/seed/kitchensink/900/600" alt="">
+        <figcaption class="post-caption">
+          A hero image at its natural aspect ratio, not cropped to the index thumbnail's square.
+          <span class="credit">Photograph © the author, 2026.</span>
+        </figcaption>
+      </figure>
+      <p>Caption sits directly under the image in regular weight; the credit line drops to a smaller, muted italic directly beneath it — matching the project's standing rule that captions live underneath, not overlaid.</p>
+
+    </article>
+
+    <div class="devnote">
+      <p><strong>What this page is testing:</strong> H1–H3, paragraphs, blockquote, inline/block code, lists, hr, a full-bleed image with caption+credit, and margin notes — all at once, so gaps show up here instead of on a real post.</p>
+      <p><strong>Margin notes, honestly:</strong> this is a pure-CSS, no-JavaScript technique (the classic "Tufte CSS" pattern) — a hidden checkbox + label pair gives mobile a tap-to-reveal note inline, while wide screens float the note into the right-hand gutter via a negative margin. It is <em>not</em> pixel-perfect: when two references land close together, or a paragraph runs long, the floats just stack in document order rather than snapping exactly level with their reference (see the two notes above collide slightly). A JS-assisted version could measure each reference's exact position and nudge its note to match — more precise, but a real dependency. Worth deciding whether "roughly level" is good enough before we build further on this.</p>
+      <p><strong>Authoring, looking ahead:</strong> Obsidian already has native footnote syntax (<code>[^1]</code> / <code>[^1]: text</code>), and Quartz renders those as ordinary bottom-of-page footnotes by default. Turning your normal footnotes into margin notes instead — rather than inventing new syntax to type — means swapping in a custom Quartz transform for footnotes. That's a real build step, not a mockup concern, but it's the automation-first path: write footnotes the normal Obsidian way, let the build turn them into this.</p>
+      <p>Resize the window below ~1180px to see notes switch from floated margins to tap-to-reveal; below 720px the left sidebar collapses as usual.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.mode-widget .cell').forEach(function (cell) {
+    cell.addEventListener('click', function () {
+      var group = cell.dataset.group;
+      document.querySelectorAll('.mode-widget .cell[data-group="' + group + '"]')
+        .forEach(function (c) { c.classList.remove('active'); });
+      cell.classList.add('active');
+    });
+  });
+  document.getElementById('sidebarToggle').addEventListener('click', function () {
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

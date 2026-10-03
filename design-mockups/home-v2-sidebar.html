@@ -180,7 +180,16 @@
     }
   }
 
-  /* ================= MAIN CONTENT ================= */
+  /* ================= MAIN CONTENT + META COLUMN =================
+     content-row holds main-col and meta-col side by side on wide
+     screens. Below 1000px it switches to flex-direction: column, so
+     meta-col (tags/backlinks) simply drops below the post list instead
+     of competing for horizontal space — no separate toggle needed. */
+  .content-row {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+  }
   .main-col {
     flex: 1 1 auto;
     min-width: 0;
@@ -188,6 +197,60 @@
   .content-wrap {
     max-width: 700px;
     padding: 2rem 1.75rem 4rem;
+  }
+
+  .meta-col {
+    flex: 0 0 240px;
+    width: 240px;
+    border-left: 1px solid var(--ink);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .meta-tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  .meta-tags a {
+    font-style: italic;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .meta-tags a::before { content: "#"; }
+  .meta-tags a:hover { color: var(--ink); }
+
+  .backlinks-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+  .backlinks-list a { color: var(--muted); text-decoration: none; }
+  .backlinks-list a:hover { color: var(--ink); }
+
+  @media (max-width: 1000px) {
+    .content-row { flex-direction: column; }
+    .meta-col {
+      position: static;
+      height: auto;
+      width: 100%;
+      flex: none;
+      border-left: none;
+      border-top: 1px solid var(--ink);
+    }
   }
 
   .post-entry {
@@ -220,10 +283,15 @@
     margin-bottom: 0.35rem;
   }
   .post-meta .tag {
-    border: 1px solid var(--rule);
-    padding: 0.1rem 0.45rem;
-    margin-left: 0.5rem;
+    /* Gorton Digital has no italic/oblique master (Light/Regular/Medium/
+       Heavy only) — this is a browser-synthesized oblique, which reads
+       fine on a monoline geometric face like this one. No box/border,
+       just a lighter weight + slant to separate it from the dateline. */
+    font-style: italic;
+    color: var(--muted);
+    margin-left: 0.6rem;
   }
+  .post-meta .tag::before { content: "#"; }
 
   .post-title {
     font-family: var(--font-presentation);
@@ -273,7 +341,6 @@
   <div class="sidebar-logo">VIZ.COUNTER.INK</div>
 
   <div class="sidebar-section graph-section">
-    <div class="sidebar-label">Graph View</div>
     <div class="graph-placeholder">
       <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
         <circle cx="30" cy="30" r="3" fill="currentColor"/>
@@ -314,6 +381,7 @@
   </div>
 </aside>
 
+<div class="content-row">
 <div class="main-col">
   <div class="content-wrap">
 
@@ -374,7 +442,31 @@
 
   <p class="devnote">mockup v2-sidebar &middot; persistent left sidebar: logo &rarr; graph (placeholder, blog-only) &rarr; search &rarr; widget &rarr; TOC &middot;
   whole sidebar is sticky + independently scrollable, so TOC stays reachable without pushing it to the top &middot;
-  resize under 720px to see the mobile collapse (tap Menu) &middot; try the "Book" cell in the widget to see Graph View disappear</p>
+  right-hand meta column (tags, backlinks) is sticky too above 1000px, and drops below the post list under 1000px &middot;
+  resize under 720px to see the sidebar's own mobile collapse (tap Menu) &middot; try the "Book" cell in the widget to see the graph placeholder disappear</p>
+</div>
+
+<aside class="meta-col">
+  <div class="sidebar-section">
+    <div class="sidebar-label">Tags</div>
+    <ul class="meta-tags">
+      <li><a href="#">studio</a></li>
+      <li><a href="#">process</a></li>
+      <li><a href="#">ig</a></li>
+      <li><a href="#">book</a></li>
+      <li><a href="#">excerpt</a></li>
+      <li><a href="#">note</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Backlinks</div>
+    <ul class="backlinks-list">
+      <li><a href="#">Studio notes, late September</a></li>
+      <li><a href="#">On reassembly as a method</a></li>
+    </ul>
+  </div>
+</aside>
 </div>
 
 <script>
