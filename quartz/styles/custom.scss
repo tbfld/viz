@@ -92,3 +92,12 @@ h1, h2, h3, h4, h5, h6, thead {
 blockquote {
   border-left-color: var(--lightgray);
 }
+
+// Quartz's native .page-title (the sidebar site logo) is sized for its
+// stock sans-serif font; at 1.75rem with Gorton's uppercase/letter-spacing
+// treatment it reads much bigger than intended. Mockup sidebar-logo was
+// 1.05rem / 0.16em tracking.
+.page-title {
+  font-size: 1.05rem;
+  letter-spacing: 0.16em;
+}
