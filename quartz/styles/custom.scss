@@ -50,3 +50,45 @@
 //    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 //  }
 //}
+
+// --- TB ADDED 2026-10-03: real typography + color system, ported from
+// design-mockups/mockup-fonts.css. Pass 1 of the Quartz integration:
+// fonts + color tokens + dark mode only. Sidebar/layout restructure and
+// margin notes are later passes. ---
+
+@font-face {
+  font-family: "Gorton Digital Heavy";
+  src: url("/static/fonts/GortonDigitalHeavy.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("/static/fonts/Bitter-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("/static/fonts/Bitter-Italic-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Gorton Digital Heavy has no italic/oblique master; let the browser
+// synthesize an oblique rather than silently falling back to upright.
+h1, h2, h3, h4, h5, h6, thead {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+// Mockups settled on the blockquote rule matching the same gray as <hr>,
+// not the accent color Quartz's stock theme uses.
+blockquote {
+  border-left-color: var(--lightgray);
+}
