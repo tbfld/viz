@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gallery post mockup — viz.counter.ink</title>
+<link rel="stylesheet" href="mockup-fonts.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.3;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ================= SIDEBAR (identical to the other blog pages —
+     this is a blog post, so Graph View stays, unlike the book
+     template) ================= */
+  .sidebar {
+    flex: 0 0 260px;
+    width: 260px;
+    border-right: 1px solid var(--ink);
+    padding: 1.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .sidebar-logo {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .sidebar-label-strong {
+    font-family: var(--font-presentation);
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .graph-placeholder {
+    border: 1px solid var(--rule);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-style: italic;
+    position: relative;
+    overflow: hidden;
+  }
+  .graph-placeholder svg { position: absolute; inset: 0; opacity: 0.35; }
+  .search-field {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.4rem 0.1rem;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+  }
+  .search-field::placeholder { color: var(--muted); font-style: italic; }
+  .search-field:focus { outline: none; border-bottom-width: 2px; }
+  .mode-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--ink);
+  }
+  .mode-widget .cell {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0.6rem;
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    cursor: pointer;
+  }
+  .mode-widget .cell:nth-child(1),
+  .mode-widget .cell:nth-child(2) { border-bottom: 1px solid var(--ink); }
+  .mode-widget .cell:nth-child(odd) { border-right: 1px solid var(--ink); }
+  .mode-widget .cell:hover { background: var(--rule); }
+  .mode-widget .cell.active { background: var(--accent); color: var(--paper); }
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .toc-list a { color: var(--muted); text-decoration: none; }
+  .toc-list a:hover { color: var(--ink); }
+
+  .sidebar-toggle { display: none; }
+  @media (max-width: 720px) {
+    body { flex-direction: column; }
+    .sidebar {
+      position: static; height: auto; width: 100%; flex: none;
+      border-right: none; border-bottom: 1px solid var(--ink); display: none;
+    }
+    .sidebar.open { display: flex; }
+    .sidebar-toggle {
+      display: block;
+      font-family: var(--font-presentation);
+      font-weight: var(--font-presentation-weight);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: left;
+      width: 100%;
+      padding: 0.9rem 1.25rem;
+      border: none;
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+    }
+  }
+
+  /* ================= ARTICLE ================= */
+  .main-col { flex: 1 1 auto; min-width: 0; }
+  .article-wrap { max-width: 920px; padding: 2.5rem 1.75rem 4rem; }
+
+  .post-kicker {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .post-kicker .tag { font-style: italic; color: var(--muted); margin-left: 0.6rem; }
+  .post-kicker .tag::before { content: "#"; }
+
+  h1.post-h1 {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: clamp(1.3rem, 2.6vw, 1.65rem);
+    text-transform: uppercase;
+    letter-spacing: 0.015em;
+    line-height: 1.3;
+    margin: 0 0 1.5rem;
+  }
+
+  article.post-article { max-width: 680px; }
+  article.post-article p { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.1rem; }
+
+  h2.post-h2 {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    margin: 2.5rem 0 1rem;
+  }
+
+  /* ================= GALLERY GRID =================
+     A CSS-columns masonry — no JS layout math, each image keeps its
+     own natural aspect ratio rather than being cropped to fit a
+     uniform cell. break-inside: avoid keeps an image+caption pair
+     from splitting across columns. Column count steps down at two
+     breakpoints rather than one, since a gallery reads badly if the
+     columns get too narrow before the sidebar's own collapse kicks in. */
+  .gallery-grid {
+    column-count: 3;
+    column-gap: 1.1rem;
+    margin: 0 0 1rem;
+  }
+  .gallery-item {
+    break-inside: avoid;
+    margin: 0 0 1.1rem;
+    display: block;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: zoom-in;
+  }
+  .gallery-item .cap {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+  @media (max-width: 900px) { .gallery-grid { column-count: 2; } }
+  @media (max-width: 560px) { .gallery-grid { column-count: 1; } }
+
+  /* ================= LIGHTBOX =================
+     Deliberately theme-independent (dark scrim regardless of
+     light/dark mode) — maximizing contrast for the photo itself is
+     the point, same convention most photo viewers use. Vanilla JS,
+     no library: open/close, prev/next via buttons, arrow keys, and
+     Escape; click the scrim (not the image) to close. */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.94);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 2rem;
+  }
+  .lightbox.open { display: flex; }
+  .lb-figure {
+    margin: 0;
+    max-width: 88vw;
+    max-height: 84vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lb-figure img {
+    display: block;
+    max-width: 88vw;
+    max-height: 76vh;
+    width: auto;
+    height: auto;
+  }
+  .lb-figure figcaption {
+    margin-top: 0.9rem;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: #d8d8d8;
+    text-align: center;
+    max-width: 60ch;
+  }
+  .lb-figure figcaption .credit {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: #9a9a9a;
+  }
+  .lb-close, .lb-prev, .lb-next {
+    position: absolute;
+    background: none;
+    border: none;
+    color: #eee;
+    font-family: var(--font-presentation);
+    cursor: pointer;
+  }
+  .lb-close {
+    top: 1.25rem; right: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .lb-prev, .lb-next {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    padding: 0.75rem;
+  }
+  .lb-prev { left: 0.5rem; }
+  .lb-next { right: 0.5rem; }
+  .lb-close:hover, .lb-prev:hover, .lb-next:hover { color: var(--accent); }
+  .lb-counter {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-presentation);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: #999;
+  }
+  @media (max-width: 560px) {
+    .lb-prev, .lb-next { font-size: 1.3rem; padding: 0.5rem; }
+    .lb-close { top: 0.75rem; right: 0.9rem; }
+  }
+
+  .devnote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .devnote p { margin: 0 0 0.6rem; font-size: 0.8rem !important; line-height: 1.5 !important; }
+</style>
+</head>
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle">&#9776;&nbsp; Menu</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">VIZ.COUNTER.INK</div>
+
+  <div class="sidebar-section">
+    <div class="graph-placeholder">
+      <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="3" fill="currentColor"/>
+        <circle cx="70" cy="45" r="3" fill="currentColor"/>
+        <circle cx="50" cy="75" r="3" fill="currentColor"/>
+        <line x1="30" y1="30" x2="70" y2="45" stroke="currentColor" stroke-width="0.5"/>
+        <line x1="70" y1="45" x2="50" y2="75" stroke="currentColor" stroke-width="0.5"/>
+      </svg>
+      <span>placeholder</span>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <input class="search-field" type="text" placeholder="Search…" disabled>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="mode-widget">
+      <button class="cell active" data-group="section" data-value="blog">Blog</button>
+      <button class="cell" data-group="section" data-value="book">Book</button>
+      <button class="cell active" data-group="theme" data-value="light">Light</button>
+      <button class="cell" data-group="theme" data-value="dark">Dark</button>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label-strong">On this page</div>
+    <ul class="toc-list">
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#gallery">The gallery</a></li>
+    </ul>
+  </div>
+</aside>
+
+<div class="main-col">
+  <div class="article-wrap">
+
+    <div class="post-kicker">02 OCT 2026 <span class="tag">studio</span> <span class="tag">scrap</span></div>
+    <h1 class="post-h1">A run of twelve, from the same afternoon</h1>
+
+    <article class="post-article">
+      <h2 class="post-h2" id="intro">Introduction</h2>
+      <p>Some posts have one image, maybe two — the automatic stacked treatment handles those fine without any thought. This one has twelve, shot within about forty minutes, and stacking twelve full-width images one after another would turn a quick look into a scroll marathon. This is the dedicated gallery view instead: a grid, not a scroll, with each image still full-size and captioned on request rather than cropped down to a uniform thumbnail.</p>
+    </article>
+
+    <h2 class="post-h2" id="gallery">The gallery</h2>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g1/1200/1500" data-caption="First light, before the scaffolding went up." data-credit="">
+        <img src="https://picsum.photos/seed/g1/400/500" alt="">
+        <div class="cap">First light, before the scaffolding went up.</div>
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g2/1200/800" data-caption="Wide shot, corner of 4th." data-credit="">
+        <img src="https://picsum.photos/seed/g2/400/270" alt="">
+        <div class="cap">Wide shot, corner of 4th.</div>
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g3/1200/1600" data-caption="Detail, kept mostly for the color." data-credit="">
+        <img src="https://picsum.photos/seed/g3/400/530" alt="">
+        <div class="cap">Detail, kept mostly for the color.</div>
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g4/1200/900" data-caption="" data-credit="">
+        <img src="https://picsum.photos/seed/g4/400/300" alt="">
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g5/1200/1700" data-caption="Same spot, ten minutes later." data-credit="">
+        <img src="https://picsum.photos/seed/g5/400/560" alt="">
+        <div class="cap">Same spot, ten minutes later.</div>
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g6/1200/800" data-caption="" data-credit="">
+        <img src="https://picsum.photos/seed/g6/400/270" alt="">
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g7/1200/1500" data-caption="The one that almost got cut." data-credit="">
+        <img src="https://picsum.photos/seed/g7/400/500" alt="">
+        <div class="cap">The one that almost got cut.</div>
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g8/1200/900" data-caption="" data-credit="">
+        <img src="https://picsum.photos/seed/g8/400/300" alt="">
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g9/1200/1600" data-caption="Last one before the light went flat." data-credit="Photograph © the author, 2026." >
+        <img src="https://picsum.photos/seed/g9/400/530" alt="">
+        <div class="cap">Last one before the light went flat.</div>
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g10/1200/800" data-caption="" data-credit="">
+        <img src="https://picsum.photos/seed/g10/400/270" alt="">
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g11/1200/1700" data-caption="" data-credit="">
+        <img src="https://picsum.photos/seed/g11/400/560" alt="">
+      </figure>
+      <figure class="gallery-item" data-full="https://picsum.photos/seed/g12/1200/900" data-caption="Closing frame." data-credit="">
+        <img src="https://picsum.photos/seed/g12/400/300" alt="">
+        <div class="cap">Closing frame.</div>
+      </figure>
+    </div>
+
+    <div class="devnote">
+      <p><strong>What this page is testing:</strong> a dedicated per-post gallery for a run of images too long for the automatic "stacked" blog treatment, with a lightbox for viewing them full-size — the gap identified when the book template's four image layouts were built (those are for one or two images at a time within running text; this is for many, with no body text in between).</p>
+      <p><strong>Layout:</strong> CSS multi-column masonry, not a uniform grid — each image keeps its own natural aspect ratio (no cropping), and <code>break-inside: avoid</code> keeps an image with its caption. No JS layout math at all; the browser handles the column-balancing. Column count steps from 3 → 2 → 1 at its own breakpoints, independent of the sidebar's 720px collapse.</p>
+      <p><strong>Lightbox:</strong> click any image to open it full-size with its caption; arrow buttons/keys and Escape all work. It's vanilla JS, no library, and the scrim stays dark regardless of light/dark mode — maximizing photo contrast is the point of a lightbox, the same convention most photo viewers use.</p>
+      <p><strong>Still open:</strong> this is the per-post case only, per your answer — a site-wide gallery page aggregating images across posts is a related but separate question, worth coming back to once this grid component is confirmed.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous image">&larr;</button>
+  <button class="lb-next" id="lbNext" aria-label="Next image">&rarr;</button>
+  <figure class="lb-figure">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCaption"></figcaption>
+  </figure>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<script>
+  document.querySelectorAll('.mode-widget .cell').forEach(function (cell) {
+    cell.addEventListener('click', function () {
+      var group = cell.dataset.group;
+      document.querySelectorAll('.mode-widget .cell[data-group="' + group + '"]')
+        .forEach(function (c) { c.classList.remove('active'); });
+      cell.classList.add('active');
+      if (group === 'theme') {
+        document.body.classList.toggle('theme-dark', cell.dataset.value === 'dark');
+      }
+    });
+  });
+  document.getElementById('sidebarToggle').addEventListener('click', function () {
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
+    var lightbox = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lbImg');
+    var lbCaption = document.getElementById('lbCaption');
+    var lbCounter = document.getElementById('lbCounter');
+    var current = 0;
+
+    function show(index) {
+      current = (index + items.length) % items.length;
+      var item = items[current];
+      lbImg.src = item.dataset.full;
+      var caption = item.dataset.caption || '';
+      var credit = item.dataset.credit || '';
+      lbCaption.innerHTML = caption + (credit ? '<span class="credit">' + credit + '</span>' : '');
+      lbCounter.textContent = (current + 1) + ' / ' + items.length;
+    }
+    function open(index) {
+      show(index);
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+    function close() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    items.forEach(function (item, index) {
+      item.querySelector('img').addEventListener('click', function () { open(index); });
+    });
+    document.getElementById('lbClose').addEventListener('click', close);
+    document.getElementById('lbPrev').addEventListener('click', function () { show(current - 1); });
+    document.getElementById('lbNext').addEventListener('click', function () { show(current + 1); });
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
+</script>
+
+</body>
+</html>

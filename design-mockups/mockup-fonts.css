@@ -40,9 +40,32 @@
   --font-presentation-weight: 400;
   --font-body: "Bitter", Georgia, serif;
 
-  /* Placeholder neutrals only — color comes later in the process. */
-  --ink: #1a1a1a;
-  --paper: #fdfcf9;
-  --rule: #d8d4cc;
-  --muted: #7a7670;
+  /* Real palette, light mode — cool/neutral direction, confirmed. */
+  --ink: #15171a;
+  --paper: #f5f6f6;
+  --rule: #d6d8d9;
+  --muted: #767a7d;
+  --code-bg: #eceef0;
+
+  /* Accent — muted ink-blue, used sparingly: inline body links, the
+     active mode-widget cell, and "current item" indicators. Never
+     body text, never tags, never structural nav links. */
+  --accent: #3e5c74;
+}
+
+/* Dark mode — cool dark charcoal, not warm charcoal or true black,
+   to match the light palette's cooler direction. Toggled by adding
+   this class to <body> (the mode-widget's Light/Dark cells do this
+   live in every mockup now — click "Dark" to see it for real). Every
+   border/rule in these mockups is already drawn with var(--ink) or
+   var(--rule) rather than a hardcoded color, so most of the chrome
+   repaints itself automatically; only the four tokens + accent +
+   code-bg actually need overriding here. */
+body.theme-dark {
+  --ink: #e8e9ea;
+  --paper: #1b1d1f;
+  --rule: #33363a;
+  --muted: #8b8f93;
+  --code-bg: #242628;
+  --accent: #7fa6c0;
 }

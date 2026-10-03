@@ -124,7 +124,7 @@
     border-right: 1px solid var(--ink);
   }
   .mode-widget .cell:hover { background: var(--rule); }
-  .mode-widget .cell.active { background: var(--ink); color: var(--paper); }
+  .mode-widget .cell.active { background: var(--accent); color: var(--paper); }
 
   /* ---- TOC (last item — stays reachable because the whole sidebar scrolls) ---- */
   .toc-list {
@@ -478,6 +478,9 @@
       cell.classList.add('active');
       if (group === 'section') {
         document.body.classList.toggle('book-view', cell.dataset.value === 'book');
+      }
+      if (group === 'theme') {
+        document.body.classList.toggle('theme-dark', cell.dataset.value === 'dark');
       }
     });
   });

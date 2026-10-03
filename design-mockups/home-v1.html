@@ -81,7 +81,7 @@
     background: var(--rule);
   }
   .mode-widget .cell.active {
-    background: var(--ink);
+    background: var(--accent);
     color: var(--paper);
   }
 
@@ -287,6 +287,9 @@
       document.querySelectorAll('.mode-widget .cell[data-group="' + group + '"]')
         .forEach(function (c) { c.classList.remove('active'); });
       cell.classList.add('active');
+      if (group === 'theme') {
+        document.body.classList.toggle('theme-dark', cell.dataset.value === 'dark');
+      }
     });
   });
 </script>

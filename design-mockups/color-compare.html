@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>color comparison — viz.counter.ink</title>
+<link rel="stylesheet" href="mockup-fonts.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #fff;
+    color: #141414;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 2rem;
+  }
+  h1 {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+  .intro { max-width: 640px; font-size: 0.95rem; color: #555; margin-bottom: 2rem; }
+
+  .row-label {
+    font-family: var(--font-presentation);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+    margin: 2.5rem 0 1rem;
+  }
+
+  .swatch-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .swatch-card {
+    border: 1px solid #ddd;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .swatch-card .card-label {
+    font-family: var(--font-presentation);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* ---- shared mini-component styles, driven by each card's own
+     custom properties so the same markup renders all three themes ---- */
+  .swatch-card {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .mini-logo {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 0.3rem;
+    display: inline-block;
+  }
+  .mini-para { font-size: 0.9rem; line-height: 1.55; margin: 0; }
+  .mini-para a { color: var(--accent); text-decoration-color: var(--accent); }
+
+  .mini-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--ink);
+    width: fit-content;
+  }
+  .mini-widget .cell {
+    font-family: var(--font-presentation);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.4rem 0.55rem;
+    color: var(--muted);
+  }
+  .mini-widget .cell:nth-child(1), .mini-widget .cell:nth-child(2) { border-bottom: 1px solid var(--ink); }
+  .mini-widget .cell:nth-child(odd) { border-right: 1px solid var(--ink); }
+  .mini-widget .cell.active { background: var(--accent); color: var(--paper); }
+
+  .mini-current {
+    font-size: 0.82rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 0.6rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .mini-rule { border-top: 1px solid var(--rule); margin: 0; }
+  .mini-muted { font-size: 0.78rem; font-style: italic; color: var(--muted); margin: 0; }
+
+  /* ---- Light palette (cool / neutral direction) ---- */
+  .theme-light-a {
+    --paper: #f5f6f6; --ink: #15171a; --rule: #d6d8d9; --muted: #767a7d;
+    --accent: #3e5c74; /* muted ink-blue */
+  }
+  .theme-light-b {
+    --paper: #f5f6f6; --ink: #15171a; --rule: #d6d8d9; --muted: #767a7d;
+    --accent: #2f5fb0; /* medium-vivid ink-blue */
+  }
+  .theme-light-c {
+    --paper: #f5f6f6; --ink: #15171a; --rule: #d6d8d9; --muted: #767a7d;
+    --accent: #2d52c7; /* vivid periwinkle-blue, closer to the screenshot */
+  }
+
+  /* ---- Dark mode (cool dark gray, matching the cooler light direction) ---- */
+  .theme-dark-a {
+    --paper: #1b1d1f; --ink: #e8e9ea; --rule: #33363a; --muted: #8b8f93;
+    --accent: #7fa6c0; /* lightened ink-blue for dark-bg contrast */
+  }
+  .theme-dark-b {
+    --paper: #1b1d1f; --ink: #e8e9ea; --rule: #33363a; --muted: #8b8f93;
+    --accent: #7b93e8; /* medium-vivid, lightened for dark-bg contrast */
+  }
+  .theme-dark-c {
+    --paper: #1b1d1f; --ink: #e8e9ea; --rule: #33363a; --muted: #8b8f93;
+    --accent: #8aa4ff; /* vivid periwinkle, close to the screenshot's hue on a dark ground */
+  }
+
+  .hex-note { font-size: 0.72rem; color: #999; margin-top: -0.5rem; }
+</style>
+</head>
+<body>
+
+<h1>Color comparison — viz.counter.ink</h1>
+<p class="intro">Round two: same ink-blue hue, three vividness steps — A is the original muted version, B and C push toward the more saturated periwinkle-blue from your screenshot (used only for this kind of sparing UI accent, not for body text). Light palette stays the cooler/neutral direction (paper #f5f6f6, ink #15171a, rule #d6d8d9, muted #767a7d); dark mode is a cool dark charcoal. Accent applied in the same three spots as before — a link, the active mode-widget cell, and a "current item" indicator.</p>
+
+<div class="row-label">Light mode</div>
+<div class="swatch-row">
+  <div class="swatch-card theme-light-a">
+    <div class="card-label">A — muted ink-blue, baseline (#3e5c74)</div>
+    <div class="mini-logo">VIZ.COUNTER.INK</div>
+    <p class="mini-para">A sentence with <a href="#">an ordinary link</a> in running text.</p>
+    <div class="mini-widget">
+      <div class="cell active">Blog</div><div class="cell">Book</div>
+      <div class="cell active">Light</div><div class="cell">Dark</div>
+    </div>
+    <hr class="mini-rule">
+    <div class="mini-current">III — The long way round</div>
+    <p class="mini-muted">#tag, shown for reference only — stays neutral, not accented.</p>
+  </div>
+  <div class="swatch-card theme-light-b">
+    <div class="card-label">B — medium-vivid (#2f5fb0)</div>
+    <div class="mini-logo">VIZ.COUNTER.INK</div>
+    <p class="mini-para">A sentence with <a href="#">an ordinary link</a> in running text.</p>
+    <div class="mini-widget">
+      <div class="cell active">Blog</div><div class="cell">Book</div>
+      <div class="cell active">Light</div><div class="cell">Dark</div>
+    </div>
+    <hr class="mini-rule">
+    <div class="mini-current">III — The long way round</div>
+    <p class="mini-muted">#tag, shown for reference only — stays neutral, not accented.</p>
+  </div>
+  <div class="swatch-card theme-light-c">
+    <div class="card-label">C — vivid, screenshot direction (#2d52c7)</div>
+    <div class="mini-logo">VIZ.COUNTER.INK</div>
+    <p class="mini-para">A sentence with <a href="#">an ordinary link</a> in running text.</p>
+    <div class="mini-widget">
+      <div class="cell active">Blog</div><div class="cell">Book</div>
+      <div class="cell active">Light</div><div class="cell">Dark</div>
+    </div>
+    <hr class="mini-rule">
+    <div class="mini-current">III — The long way round</div>
+    <p class="mini-muted">#tag, shown for reference only — stays neutral, not accented.</p>
+  </div>
+</div>
+
+<div class="row-label">Dark mode (same three accents, lightened for contrast on a dark ground)</div>
+<div class="swatch-row">
+  <div class="swatch-card theme-dark-a">
+    <div class="card-label">A — ink-blue, lightened (#7fa6c0)</div>
+    <div class="mini-logo">VIZ.COUNTER.INK</div>
+    <p class="mini-para">A sentence with <a href="#">an ordinary link</a> in running text.</p>
+    <div class="mini-widget">
+      <div class="cell active">Blog</div><div class="cell">Book</div>
+      <div class="cell">Light</div><div class="cell active">Dark</div>
+    </div>
+    <hr class="mini-rule">
+    <div class="mini-current">III — The long way round</div>
+    <p class="mini-muted">#tag, shown for reference only — stays neutral, not accented.</p>
+  </div>
+  <div class="swatch-card theme-dark-b">
+    <div class="card-label">B — medium-vivid, lightened (#7b93e8)</div>
+    <div class="mini-logo">VIZ.COUNTER.INK</div>
+    <p class="mini-para">A sentence with <a href="#">an ordinary link</a> in running text.</p>
+    <div class="mini-widget">
+      <div class="cell active">Blog</div><div class="cell">Book</div>
+      <div class="cell">Light</div><div class="cell active">Dark</div>
+    </div>
+    <hr class="mini-rule">
+    <div class="mini-current">III — The long way round</div>
+    <p class="mini-muted">#tag, shown for reference only — stays neutral, not accented.</p>
+  </div>
+  <div class="swatch-card theme-dark-c">
+    <div class="card-label">C — vivid, lightened (#8aa4ff)</div>
+    <div class="mini-logo">VIZ.COUNTER.INK</div>
+    <p class="mini-para">A sentence with <a href="#">an ordinary link</a> in running text.</p>
+    <div class="mini-widget">
+      <div class="cell active">Blog</div><div class="cell">Book</div>
+      <div class="cell">Light</div><div class="cell active">Dark</div>
+    </div>
+    <hr class="mini-rule">
+    <div class="mini-current">III — The long way round</div>
+    <p class="mini-muted">#tag, shown for reference only — stays neutral, not accented.</p>
+  </div>
+</div>
+
+<p class="hex-note">If none of these three feel right, say what's off (warmer, more saturated, darker, a different hue entirely) and I'll run another pass rather than guessing again blind.</p>
+
+</body>
+</html>

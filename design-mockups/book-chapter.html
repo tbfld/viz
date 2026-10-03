@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>book chapter mockup — viz.counter.ink</title>
+<link rel="stylesheet" href="mockup-fonts.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.3;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ================= SIDEBAR =================
+     Same component as the blog pages, with one deliberate omission:
+     no Graph View section. That was decided earlier — Graph View is
+     excluded specifically from the book section. The "On this page"
+     TOC slot is repurposed here to list the book's chapters instead
+     of in-page headings, since that's the more useful nav for a
+     multi-chapter structure. */
+  .sidebar {
+    flex: 0 0 260px;
+    width: 260px;
+    border-right: 1px solid var(--ink);
+    padding: 1.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .sidebar-logo {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .sidebar-label-strong {
+    font-family: var(--font-presentation);
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .search-field {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.4rem 0.1rem;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+  }
+  .search-field::placeholder { color: var(--muted); font-style: italic; }
+  .search-field:focus { outline: none; border-bottom-width: 2px; }
+  .mode-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--ink);
+  }
+  .mode-widget .cell {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0.6rem;
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    cursor: pointer;
+  }
+  .mode-widget .cell:nth-child(1),
+  .mode-widget .cell:nth-child(2) { border-bottom: 1px solid var(--ink); }
+  .mode-widget .cell:nth-child(odd) { border-right: 1px solid var(--ink); }
+  .mode-widget .cell:hover { background: var(--rule); }
+  .mode-widget .cell.active { background: var(--accent); color: var(--paper); }
+
+  .chapter-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .chapter-list a {
+    color: var(--muted);
+    text-decoration: none;
+    display: block;
+  }
+  .chapter-list a:hover { color: var(--ink); }
+  .chapter-list .chapter-num {
+    font-family: var(--font-presentation);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+  .chapter-list li.current a { color: var(--accent); font-weight: 600; }
+  .chapter-list li.current .chapter-num { color: var(--accent); }
+
+  /* The current chapter's own section headings, nested right under
+     it — this is "where you are in the book" (the chapter-list
+     above) and "what's on this page" (this nested list) merged into
+     one structure instead of two separate sidebar sections. In a
+     real build, the outer list is custom book data; this inner list
+     is exactly what Quartz's own per-page TOC component produces. */
+  .chapter-subheads {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding-left: 1rem;
+    border-left: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+  }
+  .chapter-subheads a { color: var(--muted); text-decoration: none; }
+  .chapter-subheads a:hover { color: var(--ink); }
+
+  .sidebar-toggle { display: none; }
+  @media (max-width: 720px) {
+    body { flex-direction: column; }
+    .sidebar {
+      position: static; height: auto; width: 100%; flex: none;
+      border-right: none; border-bottom: 1px solid var(--ink); display: none;
+    }
+    .sidebar.open { display: flex; }
+    .sidebar-toggle {
+      display: block;
+      font-family: var(--font-presentation);
+      font-weight: var(--font-presentation-weight);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: left;
+      width: 100%;
+      padding: 0.9rem 1.25rem;
+      border: none;
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+    }
+  }
+
+  /* ================= MAIN COLUMN ================= */
+  .main-col { flex: 1 1 auto; min-width: 0; }
+
+  /* ---- running head ----
+     A printed book repeats the book title / chapter on every page's
+     header. Here that's one sticky strip pinned to the viewport top
+     while you scroll through the chapter — the closest web analog. */
+  .running-head {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--paper);
+    border-bottom: 1px solid var(--ink);
+    padding: 0.65rem 1.75rem;
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .running-head .rh-book { color: var(--ink); }
+
+  .article-wrap {
+    max-width: 920px;
+    padding: 2.25rem 1.75rem 4rem;
+  }
+
+  .chapter-kicker {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+  h2.section-head {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    margin: 2.25rem 0 1rem;
+  }
+  h1.chapter-title {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+    text-transform: uppercase;
+    letter-spacing: 0.015em;
+    line-height: 1.3;
+    margin: 0 0 1.75rem;
+  }
+
+  /* ---- epigraph: sits between the chapter title and the first
+     paragraph, set apart from both blockquotes (used for in-text
+     quotation) and pull-quotes (used to break up a long chapter) ---- */
+  .epigraph {
+    width: 66%;
+    margin: 0 0 2.5rem;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  .epigraph cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-family: var(--font-presentation);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  article.post-article {
+    width: 66%;
+  }
+
+  article.post-article p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0 0 1.1rem;
+  }
+
+  /* ---- drop cap, first paragraph of the chapter only ---- */
+  article.post-article p.chapter-opening::first-letter {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 3.6em;
+    line-height: 0.78;
+    float: left;
+    padding: 0.04em 0.08em 0 0;
+    color: var(--ink);
+  }
+
+  /* ---- pull-quote: a mid-chapter excerpt set apart, distinct from
+     the epigraph (which is front matter) and blockquote (which marks
+     someone else's words inline) ---- */
+  .pull-quote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 2.5rem 0;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  article.post-article blockquote {
+    margin: 1.5rem 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 2px solid var(--rule);
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  article.post-article a { color: var(--accent); text-decoration-color: var(--accent); }
+
+  /* ================= IMAGE TOOLKIT =================
+     Four manual layouts. The article column is 66% of .article-wrap,
+     and — importantly — flush LEFT within it (the margin-notes
+     gutter is empty space on the right only, not split evenly). So
+     a bleed/plate figure only needs to grow rightward to reach
+     .article-wrap's far edge; it already starts in the right place.
+     width uses calc(100% / 0.66) rather than a fixed percentage, so
+     it's derived from the column ratio above and stays correct if
+     that ratio ever changes — no re-eyeballing needed. */
+
+  /* 1 — full-bleed: breaks out of the text column, stays inside the
+     page margins. A visual pause, not a true edge-to-edge bleed
+     (there's a sidebar in the way of true full-bleed on this site). */
+  figure.img-bleed {
+    width: calc(100% / 0.66);
+    margin: 2.5rem 0 2.5rem 0;
+  }
+  figure.img-bleed img { display: block; width: 100%; height: auto; }
+  figure.img-bleed figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    max-width: 66%;
+  }
+
+  /* 2 — inset with text wrap */
+  figure.img-inset-left,
+  figure.img-inset-right {
+    width: 42%;
+    margin-bottom: 0.5rem;
+  }
+  figure.img-inset-left { float: left; margin-right: 1.5rem; }
+  figure.img-inset-right { float: right; margin-left: 1.5rem; }
+  figure.img-inset-left img,
+  figure.img-inset-right img { display: block; width: 100%; height: auto; }
+  figure.img-inset-left figcaption,
+  figure.img-inset-right figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* 3 — diptych: a deliberate pair, same column width as body text */
+  .img-diptych {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2.5rem 0;
+    clear: both;
+  }
+  .img-diptych figure { margin: 0; }
+  .img-diptych img { display: block; width: 100%; height: 220px; object-fit: cover; }
+  .img-diptych figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* 4 — full standalone plate: the image carries the page alone,
+     no text beside it, generous air above and below like a photo
+     insert bound into a printed book. */
+  figure.img-plate {
+    width: calc(100% / 0.66);
+    margin: 3.5rem 0 3.5rem 0;
+    text-align: center;
+  }
+  figure.img-plate img {
+    display: inline-block;
+    max-width: 78%;
+    height: auto;
+  }
+  figure.img-plate figcaption {
+    margin-top: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+    max-width: 66%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .credit {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  /* ---- margin notes (identical mechanism to kitchen-sink.html —
+     book footnotes get this for free, which is a nice fit: Tufte-
+     style margin notes are themselves a book-typography convention) ---- */
+  .margin-toggle-input { display: none; }
+  .sidenote-number {
+    cursor: default;
+    font-family: var(--font-presentation);
+    font-size: 0.62rem;
+    vertical-align: super;
+    line-height: 1;
+    margin-left: 0.12em;
+    color: var(--ink);
+  }
+  .sidenote-number::after { content: attr(data-n); }
+  .sidenote {
+    float: right;
+    clear: right;
+    width: 27%;
+    margin-right: -40%;
+    margin-top: 0.1rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .sidenote::before {
+    content: attr(data-n) "  ";
+    font-family: var(--font-presentation);
+    font-size: 0.62rem;
+    vertical-align: super;
+    color: var(--muted);
+  }
+
+  /* ---- chapter nav ---- */
+  .chapter-nav {
+    clear: both;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .chapter-nav a { color: var(--ink); text-decoration: none; }
+  .chapter-nav a:hover { color: var(--muted); }
+  .chapter-nav .next { text-align: right; }
+  .chapter-nav .label { display: block; font-size: 0.6rem; color: var(--muted); margin-bottom: 0.25rem; }
+
+  @media (max-width: 1180px) {
+    article.post-article, .epigraph { width: 100%; }
+    .sidenote-number { cursor: pointer; text-decoration: underline; }
+    .sidenote {
+      float: none; display: none; width: auto;
+      margin: 0.6rem 0 1rem; padding: 0.6rem 0.9rem;
+      border-left: 2px solid var(--rule); background: transparent;
+    }
+    .margin-toggle-input:checked + .sidenote { display: block; }
+    figure.img-bleed, figure.img-plate { width: 100%; margin-left: 0; }
+    figure.img-bleed figcaption { padding: 0; }
+    figure.img-plate img { max-width: 100%; }
+  }
+
+  @media (max-width: 760px) {
+    figure.img-inset-left, figure.img-inset-right { float: none; width: 100%; margin: 0 0 1.5rem; }
+    .img-diptych { grid-template-columns: 1fr; }
+  }
+
+  .devnote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    clear: both;
+  }
+  .devnote p { margin: 0 0 0.6rem; font-size: 0.8rem !important; line-height: 1.5 !important; }
+</style>
+</head>
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle">&#9776;&nbsp; Menu</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">VIZ.COUNTER.INK</div>
+
+  <div class="sidebar-section">
+    <input class="search-field" type="text" placeholder="Search…" disabled>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="mode-widget">
+      <button class="cell" data-group="section" data-value="blog">Blog</button>
+      <button class="cell active" data-group="section" data-value="book">Book</button>
+      <button class="cell active" data-group="theme" data-value="light">Light</button>
+      <button class="cell" data-group="theme" data-value="dark">Dark</button>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label-strong">Chapters</div>
+    <ul class="chapter-list">
+      <li><a href="#"><span class="chapter-num">I</span>Opening ground</a></li>
+      <li><a href="#"><span class="chapter-num">II</span>What the scrap kept</a></li>
+      <li class="current">
+        <a href="#"><span class="chapter-num">III</span>The long way round</a>
+        <ul class="chapter-subheads">
+          <li><a href="#sec-1">The first false start</a></li>
+          <li><a href="#sec-2">A wider view</a></li>
+          <li><a href="#sec-3">What the pair shows</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><span class="chapter-num">IV</span>A second pass</a></li>
+      <li><a href="#"><span class="chapter-num">V</span>Closing the loop</a></li>
+    </ul>
+  </div>
+</aside>
+
+<div class="main-col">
+
+  <div class="running-head">
+    <span class="rh-book">A Working Title</span>
+    <span>Chapter III &middot; The Long Way Round</span>
+  </div>
+
+  <div class="article-wrap">
+
+    <div class="chapter-kicker">Chapter III</div>
+    <h1 class="chapter-title">The long way round</h1>
+
+    <blockquote class="epigraph">
+      Measure twice. Cut once. Then measure the thing you cut, because it has already changed.
+      <cite>— workshop proverb, source unverified</cite>
+    </blockquote>
+
+    <article class="post-article">
+
+      <p class="chapter-opening">There is a version of this chapter that takes the short way — states the method, shows the result, moves on. This is not that version. The long way round exists because the short way lied about how the work actually happened, smoothing over the three false starts that mattered more than the fourth, successful attempt<label for="bn-1" class="sidenote-number" data-n="1" aria-label="Note 1"></label>.</p>
+      <input type="checkbox" id="bn-1" class="margin-toggle-input">
+      <span class="sidenote" data-n="1">A note, book-style: this is the same margin-note mechanism from the single-post template — footnotes in a book are the most natural home for it, arguably more than a blog post.</span>
+
+      <h2 class="section-head" id="sec-1">The first false start</h2>
+
+      <figure class="img-inset-left">
+        <img src="https://picsum.photos/seed/book1/400/500" alt="">
+        <figcaption>The first false start, kept for the record.</figcaption>
+      </figure>
+
+      <p>So: the first attempt. It is tempting to begin a chapter about process with the clean version, but the clean version is a lie of omission — it erases exactly the part a reader setting out to do similar work actually needs. What follows instead is closer to a field notebook than a manual, written in the order it happened rather than the order that would make the most sense in retrospect.</p>
+
+      <p>The image to the left is from that first pass — kept deliberately, not cropped out, because the failure is part of the record this chapter is trying to keep straight. Text continues to wrap around it at this width, the way a printed book would set a marginal illustration beside running text rather than breaking the page for it.</p>
+
+      <p>By the second attempt the shape of the problem had changed enough that the original photographs stopped being useful as documentation and started being useful as comparison instead — which is its own small lesson about when to stop referring back to early material and when to let it recede.</p>
+
+      <h2 class="section-head" id="sec-2">A wider view</h2>
+
+      <figure class="img-bleed">
+        <img src="https://picsum.photos/seed/book2/1400/700" alt="">
+        <figcaption>A wider view, breaking out of the column on purpose — this is the moment the chapter wants room to breathe.<span class="credit">Photograph © the author, 2026.</span></figcaption>
+      </figure>
+
+      <p>After the wide view, the text resumes at the normal column width. The point of the break above wasn't informational so much as rhythmic — a place to let the reader's eye rest before the next stretch of close reading.</p>
+
+      <blockquote>
+        "The third attempt is the one nobody photographs, because by then you've stopped believing it's going anywhere" — a note to self, scrawled in the margin of an actual paper notebook, long before any of this had a name.
+      </blockquote>
+
+      <p>And yet it was the third attempt that actually taught the thing the fourth attempt merely executed. This is the part that gets cut from the short version every time, and it's the part this book is specifically trying not to cut.</p>
+
+      <div class="pull-quote">
+        "The failure isn't the part you cut for time. It's the part the whole chapter was actually about."
+      </div>
+
+      <h2 class="section-head" id="sec-3">What the pair shows</h2>
+
+      <p>Two more images, side by side, because they were taken minutes apart and the comparison is the point rather than either image alone:</p>
+
+      <div class="img-diptych">
+        <figure>
+          <img src="https://picsum.photos/seed/book3/700/500" alt="">
+          <figcaption>Before — 4:12pm.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://picsum.photos/seed/book4/700/500" alt="">
+          <figcaption>After — 4:19pm.</figcaption>
+        </figure>
+      </div>
+
+      <p>Seven minutes apart, and the difference between them is most of this chapter's actual argument<label for="bn-2" class="sidenote-number" data-n="2" aria-label="Note 2"></label> — everything written above is just there to slow the reader down long enough to notice it.</p>
+      <input type="checkbox" id="bn-2" class="margin-toggle-input">
+      <span class="sidenote" data-n="2">Worth testing with a real reader eventually: does the diptych actually land, or does it need the seven-minutes detail stated more plainly in the caption itself rather than buried here in a note?</span>
+
+      <p>What follows is a plate — a single image given the whole page, the way a photo insert in a printed book interrupts the running text entirely rather than sitting beside it:</p>
+
+      <figure class="img-plate">
+        <img src="https://picsum.photos/seed/book5/900/1100" alt="">
+        <figcaption>The fourth attempt. The one that worked, and the one that needed the other three to get here.<span class="credit">Photograph © the author, 2026.</span></figcaption>
+      </figure>
+
+      <p>Chapter IV picks up from here, with the method actually stated plainly — but only because this chapter did the work of earning it first.</p>
+
+    </article>
+
+    <nav class="chapter-nav">
+      <a href="#"><span class="label">&larr; Previous</span>II — What the scrap kept</a>
+      <a href="#" class="next"><span class="label">Next &rarr;</span>IV — A second pass</a>
+    </nav>
+
+    <div class="devnote">
+      <p><strong>What this page is testing:</strong> the book template's distinct identity from the blog post — running head, chapter kicker/title, an epigraph, a drop cap on the chapter's opening paragraph, a mid-chapter pull-quote, chapter-to-chapter nav, and all four requested image layouts (full-bleed, inset-with-wrap, diptych, standalone plate).</p>
+      <p><strong>Running head:</strong> sticky to the viewport top while you scroll this chapter — the closest web equivalent of a printed running head. It's independent of the left sidebar's own sticky scroll.</p>
+      <p><strong>Full-bleed / plate widths</strong> are now derived from the column ratio (<code>calc(100% / 0.66)</code>, no horizontal shift) rather than eyeballed — the text column sits flush left in its wrapper, not centered, so the fix was to only grow the image rightward instead of trying to center it. If the 66% figure ever changes, this stays correct automatically.</p>
+      <p><strong>Sidebar:</strong> no Graph View section (matches the earlier "not in book view" decision). The "Chapters" slot now does double duty — the book-wide chapter list, with the current chapter's own section headings nested underneath it. The chapter list is custom data (the book's structure); the nested headings are exactly what Quartz's native per-page TOC component already knows how to produce, so this merge maps cleanly onto two real, separate data sources rather than inventing a new one.</p>
+      <p>Resize under 1180px to see margin notes switch to tap-to-reveal, and under 760px to see insets and the diptych stack full-width.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.mode-widget .cell').forEach(function (cell) {
+    cell.addEventListener('click', function () {
+      var group = cell.dataset.group;
+      document.querySelectorAll('.mode-widget .cell[data-group="' + group + '"]')
+        .forEach(function (c) { c.classList.remove('active'); });
+      cell.classList.add('active');
+      if (group === 'theme') {
+        document.body.classList.toggle('theme-dark', cell.dataset.value === 'dark');
+      }
+    });
+  });
+  document.getElementById('sidebarToggle').addEventListener('click', function () {
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
