@@ -1,28 +1,21 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/footer.scss"
-import { version } from "../../package.json"
-import { i18n } from "../i18n"
 
 interface Options {
   links: Record<string, string>
 }
 
 export default ((opts?: Options) => {
-  const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const year = new Date().getFullYear()
-    const links = opts?.links ?? []
+  const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
+    const links = opts?.links ?? {}
     return (
-      <footer class={`${displayClass ?? ""}`}>
-        <p>
-       <a href="https://viz.counter.ink/index.xml">RSS</a> ~ made w/ <a href="https://quartz.jzhao.xyz/">quartz</a> ~ © <a href="https://counter.ink/">tbfld</a> {year}, images © their respective owners
-        </p>
-        <ul>
+      <footer class={`site-footer ${displayClass ?? ""}`}>
+        <div class="footer-copy">viz.counter.ink — all images © the author unless noted</div>
+        <nav class="footer-nav">
           {Object.entries(links).map(([text, link]) => (
-            <li>
-              <a href={link}>{text}</a>
-            </li>
+            <a href={link}>{text}</a>
           ))}
-        </ul>
+        </nav>
       </footer>
     )
   }
