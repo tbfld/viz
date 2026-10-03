@@ -1,36 +1,44 @@
 /* ------------------------------------------------------------------
    Shared type foundation for design mockups.
-   Self-hosted: Anton (presentation/headline) + Libre Baskerville (body).
-   Files live in quartz/static/fonts/ — same files the real site will use.
+   Self-hosted: Gorton Digital Heavy (presentation/headline) + Bitter
+   (body). Files live in quartz/static/fonts/ — same files the real
+   site will use.
+
+   Gorton Digital is noncommercial-use-only — see
+   quartz/static/fonts/LICENSE-GortonDigitalHeavy-noncommercial.md.
+   The site is strictly noncommercial, so this is cleared for use here.
+   If that ever changes (ads, print-on-demand sales, etc.), revisit
+   this license before anything ships commercially.
    ------------------------------------------------------------------ */
 
 @font-face {
-  font-family: "Anton";
-  src: url("../quartz/static/fonts/Anton-Regular.woff2") format("woff2");
+  font-family: "Gorton Heavy";
+  src: url("../quartz/static/fonts/GortonDigitalHeavy.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Libre Baskerville";
-  src: url("../quartz/static/fonts/LibreBaskerville-Variable.woff2") format("woff2-variations");
-  font-weight: 400 700;
+  font-family: "Bitter";
+  src: url("../quartz/static/fonts/Bitter-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Libre Baskerville";
-  src: url("../quartz/static/fonts/LibreBaskerville-Italic-Variable.woff2") format("woff2-variations");
-  font-weight: 400 700;
+  font-family: "Bitter";
+  src: url("../quartz/static/fonts/Bitter-Italic-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 :root {
-  --font-presentation: "Anton", sans-serif;
-  --font-body: "Libre Baskerville", Georgia, serif;
+  --font-presentation: "Gorton Heavy", sans-serif;
+  --font-presentation-weight: 400;
+  --font-body: "Bitter", Georgia, serif;
 
   /* Placeholder neutrals only — color comes later in the process. */
   --ink: #1a1a1a;
