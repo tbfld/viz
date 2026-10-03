@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>about — viz.counter.ink</title>
+<title>colophon — viz.counter.ink</title>
 <link rel="stylesheet" href="mockup-fonts.css">
 <style>
   * { box-sizing: border-box; }
@@ -159,6 +159,9 @@
   }
   article p { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.1rem; }
   article a { color: var(--accent); text-decoration-color: var(--accent); }
+  article ul { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.1rem; padding-left: 1.3rem; }
+  article li { margin-bottom: 0.4rem; }
+  article li .credit-role { color: var(--muted); font-size: 0.92em; }
 
   .site-footer {
     border-top: 1px solid var(--ink);
@@ -237,9 +240,9 @@
   <div class="sidebar-section">
     <div class="sidebar-label-strong">On this page</div>
     <ul class="toc-list">
-      <li><a href="#what-this-is">What this is</a></li>
-      <li><a href="#how-its-made">How it's made</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#typefaces">Typefaces</a></li>
+      <li><a href="#tools">Tools &amp; stack</a></li>
+      <li><a href="#images">Images</a></li>
     </ul>
   </div>
 </aside>
@@ -247,17 +250,26 @@
 <div class="main-col">
   <div class="article-wrap">
 
-    <h1 class="page-h1">About</h1>
+    <h1 class="page-h1">Colophon</h1>
 
     <article>
-      <h2 class="post-h2" id="what-this-is">What this is</h2>
-      <p>A placeholder About page, built to confirm the sidebar chrome holds up on a page that's neither a blog post nor a book chapter — just plain prose, same typography and layout system as everything else. Real copy goes here once you've written it.</p>
+      <p><em>Draft — placeholder text below reflects what's actually true of the site as of this build; edit freely once the real credits are settled.</em></p>
 
-      <h2 class="post-h2" id="how-its-made">How it's made</h2>
-      <p>This site runs on Quartz, built from notes in Obsidian, hosted on GitHub Pages. Typefaces, licenses, and tools used are credited on the <a href="colophon.html">colophon page</a> rather than repeated here.</p>
+      <h2 class="post-h2" id="typefaces">Typefaces</h2>
+      <ul>
+        <li>Headings and interface labels — <strong>Gorton Digital Heavy</strong>, self-hosted. <span class="credit-role">Noncommercial use only; cleared for this strictly noncommercial site. No italic/oblique master exists — tags use a browser-synthesized oblique.</span></li>
+        <li>Body text — <strong>Bitter</strong> (variable, with italic), self-hosted.</li>
+      </ul>
 
-      <h2 class="post-h2" id="contact">Contact</h2>
-      <p>Placeholder — however you'd actually like to be reached goes here (email, a contact form, a link to elsewhere).</p>
+      <h2 class="post-h2" id="tools">Tools &amp; stack</h2>
+      <ul>
+        <li>Written in <strong>Obsidian</strong>.</li>
+        <li>Built with <strong>Quartz 4</strong>, run locally from an editable copy rather than as an npm dependency.</li>
+        <li>Deployed via <strong>GitHub Actions</strong> on every push, to <strong>GitHub Pages</strong> — no manual build step, so posting works from iOS without a Mac in the loop.</li>
+      </ul>
+
+      <h2 class="post-h2" id="images">Images</h2>
+      <p>Most posts here are illustrated. Unless a caption says otherwise, images are used as part of an artistic transformation — reworked, recontextualized, or paired with text in ways distinct from their original use — rather than republished as-is. Specific credits and sources are noted in individual post captions where relevant.</p>
     </article>
 
     <footer class="site-footer">
@@ -269,7 +281,7 @@
     </footer>
 
     <div class="devnote">
-      <p>Confirms the sidebar/footer chrome works for a plain content page, not just posts and chapters. Colophon.html now exists and reuses this exact pattern — together these two are the template for any future simple page (privacy, contact, a static list): copy one of them rather than building from scratch.</p>
+      <p>Built from the same plain-content pattern as about.html — sidebar chrome, H1, stacked H2 sections. These two pages are effectively the template for any future simple page (privacy, contact, a static list) — copy one of them rather than building from scratch. Content above is a real-but-draft first pass; swap in final wording whenever you're ready.</p>
     </div>
 
   </div>
