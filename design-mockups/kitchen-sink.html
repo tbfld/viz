@@ -393,6 +393,37 @@
     border-top: 1px solid var(--rule);
   }
   .devnote p { margin: 0 0 0.6rem; font-size: 0.8rem !important; line-height: 1.5 !important; }
+
+  /* ---- site footer (shared pattern across every template) ---- */
+  .site-footer {
+    border-top: 1px solid var(--ink);
+    margin-top: 3rem;
+    padding: 1.5rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .footer-copy {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: lowercase;
+    color: var(--muted);
+  }
+  .footer-nav { display: flex; gap: 1.25rem; }
+  .footer-nav a {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .footer-nav a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -504,6 +535,14 @@ function buildThumbnail(src) {
       <p>Caption sits directly under the image in regular weight; the credit line drops to a smaller, muted italic directly beneath it — matching the project's standing rule that captions live underneath, not overlaid.</p>
 
     </article>
+
+    <footer class="site-footer">
+      <div class="footer-copy">viz.counter.ink — all images © the author unless noted</div>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="colophon.html">Colophon</a>
+      </nav>
+    </footer>
 
     <div class="devnote">
       <p><strong>What this page is testing:</strong> H1–H3, paragraphs, blockquote, inline/block code, lists, hr, a full-bleed image with caption+credit, and margin notes — all at once, so gaps show up here instead of on a real post.</p>

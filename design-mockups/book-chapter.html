@@ -461,6 +461,38 @@
     clear: both;
   }
   .devnote p { margin: 0 0 0.6rem; font-size: 0.8rem !important; line-height: 1.5 !important; }
+
+  /* ---- site footer (shared pattern across every template) ---- */
+  .site-footer {
+    border-top: 1px solid var(--ink);
+    margin-top: 3rem;
+    padding: 1.5rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    clear: both;
+  }
+  .footer-copy {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: lowercase;
+    color: var(--muted);
+  }
+  .footer-nav { display: flex; gap: 1.25rem; }
+  .footer-nav a {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .footer-nav a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -591,6 +623,14 @@
       <a href="#"><span class="label">&larr; Previous</span>II — What the scrap kept</a>
       <a href="#" class="next"><span class="label">Next &rarr;</span>IV — A second pass</a>
     </nav>
+
+    <footer class="site-footer">
+      <div class="footer-copy">viz.counter.ink — all images © the author unless noted</div>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="colophon.html">Colophon</a>
+      </nav>
+    </footer>
 
     <div class="devnote">
       <p><strong>What this page is testing:</strong> the book template's distinct identity from the blog post — running head, chapter kicker/title, an epigraph, a drop cap on the chapter's opening paragraph, a mid-chapter pull-quote, chapter-to-chapter nav, and all four requested image layouts (full-bleed, inset-with-wrap, diptych, standalone plate).</p>

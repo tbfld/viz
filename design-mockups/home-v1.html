@@ -168,9 +168,18 @@
   }
   .post-excerpt em { font-style: italic; }
 
-  footer.site {
+  /* ---- site footer (shared pattern — same markup/classes across
+     every template, including the sidebar-layout ones) ---- */
+  .site-footer {
     border-top: 1px solid var(--ink);
     padding: 1.5rem 0 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .footer-copy {
     font-family: var(--font-presentation);
     font-weight: var(--font-presentation-weight);
     font-size: 0.75rem;
@@ -178,6 +187,17 @@
     text-transform: lowercase;
     color: var(--muted);
   }
+  .footer-nav { display: flex; gap: 1.25rem; }
+  .footer-nav a {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .footer-nav a:hover { color: var(--accent); }
 
   /* ---- mobile check ---- */
   @media (max-width: 480px) {
@@ -272,8 +292,14 @@
   </div>
 </main>
 
-<footer class="site">
-  <div class="wrap">viz.counter.ink — all images © the author unless noted</div>
+<footer class="site-footer">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:1rem;width:100%;">
+    <div class="footer-copy">viz.counter.ink — all images © the author unless noted</div>
+    <nav class="footer-nav">
+      <a href="about.html">About</a>
+      <a href="colophon.html">Colophon</a>
+    </nav>
+  </div>
 </footer>
 
 <p class="devnote">mockup v3 · header rebuilt: logo + 2&times;2 mode widget (blog/book, light/dark) &middot; left column for book TOC deferred to the book-entry template &middot; resize the window to check the mobile breakpoint</p>

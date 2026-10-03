@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>about — viz.counter.ink</title>
+<link rel="stylesheet" href="mockup-fonts.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.3;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    flex: 0 0 260px;
+    width: 260px;
+    border-right: 1px solid var(--ink);
+    padding: 1.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .sidebar-logo {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .sidebar-label-strong {
+    font-family: var(--font-presentation);
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .graph-placeholder {
+    border: 1px solid var(--rule);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-style: italic;
+    position: relative;
+    overflow: hidden;
+  }
+  .graph-placeholder svg { position: absolute; inset: 0; opacity: 0.35; }
+  .search-field {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.4rem 0.1rem;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+  }
+  .search-field::placeholder { color: var(--muted); font-style: italic; }
+  .search-field:focus { outline: none; border-bottom-width: 2px; }
+  .mode-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--ink);
+  }
+  .mode-widget .cell {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0.6rem;
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    cursor: pointer;
+  }
+  .mode-widget .cell:nth-child(1),
+  .mode-widget .cell:nth-child(2) { border-bottom: 1px solid var(--ink); }
+  .mode-widget .cell:nth-child(odd) { border-right: 1px solid var(--ink); }
+  .mode-widget .cell:hover { background: var(--rule); }
+  .mode-widget .cell.active { background: var(--accent); color: var(--paper); }
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .toc-list a { color: var(--muted); text-decoration: none; }
+  .toc-list a:hover { color: var(--ink); }
+
+  .sidebar-toggle { display: none; }
+  @media (max-width: 720px) {
+    body { flex-direction: column; }
+    .sidebar {
+      position: static; height: auto; width: 100%; flex: none;
+      border-right: none; border-bottom: 1px solid var(--ink); display: none;
+    }
+    .sidebar.open { display: flex; }
+    .sidebar-toggle {
+      display: block;
+      font-family: var(--font-presentation);
+      font-weight: var(--font-presentation-weight);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: left;
+      width: 100%;
+      padding: 0.9rem 1.25rem;
+      border: none;
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+    }
+  }
+
+  .main-col { flex: 1 1 auto; min-width: 0; }
+  .article-wrap { max-width: 680px; padding: 2.5rem 1.75rem 4rem; }
+
+  h1.page-h1 {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: clamp(1.3rem, 2.6vw, 1.65rem);
+    text-transform: uppercase;
+    letter-spacing: 0.015em;
+    line-height: 1.3;
+    margin: 0 0 2rem;
+  }
+  h2.post-h2 {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    margin: 2.25rem 0 1rem;
+  }
+  article p { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.1rem; }
+  article a { color: var(--accent); text-decoration-color: var(--accent); }
+
+  .site-footer {
+    border-top: 1px solid var(--ink);
+    margin-top: 3rem;
+    padding: 1.5rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .footer-copy {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: lowercase;
+    color: var(--muted);
+  }
+  .footer-nav { display: flex; gap: 1.25rem; }
+  .footer-nav a {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .footer-nav a:hover { color: var(--accent); }
+
+  .devnote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>
+</head>
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle">&#9776;&nbsp; Menu</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">VIZ.COUNTER.INK</div>
+
+  <div class="sidebar-section">
+    <div class="graph-placeholder">
+      <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="3" fill="currentColor"/>
+        <circle cx="70" cy="45" r="3" fill="currentColor"/>
+        <circle cx="50" cy="75" r="3" fill="currentColor"/>
+        <line x1="30" y1="30" x2="70" y2="45" stroke="currentColor" stroke-width="0.5"/>
+        <line x1="70" y1="45" x2="50" y2="75" stroke="currentColor" stroke-width="0.5"/>
+      </svg>
+      <span>placeholder</span>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <input class="search-field" type="text" placeholder="Search…" disabled>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="mode-widget">
+      <button class="cell active" data-group="section" data-value="blog">Blog</button>
+      <button class="cell" data-group="section" data-value="book">Book</button>
+      <button class="cell active" data-group="theme" data-value="light">Light</button>
+      <button class="cell" data-group="theme" data-value="dark">Dark</button>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label-strong">On this page</div>
+    <ul class="toc-list">
+      <li><a href="#what-this-is">What this is</a></li>
+      <li><a href="#how-its-made">How it's made</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</aside>
+
+<div class="main-col">
+  <div class="article-wrap">
+
+    <h1 class="page-h1">About</h1>
+
+    <article>
+      <h2 class="post-h2" id="what-this-is">What this is</h2>
+      <p>A placeholder About page, built to confirm the sidebar chrome holds up on a page that's neither a blog post nor a book chapter — just plain prose, same typography and layout system as everything else. Real copy goes here once you've written it.</p>
+
+      <h2 class="post-h2" id="how-its-made">How it's made</h2>
+      <p>This site runs on Quartz, built from notes in Obsidian, hosted on GitHub Pages. Typefaces, licenses, and tools used are credited on the <a href="colophon.html">colophon page</a> rather than repeated here.</p>
+
+      <h2 class="post-h2" id="contact">Contact</h2>
+      <p>Placeholder — however you'd actually like to be reached goes here (email, a contact form, a link to elsewhere).</p>
+    </article>
+
+    <footer class="site-footer">
+      <div class="footer-copy">viz.counter.ink — all images © the author unless noted</div>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="colophon.html">Colophon</a>
+      </nav>
+    </footer>
+
+    <div class="devnote">
+      <p>Confirms the sidebar/footer chrome works for a plain content page, not just posts and chapters. "Colophon" is linked here and in the footer but isn't built yet — you mentioned writing it yourself once the fonts/tools list is final.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.mode-widget .cell').forEach(function (cell) {
+    cell.addEventListener('click', function () {
+      var group = cell.dataset.group;
+      document.querySelectorAll('.mode-widget .cell[data-group="' + group + '"]')
+        .forEach(function (c) { c.classList.remove('active'); });
+      cell.classList.add('active');
+      if (group === 'theme') {
+        document.body.classList.toggle('theme-dark', cell.dataset.value === 'dark');
+      }
+    });
+  });
+  document.getElementById('sidebarToggle').addEventListener('click', function () {
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
