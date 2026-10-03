@@ -25,41 +25,76 @@
   /* ---- site header ---- */
   header.site {
     border-bottom: 1px solid var(--ink);
-    padding: 2.5rem 0 1.25rem;
+    padding: 2.25rem 0 1.5rem;
   }
   header.site .wrap {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-end;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 1.25rem;
   }
   .site-title {
     font-family: var(--font-presentation);
     font-weight: var(--font-presentation-weight);
     font-size: clamp(1rem, 2vw, 1.19rem);
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     line-height: 1;
+    padding-bottom: 0.15rem;
+    border-bottom: 1px solid var(--ink);
   }
-  nav.site-nav {
+
+  /* ---- mode widget: 2x2 grid, book/blog over light/dark ---- */
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+  .mode-widget {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(3.6rem, auto));
+    border: 1px solid var(--ink);
+  }
+  .mode-widget .cell {
     font-family: var(--font-presentation);
     font-weight: var(--font-presentation-weight);
-    font-size: 0.95rem;
-    letter-spacing: 0.16em;
-    text-transform: none;
-    display: flex;
-    gap: 1.5rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.4rem 0.6rem;
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    cursor: pointer;
   }
-  nav.site-nav a {
-    color: var(--ink);
+  .mode-widget .cell:nth-child(1),
+  .mode-widget .cell:nth-child(2) {
+    border-bottom: 1px solid var(--ink);
+  }
+  .mode-widget .cell:nth-child(odd) {
+    border-right: 1px solid var(--ink);
+  }
+  .mode-widget .cell:hover {
+    background: var(--rule);
+  }
+  .mode-widget .cell.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .about-link {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
     text-decoration: none;
-    border-bottom: 2px solid transparent;
   }
-  nav.site-nav a:hover,
-  nav.site-nav a.current {
-    border-bottom-color: var(--ink);
-  }
+  .about-link:hover { color: var(--ink); }
 
   /* ---- feed ---- */
   main.feed {
@@ -148,7 +183,7 @@
   @media (max-width: 480px) {
     .post-entry { flex-direction: column; }
     .post-thumb { width: 100%; height: auto; aspect-ratio: 1 / 1; }
-    nav.site-nav { font-size: 0.8rem; gap: 1rem; }
+    .mode-widget .cell { font-size: 0.6rem; padding: 0.35rem 0.5rem; }
   }
 
   /* visible-at-a-glance ruler so you can judge widths while reviewing */
@@ -168,11 +203,15 @@
 <header class="site">
   <div class="wrap">
     <div class="site-title">VIZ.COUNTER.INK</div>
-    <nav class="site-nav">
-      <a href="#" class="current">Blog</a>
-      <a href="#">Book</a>
-      <a href="#">About</a>
-    </nav>
+    <div class="header-right">
+      <div class="mode-widget">
+        <button class="cell active" data-group="section" data-value="blog">Blog</button>
+        <button class="cell" data-group="section" data-value="book">Book</button>
+        <button class="cell active" data-group="theme" data-value="light">Light</button>
+        <button class="cell" data-group="theme" data-value="dark">Dark</button>
+      </div>
+      <a href="#" class="about-link">About</a>
+    </div>
   </div>
 </header>
 
@@ -237,7 +276,20 @@
   <div class="wrap">viz.counter.ink — all images © the author unless noted</div>
 </footer>
 
-<p class="devnote">mockup v2 · type: Gorton Digital Heavy (presentation) + Bitter (body) · resize the window to check the mobile breakpoint</p>
+<p class="devnote">mockup v3 · header rebuilt: logo + 2&times;2 mode widget (blog/book, light/dark) &middot; left column for book TOC deferred to the book-entry template &middot; resize the window to check the mobile breakpoint</p>
+
+<script>
+  // Demo only — click-to-preview the widget's two independent toggle groups.
+  // Not wired to anything real yet (no routing, no actual dark mode).
+  document.querySelectorAll('.mode-widget .cell').forEach(function (cell) {
+    cell.addEventListener('click', function () {
+      var group = cell.dataset.group;
+      document.querySelectorAll('.mode-widget .cell[data-group="' + group + '"]')
+        .forEach(function (c) { c.classList.remove('active'); });
+      cell.classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>

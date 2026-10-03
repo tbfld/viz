@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>home mockup v2 — sidebar blocking (viz.counter.ink)</title>
+<link rel="stylesheet" href="mockup-fonts.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.3;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ================= SIDEBAR =================
+     Entire column is sticky + independently scrollable, so even on a
+     long page, scrolling the main content never pushes the TOC (last
+     item) permanently out of reach — it scrolls within its own column. */
+  .sidebar {
+    flex: 0 0 260px;
+    width: 260px;
+    border-right: 1px solid var(--ink);
+    padding: 1.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .sidebar-logo {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .sidebar-section { }
+  .sidebar-label {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .sidebar-label-strong {
+    font-family: var(--font-presentation);
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+
+  /* ---- graph view (placeholder — blog only, hidden in book view) ---- */
+  .graph-placeholder {
+    border: 1px solid var(--rule);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-style: italic;
+    position: relative;
+    overflow: hidden;
+  }
+  .graph-placeholder svg { position: absolute; inset: 0; opacity: 0.35; }
+  body.book-view .graph-section { display: none; } /* demonstrates the book-view exclusion */
+
+  /* ---- search ---- */
+  .search-field {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.4rem 0.1rem;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+  }
+  .search-field::placeholder { color: var(--muted); font-style: italic; }
+  .search-field:focus { outline: none; border-bottom-width: 2px; }
+
+  /* ---- mode widget (same component as v1, unchanged) ---- */
+  .mode-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--ink);
+  }
+  .mode-widget .cell {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0.6rem;
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    cursor: pointer;
+  }
+  .mode-widget .cell:nth-child(1),
+  .mode-widget .cell:nth-child(2) {
+    border-bottom: 1px solid var(--ink);
+  }
+  .mode-widget .cell:nth-child(odd) {
+    border-right: 1px solid var(--ink);
+  }
+  .mode-widget .cell:hover { background: var(--rule); }
+  .mode-widget .cell.active { background: var(--ink); color: var(--paper); }
+
+  /* ---- TOC (last item — stays reachable because the whole sidebar scrolls) ---- */
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .toc-list a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .toc-list a:hover { color: var(--ink); }
+  .toc-note {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
+
+  /* ---- mobile collapse (Quartz stock pattern: hidden behind a toggle) ---- */
+  .sidebar-toggle { display: none; }
+  @media (max-width: 720px) {
+    body { flex-direction: column; }
+    .sidebar {
+      position: static;
+      height: auto;
+      width: 100%;
+      flex: none;
+      border-right: none;
+      border-bottom: 1px solid var(--ink);
+      display: none;
+    }
+    .sidebar.open { display: flex; }
+    .sidebar-toggle {
+      display: block;
+      font-family: var(--font-presentation);
+      font-weight: var(--font-presentation-weight);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: left;
+      width: 100%;
+      padding: 0.9rem 1.25rem;
+      border: none;
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+    }
+  }
+
+  /* ================= MAIN CONTENT ================= */
+  .main-col {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .content-wrap {
+    max-width: 700px;
+    padding: 2rem 1.75rem 4rem;
+  }
+
+  .post-entry {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .post-entry:first-child { padding-top: 0; }
+
+  .post-thumb {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    background: var(--rule);
+    display: block;
+  }
+
+  .post-body { flex: 1 1 auto; min-width: 0; }
+
+  .post-meta {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+  .post-meta .tag {
+    border: 1px solid var(--rule);
+    padding: 0.1rem 0.45rem;
+    margin-left: 0.5rem;
+  }
+
+  .post-title {
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    line-height: 1.35;
+    margin: 0 0 0.35rem;
+  }
+  .post-title a { color: var(--ink); text-decoration: none; }
+
+  .post-excerpt { font-family: var(--font-body); font-size: 1rem; color: var(--ink); margin: 0; }
+  .post-excerpt em { font-style: italic; }
+
+  footer.site {
+    border-top: 1px solid var(--ink);
+    padding: 1.5rem 0 3rem;
+    font-family: var(--font-presentation);
+    font-weight: var(--font-presentation-weight);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: lowercase;
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    .post-entry { flex-direction: column; }
+    .post-thumb { width: 100%; height: auto; aspect-ratio: 1 / 1; }
+  }
+
+  .devnote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+    padding: 1.5rem 1.75rem 0;
+  }
+</style>
+</head>
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle">&#9776;&nbsp; Menu</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">VIZ.COUNTER.INK</div>
+
+  <div class="sidebar-section graph-section">
+    <div class="sidebar-label">Graph View</div>
+    <div class="graph-placeholder">
+      <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="3" fill="currentColor"/>
+        <circle cx="70" cy="45" r="3" fill="currentColor"/>
+        <circle cx="50" cy="75" r="3" fill="currentColor"/>
+        <circle cx="90" cy="20" r="2" fill="currentColor"/>
+        <line x1="30" y1="30" x2="70" y2="45" stroke="currentColor" stroke-width="0.5"/>
+        <line x1="70" y1="45" x2="50" y2="75" stroke="currentColor" stroke-width="0.5"/>
+        <line x1="30" y1="30" x2="90" y2="20" stroke="currentColor" stroke-width="0.5"/>
+      </svg>
+      <span>placeholder</span>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <input class="search-field" type="text" placeholder="Search…" disabled>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="mode-widget">
+      <button class="cell active" data-group="section" data-value="blog">Blog</button>
+      <button class="cell" data-group="section" data-value="book">Book</button>
+      <button class="cell active" data-group="theme" data-value="light">Light</button>
+      <button class="cell" data-group="theme" data-value="dark">Dark</button>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label-strong">On this page</div>
+    <ul class="toc-list">
+      <li><a href="#">Notes on a found object, reassembled</a></li>
+      <li><a href="#">Untitled (window, late light)</a></li>
+      <li><a href="#">A longer title to see how the presentation face wraps</a></li>
+      <li><a href="#">A text-only post, no image at all</a></li>
+      <li><a href="#">Scaffolding, corner of 4th</a></li>
+    </ul>
+    <p class="toc-note">On the index page this just lists post titles — a real article's TOC will list its own headings instead.</p>
+  </div>
+</aside>
+
+<div class="main-col">
+  <div class="content-wrap">
+
+    <article class="post-entry">
+      <img class="post-thumb" src="https://picsum.photos/seed/viz1/240/240" alt="">
+      <div class="post-body">
+        <div class="post-meta">02 Oct 2026 <span class="tag">studio</span> <span class="tag">process</span></div>
+        <h2 class="post-title"><a href="#">Notes on a found object, reassembled</a></h2>
+        <p class="post-excerpt">A short run of working photos from this week — mostly scrap, mostly
+        wrong, which is usually when something starts to happen. <em>More below.</em></p>
+      </div>
+    </article>
+
+    <article class="post-entry">
+      <img class="post-thumb" src="https://picsum.photos/seed/viz2/240/240" alt="">
+      <div class="post-body">
+        <div class="post-meta">28 Sep 2026 <span class="tag">ig</span></div>
+        <h2 class="post-title"><a href="#">Untitled (window, late light)</a></h2>
+        <p class="post-excerpt">Imported from Instagram. Original caption preserved below the fold,
+        with the usual hashtags trimmed.</p>
+      </div>
+    </article>
+
+    <article class="post-entry">
+      <img class="post-thumb" src="https://picsum.photos/seed/viz3/240/240" alt="">
+      <div class="post-body">
+        <div class="post-meta">24 Sep 2026 <span class="tag">book</span> <span class="tag">excerpt</span></div>
+        <h2 class="post-title"><a href="#">A longer title to see how the presentation face wraps across two lines at this width</a></h2>
+        <p class="post-excerpt">Testing a long headline against the Anton/uppercase treatment —
+        does it stay readable, or does it start to feel shouty at two lines?</p>
+      </div>
+    </article>
+
+    <article class="post-entry">
+      <div class="post-thumb placeholder" style="display:flex;align-items:center;justify-content:center;font-family:var(--font-presentation);font-size:0.7rem;letter-spacing:0.16em;color:var(--muted);text-transform:uppercase;">no&nbsp;image</div>
+      <div class="post-body">
+        <div class="post-meta">19 Sep 2026 <span class="tag">note</span></div>
+        <h2 class="post-title"><a href="#">A text-only post, no image at all</a></h2>
+        <p class="post-excerpt">Some entries won't have a lead image — the layout needs to hold up
+        even then, without an awkward empty box.</p>
+      </div>
+    </article>
+
+    <article class="post-entry">
+      <img class="post-thumb" src="https://picsum.photos/seed/viz5/240/240" alt="">
+      <div class="post-body">
+        <div class="post-meta">15 Sep 2026 <span class="tag">ig</span></div>
+        <h2 class="post-title"><a href="#">Scaffolding, corner of 4th</a></h2>
+        <p class="post-excerpt">Another IG import, short caption, single image.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <footer class="site">
+    <div class="content-wrap" style="padding-top:0;padding-bottom:0;">viz.counter.ink — all images © the author unless noted</div>
+  </footer>
+
+  <p class="devnote">mockup v2-sidebar &middot; persistent left sidebar: logo &rarr; graph (placeholder, blog-only) &rarr; search &rarr; widget &rarr; TOC &middot;
+  whole sidebar is sticky + independently scrollable, so TOC stays reachable without pushing it to the top &middot;
+  resize under 720px to see the mobile collapse (tap Menu) &middot; try the "Book" cell in the widget to see Graph View disappear</p>
+</div>
+
+<script>
+  document.querySelectorAll('.mode-widget .cell').forEach(function (cell) {
+    cell.addEventListener('click', function () {
+      var group = cell.dataset.group;
+      document.querySelectorAll('.mode-widget .cell[data-group="' + group + '"]')
+        .forEach(function (c) { c.classList.remove('active'); });
+      cell.classList.add('active');
+      if (group === 'section') {
+        document.body.classList.toggle('book-view', cell.dataset.value === 'book');
+      }
+    });
+  });
+  document.getElementById('sidebarToggle').addEventListener('click', function () {
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
