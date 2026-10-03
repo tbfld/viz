@@ -1,0 +1,40 @@
+.mode-widget {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--darkgray);
+
+  .cell {
+    font-family: var(--headerFont);
+    font-weight: 400;
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0.6rem;
+    background: transparent;
+    color: var(--gray);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+  }
+
+  .cell:nth-child(1),
+  .cell:nth-child(2) {
+    border-bottom: 1px solid var(--darkgray);
+  }
+
+  .cell:nth-child(odd) {
+    border-right: 1px solid var(--darkgray);
+  }
+
+  .cell:hover {
+    background: var(--lightgray);
+    color: var(--gray) !important;
+  }
+
+  .cell.active {
+    background: var(--secondary) !important;
+    color: var(--light) !important;
+  }
+}

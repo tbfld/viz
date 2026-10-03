@@ -22,6 +22,7 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import BookToc from "./BookToc"
 import ViewToggle from "./ViewToggle"
+import ModeWidget from "./ModeWidget"
 import BookAwareLeft from "./BookAwareLeft"
 
 export {
@@ -50,4 +51,5 @@ export {
   BookToc,
   ViewToggle,
   BookAwareLeft,
+  ModeWidget,
 }
