@@ -110,6 +110,16 @@ export const Changelog: QuartzEmitterPlugin = () => {
 
         const firstImageSrc = getFirstImageSrc(tree)
 
+        // `extract` is a hand-written override for the blog-view teaser —
+        // useful for a post whose auto-extracted first paragraph (an
+        // Instagram caption, say) isn't a good teaser, or one you want to
+        // improve after the fact without touching the post body. Falls
+        // back to the auto-extracted paragraph when absent, so most posts
+        // never need to set it.
+        const rawExtract = frontmatter?.extract
+        const extract = typeof rawExtract === "string" ? rawExtract.trim() : ""
+        const teaser = extract.length > 0 ? extract : getFirstParagraph(text)
+
         entries.push({
           title,
           slug: slug ?? "",
@@ -117,7 +127,7 @@ export const Changelog: QuartzEmitterPlugin = () => {
           updated: updatedDate?.toISOString() ?? null,
           wordCount: countWords(text),
           isNew,
-          firstParagraph: getFirstParagraph(text),
+          firstParagraph: teaser,
           thumbnails: getThumbnails(firstImageSrc),
         })
       }
