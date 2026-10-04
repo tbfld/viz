@@ -34,6 +34,8 @@ jobs:
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          # Large enough to import the whole history in one run.
+          IG_MAX_PER_RUN: "200"
         run: python scripts/instagram_import.py
 
       - name: Commit and push new posts
