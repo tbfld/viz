@@ -26,9 +26,21 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
     const text = fileData.text
 
-    // Book index is a navigational landing page, not a dated entry.
-    if (fileData.slug === "book") {
-      return null
+    // Blog index and book index are navigational landing pages - show
+    // when they were last updated instead of the usual date/reading-time
+    // line (which also wouldn't fire for book.md, since it has no body
+    // text to key off of).
+    const isLandingPage = fileData.slug === "index" || fileData.slug === "book"
+    if (isLandingPage) {
+      const modified = fileData.dates?.modified
+      if (!modified) {
+        return null
+      }
+      return (
+        <p class={classNames(displayClass, "content-meta")}>
+          Last updated: <Date date={modified} locale={cfg.locale} />
+        </p>
+      )
     }
 
     if (text) {
