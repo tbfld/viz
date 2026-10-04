@@ -202,6 +202,13 @@ export default (() => {
         <link rel="apple-touch-icon" href={appleTouchIconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        {/* Read by modewidget.inline.ts to pick this page's default theme
+            (blog vs. book). Must sit before the beforeDOMReady scripts
+            below so it already exists when that blocking inline script
+            runs, which is what avoids a flash of the wrong theme. SPA
+            navigation swaps <head> contents before firing "nav", so it
+            stays current across client-side page changes too. */}
+        <meta name="mode-section" content={fileData.frontmatter?.book === true ? "book" : "blog"} />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
