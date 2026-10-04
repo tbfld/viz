@@ -11,7 +11,7 @@ export default ((opts?: Options) => {
     return (
       <footer class={`site-footer ${displayClass ?? ""}`}>
         <div class="footer-copy">
-          viz.counter.ink — everything © Ted Byfield unless otherwise noted — <a href={aboutPath}>about</a>
+          <a href={aboutPath}>about</a> / everything © <a href="https://counter.ink/">Ted Byfield</a> unless otherwise noted
         </div>
       </footer>
     )
