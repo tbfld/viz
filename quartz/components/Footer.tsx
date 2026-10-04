@@ -2,20 +2,17 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "./styles/footer.scss"
 
 interface Options {
-  links: Record<string, string>
+  aboutPath: string
 }
 
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
-    const links = opts?.links ?? {}
+    const aboutPath = opts?.aboutPath ?? "/1-front-matter/1.1-about"
     return (
       <footer class={`site-footer ${displayClass ?? ""}`}>
-        <div class="footer-copy">viz.counter.ink — all images © the author unless noted</div>
-        <nav class="footer-nav">
-          {Object.entries(links).map(([text, link]) => (
-            <a href={link}>{text}</a>
-          ))}
-        </nav>
+        <div class="footer-copy">
+          viz.counter.ink — everything © Ted Byfield unless otherwise noted — <a href={aboutPath}>about</a>
+        </div>
       </footer>
     )
   }
