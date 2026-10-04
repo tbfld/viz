@@ -101,3 +101,34 @@ blockquote {
   font-size: 1.05rem;
   letter-spacing: 0.16em;
 }
+
+// --- TB ADDED 2026-10-04: left sidebar fit and finish ---
+
+// Make the logo, mode widget, and search field all span the same width
+// (the sidebar column's own width) instead of each sizing to its own
+// content/defaults.
+.sidebar.left {
+  & > .page-title,
+  & > .mode-widget,
+  & > .search {
+    width: 100%;
+    max-width: none;
+  }
+
+  & > .search > .search-button {
+    width: 100%;
+  }
+}
+
+// Stock Quartz lays the mobile left sidebar out as a flex ROW (built for
+// a bare title + two icon buttons). With a full-width search field and
+// the mode widget grid in there now, that reads as a jumble. Stack them
+// instead, same as desktop.
+@media all and (max-width: 800px) {
+  .sidebar.left {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    padding: 1.25rem 1.25rem 1rem !important;
+  }
+}

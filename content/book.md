@@ -13,5 +13,3 @@ publish: true
 book: true
 disabled rules: [yaml-title]
 ---
-
-The book in progress, organized by the table of contents on the left rather than by date. Any post can be added to it — see [[posts/posts|Posts]] for how.

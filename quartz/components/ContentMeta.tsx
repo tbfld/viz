@@ -26,6 +26,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
     const text = fileData.text
 
+    // Book index is a navigational landing page, not a dated entry.
+    if (fileData.slug === "book") {
+      return null
+    }
+
     if (text) {
       const segments: (string | JSX.Element)[] = []
 

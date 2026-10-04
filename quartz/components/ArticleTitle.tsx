@@ -3,7 +3,11 @@ import { classNames } from "../util/lang"
 
 const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
-  if (title) {
+  // Root blog index and book index are navigational landing pages — the
+  // sidebar logo + breadcrumb trail already identify them, so the H1 is
+  // redundant there.
+  const isLandingPage = fileData.slug === "index" || fileData.slug === "book"
+  if (title && !isLandingPage) {
     return <h1 class={classNames(displayClass, "article-title")}>{title}</h1>
   } else {
     return null

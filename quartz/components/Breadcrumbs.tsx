@@ -113,8 +113,14 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
         crumbs.push(crumb)
       }
 
-      // Add current file to crumb (can directly use frontmatter title)
-      if (options.showCurrentPage && slugParts.at(-1) !== "index") {
+      // Add current file to crumb (can directly use frontmatter title).
+      // Normally skipped at the root ("index") to avoid a redundant
+      // "Home > Home" - but when hideOnRoot is false and the root page has
+      // its own distinct title (e.g. "Posts"), show it.
+      if (
+        options.showCurrentPage &&
+        (slugParts.at(-1) !== "index" || !options.hideOnRoot)
+      ) {
         crumbs.push({
           displayName: fileData.frontmatter!.title,
           path: "",
