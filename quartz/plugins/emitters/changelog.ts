@@ -22,6 +22,17 @@ interface ChangelogEntry {
   thumbnails: Record<number, string> | null
 }
 
+/** `new Date(someUnparseableString)` doesn't throw — it silently produces an
+ * Invalid Date, which only blows up later, on `.toISOString()`. A single
+ * unparseable `created`/`updated` value (an old note's "2026-10-04-Sun-2:50pm"
+ * timestamp format, say) used to crash this entire emitter and take out the
+ * whole build. Treat an invalid date the same way the rest of the pipeline
+ * already treats a missing one. */
+function safeISOString(date: Date | null): string | null {
+  if (!date || isNaN(date.getTime())) return null
+  return date.toISOString()
+}
+
 function countWords(text: string): number {
   return text.split(/\s+/).filter(word => word.length > 0).length
 }
@@ -104,9 +115,10 @@ export const Changelog: QuartzEmitterPlugin = () => {
 
         // Determine if new (created within last 24 hours)
         const now = new Date()
-        const isNew = createdDate
-          ? (now.getTime() - createdDate.getTime()) < 24 * 60 * 60 * 1000
-          : false
+        const isNew =
+          createdDate && !isNaN(createdDate.getTime())
+            ? now.getTime() - createdDate.getTime() < 24 * 60 * 60 * 1000
+            : false
 
         const firstImageSrc = getFirstImageSrc(tree)
 
@@ -123,8 +135,8 @@ export const Changelog: QuartzEmitterPlugin = () => {
         entries.push({
           title,
           slug: slug ?? "",
-          created: createdDate?.toISOString() ?? null,
-          updated: updatedDate?.toISOString() ?? null,
+          created: safeISOString(createdDate),
+          updated: safeISOString(updatedDate),
           wordCount: countWords(text),
           isNew,
           firstParagraph: teaser,

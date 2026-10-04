@@ -7,7 +7,7 @@ interface Options {
 
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
-    const aboutPath = opts?.aboutPath ?? "/1-front-matter/1.1-about"
+    const aboutPath = opts?.aboutPath ?? "/about"
     return (
       <footer class={`site-footer ${displayClass ?? ""}`}>
         <div class="footer-copy">

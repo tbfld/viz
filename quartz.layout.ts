@@ -7,7 +7,7 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   afterBody: [],
   footer: Component.Footer({
-    aboutPath: "/1-front-matter/1.1-about",
+    aboutPath: "/about",
   }),
 }
 
