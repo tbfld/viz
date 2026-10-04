@@ -36,7 +36,16 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           # Large enough to import the whole history in one run.
           IG_MAX_PER_RUN: "200"
-        run: python scripts/instagram_import.py
+        run: |
+          set -o pipefail
+          python scripts/instagram_import.py 2>&1 | tee import.log
+
+      # Surface the importer's last lines as an annotation, so a failure is
+      # diagnosable from the run summary (the script already redacts the token).
+      - name: Show import error
+        if: failure()
+        run: |
+          tail -n 15 import.log | while IFS= read -r line; do echo "::error::${line}"; done
 
       - name: Commit and push new posts
         run: |
