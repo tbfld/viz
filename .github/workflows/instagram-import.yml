@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: instagram-import
@@ -64,3 +65,11 @@ jobs:
             git commit -m "$msg"
             git push
           fi
+
+      # Pushes made with GITHUB_TOKEN don't trigger the deploy workflow's
+      # push trigger, so start it explicitly when new posts were committed.
+      - name: Deploy site
+        if: steps.import.outputs.count != '0' && steps.import.outputs.count != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref v4

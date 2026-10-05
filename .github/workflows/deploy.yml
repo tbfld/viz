@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - v4
+  # Lets the Instagram import workflow trigger a deploy: a push made with
+  # the default GITHUB_TOKEN deliberately does not fire the push trigger above.
+  workflow_dispatch: {}
 
 permissions:
   contents: read
