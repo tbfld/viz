@@ -1,17 +1,14 @@
 ---
 title: "Bucky Fuller’s 1959 Paperboard Dome prototype, made entirely from fold…"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "Bucky Fuller’s 1959 Paperboard Dome prototype, made entirely from folded cardboard"
-images: "true"
+image_credit:
 created: 2026-08-24 14:55
 updated: 2026-08-24 14:55
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18127757443601515"
 ig_permalink: "https://www.instagram.com/p/DcbU2WmEV99/"
 disabled rules: [yaml-title]

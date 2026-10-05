@@ -175,18 +175,15 @@ def build_post(item: dict) -> tuple[str, str]:
     # title with the filename-derived slug on the next lint pass.
     frontmatter = f"""---
 title: "{yaml_escape(title)}"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "{yaml_escape(first_line[:160])}"
-images: "true"
+image_credit:
 created: {created}
 updated: {created}
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "{media_id}"
 ig_permalink: "{permalink}"
 disabled rules: [yaml-title]

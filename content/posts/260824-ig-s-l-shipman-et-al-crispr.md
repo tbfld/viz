@@ -1,17 +1,14 @@
 ---
 title: "S. L. Shipman et al., \"CRISPR-Cas encoding of a digital movie into the…"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "S. L. Shipman et al., \"CRISPR-Cas encoding of a digital movie into the genomes of a population of living bacteria,” Nature 547 (2017), pp. 345-349 ( https://doi"
-images: "true"
+image_credit:
 created: 2026-08-24 15:00
 updated: 2026-08-24 15:00
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18098465069018600"
 ig_permalink: "https://www.instagram.com/p/DcbVYjdka_h/"
 disabled rules: [yaml-title]

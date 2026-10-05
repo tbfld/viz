@@ -1,17 +1,14 @@
 ---
 title: "https://www.quantamagazine.org/the-four-color-theorem-gets-a-rare-new-…"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "https://www.quantamagazine.org/the-four-color-theorem-gets-a-rare-new-proof-20260910/"
-images: "true"
+image_credit:
 created: 2026-09-13 10:44
 updated: 2026-09-13 10:44
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18216378793341471"
 ig_permalink: "https://www.instagram.com/p/DdOYD3kRxuk/"
 disabled rules: [yaml-title]

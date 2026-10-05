@@ -1,17 +1,14 @@
 ---
 title: "Just retweeting, so to speak, not an endorsement. The idea that eucaly…"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "Just retweeting, so to speak, not an endorsement. The idea that eucalyptuses, weeping willows, or lombardi poplars represent an invasive threat is ridiculous an"
-images: "true"
+image_credit:
 created: 2026-09-27 00:28
 updated: 2026-09-27 00:28
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18226460284335236"
 ig_permalink: "https://www.instagram.com/p/DdxUt5NoAwn/"
 disabled rules: [yaml-title]

@@ -1,17 +1,14 @@
 ---
 title: "https://www.reddit.com/r/interestingasfuck/s/gf7mHjPbMO"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "https://www.reddit.com/r/interestingasfuck/s/gf7mHjPbMO"
-images: "true"
+image_credit:
 created: 2026-09-16 06:10
 updated: 2026-09-16 06:10
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18408635935080415"
 ig_permalink: "https://www.instagram.com/p/DdVnEoJR3v9/"
 disabled rules: [yaml-title]

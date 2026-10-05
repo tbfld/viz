@@ -1,28 +1,61 @@
-const applyActiveState = (theme: "light" | "dark") => {
+type Theme = "light" | "dark"
+type Section = "blog" | "book"
+
+// Default theme per section, used until a reader picks one themselves.
+// This deliberately replaces "follow the OS color scheme" — the two
+// sections are meant to look different out of the box.
+const SECTION_DEFAULTS: Record<Section, Theme> = {
+  blog: "dark",
+  book: "light",
+}
+
+// Set server-side by Head.tsx from the page's `book` frontmatter flag.
+const getSection = (): Section =>
+  document.querySelector('meta[name="mode-section"]')?.getAttribute("content") === "book"
+    ? "book"
+    : "blog"
+
+// A reader's explicit Light/Dark choice is remembered per section, so
+// switching the book to dark doesn't also flip the blog (and vice versa).
+const storageKey = (section: Section) => `theme-${section}`
+
+const resolveTheme = (section: Section): Theme => {
+  const stored = localStorage.getItem(storageKey(section))
+  return stored === "light" || stored === "dark" ? stored : SECTION_DEFAULTS[section]
+}
+
+const applyActiveState = (theme: Theme) => {
   const lightBtn = document.getElementById("mode-light")
   const darkBtn = document.getElementById("mode-dark")
   lightBtn?.classList.toggle("active", theme === "light")
   darkBtn?.classList.toggle("active", theme === "dark")
 }
 
-const userPref = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
-const currentTheme = (localStorage.getItem("theme") as "light" | "dark" | null) ?? userPref
-document.documentElement.setAttribute("saved-theme", currentTheme)
-
-const emitThemeChangeEvent = (theme: "light" | "dark") => {
+const emitThemeChangeEvent = (theme: Theme) => {
   const event: CustomEventMap["themechange"] = new CustomEvent("themechange", {
     detail: { theme },
   })
   document.dispatchEvent(event)
 }
 
-document.addEventListener("nav", () => {
-  const savedTheme = document.documentElement.getAttribute("saved-theme") === "dark" ? "dark" : "light"
-  applyActiveState(savedTheme)
+// Runs in <head> before first paint, so the right theme is on <html>
+// before any content renders.
+document.documentElement.setAttribute("saved-theme", resolveTheme(getSection()))
 
-  const setTheme = (theme: "light" | "dark") => {
+document.addEventListener("nav", () => {
+  // Navigating between blog and book pages (client-side, no reload) can
+  // land in a section with a different theme.
+  const section = getSection()
+  const desired = resolveTheme(section)
+  if (document.documentElement.getAttribute("saved-theme") !== desired) {
+    document.documentElement.setAttribute("saved-theme", desired)
+    emitThemeChangeEvent(desired)
+  }
+  applyActiveState(desired)
+
+  const setTheme = (theme: Theme) => {
     document.documentElement.setAttribute("saved-theme", theme)
-    localStorage.setItem("theme", theme)
+    localStorage.setItem(storageKey(section), theme)
     applyActiveState(theme)
     emitThemeChangeEvent(theme)
   }
@@ -35,11 +68,4 @@ document.addEventListener("nav", () => {
   darkBtn?.addEventListener("click", onDark)
   window.addCleanup(() => lightBtn?.removeEventListener("click", onLight))
   window.addCleanup(() => darkBtn?.removeEventListener("click", onDark))
-
-  const colorSchemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-  const themeChange = (e: MediaQueryListEvent) => {
-    setTheme(e.matches ? "dark" : "light")
-  }
-  colorSchemeMediaQuery.addEventListener("change", themeChange)
-  window.addCleanup(() => colorSchemeMediaQuery.removeEventListener("change", themeChange))
 })

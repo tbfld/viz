@@ -1,17 +1,14 @@
 ---
 title: "https://themathematics.app/"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "https://themathematics.app/"
-images: "true"
+image_credit:
 created: 2026-09-24 00:37
 updated: 2026-09-24 00:37
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18104805809206968"
 ig_permalink: "https://www.instagram.com/p/DdpnRQrIBjb/"
 disabled rules: [yaml-title]

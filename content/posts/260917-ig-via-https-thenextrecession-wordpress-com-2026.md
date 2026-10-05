@@ -1,17 +1,14 @@
 ---
 title: "Via https://thenextrecession.wordpress.com/2026/09/17/iippe-2026-part-…"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "Via https://thenextrecession.wordpress.com/2026/09/17/iippe-2026-part-two-ai-imperialism-money-and-fascism/"
-images: "true"
+image_credit:
 created: 2026-09-17 14:13
 updated: 2026-09-17 14:13
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18112116401115014"
 ig_permalink: "https://www.instagram.com/p/DdZDL2YoKCM/"
 disabled rules: [yaml-title]

@@ -1,17 +1,14 @@
 ---
 title: "From XKCD"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "From XKCD"
-images: "true"
+image_credit:
 created: 2026-08-30 00:09
 updated: 2026-08-30 00:09
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18369072001211900"
 ig_permalink: "https://www.instagram.com/p/DcpMK8Vxpg5/"
 disabled rules: [yaml-title]

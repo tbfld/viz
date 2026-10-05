@@ -8,6 +8,8 @@ import fs from "fs"
 import sharp from "sharp"
 import { ImageOptions, SocialImageOptions, getSatoriFont, defaultImage } from "../util/og"
 import { unescapeHTML } from "../util/escape"
+import { visit } from "unist-util-visit"
+import type { Root } from "hast"
 
 /**
  * Generates social image (OG/twitter standard) and saves it as `.webp` inside the public folder
@@ -53,6 +55,7 @@ export default (() => {
     fileData,
     externalResources,
     ctx,
+    tree,
   }: QuartzComponentProps) => {
     // Initialize options if not set
     if (!fullOptions) {
@@ -90,6 +93,13 @@ export default (() => {
       description = fileData.frontmatter?.socialDescription as string
     } else if (fileData.frontmatter?.description) {
       description = fileData.frontmatter?.description
+    } else if (
+      typeof fileData.frontmatter?.extract === "string" &&
+      fileData.frontmatter.extract.trim()
+    ) {
+      // No hand-written description: the post's `extract` makes a better
+      // preview blurb than Quartz's auto-generated one.
+      description = fileData.frontmatter.extract.trim()
     }
 
     const fileDir = joinSegments(ctx.argv.output, "static", "social-images")
@@ -149,14 +159,44 @@ export default (() => {
       ogImagePath = ogImageDefaultPath
     }
 
-    // Override with frontmatter url if existing
-    if (frontmatterImgUrl) {
-      ogImagePath = `https://${cfg.baseUrl}/static/${frontmatterImgUrl}`
-    }
-
     // Url of current page
     const socialUrl =
       fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+
+    // A post that contains an image previews as its own first image
+    // (Messages, Facebook, etc.) instead of the site-wide default. By the
+    // time components render, CrawlLinks has already turned the src into a
+    // URL relative to this page, so resolving it against the page's own URL
+    // gives the absolute address the link-preview crawlers need.
+    let firstImageUrl: string | undefined
+    if (fileData.slug && fileData.slug !== "index" && fileData.slug !== "404") {
+      visit(tree as Root, "element", (node) => {
+        if (firstImageUrl) return
+        const src = node.tagName === "img" ? node.properties?.src : undefined
+        if (typeof src === "string" && /\.(jpe?g|png|webp)$/i.test(src)) {
+          try {
+            firstImageUrl = new URL(src, socialUrl).toString()
+          } catch {
+            // unparseable src: just fall back to the default image
+          }
+        }
+      })
+    }
+
+    // Override with a post image if there is one, then with an explicit
+    // frontmatter `socialImage` (which always wins).
+    if (firstImageUrl) {
+      ogImagePath = firstImageUrl
+    }
+    if (frontmatterImgUrl) {
+      ogImagePath = `https://${cfg.baseUrl}/static/${frontmatterImgUrl}`
+    }
+    const usesCustomImage = Boolean(firstImageUrl || frontmatterImgUrl)
+    const ogImageMime = /\.jpe?g$/i.test(ogImagePath)
+      ? "image/jpeg"
+      : /\.png$/i.test(ogImagePath)
+        ? "image/png"
+        : `image/${extension}`
 
     return (
       <head>
@@ -179,10 +219,10 @@ export default (() => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
-        <meta property="og:image:type" content={`image/${extension}`} />
+        <meta property="og:image:type" content={ogImageMime} />
         <meta property="og:image:alt" content={description} />
         {/* Dont set width and height if unknown (when using custom frontmatter image) */}
-        {!frontmatterImgUrl && (
+        {!usesCustomImage && (
           <>
             <meta property="og:image:width" content={fullOptions.width.toString()} />
             <meta property="og:image:height" content={fullOptions.height.toString()} />
@@ -202,6 +242,13 @@ export default (() => {
         <link rel="apple-touch-icon" href={appleTouchIconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        {/* Read by modewidget.inline.ts to pick this page's default theme
+            (blog vs. book). Must sit before the beforeDOMReady scripts
+            below so it already exists when that blocking inline script
+            runs, which is what avoids a flash of the wrong theme. SPA
+            navigation swaps <head> contents before firing "nav", so it
+            stays current across client-side page changes too. */}
+        <meta name="mode-section" content={fileData.frontmatter?.book === true ? "book" : "blog"} />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")

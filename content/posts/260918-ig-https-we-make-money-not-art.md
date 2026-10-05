@@ -1,17 +1,14 @@
 ---
 title: "https://we-make-money-not-art.com/conspiratorial-design-information-de…"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "https://we-make-money-not-art.com/conspiratorial-design-information-design-for-the-bigger-picture/"
-images: "true"
+image_credit:
 created: 2026-09-18 02:19
 updated: 2026-09-18 02:19
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "18070764809757342"
 ig_permalink: "https://www.instagram.com/p/DdaWQISoOqQ/"
 disabled rules: [yaml-title]

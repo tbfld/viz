@@ -1,17 +1,14 @@
 ---
 title: "Widely shared as a “topology joke mug” and available on ebay"
-aliases:
+publish: true
+draft: false
+tags: []
 description:
 extract: "Widely shared as a “topology joke mug” and available on ebay"
-images: "true"
+image_credit:
 created: 2026-08-24 17:01
 updated: 2026-08-24 17:01
-order:
-author: Ted Byfield
-draft: false
-publish: true
-book: false
-book_position:
+aliases: []
 ig_media_id: "17880023775623689"
 ig_permalink: "https://www.instagram.com/p/DcbjTknIJtv/"
 disabled rules: [yaml-title]
