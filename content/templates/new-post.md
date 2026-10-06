@@ -9,7 +9,6 @@ image_credit:
 created: 
 updated: 
 aliases: []
-disabled rules: [yaml-title]
 ---
 
 <%* tp.file.cursor() %>
