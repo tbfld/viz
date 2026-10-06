@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fold prototype</title>
+<link rel="stylesheet" href="mockup-fonts.css">
+<style>
+  /* Prototype of foldable body-text sections. Four treatments (A–D) of the
+     same content, each three levels deep. Tokens come from mockup-fonts.css
+     (the real palette). Nothing here is wired into the site yet. */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 400 1.0625rem/1.6 var(--font-body);
+  }
+  .bar {
+    position: sticky; top: 0; z-index: 5; background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; align-items: center;
+    padding: .6rem 1rem; font-size: .85rem;
+  }
+  .bar button {
+    font: inherit; color: var(--ink); background: none; cursor: pointer;
+    border: 1px solid var(--rule); padding: .2rem .6rem;
+  }
+  .bar button.on { border-color: var(--ink); }
+  .bar .grp { display: flex; gap: .25rem; align-items: center; }
+  main { max-width: 42rem; margin: 0 auto; padding: 1rem 1rem 6rem; }
+  h1 { font: var(--font-presentation-weight) 2rem/1.1 var(--font-presentation); margin: 1.5rem 0 .25rem; }
+  h2.variant {
+    font: var(--font-presentation-weight) 1.15rem/1.2 var(--font-presentation);
+    margin: 3rem 0 .15rem; padding-top: 1rem; border-top: 1px solid var(--ink);
+  }
+  .note { color: var(--muted); font-size: .85rem; margin: 0 0 1rem; }
+
+  /* ---- shared fold mechanics ---- */
+  details.fold { margin: 1rem 0; }
+  details.fold > summary {
+    list-style: none; cursor: pointer; font-weight: 600;
+    display: flex; gap: .45rem; align-items: baseline;
+  }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary::before {
+    content: ""; flex: 0 0 .5em; height: .5em; margin-top: .05em;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: rotate(-45deg) translate(-1px, -1px);
+    transition: transform .15s ease; opacity: .7;
+  }
+  details.fold[open] > summary::before { transform: rotate(45deg) translate(-1px, -1px); }
+  details.fold > summary:hover { color: var(--accent); }
+  details.fold > .body > :first-child { margin-top: 0; }
+  details.fold > .body > :last-child { margin-bottom: 0; }
+
+  /* tint colour: ink at N% (lighter overlay in dark mode) */
+  body { --tint-base: var(--ink); }
+  body.theme-dark.dark-darker { --tint-base: #000; }
+  body.theme-dark.dark-darker { --tint-boost: 2.5; }
+  body { --tint-boost: 1; }
+
+  /* ---- A: left hairline only ---- */
+  .vA details.fold { border-left: 1px solid var(--muted); padding-left: 1rem; }
+  .vA details.fold details.fold { margin-left: 0; }
+
+  /* ---- B: hairline + 5% tint ---- */
+  .vB details.fold {
+    border-left: 1px solid var(--muted); padding: .55rem 1rem .55rem 1rem;
+    background: color-mix(in srgb, var(--tint-base) calc(5% * var(--tint-boost)), transparent);
+  }
+  .vB details.fold details.fold { margin: .9rem 0 .2rem; }
+
+  /* ---- C: 10% tint, no rule ---- */
+  .vC details.fold {
+    padding: .55rem 1rem;
+    background: color-mix(in srgb, var(--tint-base) calc(10% * var(--tint-boost)), transparent);
+  }
+  .vC details.fold details.fold { margin: .9rem 0 .2rem; }
+
+  /* ---- D: hairline hangs in the left margin, 5% tint, nested folds
+         step in by one rule-width so the levels read as a staircase ---- */
+  .vD details.fold {
+    position: relative; padding: .55rem 1rem;
+    background: color-mix(in srgb, var(--tint-base) calc(5% * var(--tint-boost)), transparent);
+  }
+  .vD details.fold::before {
+    content: ""; position: absolute; left: -1rem; top: 0; bottom: 0;
+    border-left: 1px solid var(--muted);
+  }
+  .vD details.fold details.fold { margin: .9rem 0 .2rem; }
+  .vD details.fold details.fold::before { left: -.5rem; }
+
+  .sidenote { margin: 0 0 1rem; }
+  @media (max-width: 40rem) { .vD details.fold::before { left: -.5rem; } }
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="grp">Mode:
+    <button id="m-light" class="on">Light</button>
+    <button id="m-dark">Dark</button>
+  </span>
+  <span class="grp" id="dark-dir" style="opacity:.4">Dark tint:
+    <button id="t-lighter" class="on">lighter</button>
+    <button id="t-darker">darker</button>
+  </span>
+  <span class="grp">
+    <button id="expand">Open all</button>
+    <button id="collapse">Close all</button>
+  </span>
+</div>
+
+<main>
+<h1>Fold prototype</h1>
+<p class="note">Same text, four treatments. Sections start closed; click a heading to open it. Folds nest three deep.</p>
+
+<template id="sample">
+  <p>A paragraph of ordinary body text sits above the first fold, so you can judge how the fold relates to the text around it. Charts, maps and diagrams are arguments, not neutral containers.</p>
+  <details class="fold"><summary>The short version of the argument</summary><div class="body">
+    <p>Most data graphics hide their decisions: what was counted, what was left out, and who drew the boundary. This is a longer paragraph, to show how a block of text looks inside the first level of fold.</p>
+    <p>A second paragraph, because folded sections usually hold more than one.</p>
+    <details class="fold"><summary>Where the categories came from</summary><div class="body">
+      <p>Second level. Categories are rarely given; they are made, and usually by someone with a reason. The nesting here is meant to show whether two levels stay distinguishable.</p>
+      <details class="fold"><summary>A footnote-sized aside</summary><div class="body">
+        <p>Third level. Short, specific, the kind of thing a reader may want to skip. If this level is hard to tell from the one above, the treatment fails.</p>
+      </div></details>
+    </div></details>
+  </div></details>
+  <p>Body text continues after the fold, so you can see the closed state in the flow of a page.</p>
+  <details class="fold"><summary>A second, separate fold</summary><div class="body">
+    <p>Siblings should read as a list of the same kind of thing, not as one big block.</p>
+  </div></details>
+  <p>And the page carries on.</p>
+</template>
+
+<h2 class="variant">A — hairline only</h2>
+<p class="note">1px rule in the left margin; no background.</p>
+<section class="vA" data-sample></section>
+
+<h2 class="variant">B — hairline + 5% tint</h2>
+<p class="note">Rule plus a light tint. Nested folds stack their tints, so deeper levels get a little darker.</p>
+<section class="vB" data-sample></section>
+
+<h2 class="variant">C — 10% tint, no rule</h2>
+<p class="note">Tint alone, at the stronger value.</p>
+<section class="vC" data-sample></section>
+
+<h2 class="variant">D — hanging rule + 5% tint</h2>
+<p class="note">The rule sits outside the text column, in the margin; nested folds step in half a rule-width per level.</p>
+<section class="vD" data-sample></section>
+</main>
+
+<script>
+  var tpl = document.getElementById("sample");
+  document.querySelectorAll("[data-sample]").forEach(function (s) {
+    s.appendChild(tpl.content.cloneNode(true));
+  });
+  var body = document.body;
+  function setMode(dark) {
+    body.classList.toggle("theme-dark", dark);
+    document.getElementById("m-light").classList.toggle("on", !dark);
+    document.getElementById("m-dark").classList.toggle("on", dark);
+    document.getElementById("dark-dir").style.opacity = dark ? 1 : .4;
+  }
+  function setDir(darker) {
+    body.classList.toggle("dark-darker", darker);
+    document.getElementById("t-darker").classList.toggle("on", darker);
+    document.getElementById("t-lighter").classList.toggle("on", !darker);
+  }
+  document.getElementById("m-light").onclick = function () { setMode(false); };
+  document.getElementById("m-dark").onclick = function () { setMode(true); };
+  document.getElementById("t-lighter").onclick = function () { setDir(false); };
+  document.getElementById("t-darker").onclick = function () { setDir(true); };
+  document.getElementById("expand").onclick = function () {
+    document.querySelectorAll("details.fold").forEach(function (d) { d.open = true; });
+  };
+  document.getElementById("collapse").onclick = function () {
+    document.querySelectorAll("details.fold").forEach(function (d) { d.open = false; });
+  };
+  var q = location.hash;
+  if (q.indexOf("dark") > -1) setMode(true);
+  if (q.indexOf("darker") > -1) setDir(true);
+  if (q.indexOf("open") > -1) document.getElementById("expand").click();
+</script>
+</body>
+</html>
