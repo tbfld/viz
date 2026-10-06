@@ -132,3 +132,77 @@ blockquote {
     padding: 1.25rem 1.25rem 1rem !important;
   }
 }
+
+// --- TB ADDED 2026-10-06: foldable body-text sections ("fold" callouts).
+// Write `> [!fold]- Title` (closed) or `> [!fold]+ Title` (open) in a note;
+// nest by quoting again (`> > [!fold]- ...`). Prototype: design-mockups/
+// fold-prototype.html, treatment "C": a 10% tint, no border or rule.
+// Nested folds stack their tints, so each level reads a little stronger.
+// (An ordinary [!note], [!warning], etc. keeps the boxed callout look.)
+.callout[data-callout="fold"] {
+  --fold-tint: color-mix(in srgb, var(--dark) 10%, transparent);
+
+  border: none;
+  border-radius: 0;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  background-color: var(--fold-tint);
+  // Quartz's callout script animates open/close with a fixed inline
+  // max-height, which gets the height wrong when folds nest (an inner fold
+  // opens and the outer one stays clipped). Folds don't use it: the inline
+  // value is overridden, and a collapsed fold just hides its content.
+  max-height: none !important;
+  overflow: visible;
+
+  &.is-collapsed > .callout-content {
+    display: none;
+  }
+
+  & > .callout-title {
+    color: var(--dark);
+    padding: 0.55rem 0;
+    gap: 0.45rem;
+    align-items: baseline;
+    cursor: pointer;
+    --icon-size: 14px;
+
+    & > .callout-icon {
+      display: none;
+    }
+
+    & > .callout-title-inner > p {
+      color: inherit;
+      font-weight: 600;
+    }
+
+    // chevron moves from the right edge to the left of the title
+    & > .fold-callout-icon {
+      order: -1;
+      background-color: currentColor;
+      opacity: 0.7;
+      padding: 0;
+      align-self: center;
+    }
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  & > .callout-content {
+    padding-bottom: 0.55rem;
+    margin-top: -0.25rem;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // folds inside folds
+  & .callout[data-callout="fold"] {
+    margin: 0.9rem 0 0.2rem;
+  }
+}
