@@ -1,5 +1,5 @@
 ---
-title: <% tp.file.title %>
+title: Untitled
 publish: false
 draft: false
 tags: []
@@ -12,4 +12,4 @@ aliases: []
 disabled rules: [yaml-title]
 ---
 
-<%* tp.file.cursor() %>
+
