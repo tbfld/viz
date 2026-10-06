@@ -3,6 +3,7 @@ import path from "path"
 import { Repository } from "@napi-rs/simple-git"
 import { QuartzTransformerPlugin } from "../types"
 import chalk from "chalk"
+import { parseLooseDate } from "../../util/dates"
 
 export interface Options {
   priority: ("frontmatter" | "git" | "filesystem")[]
@@ -13,7 +14,7 @@ const defaultOptions: Options = {
 }
 
 function coerceDate(fp: string, d: any): Date {
-  const dt = new Date(d)
+  const dt = parseLooseDate(d)
   const invalidDate = isNaN(dt.getTime()) || dt.getTime() === 0
   if (invalidDate && d !== undefined) {
     console.log(

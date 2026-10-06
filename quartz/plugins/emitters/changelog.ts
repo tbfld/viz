@@ -5,6 +5,7 @@ import { FilePath, FullSlug, joinSegments } from "../../util/path"
 import { write } from "./helpers"
 import { getDate } from "../../components/Date"
 import DepGraph from "../../depgraph"
+import { parseLooseDate } from "../../util/dates"
 import { THUMBNAIL_SIZES, thumbnailDestName, isThumbnailableImage } from "../../util/thumbnails"
 
 interface ChangelogEntry {
@@ -109,7 +110,7 @@ export const Changelog: QuartzEmitterPlugin = () => {
 
         // Get dates
         const createdDate = frontmatter?.created
-          ? new Date(frontmatter.created as string)
+          ? parseLooseDate(frontmatter.created)
           : null
         const updatedDate = getDate(ctx.cfg.configuration, file.data) ?? new Date()
 
