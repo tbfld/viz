@@ -35,4 +35,4 @@ The `-` after `[!fold]` starts it closed; `+` starts it open.
 **Notes.**
 - Put a blank quoted line (`>`) between paragraphs inside a fold.
 - Folds open and close instantly (no slide animation), because Quartz's animation breaks when folds are nested.
-- Not yet done: opening a fold automatically when a link or search result points to text inside it.
+- **Links and search open folds automatically.** A link or heading anchor that points inside a closed fold opens every fold around it and scrolls to the target. In the search box, the preview opens folds that hold a match, and clicking a result opens the fold around the match on the destination page. A page you reach by search where the match isn't inside a fold is left alone.

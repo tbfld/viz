@@ -314,6 +314,13 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     }`
     itemTile.addEventListener("click", (event) => {
       if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return
+      // Let the destination page open a closed fold that holds the match
+      // (see callout.inline.ts).
+      try {
+        sessionStorage.setItem("viz-search-term", currentSearchTerm)
+      } catch {
+        // storage unavailable: the page just opens normally
+      }
       hideSearch()
     })
 
@@ -392,6 +399,16 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     previewInner.classList.add("preview-inner")
     previewInner.append(...innerDiv)
     preview.replaceChildren(previewInner)
+
+    // Matches inside a closed fold would be hidden in the preview: open the
+    // folds around every highlighted match first.
+    preview.querySelectorAll(".highlight").forEach((hl) => {
+      for (let node = hl.parentElement; node; node = node.parentElement) {
+        if (node.matches?.('.callout[data-callout="fold"].is-collapsed')) {
+          node.classList.remove("is-collapsed")
+        }
+      }
+    })
 
     // scroll to longest
     const highlights = [...preview.querySelectorAll(".highlight")].sort(
