@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 https://themathematics.app/
 
-![https://themathematics.app/](posts/ig-img/18104805809206968/img-1.jpg)
+![[18104805809206968-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdpnRQrIBjb/).*

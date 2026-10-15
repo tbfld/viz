@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Said to be “Volume of debris in the postwar Warszawa” (🎩 MC in CZ)
 
-![Said to be “Volume of debris in the postwar Warszawa” (🎩 MC in CZ)](posts/ig-img/18176440783446041/img-1.jpg)
+![[18176440783446041-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DeKxU-zoP6W/).*

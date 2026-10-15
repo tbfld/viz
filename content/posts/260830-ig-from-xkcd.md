@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 From XKCD
 
-![From XKCD](posts/ig-img/18369072001211900/img-1.jpg)
+![[18369072001211900-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DcpMK8Vxpg5/).*

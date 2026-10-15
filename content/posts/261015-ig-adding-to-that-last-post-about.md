@@ -33,6 +33,6 @@ Notes
 
 [6] See, for ex, Annie Jacobsen’s solid book *Operation Paperclip: The Secret Intelligence Program That Brought Nazi Scientists to America* (NYC: Back Bay Books, 2014; https://isbn.nu/978-1478981916).
 
-![Adding to that last post about the Faquhar globe[1]: transparent 'plas…](posts/ig-img/17883830205625728/img-1.jpg)
+![[17883830205625728-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DehG-qSoPOm/).*

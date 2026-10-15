@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 https://www.reddit.com/r/interestingasfuck/s/gf7mHjPbMO
 
-![https://www.reddit.com/r/interestingasfuck/s/gf7mHjPbMO](posts/ig-img/18408635935080415/img-1.jpg)
+![[18408635935080415-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdVnEoJR3v9/).*

@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 https://truckslop.joshu.dev/
 
-![https://truckslop.joshu.dev/](posts/ig-img/18190788682395267/img-1.jpg)
+![[18190788682395267-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdpnGvMIDQ4/).*

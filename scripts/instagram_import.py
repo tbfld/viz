@@ -146,10 +146,9 @@ def build_post(item: dict) -> tuple[str, str]:
         # and pull a thumbnail if IG gave us one so the post isn't bare.
         thumb = item.get("thumbnail_url")
         if thumb:
-            img_path = post_img_dir / "thumb.jpg"
+            img_path = post_img_dir / f"{media_id}-thumb.jpg"
             download(thumb, img_path)
-            rel = f"posts/ig-img/{media_id}/thumb.jpg"
-            body_media_lines.append(f"![{yaml_escape(title)}]({rel})")
+            body_media_lines.append(f"![[{media_id}-thumb.jpg]]")
         body_media_lines.append(f"\n🎥 Video — [view on Instagram]({permalink})")
     else:
         # IMAGE or CAROUSEL_ALBUM
@@ -160,10 +159,12 @@ def build_post(item: dict) -> tuple[str, str]:
             media_url = child.get("media_url")
             if not media_url:
                 continue
-            img_path = post_img_dir / f"img-{i}.jpg"
+            img_path = post_img_dir / f"{media_id}-{i}.jpg"
             download(media_url, img_path)
-            rel = f"posts/ig-img/{media_id}/img-{i}.jpg"
-            body_media_lines.append(f"![{yaml_escape(title)}]({rel})")
+            # Wikilink to a globally unique filename: Obsidian (whose vault
+            # root is the repo root, not content/) and Quartz both resolve
+            # it by name, so the image shows inline in both.
+            body_media_lines.append(f"![[{media_id}-{i}.jpg]]")
 
     body = "\n\n".join(body_media_lines)
     if caption:
@@ -195,21 +196,31 @@ disabled rules: [yaml-title]
 
 def fix_legacy_image_paths() -> int:
     """
-    One-time self-heal: early posts had their image markdown written as
-    `ig-img/<id>/img-N.jpg` (relative to the post file), but Quartz's
-    `CrawlLinks` resolver treats un-dotted relative paths as already being
-    full vault-root slugs, not paths relative to the source file's folder.
-    That silently resolved to `/ig-img/...` instead of `/posts/ig-img/...`,
-    so the images 404'd even though everything else (text, dates) worked.
-    Fix: prefix with `posts/` so it resolves as the correct vault-root slug.
-    Safe to run every time - a no-op once all posts are fixed.
+    Idempotent self-heal/migration. Older posts linked images as
+    `![alt](posts/ig-img/<id>/img-N.jpg)`, which Obsidian can't resolve
+    (its vault root is the repo root, so the real path is content/posts/...).
+    Rename each `img-N.jpg`/`thumb.jpg` to a globally unique
+    `<id>-N.jpg`/`<id>-thumb.jpg` and rewrite the link as an Obsidian
+    wikilink `![[<id>-N.jpg]]`, which Obsidian and Quartz both resolve
+    by filename. A no-op once all posts are converted.
     """
+    import re
     fixed = 0
     if not POSTS_DIR.exists():
         return fixed
+    pat = re.compile(r"!\[.*?\]\((?:posts/)?ig-img/(\d+)/(img-(\d+)|thumb)\.jpg\)")
     for md_path in POSTS_DIR.glob("*.md"):
         text = md_path.read_text()
-        new_text = text.replace("](ig-img/", "](posts/ig-img/")
+
+        def repl(m):
+            mid, kind, n = m.group(1), m.group(2), m.group(3)
+            new = f"{mid}-{n}.jpg" if n else f"{mid}-thumb.jpg"
+            old_file = IMG_DIR / mid / f"{kind}.jpg"
+            if old_file.exists():
+                old_file.rename(IMG_DIR / mid / new)
+            return f"![[{new}]]"
+
+        new_text = pat.sub(repl, text)
         if new_text != text:
             md_path.write_text(new_text)
             fixed += 1

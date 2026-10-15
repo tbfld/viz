@@ -18,6 +18,6 @@ A kitschy illustration in this planetary/face iconographic tradition by the fabu
 
 🫡 Source: https://collections.armynavyclub.org/objects/colonel-john-glenn/
 
-![A kitschy illustration in this planetary/face iconographic tradition b…](posts/ig-img/18125639824681494/img-1.jpg)
+![[18125639824681494-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DehTbzdoJG1/).*

@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Sharing for the viz, not for the crit
 
-![Sharing for the viz, not for the crit](posts/ig-img/18025561397871983/img-1.jpg)
+![[18025561397871983-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/Ded_8HnR8q9/).*

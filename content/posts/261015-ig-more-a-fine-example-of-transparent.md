@@ -24,6 +24,6 @@ But where the rocet-sci guys gathered around the Farquhar / Torica transparent g
 
 From: https://www.nasa.gov/image-article/john-glenn-february-1962/
 
-![More: a fine example of transparent spacekitsch.](posts/ig-img/17998002321033448/img-1.jpg)
+![[17998002321033448-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DehQFoxIMfi/).*

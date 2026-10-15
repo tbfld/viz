@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Widely shared as a “topology joke mug” and available on ebay
 
-![Widely shared as a “topology joke mug” and available on ebay](posts/ig-img/17880023775623689/img-1.jpg)
+![[17880023775623689-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DcbjTknIJtv/).*

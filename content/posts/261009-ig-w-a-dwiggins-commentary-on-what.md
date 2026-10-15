@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 W. A. “Dwiggins' commentary on what he saw as declining standards in book design, 1919” [from Wikipedia]
 
-![W. A. “Dwiggins' commentary on what he saw as declining standards in b…](posts/ig-img/17953286646273516/img-1.jpg)
+![[17953286646273516-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DeQSpSeIGdu/).*

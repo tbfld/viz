@@ -18,6 +18,6 @@ Promo image for a 14” (35.56cm) transparent globe manufactured by Farquhar Tra
 
 [1] https://en.wikipedia.org/wiki/Robert_W._Farquhar
 
-![Promo image for a 14” (35.56cm) transparent globe manufactured by Farq…](posts/ig-img/17913937557523426/img-1.jpg)
+![[17913937557523426-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DeesmiDoPHO/).*

@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 David Lynch, “RONNIE ROCKET: The Absurd Mystery of the Strange Forces of Existence” (rev draft 1991)
 
-![David Lynch, “RONNIE ROCKET: The Absurd Mystery of the Strange Forces …](posts/ig-img/18483876997097772/img-1.jpg)
+![[18483876997097772-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DcbVDckkR8g/).*

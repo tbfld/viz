@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Google ngram for the phrase “massive flows of data”, 1990–2009. Thank god dataviz bobbleheads stopped saying it — it always sounded like they were stroking their massive selves off.
 
-![Google ngram for the phrase “massive flows of data”, 1990–2009. Thank …](posts/ig-img/17993972166048331/img-1.jpg)
+![[17993972166048331-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DeXk2ryoADX/).*

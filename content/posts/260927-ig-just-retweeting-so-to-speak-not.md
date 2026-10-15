@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Just retweeting, so to speak, not an endorsement. The idea that eucalyptuses, weeping willows, or lombardi poplars represent an invasive threat is ridiculous and has a creepy af political undercurrent.
 
-![Just retweeting, so to speak, not an endorsement. The idea that eucaly…](posts/ig-img/18226460284335236/img-1.jpg)
+![[18226460284335236-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdxUt5NoAwn/).*

@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 From https://thenextrecession.wordpress.com/2026/09/26/ai-the-biggest-economic-bet-in-us-history/
 
-![From https://thenextrecession.wordpress.com/2026/09/26/ai-the-biggest-…](posts/ig-img/18430676437199691/img-1.jpg)
+![[18430676437199691-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdxIU-zR9CY/).*

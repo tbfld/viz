@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 substantially
 
-![substantially](posts/ig-img/18119401397510732/img-1.jpg)
+![[18119401397510732-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DcbpomFICeX/).*
