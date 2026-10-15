@@ -2,12 +2,17 @@
 title: "A kitschy illustration in this planetary/face iconographic tradition b…"
 publish: true
 draft: false
-tags: []
+tags: 
+  - space
+  - face
+  - globe
+  - cartography
+  - topography
 description:
 extract: "A kitschy illustration in this planetary/face iconographic tradition by the fabulous Boris Artzybasheff for the 1962-03-02 issue of Time magazine. Digitization"
-image_credit:
+image_credit: Time-Life
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-10-15-Thu-12:44pm
+updated: 2026-10-15-Thu-2:42pm
 aliases: []
 ig_media_id: "18125639824681494"
 ig_permalink: "https://www.instagram.com/p/DehTbzdoJG1/"
