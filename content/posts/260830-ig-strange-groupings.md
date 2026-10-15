@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Strange groupings
 
-![Strange groupings](posts/ig-img/18109886882609759/img-1.jpg)
+![[18109886882609759-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DcpMXjSR_Qf/).*

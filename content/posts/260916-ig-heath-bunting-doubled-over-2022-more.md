@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Heath Bunting, “Doubled Over” (2022). More info: https://www.facebook.com/photo/?fbid=122180568014722027&set=a.122153301230722027
 
-![Heath Bunting, “Doubled Over” (2022). More info: https://www.facebook.…](posts/ig-img/18131688673580973/img-1.jpg)
+![[18131688673580973-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdWiIPPIKSb/).*

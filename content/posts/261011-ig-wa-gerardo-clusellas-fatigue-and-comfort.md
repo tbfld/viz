@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 🎩 WA. Gerardo Clusellas, “Fatigue and Comfort in Human Positions” (1953–1957)
 
-![🎩 WA. Gerardo Clusellas, “Fatigue and Comfort in Human Positions” (195…](posts/ig-img/18106739105262790/img-1.jpg)
+![[18106739105262790-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DeXkWMZIAcq/).*

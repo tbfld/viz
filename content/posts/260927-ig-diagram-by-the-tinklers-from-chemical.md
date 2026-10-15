@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Diagram by The Tinklers, from Chemical Imbalance, 🎩 @_futuredays — for more, see https://rollo-press.com/#the-tinklers-charts-and-stories
 
-![Diagram by The Tinklers, from Chemical Imbalance, 🎩 @_futuredays — for…](posts/ig-img/17874087591582576/img-1.jpg)
+![[17874087591582576-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/Ddy85K4oC4I/).*

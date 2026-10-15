@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 No, they’re nothing more than a metaphor. 🙄 https://www.quantamagazine.org/how-does-life-unfold-a-landscape-metaphor-comes-into-its-own-20261009/
 
-![No, they’re nothing more than a metaphor. 🙄 https://www.quantamagazine…](posts/ig-img/18087529235280710/img-1.jpg)
+![[18087529235280710-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DeSnDk-oBrY/).*

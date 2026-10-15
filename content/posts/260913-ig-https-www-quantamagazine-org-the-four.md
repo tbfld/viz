@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 https://www.quantamagazine.org/the-four-color-theorem-gets-a-rare-new-proof-20260910/
 
-![https://www.quantamagazine.org/the-four-color-theorem-gets-a-rare-new-…](posts/ig-img/18216378793341471/img-1.jpg)
+![[18216378793341471-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdOYD3kRxuk/).*

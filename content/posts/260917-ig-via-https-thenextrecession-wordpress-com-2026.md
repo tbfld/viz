@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 Via https://thenextrecession.wordpress.com/2026/09/17/iippe-2026-part-two-ai-imperialism-money-and-fascism/
 
-![Via https://thenextrecession.wordpress.com/2026/09/17/iippe-2026-part-…](posts/ig-img/18112116401115014/img-1.jpg)
+![[18112116401115014-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdZDL2YoKCM/).*

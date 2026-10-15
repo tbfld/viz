@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 https://we-make-money-not-art.com/conspiratorial-design-information-design-for-the-bigger-picture/
 
-![https://we-make-money-not-art.com/conspiratorial-design-information-de…](posts/ig-img/18070764809757342/img-1.jpg)
+![[18070764809757342-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdaWQISoOqQ/).*

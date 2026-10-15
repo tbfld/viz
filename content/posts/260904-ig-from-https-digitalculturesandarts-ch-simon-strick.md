@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 From https://digitalculturesandarts.ch/simon-strick-faschisierung-fluchtlinie-des-digitalen-buchvorstellung-diskussion/ ( 🎩 @bildoperationen )
 
-![From https://digitalculturesandarts.ch/simon-strick-faschisierung-fluc…](posts/ig-img/18094251575387221/img-1.jpg)
+![[18094251575387221-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/Dc30qJXICHO/).*

@@ -16,6 +16,6 @@ disabled rules: [yaml-title]
 
 very, uh, ‘meta’
 
-![very, uh, ‘meta’](posts/ig-img/18099691313037169/img-1.jpg)
+![[18099691313037169-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DdDI5yMID91/).*
