@@ -7,12 +7,17 @@ description:
 extract: "More: a fine example of transparent spacekitsch."
 image_credit:
 created: 2026-10-15-Thu-12:25pm
-updated: 2026-10-15-Thu-12:29pm
+updated: 2026-10-15-Thu-12:44pm
 aliases: []
 ig_media_id: "17998002321033448"
 ig_permalink: "https://www.instagram.com/p/DehQFoxIMfi/"
 disabled rules: [yaml-title]
 ---
+*See also:* [Promo image for a 14" (35.56cm) transparent globe manufactured by Farquhar Transparent Globes](https://viz.counter.ink/posts/261014-ig-promo-image-for-a-14-35)
+
+*See also:* [Adding to that last post about the Faquhar globe](https://viz.counter.ink/posts/261015-ig-adding-to-that-last-post-about)
+
+*See also:* [A kitschy illustration in this planetary/face iconographic tradition by the fabulous Boris Artzybasheff](https://viz.counter.ink/posts/261015-ig-a-kitschy-illustration-in-this-planetary)
 
 More: a fine example of transparent spacekitsch.
 

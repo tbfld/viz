@@ -6,8 +6,8 @@ tags: []
 description:
 extract: "Technoculture seems to have a love affair with this kind of ‘proxemics’ theory, first articulated (AFAIK) by the cultural anthropologist Edward T. Hall in the e"
 image_credit:
-created: 2026-10-14 15:05
-updated: 2026-10-14 15:05
+created: 2026-10-15-Thu-12:36pm
+updated: 2026-10-15-Thu-12:43pm
 aliases: []
 ig_media_id: "17993671782029234"
 ig_permalink: "https://www.instagram.com/p/DeeqjWcIAxq/"
