@@ -11,7 +11,7 @@
 // potentially client-side JS later), so no Node-only imports here.
 
 /** Thumbnail sizes generated for every image, in pixels (square, cropped). */
-export const THUMBNAIL_SIZES = [160, 300] as const
+export const THUMBNAIL_SIZES = [160, 300, 640] as const
 export type ThumbnailSize = (typeof THUMBNAIL_SIZES)[number]
 
 /**

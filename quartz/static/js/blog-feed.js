@@ -32,11 +32,21 @@ async function loadPosts() {
 
       // Thumbnail, when the post has one. `thumbnails` is keyed by pixel
       // size (see util/thumbnails.ts) — the blog index uses the 160px one.
-      const thumbUrl = entry.thumbnails && entry.thumbnails['160'];
+      const thumbs = entry.thumbnails || {};
+      const thumbUrl = thumbs['160'];
       if (thumbUrl) {
         const thumb = document.createElement('img');
         thumb.className = 'post-thumb';
         thumb.src = basePath + '/' + thumbUrl;
+        // Let the browser pick a sharp size for the screen: 160px box on
+        // wide layouts, full column width on phones (blog-feed.css).
+        const srcset = ['160', '300', '640']
+          .filter((k) => thumbs[k])
+          .map((k) => basePath + '/' + thumbs[k] + ' ' + k + 'w');
+        if (srcset.length > 1) {
+          thumb.srcset = srcset.join(', ');
+          thumb.sizes = '(max-width: 480px) calc(100vw - 2rem), 160px';
+        }
         thumb.alt = '';
         thumb.loading = 'lazy';
         thumb.width = 160;
