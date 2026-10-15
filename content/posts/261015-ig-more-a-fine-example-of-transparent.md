@@ -6,8 +6,8 @@ tags: []
 description:
 extract: "More: a fine example of transparent spacekitsch."
 image_credit:
-created: 2026-10-15 15:12
-updated: 2026-10-15 15:12
+created: 2026-10-15-Thu-12:25pm
+updated: 2026-10-15-Thu-12:29pm
 aliases: []
 ig_media_id: "17998002321033448"
 ig_permalink: "https://www.instagram.com/p/DehQFoxIMfi/"

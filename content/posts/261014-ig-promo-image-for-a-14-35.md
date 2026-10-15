@@ -6,8 +6,8 @@ tags: []
 description:
 extract: "Promo image for a 14” (35.56cm) transparent globe manufactured by Farquhar Transparent Globes, a Philadelphia-based concern that made (you guess it) transparent"
 image_credit:
-created: 2026-10-14 15:23
-updated: 2026-10-14 15:23
+created: 2026-10-15-Thu-12:25pm
+updated: 2026-10-15-Thu-12:29pm
 aliases: []
 ig_media_id: "17913937557523426"
 ig_permalink: "https://www.instagram.com/p/DeesmiDoPHO/"
