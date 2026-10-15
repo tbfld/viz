@@ -5,7 +5,12 @@ async function loadPosts() {
   try {
     const response = await fetch(feedPath);
     const allEntries = await response.json();
-    const entries = allEntries.filter((e) => e.slug && e.slug.startsWith('posts/'));
+    // The blog is ordered by when a post was written (created), not when it
+    // was last edited, so touching an old post doesn't float it to the top.
+    const when = (e) => new Date(e.created || e.updated || 0).getTime() || 0;
+    const entries = allEntries
+      .filter((e) => e.slug && e.slug.startsWith('posts/'))
+      .sort((a, b) => when(b) - when(a));
 
     const container = document.getElementById('post-entries');
     container.innerHTML = '';
@@ -16,7 +21,8 @@ async function loadPosts() {
     }
 
     entries.forEach((entry) => {
-      const date = entry.updated ? new Date(entry.updated) : null;
+      const shown = entry.created || entry.updated;
+      const date = shown ? new Date(shown) : null;
       const dateStr = date
         ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
         : '';
