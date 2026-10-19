@@ -6,8 +6,8 @@ tags: []
 description:
 extract: "https://themathematics.app/"
 image_credit:
-created: 2026-09-24 00:37
-updated: 2026-09-24 00:37
+created: 2026-10-15-Thu-12:36pm
+updated: 2026-10-19-Mon-9:11am
 aliases: []
 ig_media_id: "18104805809206968"
 ig_permalink: "https://www.instagram.com/p/DdpnRQrIBjb/"
