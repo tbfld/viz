@@ -6,8 +6,8 @@ tags: []
 description:
 extract: "From XKCD"
 image_credit:
-created: 2026-08-30 00:09
-updated: 2026-08-30 00:09
+created: 2026-10-15-Thu-12:36pm
+updated: 2026-10-19-Mon-11:2am
 aliases: []
 ig_media_id: "18369072001211900"
 ig_permalink: "https://www.instagram.com/p/DcpMK8Vxpg5/"

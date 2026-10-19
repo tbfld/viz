@@ -10,8 +10,8 @@ tags:
 description: exactly what it says on the label
 extract: none
 image_credit: unknown
-created: 2026-09-21 14:22
-updated: 2026-09-21 14:22
+created: 2026-10-15-Thu-12:36pm
+updated: 2026-10-19-Mon-10:53am
 aliases: []
 ig_media_id: "18108178733589503"
 ig_permalink: https://www.instagram.com/p/DdjXTkkIPh5/

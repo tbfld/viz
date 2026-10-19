@@ -6,8 +6,8 @@ tags: []
 description:
 extract: "🎩 WA. Gerardo Clusellas, “Fatigue and Comfort in Human Positions” (1953–1957)"
 image_credit:
-created: 2026-10-11 20:56
-updated: 2026-10-11 20:56
+created: 2026-10-15-Thu-12:36pm
+updated: 2026-10-19-Mon-10:53am
 aliases: []
 ig_media_id: "18106739105262790"
 ig_permalink: "https://www.instagram.com/p/DeXkWMZIAcq/"

@@ -6,8 +6,8 @@ tags: []
 description:
 extract: "very, uh, ‘meta’"
 image_credit:
-created: 2026-09-09 02:00
-updated: 2026-09-09 02:00
+created: 2026-10-15-Thu-12:36pm
+updated: 2026-10-19-Mon-10:53am
 aliases: []
 ig_media_id: "18099691313037169"
 ig_permalink: "https://www.instagram.com/p/DdDI5yMID91/"
