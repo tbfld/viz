@@ -18,5 +18,6 @@ disabled rules:
 ---
 
 ![[261028_isotype-modley-telefacts-compilation.jpeg]]
+
 This compilation comes from Jason Forrest’s nicely researched essay “[The Telefacts of Life: Rudolf Modley’s Isotypes in American Newspapers 1938–1945](https://nightingaledvs.com/the-telefacts-of-life-rudolf.../),” for [*Nightingale*](https://nightingaledvs.com/), the journal of the [Data Visualization Society](https://datavisualizationsociety.org/). Modley was a slightly troublesome Isotype evangelist in the US, whose work broke from Neurath’s strict Viennese style. Modley’s more cartoonish style was driven in large part by his entrepreneurial approach, an adaptation necessary in country where culture and commerce were increasingly indistinguishable.
 
