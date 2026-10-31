@@ -6,15 +6,17 @@ tags: []
 description:
 extract: "Rich Gold’s reading matrix"
 image_credit:
-created: 2026-10-29 00:15
-updated: 2026-10-29 00:15
+created: 2026-10-28-Wed-11:18pm
+updated: 2026-10-31-Sat-5:12pm
 aliases: []
 ig_media_id: "18120438209470075"
 ig_permalink: "https://www.instagram.com/p/DfDsnJexAwy/"
 disabled rules: [yaml-title]
 ---
 
-Rich Gold’s reading matrix
+# Rich Gold’s reading matrix
+
+![[18120438209470075-1.jpg]]
 
 From Gold’s posthumously published book *The Plenitude* (MITP, 2021).[^1] These distinctions underpinned his distinction between what he called “bibliographic” (book-based, horizontal, small, individual) and epigraphic cultures (inscriptions, vertical, large, collective). As far as I know, he developed those categories himself.
 
@@ -23,7 +25,5 @@ The Electronic Literature Organization’s brief obit for Gold: “Rich Gold of 
 [^1]: https://mitpress.mit.edu/9780262543798/the-plenitude/
 
 [^2]: https://eliterature.org/2003/01/rich-gold-digital-pioneer-die/
-
-![[18120438209470075-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DfDsnJexAwy/).*
