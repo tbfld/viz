@@ -24,6 +24,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for git info
+      # Fails the build (so nothing deploys) on real link/bracket mistakes:
+      # unresolved [[wikilinks]], undefined footnotes, [FB]/-style shorthand, etc.
+      # Warnings are printed but don't block. To publish anyway, put [skip-lint]
+      # in the commit message. Run locally: python3 scripts/lint-brackets.py
+      - name: Lint Markdown (brackets, wikilinks, footnotes)
+        if: ${{ !contains(github.event.head_commit.message, '[skip-lint]') }}
+        run: python3 scripts/lint-brackets.py
       - uses: actions/setup-node@v4
         with:
           node-version: 22

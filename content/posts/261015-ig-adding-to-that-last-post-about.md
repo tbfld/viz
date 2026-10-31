@@ -8,7 +8,7 @@ tags:
   - globe
   - computation
 description:
-extract: "Adding to that last post about the Faquhar globe: transparent 'plastics' had been around for decades — since Otto Röhm invented plexiglass[2] in 1933 at leas"
+extract: "Adding to that last post about the Farquhar globe: transparent 'plastics' had been around for decades — since Otto Röhm invented plexiglass in 1933 at leas"
 image_credit: unknown
 created: 2026-10-15-Thu-12:25pm
 updated: 2026-10-31-Sat-5:17pm
@@ -27,10 +27,10 @@ Adding to that last post about the Farquhar globe[^1]: transparent 'plastics' ha
  
 It's worth noting that all three — von Braun, Hölzer, and Rees — were Operation Paperclip alumni, though tbh I'm not a fan of how OP's is fast becoming a sort of MK ULTRA twin in conspiracy-fanboi culture. At a time when "alt history" and "gaming out" future scenarios are all the rage, it’s not an accident that people are forgetting how to game out the *past* — in this case by asking whether the US or USSR should’ve snapped up all the scientists, engineers, etc. Not all of them were totally stoked about fascism.[^6]
 
-Orig post: FB > At the Controls \[group] > 2024-12-24 > Michael Talbot [FB]/groups/779220482206901/search/?q=mechanics%20calculations%20for%20a%20translunar%20space
+Orig post: FB > At the Controls \[group] > 2024-12-24 > Michael Talbot https://www.facebook.com/groups/779220482206901/search/?q=mechanics%20calculations%20for%20a%20translunar%20space
 
 
-[^1]: [https://www.instagram.com//p/DeesmiDoPHO/](https://www.instagram.com/p/DeesmiDoPHO/)
+[^1]: [https://www.instagram.com/p/DeesmiDoPHO/](https://www.instagram.com/p/DeesmiDoPHO/)
  
 [^2]: Properly it should be "Plexiglas," but SRSLY GTFO with that IP-obsessed editorial BS.
  
