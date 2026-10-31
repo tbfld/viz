@@ -168,7 +168,8 @@ def build_post(item: dict) -> tuple[str, str]:
 
     body = "\n\n".join(body_media_lines)
     if caption:
-        body = f"{caption}\n\n{body}" if body else caption
+        caption_md = escape_brackets(caption)
+        body = f"{caption_md}\n\n{body}" if body else caption_md
     body += f"\n\n*Originally posted on [Instagram]({permalink}).*\n"
 
     # `disabled rules: [yaml-title]` keeps Obsidian Linter's YAML Title rule
@@ -192,6 +193,18 @@ disabled rules: [yaml-title]
 
 """
     return filename, frontmatter + body
+
+
+def escape_brackets(text: str) -> str:
+    """
+    Backslash-escape every "[" in an Instagram caption so Obsidian and Quartz
+    show it literally instead of treating "[...]" (footnote-style markers
+    like "[1]", or "[[...]]") as links. Only used on the caption text; the
+    importer's own links (e.g. "view on Instagram") are written separately.
+    An already-escaped "\\[" is left alone.
+    """
+    import re
+    return re.sub(r"(?<!\\)\[", r"\\[", text)
 
 
 def fix_legacy_image_paths() -> int:
