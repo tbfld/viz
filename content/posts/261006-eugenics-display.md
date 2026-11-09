@@ -9,9 +9,9 @@ tags:
   - interactive
 description: a blinkenlights eugenics display
 extract: “some people are born to be a burden on the rest”
-image_credit:
-created: 2026-10-06 02:09
-updated: 2026-10-06 02:09
+image_credit: American Philosophical Society
+created: 2026-10-15-Thu-12:36pm
+updated: 2026-11-09-Mon-6:1pm
 aliases: []
 ig_media_id: "18156902257509583"
 ig_permalink: https://www.instagram.com/p/DeIrWCFn-Hd/
