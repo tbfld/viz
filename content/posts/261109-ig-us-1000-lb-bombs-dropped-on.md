@@ -1,17 +1,18 @@
 ---
-title: "US 1000-lb bombs dropped of SE Asia"
+title: US 1000-lb bombs dropped on SE Asia
 publish: true
 draft: false
 tags: []
 description:
-extract: "US 1000-lb bombs dropped of SE Asia"
+extract: US 1000-lb bombs dropped of SE Asia
 image_credit:
 created: 2026-11-09 16:50
 updated: 2026-11-09 16:50
 aliases: []
 ig_media_id: "17886792441691255"
-ig_permalink: "https://www.instagram.com/p/DfhzQEERwZt/"
-disabled rules: [yaml-title]
+ig_permalink: https://www.instagram.com/p/DfhzQEERwZt/
+disabled rules:
+  - yaml-title
 ---
 
 US 1000-lb bombs dropped of SE Asia
