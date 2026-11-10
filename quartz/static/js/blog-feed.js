@@ -9,7 +9,8 @@ async function loadPosts() {
     // was last edited, so touching an old post doesn't float it to the top.
     const when = (e) => new Date(e.created || e.updated || 0).getTime() || 0;
     const entries = allEntries
-      .filter((e) => e.slug && e.slug.startsWith('posts/'))
+      // isPost comes from the Changelog emitter (older builds lack it)
+      .filter((e) => e.slug && (e.isPost !== undefined ? e.isPost : e.slug.startsWith('posts/')))
       .sort((a, b) => when(b) - when(a));
 
     const container = document.getElementById('post-entries');

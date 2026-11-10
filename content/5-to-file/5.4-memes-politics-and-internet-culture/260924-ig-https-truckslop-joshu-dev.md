@@ -1,0 +1,21 @@
+---
+title: "2026-09-24: truckslop.joshu.dev"
+publish: true
+draft: false
+tags: []
+description:
+extract: "https://truckslop.joshu.dev/"
+image_credit:
+created: 2026-10-15-Thu-12:36pm
+updated: 2026-10-19-Mon-9:11am
+aliases: []
+ig_media_id: "18190788682395267"
+ig_permalink: "https://www.instagram.com/p/DdpnGvMIDQ4/"
+disabled rules: [yaml-title]
+---
+
+https://truckslop.joshu.dev/
+
+![[18190788682395267-1.jpg]]
+
+*Originally posted on [Instagram](https://www.instagram.com/p/DdpnGvMIDQ4/).*

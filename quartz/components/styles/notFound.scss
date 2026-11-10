@@ -1,0 +1,32 @@
+.not-found {
+  .nf-lede code {
+    word-break: break-all;
+  }
+  .nf-terms {
+    color: var(--gray);
+    font-size: 0.85rem;
+  }
+  .nf-chip {
+    display: inline-block;
+    margin: 0 0.25rem 0.25rem 0;
+    padding: 0 0.45rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 999px;
+  }
+  .nf-top > a {
+    font-size: 1.1rem;
+  }
+  .nf-list {
+    padding-left: 1.2rem;
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+  .nf-meta {
+    color: var(--gray);
+    font-size: 0.8rem;
+  }
+  .nf-fallback {
+    margin-top: 1.5rem;
+  }
+}

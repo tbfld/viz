@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Pull new posts from Instagram (via the Instagram API with Instagram Login,
-graph.instagram.com) and write each one as a new blog post under content/posts/.
+graph.instagram.com) and write each one as a new note under content/5-to-file/5.9-unsorted/.
 
 Requires env vars:
   IG_ACCESS_TOKEN   - long-lived Instagram user access token
@@ -29,6 +29,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_PATH = REPO_ROOT / "scripts" / "instagram_state.json"
 POSTS_DIR = REPO_ROOT / "content" / "posts"
 IMG_DIR = POSTS_DIR / "ig-img"
+# New post notes land in the book's "to file" pen (Unsorted), whose folder
+# note gives them a book_position at build time; images stay under POSTS_DIR.
+NOTES_DIR = REPO_ROOT / "content" / "5-to-file" / "5.9-unsorted"
 
 # Safety valve: cap how many NEW posts we create in one run. Backfilling a
 # large history happens automatically over several scheduled runs instead of
@@ -269,7 +272,7 @@ def main() -> int:
                 f.write(f"fixed={fixed}\n")
         return 0
 
-    POSTS_DIR.mkdir(parents=True, exist_ok=True)
+    NOTES_DIR.mkdir(parents=True, exist_ok=True)
     created_files = []
     for item in batch:
         try:
@@ -277,7 +280,7 @@ def main() -> int:
         except Exception as e:
             print(f"Skipping {item['id']}: {e}", file=sys.stderr)
             continue
-        out_path = POSTS_DIR / filename
+        out_path = NOTES_DIR / filename
         out_path.write_text(contents)
         created_files.append(out_path)
         imported.add(item["id"])

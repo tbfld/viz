@@ -15,6 +15,8 @@ interface ChangelogEntry {
   updated: string | null
   wordCount: number
   isNew: boolean
+  // true for blog posts (shown in the blog feed); see isBlogPost below
+  isPost: boolean
   firstParagraph: string
   // URLs of the first image in the post, resized by the Thumbnails emitter
   // (see util/thumbnails.ts). null when the post has no image. Keyed by
@@ -32,6 +34,22 @@ interface ChangelogEntry {
 function safeISOString(date: Date | null): string | null {
   if (!date || isNaN(date.getTime())) return null
   return date.toISOString()
+}
+
+/** Whether a page is a blog post, as opposed to a book-structure page. Not
+ * decided by folder alone: filing a note into the book moves it between
+ * folders, and it should stay in the blog. A post is a page in posts/, in
+ * any "to-file" folder, or one imported from Instagram (ig_media_id) wherever
+ * it has been filed -- but never a folder note (<dir>/<dir>.md), which just
+ * names a book group. */
+function isBlogPost(slug: string, frontmatter: Record<string, any> | undefined): boolean {
+  const segs = slug.split("/")
+  if (segs.length > 1 && segs[segs.length - 1] === segs[segs.length - 2]) return false
+  return (
+    segs[0] === "posts" ||
+    segs.slice(0, -1).some((s) => s.includes("to-file")) ||
+    frontmatter?.ig_media_id != null
+  )
 }
 
 function countWords(text: string): number {
@@ -140,6 +158,7 @@ export const Changelog: QuartzEmitterPlugin = () => {
           updated: safeISOString(updatedDate),
           wordCount: countWords(text),
           isNew,
+          isPost: isBlogPost(slug, frontmatter),
           firstParagraph: teaser,
           thumbnails: getThumbnails(firstImageSrc),
         })

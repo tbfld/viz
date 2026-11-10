@@ -11,3 +11,6 @@ private/
 replit.nix
 __pycache__
 *.pyc
+
+# hand-made backup copies (e.g. foo.ts_BU-250212-1041)
+*_BU-*

@@ -9,7 +9,7 @@
  * see the `TZ` setting on the build step there. Net effect: hand-written and imported posts sort on
  * one real timeline.
  * Returns an Invalid Date (NaN time) for anything unparseable. */
-const LONG_FORMAT = /^(\d{4})-(\d{2})-(\d{2})-[A-Za-z]{3}-(\d{1,2}):(\d{2})\s*([ap]m)$/i
+const LONG_FORMAT = /^(\d{4})-(\d{2})-(\d{2})-[A-Za-z]{3}-(\d{1,2}):(\d{1,2})\s*([ap]m)$/i
 const AUTHOR_TZ = "America/New_York"
 
 /** Milliseconds that AUTHOR_TZ is ahead of UTC at the given instant

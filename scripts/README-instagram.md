@@ -108,6 +108,7 @@ After that, it just runs on its own. The token-refresh workflow keeps
   the post body, with "Originally posted on Instagram" + a link at the
   bottom. No dedicated caption/credit layout component yet; that's the
   broader "image handling design" work still on the list.
-- **No `book_position` is set automatically** — imported posts land in the
-  blog feed only, same as any other post. File them into the book by hand
-  if/when you want one in there, same as always.
+- **Imported notes go to `content/5-to-file/5.9-unsorted/`**, whose folder
+  note gives them a book position automatically (images stay under
+  `content/posts/ig-img/`). Drag a note to another "to file" folder to file
+  it; see `content/posts/posts.md`.

@@ -3,37 +3,35 @@ title: Posts
 publish: false
 disabled rules: [yaml-title]
 created: 2026-10-03-Sat-5:14pm
-updated: 2026-10-04-Sun-2:50pm
+updated: 2026-11-10
 ---
-By default a post only shows up here, in the reverse-chronological feed. To also place it in the book (the alternate, table-of-contents view), add two fields to its frontmatter:
+# How notes get into the book
 
-- `book: true` — includes it in the book.
-- `book_position: "<path>"` — a dot-separated position, e.g. `"2000.100.400"`.
+The blog feed lists every published note. The book (the table-of-contents view) lists notes that have a **book position**: a dot-separated path of integers, e.g. `2000.100.030`. Each segment only means "nested one level deeper, sorted numerically"; labels come from each page's own title, and nothing is hardcoded in the site.
 
-Note: the default template's `order:` field is an old, unused leftover — it is **not** the book position and the book code never reads it. Use `book_position` (and quote it, since something like `2.1.1` isn't valid YAML as a bare number).
+## Two ways to give a note a position
 
-There is no fixed meaning per segment, and nothing hardcoded anywhere (not even in the site's code) — a book_position just nests however deep you want, and every node's label is simply that page's own title. So the structure below is today's content, not a rule:
+1. **By folder (default; just drag the file).** A note with no `book_position` in a folder whose folder note (`<folder>/<folder>.md`) has `book: true` and a `book_position` gets that position plus `.010`, `.020`, … in filename (date) order. Computed at build time (`quartz/plugins/transformers/folderBookPosition.ts`); nothing is written into the note. Only the immediate folder counts.
+2. **By hand (pin an exact spot).** Put `book: true` and `book_position: "<path>"` (quoted) in the note's frontmatter. This always wins over the folder rule. `book: false` opts a note out.
+
+## Where things are
 
 | Position | Page |
 | --- | --- |
 | `0` | front matter |
-| `1000` | Part I |
-| `1000.100` | anecdata |
-| `1000.200` | isotype |
-| `2000` | Part II |
-| `2000.100` | spaces |
-| `2000.200` | fields |
-| `2000.300` | bodies |
-| `3000` | Part III |
-| `3000.100` | worlds |
-| `3000.200` | interiors |
-| `3000.300` | ends |
+| `1000` / `2000` / `3000` | Part I / II / III (chapters at `.100`, `.200`, …) |
+| `1000.900` / `2000.900` / `3000.900` | "To file" folder for each Part (`2-main/2.0-to-file-I`, `-II`, `-III`) |
 | `4000` | back matter |
+| `5000` | `5-to-file/` holding pen: `.100` maps, `.200` charts, `.300` bodies/work, `.400` memes/politics, `.500` art/ephemera, `.900` unsorted |
 
-(Check the section/Part notes themselves under `2 main/` for the current numbers if this table ever goes stale — it's just a snapshot.)
+(A snapshot; each page's own `book_position` is authoritative.) Leave gaps between siblings (100 within a section, 1000 between top-level groups) so something can be inserted without renumbering.
 
-A post about, say, spaces would get `book_position: "2000.100.100"` — under spaces, first in line. Leave gaps between siblings at every level (100 within a section, 1000 between the handful of top-level groups) so something can always be inserted later without renumbering anything else. "Part I/II/III" are placeholder names on ordinary pages, not a special mechanism — rename them, delete them, or add a Part IV at `1500` any time, purely by editing frontmatter.
+## Filing and housekeeping
 
-Because it's a path, a whole cluster can be regrouped at once by changing a shared prefix (every entry starting `"2000.100."` → `"3000.100."` moves that whole group from spaces to worlds), and a prefix or range is also what a future "generate a PDF from this slice of the book" feature would select on.
-
-The post stays exactly where it is on disk — nothing needs to move into the `2 main/` folders. `book` and `book_position` are what place it in the book's table of contents.
+- **File a note:** drag it to another folder, e.g. from `5-to-file/5.2-…` to `2-main/2.0-to-file-II`. Nothing else to edit.
+- **New Instagram imports** land in `5-to-file/5.9-unsorted` automatically.
+- **New pen/group:** make a folder with a note named after it, containing `book: true` and `book_position`. If Folder Notes auto-creates an empty duplicate, keep the one with the position.
+- **Regroup a cluster:** change the folder note's position (or a shared prefix on pinned notes).
+- **Old URLs keep working:** a note in a `to-file` folder, or imported from Instagram, also answers at `/posts/<name>` (an automatic redirect, so filing never 404s links made when it lived in `posts/`). A note filed somewhere else loses that, as does any other path it used to have. Any other dead URL lands on a 404 page that searches the site for the URL's words (`quartz/util/notFoundSearch.ts`).
+- **Gotchas:** in `quartz build --serve`, restart after moving files so siblings renumber. The `order:` field in the template is an unused leftover, not the position.
+- The TOC folds any group with more than 8 children (the current page's branch stays open).

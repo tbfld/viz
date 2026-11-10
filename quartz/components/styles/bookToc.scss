@@ -61,4 +61,12 @@
       color: var(--secondary);
     }
   }
+
+  // folded groups (see FOLD_THRESHOLD in BookToc.tsx)
+  details > summary {
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--gray);
+    padding: 0.1rem 0;
+  }
 }

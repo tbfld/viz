@@ -37,6 +37,17 @@ function getOrCreateChild(node: BookNode, segment: number, path: number[]): Book
   return child
 }
 
+// Groups with more than this many direct children (e.g. a holding-pen
+// with dozens of posts) render folded, so a big pen doesn't swamp the
+// TOC. The branch containing the current page is always open.
+const FOLD_THRESHOLD = 8
+
+function containsActive(node: BookNode, fileData: QuartzPluginData): boolean {
+  if (node.page?.slug === fileData.slug) return true
+  for (const c of node.children.values()) if (containsActive(c, fileData)) return true
+  return false
+}
+
 function renderNode(node: BookNode, fileData: QuartzPluginData) {
   const sortedChildren = [...node.children.values()].sort((a, b) => a.segment - b.segment)
   if (sortedChildren.length === 0) return null
@@ -60,7 +71,14 @@ function renderNode(node: BookNode, fileData: QuartzPluginData) {
             ) : (
               <span class="book-toc-heading">{label}</span>
             )}
-            {renderNode(child, fileData)}
+            {child.children.size > FOLD_THRESHOLD ? (
+              <details open={containsActive(child, fileData)}>
+                <summary>{child.children.size} entries</summary>
+                {renderNode(child, fileData)}
+              </details>
+            ) : (
+              renderNode(child, fileData)
+            )}
           </li>
         )
       })}
