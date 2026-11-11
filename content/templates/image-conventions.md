@@ -1,8 +1,8 @@
 ---
 title: Image storage & naming conventions
 publish: false
-created: 2026-10-02
-updated: 2026-10-02
+created: 2026-10-03-Sat-5:14pm
+updated: 2026-11-11-Wed-12:57pm
 disabled rules: [yaml-title]
 ---
 This note lives only in the vault — it's in `content/templates/`, which Quartz is configured to skip entirely (`ignorePatterns` in `quartz.config.ts`), and it's marked `publish: false`. It will never appear on the live site. It's a reference for future-you, not content.

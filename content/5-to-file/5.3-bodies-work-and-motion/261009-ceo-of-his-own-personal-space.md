@@ -30,5 +30,5 @@ disabled rules:
 
 Related:
 
-* [[261014-ig-technoculture-seems-to-have-a-love]]
+* [[261014-technoculture-seems-to-have-a-love]]
 
