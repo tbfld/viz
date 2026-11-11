@@ -12,7 +12,7 @@ description: this is where I put survivor bias memes, refs, gags, etc
 extract: none
 image_credit: various
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-11-Wed-1:37pm
+updated: 2026-11-11-Wed-6:34pm
 aliases: []
 ig_media_id: "18094251575387221"
 ig_permalink: https://www.instagram.com/p/Dc30qJXICHO/
@@ -31,8 +31,3 @@ More:
 
 ![[public/posts/ig-img/18099691313037169/18099691313037169-1.jpg]]
 
-![[survivor-bias-costume-1.png]]
-
-![[survivor-bias-costume-2.png]]
-
-![[survivor-bias-costume-3.jpg]]

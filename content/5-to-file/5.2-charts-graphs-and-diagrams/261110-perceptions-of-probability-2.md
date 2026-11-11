@@ -10,7 +10,7 @@ description: 1977 dot/strip plot w/ range bars graphing what a spectrum of proba
 extract: “what uncertainty statements mean to different readers”
 image_credit: Decisions and Designs Inc.?
 created: 2026-11-10-Tue-9:55am
-updated: 2026-11-11-Wed-1:7pm
+updated: 2026-11-11-Wed-6:29pm
 aliases: []
 ig_media_id: "17966597817217555"
 ig_permalink: https://www.instagram.com/p/DfkJtBKxIoY/
