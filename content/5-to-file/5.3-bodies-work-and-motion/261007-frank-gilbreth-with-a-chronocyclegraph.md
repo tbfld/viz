@@ -7,17 +7,20 @@ tags:
   - scientific-management
   - rationalization
   - optimization
-description: Frank Gilbreth contenplating a chronocyclegraph, i.e., time-and-motion studies sculpture in his lap (196)
-extract: ""
+  - 1910s
+  - 3D
+description: Frank Gilbreth dandling a chronocyclegraph, i.e., time-and-motion studies sculpture in his lap (1916)
+extract: none
 image_credit: public domain
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-09-Mon-5:40pm
+updated: 2026-11-11-Wed-9:57am
 aliases: []
 ig_media_id: "18086271038702497"
 ig_permalink: https://www.instagram.com/p/DeMvVLCoFc4/
 disabled rules:
   - yaml-title
 ---
+### Frank Gilbreth dandling a chronocyclegraph
 
 ![[18086271038702497-1.jpg]]
 

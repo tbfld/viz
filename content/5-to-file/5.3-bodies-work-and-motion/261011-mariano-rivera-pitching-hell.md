@@ -7,17 +7,22 @@ tags:
   - baseball
   - sports
   - interactive
+  - time
+  - multiples
+  - 3D
+  - pov
 description: screenshot from the NYT’s 2010 interactive story “Mariano Rivera, King of the Closers”
-extract: ""
+extract: Screenshot from a 2010 NYT interactive story on Mariano Rivera
 image_credit: NYT
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-09-Mon-5:23pm
+updated: 2026-11-11-Wed-7:36am
 aliases: []
 ig_media_id: "18147307519603832"
 ig_permalink: https://www.instagram.com/p/DeXlDHpoFZ9/
 disabled rules:
   - yaml-title
 ---
+### The “everything all at once” aesthetic
 
 ![[18147307519603832-1.jpg]]
 
