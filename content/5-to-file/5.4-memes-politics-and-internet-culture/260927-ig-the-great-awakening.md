@@ -12,7 +12,7 @@ description: trendy redpilled everything chart
 extract: '"We are using our collective consciousness to manifest the Optimal Timeline Reality for Earth"'
 image_credit: Champ Parinya, 2018
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-10-19-Mon-9:28am
+updated: 2026-11-11-Wed-2:27pm
 aliases: []
 ig_media_id: "18088244222300588"
 ig_permalink: https://www.instagram.com/p/Ddy8aA9oC0K/

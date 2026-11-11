@@ -12,13 +12,14 @@ description: gag meme viz
 extract: “ it’s so over” and “we’re so back” (what more do you want?!)
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-09-Mon-6:20pm
+updated: 2026-11-11-Wed-1:35pm
 aliases: []
 ig_media_id: "18064025291762430"
 ig_permalink: https://www.instagram.com/p/Dcb91RvxX4A/
 disabled rules:
   - yaml-title
 ---
+### it’s so over, we’re so back
 
 ![[18064025291762430-1.jpg]]
 
