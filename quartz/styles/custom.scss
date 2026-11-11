@@ -208,10 +208,9 @@ blockquote {
 }
 
 // --- TB ADDED 2026-11-11: smaller page titles ---
-// The title at the top of a page (ArticleTitle's h1) was 2rem in Gorton's
-// uppercase treatment, which read too big. Reduced 25%: 2rem -> 1.5rem.
-// (Same specificity as base.scss's `.page article > h1`; this file loads
-// after it, so it wins.)
-.page article > h1.article-title {
-  font-size: 1.5rem;
+// The title at the top of a page (ArticleTitle's h1.article-title) renders
+// outside the <article> element, at the global h1 size (1.75rem) in Gorton's
+// uppercase treatment, which read too big. Reduced 25%: 1.75rem -> 1.3125rem.
+.article-title {
+  font-size: 1.3125rem;
 }

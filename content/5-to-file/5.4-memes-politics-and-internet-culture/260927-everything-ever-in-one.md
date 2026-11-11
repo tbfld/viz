@@ -16,8 +16,6 @@ ig_permalink: https://www.instagram.com/p/Ddy9L38oJMB/
 disabled rules:
   - yaml-title
 ---
-### Everything ever in a single graphic
-
 ![[18167701162473922-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/Ddy9L38oJMB/).*

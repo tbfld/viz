@@ -59,6 +59,14 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
     allFiles,
     displayClass,
   }: QuartzComponentProps) => {
+    // The current page's title is shown by ArticleTitle right below the
+    // trail, so with showCurrentPage off the trail is only the path, ending
+    // in the separator that leads into the title. The two landing pages
+    // (blog index and book) have no ArticleTitle, so there the trail is the
+    // only place their name appears: keep the current page on them.
+    const isLanding = fileData.slug === "index" || fileData.slug === "book"
+    const showCurrent = options.showCurrentPage || isLanding
+
     // Hide crumbs on root if enabled
     if (options.hideOnRoot && fileData.slug === "index") {
       return <></>
@@ -118,7 +126,7 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
       // "Home > Home" - but when hideOnRoot is false and the root page has
       // its own distinct title (e.g. "Posts"), show it.
       if (
-        options.showCurrentPage &&
+        showCurrent &&
         (slugParts.at(-1) !== "index" || !options.hideOnRoot)
       ) {
         crumbs.push({
@@ -133,7 +141,9 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
         {crumbs.map((crumb, index) => (
           <div class="breadcrumb-element">
             <a href={crumb.path}>{crumb.displayName}</a>
-            {index !== crumbs.length - 1 && <p>{` ${options.spacerSymbol} `}</p>}
+            {(index !== crumbs.length - 1 || !showCurrent) && (
+              <p>{` ${options.spacerSymbol} `}</p>
+            )}
           </div>
         ))}
       </nav>

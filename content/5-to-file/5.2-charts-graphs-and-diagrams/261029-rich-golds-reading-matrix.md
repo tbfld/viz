@@ -18,8 +18,6 @@ ig_permalink: https://www.instagram.com/p/DfDsnJexAwy/
 disabled rules:
   - yaml-title
 ---
-### Rich Gold’s reading matrix
-
 ![[18120438209470075-1.jpg]]
 
 From Gold’s posthumously published book *The Plenitude* (MITP, 2021).[^1] These distinctions underpinned his distinction between what he called “bibliographic” (book-based, horizontal, small, individual) and epigraphic cultures (inscriptions, vertical, large, collective). As far as I know, he developed those categories himself.

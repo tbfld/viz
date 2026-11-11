@@ -17,8 +17,6 @@ ig_permalink: https://www.instagram.com/p/DfQDcEdxcRW/
 disabled rules:
   - yaml-title
 ---
-### Montreal Cognitive Assessment (MOCA)
-
 ![[18095859548181052-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DfQDcEdxcRW/).*

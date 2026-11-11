@@ -19,8 +19,6 @@ ig_permalink: https://www.instagram.com/p/Dc30qJXICHO/
 disabled rules:
   - yaml-title
 ---
-### Survivor bias becomes a meme
-
 ![[18094251575387221-1.jpg]]
 
 From https://digitalculturesandarts.ch/simon-strick-faschisierung-fluchtlinie-des-digitalen-buchvorstellung-diskussion/ ( 🎩 @bildoperationen )

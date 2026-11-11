@@ -17,8 +17,6 @@ ig_permalink: https://www.instagram.com/p/DfiSW_sRtwu/
 disabled rules:
   - yaml-title
 ---
-### Heatmap: where chess pieces go to die
-
 Source: [sundellviz](https://ko-fi.com/sundellviz)
 
 ![[18097301957485553-1.jpg]]

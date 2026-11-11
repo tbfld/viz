@@ -19,8 +19,6 @@ ig_permalink: https://www.instagram.com/p/DexIqoEHwPz/
 disabled rules:
   - yaml-title
 ---
-### Babbage’s brain
-
 Image from V. Horsley, “Description of the Brain of Mr. Charles Babbage, F.R.S,” *Philosophical Transactions of the Royal Society of London*, Ser. B: *Containing Papers of a Biological Character, 1896–1934* (London: Royal Society of London, 1909).
 
 *[A Description of the Brain of Mr. Charles Babbage](https://publicdomainreview.org/collection/a-description-of-the-brain-of-mr-charles-babbage-1909/)* (1909), via [Public Domain Review](https://publicdomainreview.org/collection/a-description-of-the-brain-of-mr-charles-babbage-1909/).

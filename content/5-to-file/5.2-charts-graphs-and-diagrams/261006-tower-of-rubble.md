@@ -17,8 +17,6 @@ ig_permalink: https://www.instagram.com/p/DeKxU-zoP6W/
 disabled rules:
   - yaml-title
 ---
-### Tower of rubble
-
 Said to be “Volume of debris in the postwar Warszawa” (🎩 MC in CZ)
 
 ![[18176440783446041-1.jpg]]

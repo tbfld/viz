@@ -20,8 +20,6 @@ ig_permalink: https://www.instagram.com/p/DfEHE3lxn2_/
 disabled rules:
   - yaml-title
 ---
-### Clothing pattern (1873)
-
 From Bernard Rudofsky’s *Are Clothes Modern? An Essay on Contemporary Apparel* (NYC: P. Theobold, 1947), published in conjunction with the Museum of Modern Art’s “[Are Clothes Modern?](https://www.moma.org/calendar/exhibitions/3159)” exhibition (28 Nov 1944 – 4 Mar 1945), p. 146. Image credit in the catalog: “Courtesy Museum of Costume Art, New York.”
 
 ![[18138355333658296-1.jpg]]

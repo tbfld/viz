@@ -18,8 +18,6 @@ ig_permalink: https://www.instagram.com/p/DfDvD6PRqNB/
 disabled rules:
   - yaml-title
 ---
-### Guardian eye-tracking (2007)
-
 ![[18127723120805995-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DfDvD6PRqNB/).*

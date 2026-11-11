@@ -24,8 +24,6 @@ ig_permalink: https://www.instagram.com/p/DfQDlv_x0zB/
 disabled rules:
   - yaml-title
 ---
-### Dick Higgins’s Intermedia chart
-
 ![[18124559188941628-1.jpg]]
 
 More on Dick Higgins at [Wikipedia.](https://en.wikipedia.org/wiki/Dick_Higgins)

@@ -7,7 +7,16 @@
   border-bottom: 1px solid var(--lightgray);
 }
 
+/* Thumbnail and title top alignment. Images get a 1rem top margin from the
+   site's base styles; the title block is pushed down by the same amount, so
+   the title's cap height lands slightly (about 0.2em) below the thumbnail's
+   upper edge instead of well above it. One variable keeps them in step. */
+.post-entry {
+  --thumb-offset: 1rem;
+}
+
 .post-thumb {
+  margin: var(--thumb-offset) 0;
   flex: 0 0 auto;
   width: 160px;
   height: 160px;
@@ -19,6 +28,10 @@
 .post-body {
   flex: 1 1 auto;
   min-width: 0;
+}
+
+.post-thumb + .post-body {
+  padding-top: var(--thumb-offset);
 }
 
 .post-title {
@@ -42,6 +55,11 @@
 @media (max-width: 480px) {
   .post-entry {
     flex-direction: column;
+  }
+
+  /* stacked layout: the title sits under the image, no offset needed */
+  .post-thumb + .post-body {
+    padding-top: 0;
   }
 
   .post-thumb {

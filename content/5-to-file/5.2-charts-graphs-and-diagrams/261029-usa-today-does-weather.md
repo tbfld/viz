@@ -17,8 +17,6 @@ ig_permalink: https://www.instagram.com/p/DfDt4fbR6zw/
 disabled rules:
   - yaml-title
 ---
-### *USA Today* Does Weather
-
 ![[17913327798483494-1.jpg]]
 
 The graphically driven, full-color newspaper *USA Today* — launched in 1982, a decade before the internet was commercialized — had shown, despite its lite reputation as “television you can wrap your fish in,”[^1] that newspapers could be colorful and illustrative. It took another fifteen years for the NYT to run the first color image on its front page, on 16 October 1997, for a baseball story.[^2]

@@ -7,7 +7,7 @@ tags:
   - probability
   - semantics
 description: 1977 dot/strip plot w/ range bars graphing what a spectrum of probabilistic phrases mean
-extract: Perceptions of probability (2)
+extract: “what uncertainty statements mean to different readers”
 image_credit: Decisions and Designs Inc.?
 created: 2026-11-10-Tue-9:55am
 updated: 2026-11-11-Wed-1:7pm
@@ -17,8 +17,6 @@ ig_permalink: https://www.instagram.com/p/DfkJtBKxIoY/
 disabled rules:
   - yaml-title
 ---
-### Perceptions of probability (2)
-
 For Perceptions of probability (1), see https://www.instagram.com/p/DfiTUJ3xN0J/ 
 
 

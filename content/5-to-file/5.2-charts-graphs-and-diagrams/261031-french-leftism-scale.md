@@ -18,8 +18,6 @@ ig_permalink: https://www.instagram.com/p/DfKj4A6xraO/
 disabled rules:
   - yaml-title
 ---
-### French leftism scale
-
 🎩 BG
 
 ![[18115448381598338-1.jpg]]

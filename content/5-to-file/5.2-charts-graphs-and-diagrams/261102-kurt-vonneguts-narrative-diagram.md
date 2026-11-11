@@ -17,8 +17,6 @@ ig_permalink: https://www.instagram.com/p/DfQDPAbRlOk/
 disabled rules:
   - yaml-title
 ---
-### Kurt Vonnegut’s narrative diagram
-
 ![[18125328136901307-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DfQDPAbRlOk/).*

@@ -16,8 +16,6 @@ ig_permalink: https://www.instagram.com/p/DewoykJIOJY/
 disabled rules:
   - yaml-title
 ---
-### Problem spaces you never imagined
-
 Like light-years or human hours, but watts per candle, cost, and smashing point. 🎩 WY, source beyond that unknown
 
 ![[18087258080291634-1.jpg]]

@@ -18,8 +18,6 @@ ig_permalink: https://www.instagram.com/p/Ddo1jVlxQDL/
 disabled rules:
   - yaml-title
 ---
-### Global density of where flight attendants will most likely need duct tape
-
 ![[18176948620439847-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/Ddo1jVlxQDL/).*

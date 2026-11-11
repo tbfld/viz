@@ -22,8 +22,6 @@ ig_permalink: https://www.instagram.com/p/DeXkWMZIAcq/
 disabled rules:
   - yaml-title
 ---
-### Gerardo Clusellas, “Fatigue and Comfort in Human Positions” (1953–1957)
-
 ![[18106739105262790-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DeXkWMZIAcq/); 🎩 WA.

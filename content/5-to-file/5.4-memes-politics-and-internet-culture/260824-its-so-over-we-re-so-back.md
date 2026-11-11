@@ -19,8 +19,6 @@ ig_permalink: https://www.instagram.com/p/Dcb91RvxX4A/
 disabled rules:
   - yaml-title
 ---
-### it’s so over, we’re so back
-
 ![[18064025291762430-1.jpg]]
 
 For more on the It’s So Over / We’re So Back duality, including many more memes, see [Know Your Meme](https://knowyourmeme.com/memes/its-so-over-were-so-back).

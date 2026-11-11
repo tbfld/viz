@@ -22,8 +22,6 @@ ig_permalink: https://www.instagram.com/p/DeQS-VCoPYb/
 disabled rules:
   - yaml-title
 ---
-### CEO of own personal space
-
 ![[17910971496501347-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DeQS-VCoPYb/).*

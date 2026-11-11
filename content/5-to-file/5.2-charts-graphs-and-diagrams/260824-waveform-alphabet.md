@@ -18,8 +18,6 @@ ig_permalink: https://www.instagram.com/p/DcblCQKIIke/
 disabled rules:
   - yaml-title
 ---
-### waveform alphabet
-
 ![[17987002305021576-1.jpg]]
 
 Widely re/printed as a poster. Variously known as a waveform diagram, waveform plot, and/or time-domain amplitude graph.
