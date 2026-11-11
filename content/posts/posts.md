@@ -3,7 +3,7 @@ title: Posts
 publish: false
 disabled rules: [yaml-title]
 created: 2026-10-03-Sat-5:14pm
-updated: 2026-11-10-Tue-7:22pm
+updated: 2026-11-11-Wed-4:8pm
 ---
 # How notes get into the book
 
@@ -31,7 +31,8 @@ The blog feed lists every published note. The book (the table-of-contents view) 
 - **File a note:** drag it to another folder, e.g. from `5-to-file/5.2-…` to `2-main/2.0-to-file-II`. Nothing else to edit.
 - **New Instagram imports** land in `5-to-file/5.9-unsorted` automatically.
 - **New pen/group:** make a folder with a note named after it, containing `book: true` and `book_position`. If Folder Notes auto-creates an empty duplicate, keep the one with the position.
-- **Group pages list their own entries.** A book page with entries directly beneath it (a Part, a chapter, a pen) shows them automatically under its own text: Title (linked), Image (if it has one), Added, Updated. See `quartz/components/BookIndex.tsx`; nothing to maintain.
+- **Group pages are reading views.** A book page with entries beneath it (a Part, a chapter, a pen) shows, under its own text: an index of its direct entries (Title, Image, Added, Updated; each title jumps down the page), then the **full text of everything beneath it**, in book order, with each entry's title (linked to its own page) as a heading. See `quartz/components/BookIndex.tsx` and `BookReader.tsx`; nothing to maintain.
+- **TOC counts:** a TOC entry with notes beneath it shows the number in parentheses, e.g. `Charts, graphs & diagrams (35)`. It counts end-of-the-line notes; group pages (folder notes) aren't counted. The TOC scrolls inside the sidebar when it is taller than the window.
 - **Regroup a cluster:** change the folder note's position (or a shared prefix on pinned notes).
 - **Old URLs keep working:** a note in a `to-file` folder, or imported from Instagram, also answers at `/posts/<name>` (an automatic redirect, so filing never 404s links made when it lived in `posts/`). A note filed somewhere else loses that, as does any other path it used to have. Any other dead URL lands on a 404 page that searches the site for the URL's words (`quartz/util/notFoundSearch.ts`).
 - **Gotchas:** in `quartz build --serve`, restart after moving files so siblings renumber. The `order:` field in the template is an unused leftover, not the position.

@@ -1,11 +1,11 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { resolveRelative } from "../util/path"
-import { bookChildren } from "../util/book"
+import { bookChildren, entryAnchor } from "../util/book"
 import style from "./styles/bookIndex.scss"
 
 // On any book page that has entries directly beneath it (a Part, a chapter,
 // a "to file" pen), lists those entries automatically: Title (linked),
-// Image (only if it has one), Added, Updated. Nothing to maintain: the list
+// Image (only if it has one), Added, Updated; each title jumps to that
+// entry in the reading view below (see BookReader). Nothing to maintain: the list
 // is derived from book positions, so filing a note updates it on the next
 // build.
 const ymd = new Intl.DateTimeFormat("en-CA", {
@@ -30,9 +30,7 @@ const BookIndex: QuartzComponent = ({ fileData, allFiles, displayClass }: Quartz
           <dl class="book-index-entry">
             <dt>Title</dt>
             <dd>
-              <a href={resolveRelative(fileData.slug!, f.slug!)} class="internal">
-                {title}
-              </a>
+              <a href={`#${entryAnchor(f.slug!)}`}>{title}</a>
             </dd>
             {f.hasImage && (
               <>

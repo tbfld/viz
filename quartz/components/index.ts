@@ -25,6 +25,7 @@ import ViewToggle from "./ViewToggle"
 import ModeWidget from "./ModeWidget"
 import BookAwareLeft from "./BookAwareLeft"
 import BookIndex from "./BookIndex"
+import BookReader from "./BookReader"
 
 export {
   ArticleTitle,
@@ -53,5 +54,6 @@ export {
   ViewToggle,
   BookAwareLeft,
   BookIndex,
+  BookReader,
   ModeWidget,
 }

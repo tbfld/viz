@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { resolveRelative, FullSlug } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
-import { parsePosition } from "../util/book"
+import { parsePosition, isFolderNote } from "../util/book"
 import style from "./styles/bookToc.scss"
 
 // A book_position is a dot-separated path of integers, e.g. "2000.100.400".
@@ -38,6 +38,18 @@ function containsActive(node: BookNode, fileData: QuartzPluginData): boolean {
   return false
 }
 
+// Number of entries beneath a node, shown as "(N)" so a visitor can see
+// how much is inside without opening it. Counts end-of-the-line pages;
+// group pages (folder notes) only name a group, so they aren't counted.
+function countItems(node: BookNode): number {
+  let n = 0
+  for (const c of node.children.values()) {
+    if (c.children.size > 0) n += countItems(c)
+    else if (c.page && !isFolderNote(c.page.slug)) n += 1
+  }
+  return n
+}
+
 function renderNode(node: BookNode, fileData: QuartzPluginData) {
   const sortedChildren = [...node.children.values()].sort((a, b) => a.segment - b.segment)
   if (sortedChildren.length === 0) return null
@@ -51,19 +63,25 @@ function renderNode(node: BookNode, fileData: QuartzPluginData) {
         // visible (and fixable) rather than silently swallowed.
         const label = title ?? child.path.join(".")
         const active = child.page?.slug === fileData.slug
+        const count = countItems(child)
+        const countEl = count > 0 ? <span class="book-toc-count"> ({count})</span> : null
 
         return (
           <li class={active ? "active" : undefined}>
             {child.page ? (
               <a href={resolveRelative(fileData.slug!, child.page.slug!)} class="internal">
                 {label}
+                {countEl}
               </a>
             ) : (
-              <span class="book-toc-heading">{label}</span>
+              <span class="book-toc-heading">
+                {label}
+                {countEl}
+              </span>
             )}
             {child.children.size > FOLD_THRESHOLD ? (
               <details open={containsActive(child, fileData)}>
-                <summary>{child.children.size} entries</summary>
+                <summary>{count} items</summary>
                 {renderNode(child, fileData)}
               </details>
             ) : (

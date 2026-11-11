@@ -3,6 +3,13 @@
 .book-toc {
   display: flex;
   flex-direction: column;
+  // The sidebar is a fixed-height (100vh) flex column. Without these, a
+  // long TOC spills out of the bottom of the page; with them it scrolls
+  // inside the sidebar instead.
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   &.desktop-only {
     @media all and not ($mobile) {
       display: flex;
@@ -68,5 +75,11 @@
     font-size: 0.8rem;
     color: var(--gray);
     padding: 0.1rem 0;
+  }
+
+  .book-toc-count {
+    color: var(--gray);
+    font-size: 0.85em;
+    font-weight: normal;
   }
 }

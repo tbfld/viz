@@ -1,0 +1,24 @@
+.book-reader {
+  margin-top: 2rem;
+
+  .book-reader-entry {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--lightgray);
+
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      margin-top: 0;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .book-reader-meta {
+    margin: 0 0 0.75rem 0;
+    color: var(--gray);
+    font-size: 0.8rem;
+  }
+}

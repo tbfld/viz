@@ -18,7 +18,7 @@ description: how to decompress the lonely crowdster
 extract: Technoculture seems to have a love affair with this kind of ‘proxemics’ theory, first articulated (AFAIK) by the cultural anthropologist Edward T. Hall in the e
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-11-Wed-9:25am
+updated: 2026-11-11-Wed-3:55pm
 aliases: []
 ig_media_id: "17993671782029234"
 ig_permalink: https://www.instagram.com/p/DeeqjWcIAxq/
