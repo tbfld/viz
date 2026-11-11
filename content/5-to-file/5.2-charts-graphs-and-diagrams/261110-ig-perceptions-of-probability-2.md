@@ -29,10 +29,10 @@ This spare figure comes from Scott Barclay et al., *Handbook for Decision Analys
 
 Props to Daniel Hails[^2] for tracking down this publication. 🏆 And beyond that for his method, which is all too rare in dataviz histories: “I did what should be the obvious thing: I checked.”[^3] 🏆 
 
-1. https://files.eric.ed.gov/fulltext/ED153329.pdf
+[^1]: https://files.eric.ed.gov/fulltext/ED153329.pdf
 
-2. https://hails.info/ + https://github.com/DJRHails
+[^2]: https://hails.info/ + https://github.com/DJRHails
 
-3. Daniel Hails, “The CIA was ‘Probably’ Right,” hails.info (Apr 2026): https://hails.info/writing/perception-of-probability/
+[^3]: Daniel Hails, “The CIA was ‘Probably’ Right,” hails.info (Apr 2026): https://hails.info/writing/perception-of-probability/
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DfkJtBKxIoY/).*
