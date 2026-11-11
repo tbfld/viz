@@ -5,7 +5,8 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  // lists a book group's entries (Part, chapter, "to file" pen) under its text
+  afterBody: [Component.BookIndex()],
   footer: Component.Footer({
     aboutPath: "/about",
   }),

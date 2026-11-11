@@ -2,6 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { resolveRelative, FullSlug } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
+import { parsePosition } from "../util/book"
 import style from "./styles/bookToc.scss"
 
 // A book_position is a dot-separated path of integers, e.g. "2000.100.400".
@@ -10,17 +11,6 @@ import style from "./styles/bookToc.scss"
 // lookup here, so renaming, regrouping, or adding a new level (a "Part",
 // say) is purely a frontmatter edit, never a code change.
 //
-// YAML may hand this to us as a string (the normal case) or, for a bare
-// value like `2000`, as a number -- handle both.
-function parsePosition(raw: unknown): number[] | null {
-  if (typeof raw !== "string" && typeof raw !== "number") return null
-  const str = String(raw).trim()
-  if (str === "") return null
-  const parts = str.split(".").map((p) => parseInt(p, 10))
-  if (parts.length === 0 || parts.some((n) => Number.isNaN(n))) return null
-  return parts
-}
-
 interface BookNode {
   segment: number
   path: number[]

@@ -14,7 +14,8 @@ import { QuartzTransformerPlugin } from "../types"
 // chronological). Nothing is written to disk; it's recomputed every build.
 //
 // An explicit book_position on the page always wins (that's how to pin an
-// exact spot or order), and `book: false` opts a page out. Only the page's
+// exact spot or order) and is by itself enough to put the page in the book
+// (no separate `book: true` needed); `book: false` opts a page out. Only the page's
 // immediate folder is consulted, so every folder that should hold derived
 // pages needs its own folder note with a position.
 //
@@ -78,7 +79,12 @@ export const FolderBookPosition: QuartzTransformerPlugin = () => ({
       },
       () => (_tree, file) => {
         const fm: any = file.data.frontmatter
-        if (!fm || fm.book === false || hasPosition(fm.book_position)) return
+        if (!fm || fm.book === false) return
+        // a book_position of its own is enough to put a page in the book
+        if (hasPosition(fm.book_position)) {
+          fm.book = true
+          return
+        }
 
         const fp = file.data.filePath!
         const full = path.isAbsolute(fp) ? fp : path.join(file.cwd, fp)
