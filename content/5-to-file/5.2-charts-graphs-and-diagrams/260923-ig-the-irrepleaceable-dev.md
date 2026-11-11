@@ -10,15 +10,16 @@ tags:
   - geology
 description: snarky chart tracing developer career path until vibe-coding
 extract: “Finally, I am irreplaceable dev"
-image_credit:
+image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-10-19-Mon-9:11am
+updated: 2026-11-10-Tue-9:15pm
 aliases: []
 ig_media_id: "18133958335637583"
 ig_permalink: https://www.instagram.com/p/Ddpf7KUIA3K/
 disabled rules:
   - yaml-title
 ---
+### The irreplaceable dev
 
 ![[18133958335637583-1.jpg]]
 

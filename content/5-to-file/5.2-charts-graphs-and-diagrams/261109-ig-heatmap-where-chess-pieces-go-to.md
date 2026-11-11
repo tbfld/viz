@@ -2,21 +2,24 @@
 title: "2026-11-09: Heatmap: where chess pieces go to die"
 publish: true
 draft: false
-tags: []
-description:
-extract: "Heatmap: where chess pieces go to die"
-image_credit:
-created: 2026-11-09 21:22
-updated: 2026-11-09 21:22
+tags:
+  - games
+  - chess
+  - play
+description: 32 heatmaps, one per piece
+extract: “how often each piece was captured on a given square”
+image_credit: ko-fi/sundellviz
+created: 2026-11-09-Mon-4:41pm
+updated: 2026-11-10-Tue-7:52pm
 aliases: []
 ig_media_id: "18097301957485553"
-ig_permalink: "https://www.instagram.com/p/DfiSW_sRtwu/"
-disabled rules: [yaml-title]
+ig_permalink: https://www.instagram.com/p/DfiSW_sRtwu/
+disabled rules:
+  - yaml-title
 ---
+### Heatmap: where chess pieces go to die
 
-Heatmap: where chess pieces go to die
-
-Source: \[sundellviz])https://ko-fi.com/sundellviz)
+Source: [sundellviz](https://ko-fi.com/sundellviz)
 
 ![[18097301957485553-1.jpg]]
 

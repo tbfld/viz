@@ -2,21 +2,27 @@
 title: "2026-10-29: From Christopher Alexander, Notes on the Synthesis of Form (HUP, 1964)"
 publish: true
 draft: false
-tags: []
-description:
-extract: "From Christopher Alexander, Notes on the Synthesis of Form (HUP, 1964)"
-image_credit:
-created: 2026-10-29 00:02
-updated: 2026-10-29 00:02
+tags:
+  - analysis
+  - method
+  - theory
+description: three graphs of complex problems
+extract: a graph-oriented method for breaking down complex design problem into simpler sub-issues
+image_credit: Christopher Alexander / Harvard U Press
+created: 2026-10-28-Wed-11:18pm
+updated: 2026-11-10-Tue-8:39pm
 aliases: []
 ig_media_id: "18482723896114807"
-ig_permalink: "https://www.instagram.com/p/DfDrEr1RTfC/"
-disabled rules: [yaml-title]
+ig_permalink: https://www.instagram.com/p/DfDrEr1RTfC/
+disabled rules:
+  - yaml-title
 ---
+### Christopher Alexander’s *Notes on the Synthesis of Form*
 
-From Christopher Alexander, Notes on the Synthesis of Form (HUP, 1964)
 
-From Christopher Alexander, Notes on the Synthesis of Form (HUP, 1964)
+![[18482723896114807-1.jpg]]
+
+*From Christopher Alexander,* Notes on the Synthesis of Form *(HUP, 1964)*
 
 These image illustrate Alexander’s graph-oriented method for breaking down complex design problem into simpler sub-issues.
 
@@ -25,7 +31,5 @@ These image illustrate Alexander’s graph-oriented method for breaking down com
 (2) “We may therefore picture the process of form-making as the action of a series of subsystems, all interlinked, yet sufficiently free of one another to adjust independently in a feasible amount of time. It works, because the cycles of correction and recorrection, which occur during adaptation, are restricted to one subsystem at a time.” (p. 43)
 
 (3) “Of course this demonstrates only that concepts can easily be arbitrary. It does not show that the concepts used in practice actually are so. Indeed, clearly, their arbitrariness can only be established for individual and specific cases. Detailed analysis of the problem of designing urban family houses, for instance, has shown that the usually accepted functional categories like acoustics, circulation, and accommodation are inappropriate for this problemP Similarly, the principle of the "neighborhood," one of the old chestnuts of city-planning theory, has been shown to be an inadequate mental component of the residential planning problem.14 But since such demonstrations can only be made for special cases, let us examine a more general, rather plausible reason for believing that such verbal concepts always will be of this arbitrary kind.” (p. 65)
-
-![[18482723896114807-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DfDrEr1RTfC/).*

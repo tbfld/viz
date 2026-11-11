@@ -8,16 +8,17 @@ tags:
   - scatterplot
   - greatman
 description: exactly what it says on the label
-extract: none
+extract: “Napoleon Bonaparte”
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-10-19-Mon-10:53am
+updated: 2026-11-10-Tue-9:14pm
 aliases: []
 ig_media_id: "18108178733589503"
 ig_permalink: https://www.instagram.com/p/DdjXTkkIPh5/
 disabled rules:
   - yaml-title
 ---
+### War vs battle scatterplot
 
 ![[18108178733589503-1.jpg]]
 

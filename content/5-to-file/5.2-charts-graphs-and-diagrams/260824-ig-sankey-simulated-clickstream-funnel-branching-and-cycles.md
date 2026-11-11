@@ -14,13 +14,14 @@ extract: |-
   sure the labels are really good."
 image_credit:
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-10-22-Thu-9:57am
+updated: 2026-11-10-Tue-9:16pm
 aliases: []
 ig_media_id: "18089539187265622"
 ig_permalink: https://www.instagram.com/p/Dcbskh3oHRA/
 disabled rules:
   - yaml-title
 ---
+### AI-gen Sankey simulated clickstream funnel
 
 ![[18089539187265622-1.jpg]]
 

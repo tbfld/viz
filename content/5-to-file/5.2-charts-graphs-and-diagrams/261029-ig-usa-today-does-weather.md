@@ -2,19 +2,22 @@
 title: "2026-10-29: USA Today Does Weather"
 publish: true
 draft: false
-tags: []
-description:
-extract: "USA Today Does Weather"
-image_credit:
+tags:
+  - weather
+  - usatoday
+  - illustration
+description: a surprisingly, um, ‘graphic’ infographic illustrating the risks of extreme heat
+extract: USA Today Does Weather
+image_credit: USA Today (Doyle Rice and Julie Snider)
 created: 2026-10-28-Wed-11:18pm
-updated: 2026-10-31-Sat-5:15pm
+updated: 2026-11-10-Tue-8:34pm
 aliases: []
 ig_media_id: "17913327798483494"
-ig_permalink: "https://www.instagram.com/p/DfDt4fbR6zw/"
-disabled rules: [yaml-title]
+ig_permalink: https://www.instagram.com/p/DfDt4fbR6zw/
+disabled rules:
+  - yaml-title
 ---
-
-# *USA Today* Does Weather
+### *USA Today* Does Weather
 
 ![[17913327798483494-1.jpg]]
 

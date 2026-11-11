@@ -11,13 +11,14 @@ description: odd illustration/diagram supposedly related to Spinoza
 extract: “Time as Emergent Relational Order — A Relational Ontoloov of Temporality”
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-09-Mon-6:34pm
+updated: 2026-11-10-Tue-9:17pm
 aliases: []
 ig_media_id: "18406616905082154"
 ig_permalink: https://www.instagram.com/p/DcbUkLKkS0Q/
 disabled rules:
   - yaml-title
 ---
+### Spinozio-emergence relational ontology, or something along those lines
 
 ![[18406616905082154-1.jpg]]
 

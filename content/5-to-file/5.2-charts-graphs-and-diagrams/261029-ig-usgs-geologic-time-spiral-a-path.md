@@ -2,19 +2,22 @@
 title: "2026-10-29: USGS, Geologic Time Spiral: A Path to the Past, 2008"
 publish: true
 draft: false
-tags: []
-description:
+tags:
+  - geology
+  - history
+  - earth
+description: a “time spiral” diagram of geological history
 extract: "USGS, Geologic Time Spiral: A Path to the Past, 2008"
-image_credit:
-created: 2026-10-29 00:33
-updated: 2026-10-29 00:33
+image_credit: US Geological Survey
+created: 2026-10-28-Wed-11:18pm
+updated: 2026-11-10-Tue-8:35pm
 aliases: []
 ig_media_id: "17948789493300718"
-ig_permalink: "https://www.instagram.com/p/DfDuqdlREjU/"
-disabled rules: [yaml-title]
+ig_permalink: https://www.instagram.com/p/DfDuqdlREjU/
+disabled rules:
+  - yaml-title
 ---
-
-USGS, Geologic Time Spiral: A Path to the Past, 2008
+### USGS, Geologic Time Spiral: A Path to the Past, 2008
 
 ![[17948789493300718-1.jpg]]
 

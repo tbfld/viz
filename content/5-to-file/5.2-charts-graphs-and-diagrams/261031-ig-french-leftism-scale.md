@@ -2,19 +2,23 @@
 title: "2026-10-31: French leftism scale"
 publish: true
 draft: false
-tags: []
-description:
-extract: "French leftism scale"
-image_credit:
-created: 2026-10-31 16:17
-updated: 2026-10-31 16:17
+tags:
+  - politics
+  - performance
+  - parody
+  - leftism
+description: French leftism scale
+extract: En France, le gouvernement érige LFI en bouc émissaire des émeutes, en l'assimilant à une «ultra-gauche» fort floue / in France, the government makes lfi (la france insoumise) the scapegoat for the riots, lumping it in with a vague “far left”
+image_credit: unknown
+created: 2026-10-31-Sat-1:19pm
+updated: 2026-11-10-Tue-8:31pm
 aliases: []
 ig_media_id: "18115448381598338"
-ig_permalink: "https://www.instagram.com/p/DfKj4A6xraO/"
-disabled rules: [yaml-title]
+ig_permalink: https://www.instagram.com/p/DfKj4A6xraO/
+disabled rules:
+  - yaml-title
 ---
-
-French leftism scale
+### French leftism scale
 
 🎩 BG
 

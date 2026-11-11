@@ -2,19 +2,23 @@
 title: "2026-10-29: Rich Gold’s reading matrix"
 publish: true
 draft: false
-tags: []
-description:
-extract: "Rich Gold’s reading matrix"
-image_credit:
+tags:
+  - communications
+  - typology
+  - presentation
+  - media
+description: A slide from a presentation by Rich Gold, founder of Xerox PARC’s Artist-In-Residence program
+extract: synchronous / asynchronous // private / public // individual / group
+image_credit: Rich Gold
 created: 2026-10-28-Wed-11:18pm
-updated: 2026-10-31-Sat-5:12pm
+updated: 2026-11-10-Tue-8:37pm
 aliases: []
 ig_media_id: "18120438209470075"
-ig_permalink: "https://www.instagram.com/p/DfDsnJexAwy/"
-disabled rules: [yaml-title]
+ig_permalink: https://www.instagram.com/p/DfDsnJexAwy/
+disabled rules:
+  - yaml-title
 ---
-
-# Rich Gold’s reading matrix
+### Rich Gold’s reading matrix
 
 ![[18120438209470075-1.jpg]]
 
