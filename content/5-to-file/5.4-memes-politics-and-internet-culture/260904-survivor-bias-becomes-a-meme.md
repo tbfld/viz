@@ -29,5 +29,5 @@ From https://digitalculturesandarts.ch/simon-strick-faschisierung-fluchtlinie-de
 
 More:
 
-![[public/posts/ig-img/18099691313037169/18099691313037169-1.jpg]]
+![[18099691313037169-1.jpg]]
 
