@@ -11,9 +11,9 @@ extract: a graph-oriented method for breaking down complex design problem into s
 image_credit: Christopher Alexander / Harvard U Press
 created: 2026-10-28-Wed-11:18pm
 updated: 2026-11-10-Tue-8:39pm
+republished:
 aliases: []
 ig_media_id: "18482723896114807"
-ig_permalink: https://www.instagram.com/p/DfDrEr1RTfC/
 disabled rules:
   - yaml-title
 ---

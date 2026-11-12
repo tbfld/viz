@@ -15,9 +15,9 @@ extract: |-
 image_credit:
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:16pm
+republished:
 aliases: []
 ig_media_id: "18089539187265622"
-ig_permalink: https://www.instagram.com/p/Dcbskh3oHRA/
 disabled rules:
   - yaml-title
 ---

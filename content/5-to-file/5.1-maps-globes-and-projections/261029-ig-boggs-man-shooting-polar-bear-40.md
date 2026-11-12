@@ -8,9 +8,9 @@ extract: "Boggs, “Man shooting polar bear 40 rods due east of him”"
 image_credit:
 created: 2026-10-29 00:46
 updated: 2026-10-29 00:46
+republished:
 aliases: []
 ig_media_id: "18417599524086457"
-ig_permalink: "https://www.instagram.com/p/DfDwH81RaEX/"
 disabled rules: [yaml-title]
 ---
 

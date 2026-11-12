@@ -8,9 +8,9 @@ extract: "Ikealegollusion"
 image_credit:
 created: 2026-11-09 17:08
 updated: 2026-11-09 17:08
+republished:
 aliases: []
 ig_media_id: "17935622934416077"
-ig_permalink: "https://www.instagram.com/p/Dfh1VRlRSti/"
 disabled rules: [yaml-title]
 ---
 

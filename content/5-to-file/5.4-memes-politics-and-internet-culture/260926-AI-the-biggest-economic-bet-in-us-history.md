@@ -13,9 +13,9 @@ extract:
 image_credit: sona-am.com via Michael Roberts / thenextrecession.wordpress.com
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-6:38pm
+republished:
 aliases: []
 ig_media_id: "18430676437199691"
-ig_permalink: https://www.instagram.com/p/DdxIU-zR9CY/
 disabled rules:
   - yaml-title
 ---

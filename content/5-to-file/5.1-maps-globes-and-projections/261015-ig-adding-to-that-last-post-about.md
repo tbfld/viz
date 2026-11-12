@@ -12,9 +12,9 @@ extract: "Adding to that last post about the Farquhar globe: transparent 'plasti
 image_credit: unknown
 created: 2026-10-15-Thu-12:25pm
 updated: 2026-10-31-Sat-5:17pm
+republished:
 aliases: []
 ig_media_id: "17883830205625728"
-ig_permalink: "https://www.instagram.com/p/DehG-qSoPOm/"
 disabled rules: [yaml-title]
 ---
 *See also:* [Promo image for a 14" (35.56cm) transparent globe manufactured by Farquhar Transparent Globes](https://viz.counter.ink/5-to-file/5.1-maps-globes-and-projections/261014-ig-promo-image-for-a-14-35)

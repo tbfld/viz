@@ -8,9 +8,9 @@ extract: "Awkward Look Monkey Puppet meme quantum graffiti"
 image_credit:
 created: 2026-11-09 16:15
 updated: 2026-11-09 16:15
+republished:
 aliases: []
 ig_media_id: "18134565760764264"
-ig_permalink: "https://www.instagram.com/p/DfhvM4AxNU7/"
 disabled rules: [yaml-title]
 ---
 

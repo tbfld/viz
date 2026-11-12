@@ -12,9 +12,9 @@ extract: none
 image_credit:
 created: 2026-10-28-Wed-11:18pm
 updated: 2026-11-11-Wed-5:54pm
+republished:
 aliases: []
 ig_media_id: "18029203157879248"
-ig_permalink: https://www.instagram.com/p/DfDrbG4RRiM/
 disabled rules:
   - yaml-title
 ---

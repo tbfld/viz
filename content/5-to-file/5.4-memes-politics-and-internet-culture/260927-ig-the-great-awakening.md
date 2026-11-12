@@ -13,9 +13,9 @@ extract: '"We are using our collective consciousness to manifest the Optimal Tim
 image_credit: Champ Parinya, 2018
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-2:27pm
+republished:
 aliases: []
 ig_media_id: "18088244222300588"
-ig_permalink: https://www.instagram.com/p/Ddy8aA9oC0K/
 disabled rules:
   - yaml-title
 ---

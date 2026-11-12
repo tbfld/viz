@@ -13,9 +13,9 @@ extract: |-
 image_credit: truckslop.joshu.dev/
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-2:16pm
+republished:
 aliases: []
 ig_media_id: "18190788682395267"
-ig_permalink: https://www.instagram.com/p/DdpnGvMIDQ4/
 disabled rules:
   - yaml-title
 ---

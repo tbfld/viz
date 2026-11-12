@@ -13,9 +13,9 @@ extract: “Description of the Brain of Mr. Charles Babbage, F.R.S”
 image_credit: public domain
 created: 2026-10-22-Thu-9:57am
 updated: 2026-11-11-Wed-9:55am
+republished:
 aliases: []
 ig_media_id: "18110527004207818"
-ig_permalink: https://www.instagram.com/p/DexIqoEHwPz/
 disabled rules:
   - yaml-title
 ---

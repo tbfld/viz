@@ -14,9 +14,9 @@ extract: none
 image_credit: public domain
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-9:57am
+republished:
 aliases: []
 ig_media_id: "18086271038702497"
-ig_permalink: https://www.instagram.com/p/DeMvVLCoFc4/
 disabled rules:
   - yaml-title
 ---

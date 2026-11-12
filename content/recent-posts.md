@@ -3,10 +3,9 @@ title: recent posts (index)
 aliases: 
 description: 
 extract: 
-images: 
 created: 2026-10-03-Sat-5:14pm
 updated: 2026-10-04-Sun-2:48pm
-order: 
+republished:
 author: 
 draft: true
 publish: false

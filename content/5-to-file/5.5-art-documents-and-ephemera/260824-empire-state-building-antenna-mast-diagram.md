@@ -15,9 +15,9 @@ extract: “From 1967, a list of TV and radio stations’ space on the Empire St
 image_credit: Broadcast Engineering magazine
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-09-Mon-6:29pm
+republished:
 aliases: []
 ig_media_id: "17970679892940450"
-ig_permalink: https://www.instagram.com/p/DcbjdDaoGIa/
 disabled rules:
   - yaml-title
 ---

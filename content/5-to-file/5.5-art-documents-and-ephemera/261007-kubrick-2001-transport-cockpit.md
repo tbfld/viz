@@ -17,9 +17,9 @@ extract: none
 image_credit: Warner Bros. Pictures
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-09-Mon-6:14pm
+republished:
 aliases: []
 ig_media_id: "18344635735286644"
-ig_permalink: https://www.instagram.com/p/DeMu5fFoG1L/
 disabled rules:
   - yaml-title
 ---

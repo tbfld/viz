@@ -11,9 +11,9 @@ extract: Kurt Vonnegut’s narrative diagram
 image_credit: unknown
 created: 2026-11-09-Mon-12:15pm
 updated: 2026-11-10-Tue-8:25pm
+republished:
 aliases: []
 ig_media_id: "18125328136901307"
-ig_permalink: https://www.instagram.com/p/DfQDPAbRlOk/
 disabled rules:
   - yaml-title
 ---

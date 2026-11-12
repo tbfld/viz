@@ -11,9 +11,9 @@ extract: '"a snapshot of local incompressible motion"'
 image_credit: " OpenAI"
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:13pm
+republished:
 aliases: []
 ig_media_id: "18126634123698875"
-ig_permalink: https://www.instagram.com/p/DdIRuLsxU7Y/
 disabled rules:
   - yaml-title
 ---

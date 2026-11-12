@@ -10,9 +10,9 @@ extract: "one of my fave #dataviz microgenres"
 image_credit: SMPritchard / @AstroBioGeek (Xitter)
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-2:27pm
+republished:
 aliases: []
 ig_media_id: "18167701162473922"
-ig_permalink: https://www.instagram.com/p/Ddy9L38oJMB/
 disabled rules:
   - yaml-title
 ---

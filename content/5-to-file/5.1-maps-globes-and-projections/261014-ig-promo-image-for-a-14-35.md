@@ -8,9 +8,9 @@ extract: "Promo image for a 14” (35.56cm) transparent globe manufactured by Fa
 image_credit:
 created: 2026-10-15-Thu-12:25pm
 updated: 2026-10-31-Sat-5:3pm
+republished:
 aliases: []
 ig_media_id: "17913937557523426"
-ig_permalink: "https://www.instagram.com/p/DeesmiDoPHO/"
 disabled rules: [yaml-title]
 ---
 

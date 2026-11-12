@@ -13,6 +13,9 @@ interface ChangelogEntry {
   slug: string
   created: string | null
   updated: string | null
+  // Optional frontmatter `republished` (a date). When set, the blog feed
+  // sorts and dates the post by it instead of `created`; null when absent.
+  republished: string | null
   wordCount: number
   isNew: boolean
   // true for blog posts (shown in the blog feed); see isBlogPost below
@@ -31,6 +34,24 @@ interface ChangelogEntry {
  * timestamp format, say) used to crash this entire emitter and take out the
  * whole build. Treat an invalid date the same way the rest of the pipeline
  * already treats a missing one. */
+/** `republished` is usually a bare date ("2026-11-11", which YAML may hand
+ * us as a Date at UTC midnight). Anchor a bare date at noon UTC so every
+ * timezone displays the same calendar day; anything else goes through the
+ * normal loose parser. Empty or missing -> null (the key is kept blank on
+ * every note for consistency, so blank must mean "not republished"). */
+function parseRepublished(value: unknown): Date | null {
+  if (value === null || value === undefined || value === "") return null
+  const bare =
+    value instanceof Date
+      ? value.toISOString().slice(0, 10)
+      : typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value.trim())
+        ? value.trim()
+        : null
+  if (bare) return new Date(`${bare}T12:00:00Z`)
+  const d = parseLooseDate(value)
+  return isNaN(d.getTime()) ? null : d
+}
+
 function safeISOString(date: Date | null): string | null {
   if (!date || isNaN(date.getTime())) return null
   return date.toISOString()
@@ -131,6 +152,7 @@ export const Changelog: QuartzEmitterPlugin = () => {
           ? parseLooseDate(frontmatter.created)
           : null
         const updatedDate = getDate(ctx.cfg.configuration, file.data) ?? new Date()
+        const republishedDate = parseRepublished(frontmatter?.republished)
 
         // Determine if new (created within last 24 hours)
         const now = new Date()
@@ -156,6 +178,7 @@ export const Changelog: QuartzEmitterPlugin = () => {
           slug: slug ?? "",
           created: safeISOString(createdDate),
           updated: safeISOString(updatedDate),
+          republished: safeISOString(republishedDate),
           wordCount: countWords(text),
           isNew,
           isPost: isBlogPost(slug, frontmatter),

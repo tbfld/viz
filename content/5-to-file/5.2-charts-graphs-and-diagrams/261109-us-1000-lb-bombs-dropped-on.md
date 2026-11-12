@@ -15,9 +15,9 @@ extract: US 1000-lb bombs dropped of SE Asia
 image_credit: unknown
 created: 2026-11-09-Mon-12:15pm
 updated: 2026-11-10-Tue-7:44pm
+republished:
 aliases: []
 ig_media_id: "17886792441691255"
-ig_permalink: https://www.instagram.com/p/DfhzQEERwZt/
 disabled rules:
   - yaml-title
 ---

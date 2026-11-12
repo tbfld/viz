@@ -8,6 +8,7 @@ extract:
 image_credit: 
 created: 
 updated: 
+republished:
 aliases: []
 ---
 

@@ -11,9 +11,9 @@ extract: Another strange design orbiting (so to speak) around the head/planet vi
 image_credit:
 created: 2026-10-17-Sat-3:58pm
 updated: 2026-10-19-Mon-10:53am
+republished:
 aliases: []
 ig_media_id: "18154580170479461"
-ig_permalink: https://www.instagram.com/p/Demf729IOI4/
 disabled rules:
   - yaml-title
 ---

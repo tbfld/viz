@@ -8,9 +8,9 @@ extract: "Heath Bunting, “Travel Jog” (2015)"
 image_credit:
 created: 2026-11-09 16:21
 updated: 2026-11-09 16:21
+republished:
 aliases: []
 ig_media_id: "18130693159894671"
-ig_permalink: "https://www.instagram.com/p/Dfhv3kcxSEU/"
 disabled rules: [yaml-title]
 ---
 

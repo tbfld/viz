@@ -8,9 +8,9 @@ extract: "Yannis Skarpelos on FB: {{{ Thinking over the Character Assassination 
 image_credit:
 created: 2026-10-24 18:44
 updated: 2026-10-24 18:44
+republished:
 aliases: []
 ig_media_id: "18152015023543240"
-ig_permalink: "https://www.instagram.com/p/De4zmD9R_Ll/"
 disabled rules: [yaml-title]
 ---
 

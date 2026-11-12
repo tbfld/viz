@@ -14,9 +14,9 @@ extract: Thomas Edison, Kinetoscopic Record of a Sneeze, Harper’s (March 24, 1
 image_credit: public domain
 created: 2026-10-22-Thu-9:57am
 updated: 2026-11-11-Wed-9:36am
+republished:
 aliases: []
 ig_media_id: "18134665384675936"
-ig_permalink: https://www.instagram.com/p/Dexx4KqIL2x/
 disabled rules:
   - yaml-title
 ---

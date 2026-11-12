@@ -8,9 +8,9 @@ extract: "Clerical folk-art calendar"
 image_credit:
 created: 2026-10-24 18:57
 updated: 2026-10-24 18:57
+republished:
 aliases: []
 ig_media_id: "18479955274114153"
-ig_permalink: "https://www.instagram.com/p/De41BDSRi3b/"
 disabled rules: [yaml-title]
 ---
 

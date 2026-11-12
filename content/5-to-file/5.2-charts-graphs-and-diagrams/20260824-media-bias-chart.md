@@ -12,9 +12,9 @@ extract: from “most extreme” to “most extreme”
 image_credit: Adfontes Media
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-7:26pm
+republished:
 aliases: []
 ig_media_id: "18141184399569762"
-ig_permalink: https://www.instagram.com/p/DcbTsJikeu4/
 disabled rules:
   - yaml-title
 ---

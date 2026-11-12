@@ -12,9 +12,9 @@ extract: https://www.quantamagazine.org/the-four-color-theorem-gets-a-rare-new-p
 image_credit: Kenneth Appel and Wolfgang Haken
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:6pm
+republished:
 aliases: []
 ig_media_id: "18216378793341471"
-ig_permalink: https://www.instagram.com/p/DdOYD3kRxuk/
 disabled rules:
   - yaml-title
 ---

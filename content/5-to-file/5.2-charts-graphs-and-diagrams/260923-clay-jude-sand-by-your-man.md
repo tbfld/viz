@@ -11,9 +11,9 @@ extract: '"Subte-clay-nean Loamsick Blues"'
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:14pm
+republished:
 aliases: []
 ig_media_id: "18064743023785190"
-ig_permalink: https://www.instagram.com/p/DdphjYVoAVj/
 disabled rules:
   - yaml-title
 ---

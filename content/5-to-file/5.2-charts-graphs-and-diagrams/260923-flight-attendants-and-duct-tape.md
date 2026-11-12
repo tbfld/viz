@@ -12,9 +12,9 @@ extract: '"Global Density of Where Flight Attendants Will Most Likely Need Duct 
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:14pm
+republished:
 aliases: []
 ig_media_id: "18176948620439847"
-ig_permalink: https://www.instagram.com/p/Ddo1jVlxQDL/
 disabled rules:
   - yaml-title
 ---

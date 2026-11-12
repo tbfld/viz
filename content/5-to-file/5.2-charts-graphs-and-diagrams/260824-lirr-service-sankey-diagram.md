@@ -13,9 +13,9 @@ extract: “A great little 1966 infographic of LIRR service showing one-way trip
 image_credit: LIRR
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:16pm
+republished:
 aliases: []
 ig_media_id: "17916045360441898"
-ig_permalink: https://www.instagram.com/p/DcbjlVroPNA/
 disabled rules:
   - yaml-title
 ---

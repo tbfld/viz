@@ -16,9 +16,9 @@ extract: Gerardo Clusellas, “Fatigue and Comfort in Human Positions” (1953�
 image_credit:
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-9:57am
+republished:
 aliases: []
 ig_media_id: "18106739105262790"
-ig_permalink: https://www.instagram.com/p/DeXkWMZIAcq/
 disabled rules:
   - yaml-title
 ---

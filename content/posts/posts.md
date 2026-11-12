@@ -37,3 +37,8 @@ The blog feed lists every published note. The book (the table-of-contents view) 
 - **Old URLs keep working:** a note in a `to-file` folder, or imported from Instagram, also answers at `/posts/<name>` (an automatic redirect, so filing never 404s links made when it lived in `posts/`). A note filed somewhere else loses that, as does any other path it used to have. Any other dead URL lands on a 404 page that searches the site for the URL's words (`quartz/util/notFoundSearch.ts`).
 - **Gotchas:** in `quartz build --serve`, restart after moving files so siblings renumber. The `order:` field in the template is an unused leftover, not the position.
 - The TOC folds any group with more than 8 children (the current page's branch stays open).
+
+## Floating a post back to the top of the blog
+
+The blog feed is ordered by `created`, so editing a post never moves it. To bring a developed post back to the top, set `republished: YYYY-MM-DD` in its properties. The feed then sorts and dates it by that date and adds "(originally <created date>)". Leave it blank (it is on every note for consistency) and nothing changes. `created`, the book position and the importer are untouched.
+

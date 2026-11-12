@@ -12,9 +12,9 @@ extract: En France, le gouvernement érige LFI en bouc émissaire des émeutes, 
 image_credit: unknown
 created: 2026-10-31-Sat-1:19pm
 updated: 2026-11-10-Tue-8:31pm
+republished:
 aliases: []
 ig_media_id: "18115448381598338"
-ig_permalink: https://www.instagram.com/p/DfKj4A6xraO/
 disabled rules:
   - yaml-title
 ---

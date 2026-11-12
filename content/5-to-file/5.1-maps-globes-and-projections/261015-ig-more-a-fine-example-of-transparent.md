@@ -13,9 +13,9 @@ extract: "More: a fine example of transparent spacekitsch."
 image_credit: NASA
 created: 2026-10-15-Thu-12:25pm
 updated: 2026-10-15-Thu-2:41pm
+republished:
 aliases: []
 ig_media_id: "17998002321033448"
-ig_permalink: https://www.instagram.com/p/DehQFoxIMfi/
 disabled rules:
   - yaml-title
 ---

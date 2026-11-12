@@ -11,9 +11,9 @@ extract: “I clicked ‘smooth’”
 image_credit: Randall Munroe / XKCD
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:18pm
+republished:
 aliases: []
 ig_media_id: "18369072001211900"
-ig_permalink: https://www.instagram.com/p/DcpMK8Vxpg5/
 disabled rules:
   - yaml-title
 ---

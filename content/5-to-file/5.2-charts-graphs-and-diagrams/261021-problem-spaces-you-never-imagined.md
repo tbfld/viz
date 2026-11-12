@@ -10,9 +10,9 @@ extract: Problem spaces you never imagined
 image_credit: unknown
 created: 2026-10-22-Thu-9:57am
 updated: 2026-11-10-Tue-8:44pm
+republished:
 aliases: []
 ig_media_id: "18087258080291634"
-ig_permalink: https://www.instagram.com/p/DewoykJIOJY/
 disabled rules:
   - yaml-title
 ---

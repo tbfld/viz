@@ -11,9 +11,9 @@ extract: Said to be “Volume of debris in the postwar Warszawa” (🎩 MC in C
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-7:36pm
+republished:
 aliases: []
 ig_media_id: "18176440783446041"
-ig_permalink: https://www.instagram.com/p/DeKxU-zoP6W/
 disabled rules:
   - yaml-title
 ---

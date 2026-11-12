@@ -12,9 +12,9 @@ extract: “Time as Emergent Relational Order — A Relational Ontoloov of Tempo
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:17pm
+republished:
 aliases: []
 ig_media_id: "18406616905082154"
-ig_permalink: https://www.instagram.com/p/DcbUkLKkS0Q/
 disabled rules:
   - yaml-title
 ---

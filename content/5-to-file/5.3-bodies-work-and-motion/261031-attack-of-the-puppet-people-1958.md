@@ -15,9 +15,9 @@ extract: Attack of the Puppet People (1958)
 image_credit:
 created: 2026-10-31-Sat-1:19pm
 updated: 2026-11-11-Wed-9:28am
+republished:
 aliases: []
 ig_media_id: "18223325461342375"
-ig_permalink: https://www.instagram.com/p/DfKohFJxXJ3/
 disabled rules:
   - yaml-title
 ---

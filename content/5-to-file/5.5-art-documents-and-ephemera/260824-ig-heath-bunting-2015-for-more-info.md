@@ -8,9 +8,9 @@ extract: "Heath Bunting (2015), for more info 👉🏼 https://www.facebook.com/
 image_credit:
 created: 2026-08-24 18:02
 updated: 2026-08-24 18:02
+republished:
 aliases: []
 ig_media_id: "17986697252858110"
-ig_permalink: "https://www.instagram.com/p/DcbqO8KIK2Z/"
 disabled rules: [yaml-title]
 ---
 

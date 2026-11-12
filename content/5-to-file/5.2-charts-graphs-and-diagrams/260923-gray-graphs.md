@@ -12,9 +12,9 @@ extract: none
 image_credit: '"Mathematics Learning Page By Mamun-Or-Rashid"'
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:14pm
+republished:
 aliases: []
 ig_media_id: "18099935546380020"
-ig_permalink: https://www.instagram.com/p/Ddo1mQvRedx/
 disabled rules:
   - yaml-title
 ---

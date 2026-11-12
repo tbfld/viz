@@ -8,9 +8,9 @@ extract: "A _____ is a _____ who has/n't _____"
 image_credit:
 created: 2026-11-09 16:54
 updated: 2026-11-09 16:54
+republished:
 aliases: []
 ig_media_id: "18492385771108647"
-ig_permalink: "https://www.instagram.com/p/DfhzsRHxlvd/"
 disabled rules: [yaml-title]
 ---
 

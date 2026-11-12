@@ -11,9 +11,9 @@ extract: "“Repeat: ‘I only know that John is the one to help today.’”"
 image_credit: mocatest.org
 created: 2026-11-09-Mon-12:15pm
 updated: 2026-11-10-Tue-8:23pm
+republished:
 aliases: []
 ig_media_id: "18095859548181052"
-ig_permalink: https://www.instagram.com/p/DfQDcEdxcRW/
 disabled rules:
   - yaml-title
 ---

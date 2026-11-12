@@ -8,9 +8,9 @@ extract: "Marta Cerdà Alimbau, *Vogue* cover, 2021"
 image_credit:
 created: 2026-11-09 16:31
 updated: 2026-11-09 16:31
+republished:
 aliases: []
 ig_media_id: "18137183527679637"
-ig_permalink: "https://www.instagram.com/p/DfhxE3yRRwX/"
 disabled rules: [yaml-title]
 ---
 

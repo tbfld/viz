@@ -8,9 +8,9 @@ extract: "S. L. Shipman et al., \"CRISPR-Cas encoding of a digital movie into th
 image_credit:
 created: 2026-08-24 15:00
 updated: 2026-08-24 15:00
+republished:
 aliases: []
 ig_media_id: "18098465069018600"
-ig_permalink: "https://www.instagram.com/p/DcbVYjdka_h/"
 disabled rules: [yaml-title]
 ---
 

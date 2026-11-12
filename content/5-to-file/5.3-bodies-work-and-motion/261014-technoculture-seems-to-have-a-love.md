@@ -19,9 +19,9 @@ extract: Technoculture seems to have a love affair with this kind of ‘proxemic
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-3:55pm
+republished:
 aliases: []
 ig_media_id: "17993671782029234"
-ig_permalink: https://www.instagram.com/p/DeeqjWcIAxq/
 disabled rules:
   - yaml-title
 ---

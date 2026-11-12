@@ -12,10 +12,10 @@ description:
 extract: "A kitschy illustration in this planetary/face iconographic tradition by the fabulous Boris Artzybasheff for the 1962-03-02 issue of Time magazine. Digitization"
 image_credit: Time-Life
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-10-15-Thu-2:42pm
+updated: 2026-11-11-Wed-7:48pm
+republished:
 aliases: []
 ig_media_id: "18125639824681494"
-ig_permalink: "https://www.instagram.com/p/DehTbzdoJG1/"
 disabled rules: [yaml-title]
 ---
 *See also:* [Promo image for a 14" (35.56cm) transparent globe manufactured by Farquhar Transparent Globes](https://viz.counter.ink/5-to-file/5.1-maps-globes-and-projections/261014-ig-promo-image-for-a-14-35)

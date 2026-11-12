@@ -188,9 +188,9 @@ extract: "{yaml_escape(first_line[:160])}"
 image_credit:
 created: {created}
 updated: {created}
+republished:
 aliases: []
 ig_media_id: "{media_id}"
-ig_permalink: "{permalink}"
 disabled rules: [yaml-title]
 ---
 

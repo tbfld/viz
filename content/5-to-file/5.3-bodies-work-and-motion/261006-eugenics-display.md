@@ -16,9 +16,9 @@ extract: “some people are born to be a burden on the rest”
 image_credit: American Philosophical Society
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-9:58am
+republished:
 aliases: []
 ig_media_id: "18156902257509583"
-ig_permalink: https://www.instagram.com/p/DeIrWCFn-Hd/
 disabled rules:
   - yaml-title
 ---

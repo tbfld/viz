@@ -12,9 +12,9 @@ extract: synchronous / asynchronous // private / public // individual / group
 image_credit: Rich Gold
 created: 2026-10-28-Wed-11:18pm
 updated: 2026-11-10-Tue-8:37pm
+republished:
 aliases: []
 ig_media_id: "18120438209470075"
-ig_permalink: https://www.instagram.com/p/DfDsnJexAwy/
 disabled rules:
   - yaml-title
 ---

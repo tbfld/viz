@@ -14,9 +14,9 @@ extract: none
 image_credit: Museum of Costume Art (NYC)
 created: 2026-10-31-Sat-1:19pm
 updated: 2026-11-11-Wed-9:34am
+republished:
 aliases: []
 ig_media_id: "18138355333658296"
-ig_permalink: https://www.instagram.com/p/DfEHE3lxn2_/
 disabled rules:
   - yaml-title
 ---

@@ -12,6 +12,7 @@ extract: Modley’s more cartoonish style was driven in part by his entrepreneur
 image_credit: Jason Forrest, Nightingale, Data visualization Society
 created: 2026-10-28-Wed-11:12pm
 updated: 2026-10-31-Sat-1:19pm
+republished:
 aliases: []
 disabled rules:
   - yaml-title-alias

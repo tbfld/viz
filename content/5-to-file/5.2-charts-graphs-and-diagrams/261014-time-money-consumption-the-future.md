@@ -10,9 +10,9 @@ extract: “FUTURE”
 image_credit: Johan Jarnestad / The Royal Sweidh Academy of Sciences
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-8:45pm
+republished:
 aliases: []
 ig_media_id: "18135560200637683"
-ig_permalink: https://www.instagram.com/p/Ded_rM9xCpQ/
 disabled rules:
   - yaml-title
 ---

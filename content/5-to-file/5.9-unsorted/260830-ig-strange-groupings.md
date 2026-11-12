@@ -8,9 +8,9 @@ extract: "Strange groupings"
 image_credit:
 created: 2026-08-30 00:11
 updated: 2026-08-30 00:11
+republished:
 aliases: []
 ig_media_id: "18109886882609759"
-ig_permalink: "https://www.instagram.com/p/DcpMXjSR_Qf/"
 disabled rules: [yaml-title]
 ---
 

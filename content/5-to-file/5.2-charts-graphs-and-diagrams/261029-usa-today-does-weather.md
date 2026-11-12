@@ -11,9 +11,9 @@ extract: USA Today Does Weather
 image_credit: USA Today (Doyle Rice and Julie Snider)
 created: 2026-10-28-Wed-11:18pm
 updated: 2026-11-10-Tue-8:34pm
+republished:
 aliases: []
 ig_media_id: "17913327798483494"
-ig_permalink: https://www.instagram.com/p/DfDt4fbR6zw/
 disabled rules:
   - yaml-title
 ---

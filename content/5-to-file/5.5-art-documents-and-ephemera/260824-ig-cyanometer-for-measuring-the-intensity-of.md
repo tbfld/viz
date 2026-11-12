@@ -8,9 +8,9 @@ extract: "cyanometer for measuring the intensity of a blue sky, invention credit
 image_credit:
 created: 2026-08-24 16:56
 updated: 2026-08-24 16:56
+republished:
 aliases: []
 ig_media_id: "18099536480102980"
-ig_permalink: "https://www.instagram.com/p/DcbiqBkoEeD/"
 disabled rules: [yaml-title]
 ---
 

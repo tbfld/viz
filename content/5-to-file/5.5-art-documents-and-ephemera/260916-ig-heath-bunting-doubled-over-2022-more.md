@@ -8,9 +8,9 @@ extract: "Heath Bunting, “Doubled Over” (2022). More info: https://www.faceb
 image_credit:
 created: 2026-09-16 14:46
 updated: 2026-09-16 14:46
+republished:
 aliases: []
 ig_media_id: "18131688673580973"
-ig_permalink: "https://www.instagram.com/p/DdWiIPPIKSb/"
 disabled rules: [yaml-title]
 ---
 

@@ -12,9 +12,9 @@ extract: Object series like this are widely available as â€œtopology joke mugsâ€
 image_credit:
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-1:37pm
+republished:
 aliases: []
 ig_media_id: "17880023775623689"
-ig_permalink: https://www.instagram.com/p/DcbjTknIJtv/
 disabled rules:
   - yaml-title
 ---

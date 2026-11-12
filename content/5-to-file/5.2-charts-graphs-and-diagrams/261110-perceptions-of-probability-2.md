@@ -11,9 +11,9 @@ extract: “what uncertainty statements mean to different readers”
 image_credit: Decisions and Designs Inc.?
 created: 2026-11-10-Tue-9:55am
 updated: 2026-11-11-Wed-6:29pm
+republished:
 aliases: []
 ig_media_id: "17966597817217555"
-ig_permalink: https://www.instagram.com/p/DfkJtBKxIoY/
 disabled rules:
   - yaml-title
 ---

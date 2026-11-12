@@ -11,9 +11,9 @@ extract: “hierarchicolly clustered, 171 emotions”
 image_credit: unknown
 created: 2026-11-09-Mon-12:15pm
 updated: 2026-11-10-Tue-8:23pm
+republished:
 aliases: []
 ig_media_id: "17957021055301248"
-ig_permalink: https://www.instagram.com/p/Dfhxqorx5rl/
 disabled rules:
   - yaml-title
 ---

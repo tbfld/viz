@@ -11,9 +11,9 @@ extract: Odd astronomical magnitude scale
 image_credit: Astronomical League
 created: 2026-10-31-Sat-1:19pm
 updated: 2026-11-10-Tue-8:28pm
+republished:
 aliases: []
 ig_media_id: "18074555393772088"
-ig_permalink: https://www.instagram.com/p/DfKk2WmxdJs/
 disabled rules:
   - yaml-title
 ---

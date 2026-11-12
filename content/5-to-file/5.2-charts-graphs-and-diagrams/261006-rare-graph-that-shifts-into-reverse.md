@@ -12,9 +12,9 @@ extract: "Rare graph that “shifts into reverse,” from the NYT 2010-05-02. Th
 image_credit: NYT
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:15pm
+republished:
 aliases: []
 ig_media_id: "18110817113521287"
-ig_permalink: https://www.instagram.com/p/DeK05r2oAM1/
 disabled rules:
   - yaml-title
 ---

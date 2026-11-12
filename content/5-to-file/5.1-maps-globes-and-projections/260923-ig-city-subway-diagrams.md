@@ -12,9 +12,9 @@ extract: ""
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-10-19-Mon-8:59am
+republished:
 aliases: []
 ig_media_id: "18107608868615190"
-ig_permalink: https://www.instagram.com/p/Ddpf-WyoNDE/
 disabled rules:
   - yaml-title
 ---

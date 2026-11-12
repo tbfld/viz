@@ -3,10 +3,9 @@ title: Part III
 aliases:
 description:
 extract:
-images:
 created:
 updated:
-order:
+republished:
 author:
 draft: false
 publish: true

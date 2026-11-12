@@ -8,9 +8,9 @@ extract: "Bucky Fuller’s 1959 Paperboard Dome prototype, made entirely from fo
 image_credit:
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-09-Mon-7:6pm
+republished:
 aliases: []
 ig_media_id: "18127757443601515"
-ig_permalink: "https://www.instagram.com/p/DcbU2WmEV99/"
 disabled rules: [yaml-title]
 ---
 

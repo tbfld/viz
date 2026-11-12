@@ -7,7 +7,8 @@ async function loadPosts() {
     const allEntries = await response.json();
     // The blog is ordered by when a post was written (created), not when it
     // was last edited, so touching an old post doesn't float it to the top.
-    const when = (e) => new Date(e.created || e.updated || 0).getTime() || 0;
+    // A post with a `republished` date sorts (and is dated) by that instead.
+    const when = (e) => new Date(e.republished || e.created || e.updated || 0).getTime() || 0;
     const entries = allEntries
       // isPost comes from the Changelog emitter (older builds lack it)
       .filter((e) => e.slug && (e.isPost !== undefined ? e.isPost : e.slug.startsWith('posts/')))
@@ -22,11 +23,16 @@ async function loadPosts() {
     }
 
     entries.forEach((entry) => {
-      const shown = entry.created || entry.updated;
-      const date = shown ? new Date(shown) : null;
-      const dateStr = date
-        ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
-        : '';
+      const fmt = (iso) =>
+        iso
+          ? new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+          : '';
+      const shown = entry.republished || entry.created || entry.updated;
+      let dateStr = fmt(shown);
+      // For a republished post, keep the original date visible too.
+      if (entry.republished && entry.created) {
+        dateStr += ' (originally ' + fmt(entry.created) + ')';
+      }
 
       const div = document.createElement('div');
       div.className = 'post-entry';

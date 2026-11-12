@@ -8,9 +8,9 @@ extract: "David Lynch, “RONNIE ROCKET: The Absurd Mystery of the Strange Force
 image_credit:
 created: 2026-08-24 14:57
 updated: 2026-08-24 14:57
+republished:
 aliases: []
 ig_media_id: "18483876997097772"
-ig_permalink: "https://www.instagram.com/p/DcbVDckkR8g/"
 disabled rules: [yaml-title]
 ---
 

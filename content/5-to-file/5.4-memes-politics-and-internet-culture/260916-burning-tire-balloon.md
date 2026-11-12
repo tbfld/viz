@@ -11,9 +11,9 @@ extract:
 image_credit: https://www.reddit.com/r/interestingasfuck/s/gf7mHjPbMO
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-2:22pm
+republished:
 aliases: []
 ig_media_id: "18408635935080415"
-ig_permalink: https://www.instagram.com/p/DdVnEoJR3v9/
 disabled rules:
   - yaml-title
 ---

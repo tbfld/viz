@@ -10,9 +10,9 @@ extract: “Anyone can do it. Data journalism is the new punk”
 image_credit: theguardian.com
 created: 2026-10-22-Thu-9:57am
 updated: 2026-11-10-Tue-8:42pm
+republished:
 aliases: []
 ig_media_id: "17896743153415809"
-ig_permalink: https://www.instagram.com/p/Dexw8BpoP4x/
 disabled rules:
   - yaml-title
 ---

@@ -12,10 +12,10 @@ description: this is where I put survivor bias memes, refs, gags, etc
 extract: none
 image_credit: various
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-11-Wed-6:34pm
+updated: 2026-11-11-Wed-6:46pm
+republished:
 aliases: []
 ig_media_id: "18094251575387221"
-ig_permalink: https://www.instagram.com/p/Dc30qJXICHO/
 disabled rules:
   - yaml-title
 ---

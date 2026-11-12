@@ -16,9 +16,9 @@ extract: Screenshot from a 2010 NYT interactive story on Mariano Rivera
 image_credit: NYT
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-11-Wed-7:36am
+republished:
 aliases: []
 ig_media_id: "18147307519603832"
-ig_permalink: https://www.instagram.com/p/DeXlDHpoFZ9/
 disabled rules:
   - yaml-title
 ---

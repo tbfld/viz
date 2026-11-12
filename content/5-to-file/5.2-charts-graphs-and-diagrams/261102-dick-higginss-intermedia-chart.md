@@ -18,9 +18,9 @@ extract: Dick Higgins’s Intermedia chart
 image_credit: Dick Higgins
 created: 2026-11-09-Mon-12:15pm
 updated: 2026-11-10-Tue-8:27pm
+republished:
 aliases: []
 ig_media_id: "18124559188941628"
-ig_permalink: https://www.instagram.com/p/DfQDlv_x0zB/
 disabled rules:
   - yaml-title
 ---
