@@ -9,7 +9,7 @@ description: a free-form hand-drawn viz related to country music
 extract: beers, steers, cheers, deers
 image_credit: unknown
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-09-Mon-5:10pm
+updated: 2026-11-13-Fri-4:57pm
 republished:
 aliases: []
 ig_media_id: "18108908135578089"

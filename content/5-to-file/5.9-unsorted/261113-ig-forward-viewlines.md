@@ -1,13 +1,20 @@
 ---
-title: "Forward viewlines"
+title: "Forward viewlines": vehicular sightline comparison
 publish: true
 draft: false
-tags: []
-description:
+tags:
+  - cars 
+  - comparison
+  - design
+  - engineering
+  - risk
+  - safety
+  - vision
+description: 2023 chart attributed to the civil engineer Myles Russell
 extract: "Forward viewlines"
-image_credit:
-created: 2026-11-13 21:25
-updated: 2026-11-13 21:25
+image_credit: Myles Russell streetsafp.ca
+created: 2026-11-13-Fri-4:41pm
+updated: 2026-11-13-Fri-4:53pm
 republished:
 aliases: []
 ig_media_id: "17972630489960069"

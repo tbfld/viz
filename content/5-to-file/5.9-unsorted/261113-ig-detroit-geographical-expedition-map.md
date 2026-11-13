@@ -1,17 +1,25 @@
 ---
-title: "Detroit Geographical Expedition map"
+title: DGEI’s 1971 map of racist traffic data in Detroit
 publish: true
 draft: false
-tags: []
-description:
-extract: "Detroit Geographical Expedition map"
-image_credit:
-created: 2026-11-13 21:39
-updated: 2026-11-13 21:39
+tags:
+  - 1970s
+  - cars
+  - cartography
+  - geography
+  - race
+  - radicalism
+  - urban
+description: Bunge and Warren’s confrontational map of racist traffic data
+extract: Detroit Geographical Expedition map
+image_credit: William Bunge and Gwendolyn Warren
+created: 2026-11-13-Fri-4:41pm
+updated: 2026-11-13-Fri-4:49pm
 republished:
 aliases: []
 ig_media_id: "18118285175020130"
-disabled rules: [yaml-title]
+disabled rules:
+  - yaml-title
 ---
 
 Detroit Geographical Expedition map
