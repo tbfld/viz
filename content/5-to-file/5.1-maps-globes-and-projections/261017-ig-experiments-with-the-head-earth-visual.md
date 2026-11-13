@@ -17,6 +17,8 @@ ig_media_id: "18498899362101391"
 disabled rules:
   - yaml-title
 ---
+![[18498899362101391-1.jpg]]
+
 Experiments with the head / earth visual homology had two aspects: 
  
 OT1H, it suggests a growing intuition that the inherited ~poetic assumption that man is but a speck and the world infinite was crumbling. In its place came a new recognition — fueled by globe-spanning colonial empires, the territorial expansion of the "Great War" (WW1) into "World War" (WW2, obv), and later the rise of aviation and space flight — that humanity was "outgrowing" the earth. 
@@ -46,7 +48,5 @@ Plate 18
 Neurath, Pictorial Statistics 
  
 For more, see https://isotyperevisited.org/2009/09/neurath-on-maps.php
-
-![[18498899362101391-1.jpg]]
 
 *Originally posted on [Instagram](https://www.instagram.com/p/DemtkOCIN_H/).*

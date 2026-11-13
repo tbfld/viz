@@ -13,14 +13,16 @@ description: Part 1 of an essay about Edward Tufte
 extract: "“In many ways Tufte is a non-scholar’s idea of a scholar: opinionated, obsessive, lecturing, hectoring, a man of big ideas.”"
 image_credit: Ted Byfield
 created: 2026-11-12-Thu-4:23pm
-updated: 2026-11-12-Thu-7:56pm
+updated: 2026-11-12-Thu-8:27pm
 republished:
 aliases: []
 disabled rules:
   - yaml-title
 ---
-*Note: This essay has been sitting on my hard drive for a decade, and I’m delighted to finally get it off. I’ve update a few things and tweaked a few others, but it remains substantially the same. — Ted*
 
+***
+*Note: This essay has been sitting on my hard drive for a decade, and I’m delighted to finally get it off. I’ve update a few things and tweaked a few others, but it remains substantially the same. — Ted*
+***
  
 For decades, Edward Tufte was — and for many still is — the most widely known name in the field of visualization, and with good reason. His visual acuity is immense and intense, and he’s dedicated much of his life to encouraging others to cultivate this critical awareness — in particular, by attuning them to the importance of attentive and accurate representations of information and data. He’s worked tirelessly to show how lazy, thoughtless, or pandering charts and graphs can have serious consequences, ranging from pervasive mediocrity to sudden catastrophe. More than that, he’s a vigorously entrepreneurial one-man band, an impresario and pamphleteer who researches, curates, writes, publishes, promotes, and distributes his ideas and books via his website and in person. Starting in the mid-1980s he has criss-crossed the US, promoting his vision of a virtuous vision in day-long lectures held in corporate meeting rooms packed with people who pay \$300–400 to learn from him and get a boxed set of his books. These efforts have succeeded wildly: as of 2007 one source claimed there were *1.4 million* copies of his titles in print; by 2009 it was said to be 1.5 million copies,[^1] and by 2011 it was almost 2 million.[^2] Even if those figures were exaggerated tenfold or even a hundredfold, the actual numbers would still be blockbusters for nonfiction.
 
