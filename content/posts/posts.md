@@ -3,7 +3,7 @@ title: Posts
 publish: false
 disabled rules: [yaml-title]
 created: 2026-10-03-Sat-5:14pm
-updated: 2026-11-11-Wed-4:8pm
+updated: 2026-11-12-Thu-3:41pm
 ---
 # How notes get into the book
 

@@ -20,7 +20,8 @@ WARNINGS (printed, exit 0 unless --strict):
   frontmatter-bracket    "[" or "]" in title/extract/description (shows in previews)
   unbalanced-brackets    a paragraph with more "[" than "]" or vice versa
 
-Skipped: templates/, private/, .obsidian/, and notes with draft: true or publish: false.
+Skipped: templates/, private/, .obsidian/, and notes with draft: true, publish: false
+or publish: preview (preview-only notes never go live, so they can't block a deploy).
 Code fences, inline code, HTML comments and $$math$$ are ignored.
 Internal failures never block a deploy: if this script itself crashes it exits 0.
 """
@@ -96,7 +97,7 @@ def lint_file(rel, content, index, out):
     stems, paths, names = index
     text = open(os.path.join(content, rel), encoding="utf-8", errors="replace").read()
     fm, body = split_frontmatter(text)
-    if re.search(r"^\s*draft:\s*true\b", fm, re.I | re.M) or re.search(r"^\s*publish:\s*false\b", fm, re.I | re.M):
+    if re.search(r"^\s*draft:\s*true\b", fm, re.I | re.M) or re.search(r"^\s*publish:\s*(false|preview)\b", fm, re.I | re.M):
         return
     path = os.path.join(os.path.basename(content), rel).replace(os.sep, "/")
     off = fm.count("\n")

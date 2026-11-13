@@ -87,6 +87,58 @@ h1, h2, h3, h4, h5, h6, thead {
   letter-spacing: 0.02em;
 }
 
+// TB ADDED 2026-11-12
+// Footnotes section heading ("Notes"): mixed case, 30% smaller than the
+// stock h2 size (1.4rem * 0.7 = 0.98rem).
+.footnotes > h2 {
+  text-transform: none;
+  font-size: 0.98rem;
+}
+
+// TB ADDED 2026-11-12: body text was too dense (16px type, line-height 1.6).
+// Article text only (sidebars, TOC, explorer keep their sizes). Tune here:
+//   size   1rem -> 1.125rem   (16px -> 18px, +12.5%)
+//   leading 1.6rem fixed -> 1.75 -> 1.9 unitless (scales with the type size)
+$article-size: 1.125rem;
+$article-leading: 1.9;
+
+article p,
+article li {
+  font-size: $article-size;
+  line-height: $article-leading;
+}
+
+// Notes stay a step smaller than the text they annotate.
+article .footnotes p,
+article .footnotes li {
+  font-size: 0.95rem;
+  line-height: 1.98; // 1.65 x 1.2
+}
+
+// TB ADDED 2026-11-12: image captions (see plugins/transformers/imageCaption.ts
+// and templates/image-conventions.md). An image alone in its paragraph followed
+// by an all-italic paragraph is tagged .image-with-caption / .image-caption.
+// The image is centered, so the caption is centered under it.
+$caption-scale: 0.85; // 15% smaller than body text
+
+article p.image-with-caption {
+  text-align: center;
+  margin-bottom: 0;
+
+  > img {
+    vertical-align: bottom; // no baseline gap under the image
+    margin-bottom: 0.4rem;
+  }
+}
+
+article p.image-caption {
+  text-align: center;
+  font-style: italic;
+  font-size: calc(#{$article-size} * #{$caption-scale});
+  line-height: 1.5;
+  margin-top: 0;
+}
+
 // Mockups settled on the blockquote rule matching the same gray as <hr>,
 // not the accent color Quartz's stock theme uses.
 blockquote {

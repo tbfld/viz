@@ -60,6 +60,22 @@ Also fixed at the source: `instagram_import.py`'s filename generation used to pr
 
 Page **titles** (the YAML `title:` field, what's actually displayed) are completely unaffected by any of this — only the underlying file/folder names changed.
 
+## Captions (added 2026-11-12)
+
+An image alone on its line, a blank line, then the caption as **one paragraph written entirely in italics**:
+
+```
+![[261028-isotype-modley-telefacts-compilation.jpeg]]
+
+*Modley's "Telefacts" ran in US newspapers from 1938 to 1945.*
+```
+
+That's the whole syntax. At build time `quartz/plugins/transformers/imageCaption.ts` tags the pair (`.image-with-caption` / `.image-caption`) and `custom.scss` styles it: the image is centered, and the caption is italic, centered under it, and 15% smaller than body text (`$caption-scale: 0.85`).
+
+- The caption must be *only* italic. A normal paragraph with an italic phrase in it (a book title, say) is not treated as a caption.
+- Link by **filename only** (`![[x.jpg]]`), never `![[content/4-images/x.jpg]]`: Quartz resolves links relative to `content/`, so the folder path 404s on the site even though Obsidian accepts it.
+- Images with no caption are unchanged (left-aligned, full width).
+
 ## Credits / rights
 
 Not addressed by this doc — the footer already states `images © their respective owners` sitewide. A per-image credit/attribution field (frontmatter or a sidecar) is part of the still-open "image handling design" pass (captions, credits, layout), not yet built.
