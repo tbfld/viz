@@ -10,7 +10,7 @@ description:
 extract: "Experiments with the head / earth visual homology had two aspects:"
 image_credit: unknown (low-res copies all over the net)
 created: 2026-10-17-Sat-3:58pm
-updated: 2026-11-10-Tue-7:21pm
+updated: 2026-11-13-Fri-4:41pm
 republished:
 aliases: []
 ig_media_id: "18498899362101391"
