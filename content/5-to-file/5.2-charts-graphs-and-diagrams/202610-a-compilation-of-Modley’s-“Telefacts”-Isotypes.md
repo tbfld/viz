@@ -3,10 +3,10 @@ title: A compilation of Modley’s “Telefacts” Isotypes
 publish: true
 draft: false
 tags:
-  - isotype
-  - USA
   - Austria
   - culture
+  - isotype
+  - USA
 description: short notice of an essay on Modley
 extract: Modley’s more cartoonish style was driven in part by his entrepreneurial approach
 image_credit: Jason Forrest, Nightingale, Data visualization Society

@@ -3,10 +3,10 @@ title: "2026-09-23: Gray graphs"
 publish: true
 draft: false
 tags:
-  - mathematics
-  - graph
-  - meme
   - gender
+  - graph
+  - mathematics
+  - meme
 description: several "Gray graphs" presenting Marion Cameron Gray’s discovery
 extract: none
 image_credit: '"Mathematics Learning Page By Mamun-Or-Rashid"'

@@ -3,10 +3,10 @@ title: "2026-10-29: Guardian eye-tracking 2007"
 publish: true
 draft: false
 tags:
-  - journalism
-  - vision
-  - measurement
   - interaction
+  - journalism
+  - measurement
+  - vision
 description:
 extract: Guardian eye-tracking 2007
 image_credit: theguardian.com

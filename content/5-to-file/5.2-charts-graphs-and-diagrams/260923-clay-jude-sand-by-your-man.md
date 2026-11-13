@@ -3,8 +3,8 @@ title: "2026-09-23: Clay, silt, sand diagram of pop music hits"
 publish: true
 draft: false
 tags:
-  - music
   - geology
+  - music
   - parody
 description: triangular clay-silt-sand diagram of pop music hits
 extract: '"Subte-clay-nean Loamsick Blues"'

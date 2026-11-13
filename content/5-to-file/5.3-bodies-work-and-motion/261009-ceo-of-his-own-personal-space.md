@@ -3,14 +3,14 @@ title: "2026-10-09: CEO of own personal space"
 publish: true
 draft: false
 tags:
-  - proxemics
-  - social
-  - edward-t-hall
-  - space
-  - quantification
-  - society
-  - gender
   - clipart
+  - edward-t-hall
+  - gender
+  - proxemics
+  - quantification
+  - social
+  - society
+  - space
 description: a generic “personal space” viz, notable for the silhouette’s signals
 extract: intimate, personal, social
 image_credit: unknown

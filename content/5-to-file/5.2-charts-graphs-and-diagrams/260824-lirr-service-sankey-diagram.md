@@ -3,11 +3,11 @@ title: "2026-08-24: LIRR service Sankey diagram"
 publish: true
 draft: false
 tags:
+  - suburban
   - trains
   - transportation
   - travel
   - urban
-  - suburban
 description: 1966 Sankey diagram showing one-way trip counts on the Long Island Railroad
 extract: “A great little 1966 infographic of LIRR service showing one-way trip counts”
 image_credit: LIRR

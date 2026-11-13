@@ -3,10 +3,10 @@ title: "2026-09-23: City subway diagrams"
 publish: true
 draft: false
 tags:
-  - map
-  - transportation
-  - public
   - comparison
+  - map
+  - public
+  - transportation
 description: 30 basic subway duagrams, from Bielefeld to Osaka
 extract: ""
 image_credit: unknown

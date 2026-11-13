@@ -4,8 +4,8 @@ publish: true
 draft: false
 tags:
   - history
-  - weather
   - printing
+  - weather
 description: On Willard Brinton and Tufte’s tricky approach to citing and evaluating sources
 extract: '"just one example of (imo) Tufte’s penchant for obscuring his sources and precedents"'
 image_credit: Heating and Ventilating magazine

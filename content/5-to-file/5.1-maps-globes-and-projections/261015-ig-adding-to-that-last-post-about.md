@@ -3,10 +3,10 @@ title: "2026-10-15: Transparent ‘plastics’ had been around for decades (Farq
 publish: true
 draft: false
 tags: 
+  - computation
+  - globe
   - space
   - transparency
-  - globe
-  - computation
 description:
 extract: "Adding to that last post about the Farquhar globe: transparent 'plastics' had been around for decades — since Otto Röhm invented plexiglass in 1933 at leas"
 image_credit: unknown

@@ -3,11 +3,11 @@ title: "2026-10-15: More: a fine example of transparent spacekitsch."
 publish: true
 draft: false
 tags:
-  - space
-  - face
-  - transparency
-  - globe
   - animation
+  - face
+  - globe
+  - space
+  - transparency
 description:
 extract: "More: a fine example of transparent spacekitsch."
 image_credit: NASA

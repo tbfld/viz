@@ -3,15 +3,15 @@ title: "2026-10-07: Kubrick > 2001 > transport > cockpit"
 publish: true
 draft: false
 tags:
-  - film
+  - aviation
   - cinema
   - cockpit
+  - film
   - interface
-  - sci-fi
   - orientation
-  - trajectory
-  - aviation
+  - sci-fi
   - space
+  - trajectory
 description: "screenshot from Kurbrick’s 2001: A Space Odyssey"
 extract: none
 image_credit: Warner Bros. Pictures

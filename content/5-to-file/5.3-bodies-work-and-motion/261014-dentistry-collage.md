@@ -3,10 +3,10 @@ title: "2026-10-14: Dentistry collage"
 publish: true
 draft: false
 tags:
-  - medicine
   - anatomy
-  - photography
   - collage
+  - medicine
+  - photography
   - scale
 description: unusual diagram with labeled dentists pointing at teeth
 extract: none

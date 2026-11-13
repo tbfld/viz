@@ -5,8 +5,8 @@ draft: false
 tags:
   - audio
   - phonology
-  - time
   - sound
+  - time
 description: a “time-domain amplitude graph” of the english alphabet
 extract: (the alphabet)
 image_credit: unknown

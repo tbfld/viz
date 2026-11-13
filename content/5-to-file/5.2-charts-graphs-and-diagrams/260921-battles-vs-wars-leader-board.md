@@ -3,10 +3,10 @@ title: "2026-09-21: Battles vs wars leaderboard scatterplot"
 publish: true
 draft: false
 tags:
-  - history
-  - war
-  - scatterplot
   - greatman
+  - history
+  - scatterplot
+  - war
 description: exactly what it says on the label
 extract: “Napoleon Bonaparte”
 image_credit: unknown

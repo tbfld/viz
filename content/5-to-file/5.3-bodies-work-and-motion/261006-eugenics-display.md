@@ -3,14 +3,14 @@ title: "2026-10-06: eugenics display (date unknown — ca. 1920s/1930s)"
 publish: true
 draft: false
 tags:
-  - racism
-  - demographics
-  - eugenics
-  - interactive
   - 1920s
   - 1930s
-  - public
+  - demographics
+  - eugenics
   - event
+  - interactive
+  - public
+  - racism
 description: a blinkenlights eugenics display
 extract: “some people are born to be a burden on the rest”
 image_credit: American Philosophical Society

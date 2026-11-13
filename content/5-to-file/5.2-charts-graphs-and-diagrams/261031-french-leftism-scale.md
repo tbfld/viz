@@ -3,10 +3,10 @@ title: "2026-10-31: French leftism scale"
 publish: true
 draft: false
 tags:
-  - politics
-  - performance
-  - parody
   - leftism
+  - parody
+  - performance
+  - politics
 description: French leftism scale
 extract: En France, le gouvernement érige LFI en bouc émissaire des émeutes, en l'assimilant à une «ultra-gauche» fort floue / in France, the government makes lfi (la france insoumise) the scapegoat for the riots, lumping it in with a vague “far left”
 image_credit: unknown

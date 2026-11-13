@@ -3,8 +3,8 @@ title: "2026-10-11: Google Ngram for “massive flows of data”, 1990–2009"
 publish: true
 draft: false
 tags:
-  - trends
   - language
+  - trends
 description: ngram of a tired phrase beloved by datavizzies
 extract: Google ngram for the phrase “massive flows of data”, 1990–2009. Thank god dataviz bobbleheads stopped saying it — it always sounded like they were stroking thei
 image_credit: Ted Byfield

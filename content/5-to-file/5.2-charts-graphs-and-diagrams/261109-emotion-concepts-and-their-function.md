@@ -3,9 +3,9 @@ title: "2026-11-09: Emotion Concepts and their Function"
 publish: true
 draft: false
 tags:
-  - subjectivity
   - emotions
   - psychology
+  - subjectivity
 description: emotion concepts and their function
 extract: “hierarchicolly clustered, 171 emotions”
 image_credit: unknown

@@ -3,8 +3,8 @@ title: "2026-10-22: The Grauniad 2012-05-24 was a simpler time"
 publish: true
 draft: false
 tags:
-  - journalism
   - data
+  - journalism
 description: screenshot of a 2012 Guardian headline
 extract: “Anyone can do it. Data journalism is the new punk”
 image_credit: theguardian.com

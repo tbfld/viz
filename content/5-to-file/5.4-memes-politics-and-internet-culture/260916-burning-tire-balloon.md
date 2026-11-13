@@ -4,8 +4,8 @@ publish: true
 draft: false
 tags:
   - environment
-  - pollution
   - performance
+  - pollution
 description: screenshot of a video of a group collecting the pollution from a burning tire in a weather balloon
 extract:
 image_credit: https://www.reddit.com/r/interestingasfuck/s/gf7mHjPbMO

@@ -3,9 +3,9 @@ title: "2026-10-29: Cahill-Keyes / Cahill-Waterman butterfly projection no. 245"
 publish: true
 draft: false
 tags:
+  - 1910s
   - cartography
   - earth
-  - 1910s
   - folding
 description: experimental map projection designed to minimize point-to-point distortions within continents
 extract: none

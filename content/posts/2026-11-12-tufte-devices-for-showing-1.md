@@ -3,12 +3,12 @@ title: "Devices for showing the obvious to the ignorant: Edward Tufte and the 20
 publish: "true"
 draft:
 tags:
-  - tufte
-  - criticism
-  - publishing
-  - canon
-  - ethics
   - bibliography
+  - canon
+  - criticism
+  - ethics
+  - publishing
+  - tufte
 description: Part 1 of an essay about Edward Tufte
 extract: "“In many ways Tufte is a non-scholar’s idea of a scholar: opinionated, obsessive, lecturing, hectoring, a man of big ideas.”"
 image_credit: Ted Byfield
@@ -91,9 +91,9 @@ But the *Challenger* had blown up in 1986, in the early days of Reagan’s lame-
 
 [^1]: Adam Aston, “Tufte's Invisible Yet Ubiquitous Influence,” *BloombergBusiness* (then called *Businessweek*; 10 Jun 2009) [LINK](http://www.bloomberg.com/bw/stories/2009-06-10/tuftes-invisible-yet-ubiquitous-influencebusinessweek-business-news-stock-market-and-financial-advice).
 
-[^2]: Christopher Bonanos, “The Minister of Information: If This Messy World Is Becoming Easier to Understand, Thank Edward Tufte,” *New York* magazine (10 Jun 2007), [LINK](http://nymag.com/arts/books/features/33156/); Joshua Yaffa, “The Information Sage: Meet Edward Tufte, the Graphics Guru to the Power Elite Who Is Revolutionizing How We See Data,” *Washington Monthly* (May/Jun 2011), [ARCHIVED LINK]([http://www.washingtonmonthly.com/magazine/mayjune_2011/features/the_information_sage029137.php?page=all](https://web.archive.org/web/20140701063846/https://washingtonmonthly.com/magazine/mayjune_2011/features/the_information_sage029137.php?page=all)). Tufte self-publishes, so it’s impossible to corroborate these numbers with independent sources. In an interview conducted in 1994 and 1997, he stated that “there are now 245,000 copies in print.” See "Computer Literacy Bookshops Interview, 1994–1997" [ARCHIVED LINK]([https://www.edwardtufte.com/tufte/complit_9497](https://web.archive.org/web/20080512091507/http://www.edwardtufte.com/tufte/complit_9497)).
+[^2]: Christopher Bonanos, “The Minister of Information: If This Messy World Is Becoming Easier to Understand, Thank Edward Tufte,” *New York* magazine (10 Jun 2007), [LINK](http://nymag.com/arts/books/features/33156/); Joshua Yaffa, “The Information Sage: Meet Edward Tufte, the Graphics Guru to the Power Elite Who Is Revolutionizing How We See Data,” *Washington Monthly* (May/Jun 2011), [ARCHIVED LINK](https://web.archive.org/web/20140701063846/https://washingtonmonthly.com/magazine/mayjune_2011/features/the_information_sage029137.php?page=all). Tufte self-publishes, so it’s impossible to corroborate these numbers with independent sources. In an interview conducted in 1994 and 1997, he stated that “there are now 245,000 copies in print.” See "Computer Literacy Bookshops Interview, 1994–1997" [ARCHIVED LINK](https://web.archive.org/web/20080512091507/http://www.edwardtufte.com/tufte/complit_9497).
 
-[^3]: Michael H. Martin, “The Man Who Makes Sense Of Numbers: Yale Professor Edward Tufte Dazzles Business People by Making Rational the Data that Rule Their Work Lives,” *Fortune* magazine (27 Oct 1997), [ARCHIVED LINK]([http://www.edwardtufte.com/tufte/fortune_97](https://web.archive.org/web/20150227203616/http://www.edwardtufte.com/tufte/fortune_97)).
+[^3]: Michael H. Martin, “The Man Who Makes Sense Of Numbers: Yale Professor Edward Tufte Dazzles Business People by Making Rational the Data that Rule Their Work Lives,” *Fortune* magazine (27 Oct 1997), [ARCHIVED LINK](https://web.archive.org/web/20150227203616/http://www.edwardtufte.com/tufte/fortune_97).
 
 [^4]: Steve Duin, “Edward Tufte: the master of graphics and design,” *The Oregonian* (22 Jun 2011), [LINK](http://www.oregonlive.com/news/oregonian/steve_duin/index.ssf/2011/06/edward_tufte_the_master_of_gra.html).
 
@@ -107,7 +107,7 @@ But the *Challenger* had blown up in 1986, in the early days of Reagan’s lame-
 
 [^9]: Deborah Shapley, “The da Vinci of Data,” *New York Times* (30 Mar 1998), [LINK](http://www.nytimes.com/1998/03/30/business/the-da-vinci-of-data.html).
 
-[^10]: James Surowiecki, “Sermon on the Mont: How Edward Tufte Led Bose out of the Land of Chartjunk,” *Metropolis Enterprise* (Jan 1999), [ARCHIVED LINK]([http://www.edwardtufte.com/tufte/metropolis_0199](https://web.archive.org/web/20150227204103/http://www.edwardtufte.com/tufte/metropolis_0199)).
+[^10]: James Surowiecki, “Sermon on the Mont: How Edward Tufte Led Bose out of the Land of Chartjunk,” *Metropolis Enterprise* (Jan 1999), [ARCHIVED LINK](https://web.archive.org/web/20150227204103/http://www.edwardtufte.com/tufte/metropolis_0199).
 
 [^11]: Orit Halpern, *Beautiful Data: A History of Vision and Reason Since 1945* (Durham NC: Duke UP, 2014).
 
@@ -127,7 +127,7 @@ But the *Challenger* had blown up in 1986, in the early days of Reagan’s lame-
 
 [^19]: Tufte, *Visual Display*, p. 112. Tufte’s table omits Brinton’s later book *Graphic Presentation* (NYC: Brinton Associates, 1939).
 
-[^20]: Charles A. Baker and Walter F. Grether (Aero Medical Laboratory). *Visual Presentation of Information*. Project No. 7180; Accession No. AD0043064 (Patterson AFB, OH: Air Force Aerospace Medical Research Lab, Air Research and Development Command, Aug 1954) [LINK]([[ontent/4-images/baker-grether.pdf]]4-images/baker-grether.pdf|baker-grether), marked declassified 27 Dec 1979.
+[^20]: Charles A. Baker and Walter F. Grether (Aero Medical Laboratory). *Visual Presentation of Information*. Project No. 7180; Accession No. AD0043064 (Patterson AFB, OH: Air Force Aerospace Medical Research Lab, Air Research and Development Command, Aug 1954) [[baker-grether.pdf|LINK]], marked declassified 27 Dec 1979.
 
 [^21]: Baker and Grether, *Visual Presentation* of Information*. Henry Dreyfuss, *The Measure of Man: Human Factors in Design* \[1959\] (rev and expanded 2d ed, NYC: Whitney Library of Design, 1966).
 
@@ -155,13 +155,13 @@ But the *Challenger* had blown up in 1986, in the early days of Reagan’s lame-
 
 [^33]: Yaffa’s “Information Sage” variously refers to Tufte as "revered," an "oracle," a "Talmudic authority," and "a philosopher king who reigns over his field largely because he invented it.”
 
-[^34]: Tufte, “PowerPoint Is Evil: Power Corrupts. PowerPoint Corrupts Absolutely,” *WiReD* 11.9 (Sep 2003), [ARCHIVED LINK]([http://archive.wired.com/wired/archive/11.09/ppt2.html](https://web.archive.org/web/20150124160216/http://archive.wired.com/wired/archive/11.09/ppt2.html)).
+[^34]: Tufte, “PowerPoint Is Evil: Power Corrupts. PowerPoint Corrupts Absolutely,” *WiReD* 11.9 (Sep 2003), [ARCHIVED LINK](https://web.archive.org/web/20150124160216/http://archive.wired.com/wired/archive/11.09/ppt2.html).
 
 [^35]: William Drenttel, “Edward Tufte: The Dispassionate Statistician II,” *Design Observer* (6 Nov 2003); [LINK](https://www.designobserver.com/feature/edward-tufte-the-dispassionate-statistician-ii/1587).
 
 [^36]: Ian Parker, “Absolute Powerpoint: Can a Software Package Edit Our Thoughts?”, *New Yorker* (21 May 21 2001), [LINK](http://www.newyorker.com/magazine/2001/05/28/absolute-powerpoint).
 
-[^37]: Dan Nadel, "Ten Questions for Edward Tufte," *ID Magazine* (Nov 2003); [LINK]([https://www.edwardtufte.com/tufte/tenquestions](https://web.archive.org/web/20150227205451/https://www.edwardtufte.com/tufte/tenquestions)).
+[^37]: Dan Nadel, "Ten Questions for Edward Tufte," *ID Magazine* (Nov 2003); [ARCHIVED LINK](https://web.archive.org/web/20150227205451/https://www.edwardtufte.com/tufte/tenquestions).
 
 [^38]: Tufte, *The Cognitive Style of PowerPoint* (Cheshire CT: Graphics Press, 2003).
 

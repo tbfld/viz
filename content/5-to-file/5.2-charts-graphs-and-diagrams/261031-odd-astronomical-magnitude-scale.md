@@ -4,8 +4,8 @@ publish: true
 draft: false
 tags:
   - astronomy
-  - space
   - light
+  - space
 description: a semi-free-form linear magnitude scale
 extract: Odd astronomical magnitude scale
 image_credit: Astronomical League

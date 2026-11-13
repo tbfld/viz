@@ -3,8 +3,8 @@ title: "2026-11-02: Kurt Vonnegut’s narrative diagram"
 publish: true
 draft: false
 tags:
-  - narrative
   - fiction
+  - narrative
   - presentation
 description: screenshot of a talk given by Kurt Vonnegut on narrative structures
 extract: Kurt Vonnegut’s narrative diagram

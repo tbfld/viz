@@ -5,8 +5,8 @@ draft: false
 tags:
   - 3D
   - morphology
-  - object
   - multiples
+  - object
 description: a series of ceramic objects that morph from a donut to a mug
 extract: Object series like this are widely available as “topology joke mugs” on Ebay, Etsy, etc.
 image_credit:

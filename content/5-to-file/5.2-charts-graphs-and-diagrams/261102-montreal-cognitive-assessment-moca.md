@@ -3,8 +3,8 @@ title: "2026-11-02: Montreal Cognitive Assessment (MOCA)"
 publish: true
 draft: false
 tags:
-  - cognition
   - assessment
+  - cognition
   - psychology
 description: Montreal Cognitive Assessment (MOCA)
 extract: "“Repeat: ‘I only know that John is the one to help today.’”"

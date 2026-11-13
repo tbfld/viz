@@ -3,12 +3,12 @@ title: "2026-10-29: Clothing pattern (1873)"
 publish: true
 draft: false
 tags:
-  - clothing
-  - optimization
-  - museum
-  - exhibition
-  - 1940s
   - 1870s
+  - 1940s
+  - clothing
+  - exhibition
+  - museum
+  - optimization
 description: a page from Rudofsky’s Art Clothes Modern? showing clothing patterns
 extract: none
 image_credit: Museum of Costume Art (NYC)

@@ -4,10 +4,10 @@ publish: true
 draft: false
 tags:
   - advertising
-  - computation
-  - IBM
-  - hollerith
   - business
+  - computation
+  - hollerith
+  - IBM
 description: 1934 IBM punchcard ad
 extract: “You can be EVERYWHERE — WATCH EVERYTHING WITH PUNCHED CARDS
 image_credit: IBM

@@ -3,9 +3,9 @@ title: "2026-10-29: USA Today Does Weather"
 publish: true
 draft: false
 tags:
-  - weather
-  - usatoday
   - illustration
+  - usatoday
+  - weather
 description: a surprisingly, um, ‘graphic’ infographic illustrating the risks of extreme heat
 extract: USA Today Does Weather
 image_credit: USA Today (Doyle Rice and Julie Snider)

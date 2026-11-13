@@ -3,9 +3,9 @@ title: "2026-09-23: Global density of where flight attendants will most likely n
 publish: true
 draft: false
 tags:
-  - parody
   - joke
   - map
+  - parody
   - violence
 description:
 extract: '"Global Density of Where Flight Attendants Will Most Likely Need Duct Tape"'

@@ -3,10 +3,10 @@ title: "2026-10-09: Waddington’s landscapes"
 publish: true
 draft: false
 tags:
-  - waves
-  - dynamics
   - biology
+  - dynamics
   - metaphor
+  - waves
 description: Image from a C. H. Waddington book
 extract: “No, they’re nothing more than a metaphor”
 image_credit:

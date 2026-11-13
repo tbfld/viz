@@ -3,12 +3,12 @@ title: "2026-10-22: Thomas Edison, Kinetoscopic Record of a Sneeze, Harper’s (
 publish: true
 draft: false
 tags:
+  - 1890s
+  - body
+  - magazines
   - multiples
   - photography
-  - body
   - time-and-motion-studies
-  - 1890s
-  - magazines
 description: a grid of frame from Edison’s Kinetoscopic record of a sneeze
 extract: Thomas Edison, Kinetoscopic Record of a Sneeze, Harper’s (March 24, 1894)
 image_credit: public domain

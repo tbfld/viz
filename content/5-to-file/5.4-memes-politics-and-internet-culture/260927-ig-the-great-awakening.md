@@ -3,10 +3,10 @@ title: "2026-09-27: The Great Awakening map"
 publish: true
 draft: false
 tags:
+  - conspiraxcy
   - diagram
   - everything
   - paranoia
-  - conspiraxcy
   - redpill
 description: trendy redpilled everything chart
 extract: '"We are using our collective consciousness to manifest the Optimal Timeline Reality for Earth"'

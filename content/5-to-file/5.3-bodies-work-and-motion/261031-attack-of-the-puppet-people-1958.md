@@ -3,13 +3,13 @@ title: "2026-10-31: Attack of the Puppet People (1958)"
 publish: true
 draft: false
 tags:
-  - film
-  - cinema
   - 1950s
+  - cinema
+  - film
   - gender
+  - metrics
   - scale
   - trope
-  - metrics
 description: screenshot from Attack of the Puppet People (1958)
 extract: Attack of the Puppet People (1958)
 image_credit:

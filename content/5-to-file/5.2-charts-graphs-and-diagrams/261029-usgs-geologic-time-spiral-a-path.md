@@ -3,9 +3,9 @@ title: "2026-10-29: USGS, Geologic Time Spiral: A Path to the Past, 2008"
 publish: true
 draft: false
 tags:
+  - earth
   - geology
   - history
-  - earth
 description: a “time spiral” diagram of geological history
 extract: "USGS, Geologic Time Spiral: A Path to the Past, 2008"
 image_credit: US Geological Survey

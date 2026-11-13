@@ -3,17 +3,17 @@ title: "2026-10-14: Technoculture’s love affair with ‘proxemics’"
 publish: true
 draft: false
 tags:
-  - proxemics
-  - space
-  - edward-t-hall
-  - quantification
-  - politics
-  - society
-  - art-history
-  - theory
-  - gender
   - 1960s
+  - art-history
   - clipart
+  - edward-t-hall
+  - gender
+  - politics
+  - proxemics
+  - quantification
+  - society
+  - space
+  - theory
 description: how to decompress the lonely crowdster
 extract: Technoculture seems to have a love affair with this kind of ‘proxemics’ theory, first articulated (AFAIK) by the cultural anthropologist Edward T. Hall in the e
 image_credit: unknown

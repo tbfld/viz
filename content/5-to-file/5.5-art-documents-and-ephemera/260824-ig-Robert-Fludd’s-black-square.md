@@ -3,12 +3,12 @@ title: "2026-08-24: Robert Fludd’s black square, from Utriusque Cosmi (1617)"
 publish: true
 draft: false
 tags:
-  - print
   - 17C
+  - black
   - cosmology
   - infinity
-  - black
   - ink
+  - print
 description: screenshot of a PDR social-media post on Fludd's use of solid black
 extract: |-
   "Robert Fludd's black square representing the

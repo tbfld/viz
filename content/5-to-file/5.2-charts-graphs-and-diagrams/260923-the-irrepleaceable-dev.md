@@ -3,11 +3,11 @@ title: "2026-09-23: The irreplaceable dev: developer career path chart"
 publish: true
 draft: false
 tags:
-  - parody
-  - joke
-  - qualitative
-  - programming
   - geology
+  - joke
+  - parody
+  - programming
+  - qualitative
 description: snarky chart tracing developer career path until vibe-coding
 extract: “Finally, I am irreplaceable dev"
 image_credit: unknown

@@ -3,8 +3,8 @@ title: "2026-10-14: Time, money, consumption, the future"
 publish: true
 draft: false
 tags:
-  - time
   - figurative
+  - time
 description: time vs consumption graph with figures
 extract: “FUTURE”
 image_credit: Johan Jarnestad / The Royal Sweidh Academy of Sciences

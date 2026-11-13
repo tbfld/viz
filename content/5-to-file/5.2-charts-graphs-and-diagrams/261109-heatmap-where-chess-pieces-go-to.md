@@ -3,8 +3,8 @@ title: "2026-11-09: Heatmap: where chess pieces go to die"
 publish: true
 draft: false
 tags:
-  - games
   - chess
+  - games
   - play
 description: 32 heatmaps, one per piece
 extract: “how often each piece was captured on a given square”

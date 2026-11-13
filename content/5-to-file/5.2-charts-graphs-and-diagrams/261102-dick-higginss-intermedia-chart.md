@@ -3,16 +3,16 @@ title: "2026-11-02: Dick Higgins’s Intermedia chart"
 publish: true
 draft: false
 tags:
-  - media
-  - theory
-  - cartography
-  - qualitative
   - art
-  - movements
-  - performance
+  - cartography
+  - genre
   - graphics
   - literature
-  - genre
+  - media
+  - movements
+  - performance
+  - qualitative
+  - theory
 description: A chart of intermedia
 extract: Dick Higgins’s Intermedia chart
 image_credit: Dick Higgins

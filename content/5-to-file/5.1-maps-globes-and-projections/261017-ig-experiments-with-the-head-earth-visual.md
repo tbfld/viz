@@ -4,8 +4,8 @@ publish: true
 draft: false
 tags:
   - cartography
-  - silhouette
   - distortion
+  - silhouette
 description:
 extract: "Experiments with the head / earth visual homology had two aspects:"
 image_credit: unknown (low-res copies all over the net)

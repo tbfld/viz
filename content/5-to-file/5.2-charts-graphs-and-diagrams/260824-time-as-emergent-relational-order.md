@@ -3,10 +3,10 @@ title: "2026-08-24: Time as emergent relational order"
 publish: true
 draft: false
 tags:
-  - time
-  - philosophy
   - complexity
   - emergence
+  - philosophy
+  - time
 description: odd illustration/diagram supposedly related to Spinoza
 extract: “Time as Emergent Relational Order — A Relational Ontoloov of Temporality”
 image_credit: unknown

@@ -3,10 +3,10 @@ title: "2026-09-23: Knowledge-of-philosophy rageface meme chart"
 publish: true
 draft: false
 tags:
-  - parody
   - joke
-  - philosophy
   - meme
+  - parody
+  - philosophy
   - rageface
 description: rageface meme chart tracing the knowledge-of-philosophy trajectory
 extract: '"help me"'

@@ -4,9 +4,9 @@ publish: true
 draft: false
 tags:
   - AI
+  - interaction
   - parody
   - simulation
-  - interaction
 description: AI-gen nonsense sankey diagram
 extract: |-
   "Draw a sankey diagram showing the simulated flow of people

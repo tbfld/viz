@@ -3,13 +3,13 @@ title: "2026-08-24: Empire State Building antenna mast diagram"
 publish: true
 draft: false
 tags:
+  - architecture
+  - broadcast
   - nyc
   - radio
-  - tv
-  - broadcast
-  - architecture
   - skyscraper
   - spectrum
+  - tv
 description: which TV and radio stations broadcast from where on the mast
 extract: “From 1967, a list of TV and radio stations’ space on the Empire State Building antenna mast”
 image_credit: Broadcast Engineering magazine

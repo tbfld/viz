@@ -3,11 +3,11 @@ title: "2026-09-04: Survivor bias becomes a meme"
 publish: true
 draft: false
 tags:
-  - meme
   - aviation
-  - WW2
   - costume
   - humor
+  - meme
+  - WW2
 description: this is where I put survivor bias memes, refs, gags, etc
 extract: none
 image_credit: various

@@ -6,8 +6,8 @@ tags:
   - flowchart
   - parody
   - topography
-  - yin-yang
   - trends
+  - yin-yang
 description: gag meme viz
 extract: “ it’s so over” and “we’re so back” (what more do you want?!)
 image_credit: unknown

@@ -4,10 +4,10 @@ publish: true
 draft: false
 tags:
   - AI
-  - finance
   - bubble
-  - economics
   - circle
+  - economics
+  - finance
 description:
 extract:
 image_credit: sona-am.com via Michael Roberts / thenextrecession.wordpress.com

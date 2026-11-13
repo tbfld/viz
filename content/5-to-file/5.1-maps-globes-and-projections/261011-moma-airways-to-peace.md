@@ -3,11 +3,11 @@ title: "2026-10-11: MoMa, Airways to Peace exhibition, 1943"
 publish: true
 draft: false
 tags:
+  - 1940s
   - aviation
   - exhibition
   - moma
   - museum
-  - 1940s
 description:
 extract: ""
 image_credit:

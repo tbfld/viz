@@ -3,8 +3,8 @@ title: "2026-11-09: Perceptions of probability 1"
 publish: true
 draft: false
 tags:
-  - statistics
   - language
+  - statistics
 description: zonination rendering of a classic using ggjoy
 extract: none
 image_credit: github/zonination

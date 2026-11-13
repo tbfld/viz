@@ -4,9 +4,9 @@ publish: true
 draft: false
 tags:
   - communications
-  - typology
-  - presentation
   - media
+  - presentation
+  - typology
 description: A slide from a presentation by Rich Gold, founder of Xerox PARC’s Artist-In-Residence program
 extract: synchronous / asynchronous // private / public // individual / group
 image_credit: Rich Gold

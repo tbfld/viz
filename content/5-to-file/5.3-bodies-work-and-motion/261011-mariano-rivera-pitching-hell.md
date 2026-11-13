@@ -3,14 +3,14 @@ title: "2026-10-11: Mariano Rivera pitching hell"
 publish: true
 draft: false
 tags:
-  - nyt
-  - baseball
-  - sports
-  - interactive
-  - time
-  - multiples
   - 3D
+  - baseball
+  - interactive
+  - multiples
+  - nyt
   - pov
+  - sports
+  - time
 description: screenshot from the NYT’s 2010 interactive story “Mariano Rivera, King of the Closers”
 extract: Screenshot from a 2010 NYT interactive story on Mariano Rivera
 image_credit: NYT

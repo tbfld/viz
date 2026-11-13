@@ -3,13 +3,13 @@ title: "2026-11-09: map of US 1000-lb-bombs-in SE Asia"
 publish: true
 draft: false
 tags:
-  - war
-  - vietnam
-  - laos
-  - cambodia
-  - bombing
   - aviation
+  - bombing
+  - cambodia
   - environment
+  - laos
+  - vietnam
+  - war
 description: two maps showing distribution of US 1K-lb bombs dropped in SE Asia
 extract: US 1000-lb bombs dropped of SE Asia
 image_credit: unknown

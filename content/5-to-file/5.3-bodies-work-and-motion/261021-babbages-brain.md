@@ -4,10 +4,10 @@ publish: true
 draft: false
 tags:
   - 1900s
+  - computation
   - pathology
   - photography
   - phrenology
-  - computation
 description: two images of Babbage’s brain from a 1909 Royal Society of London publication
 extract: “Description of the Brain of Mr. Charles Babbage, F.R.S”
 image_credit: public domain

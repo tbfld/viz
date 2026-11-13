@@ -3,8 +3,8 @@ title: "2026-10-14: country, beers, boots"
 publish: true
 draft: false
 tags:
-  - music
   - freeform
+  - music
 description: a free-form hand-drawn viz related to country music
 extract: beers, steers, cheers, deers
 image_credit: unknown

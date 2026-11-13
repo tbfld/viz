@@ -3,14 +3,14 @@ title: "2026-10-11: Gerardo Clusellas, “Fatigue and Comfort in Human Positions
 publish: true
 draft: false
 tags:
+  - architecture
+  - argentina
   - body
   - ergonomics
-  - photography
-  - multiples
-  - vitruvian
-  - argentina
-  - architecture
   - furniture
+  - multiples
+  - photography
+  - vitruvian
 description: multiple-exposure photo of a man raising his arm, by the Argentine architect Gerardo Clusellas
 extract: Gerardo Clusellas, “Fatigue and Comfort in Human Positions” (1953–1957)
 image_credit:

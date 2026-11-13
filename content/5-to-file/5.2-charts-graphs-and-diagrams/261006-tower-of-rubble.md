@@ -3,9 +3,9 @@ title: "2026-10-06: Tower of rubble"
 publish: true
 draft: false
 tags:
+  - urban
   - war
   - WW2
-  - urban
 description: rendering of an immense high-rise of debris
 extract: Said to be “Volume of debris in the postwar Warszawa” (🎩 MC in CZ)
 image_credit: unknown

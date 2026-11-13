@@ -3,9 +3,9 @@ title: "2026-09-24: truck parking simulation"
 publish: true
 draft: false
 tags:
+  - cars
   - games
   - simulation
-  - cars
 description:
 extract: |-
   “the computer parks the truck. draw

@@ -3,9 +3,9 @@ title: "2026-08-30: XKCD on curve-fitting"
 publish: true
 draft: false
 tags:
-  - parody
   - cartoon
   - mathematics
+  - parody
 description: XKCD on curve-fitting
 extract: “I clicked ‘smooth’”
 image_credit: Randall Munroe / XKCD

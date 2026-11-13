@@ -3,10 +3,10 @@ title: "2026-10-15: Boris Artzybasheff, kitschy planetary/face illustration, Tim
 publish: true
 draft: false
 tags: 
-  - space
+  - cartography
   - face
   - globe
-  - cartography
+  - space
   - topography
 description:
 extract: "A kitschy illustration in this planetary/face iconographic tradition by the fabulous Boris Artzybasheff for the 1962-03-02 issue of Time magazine. Digitization"

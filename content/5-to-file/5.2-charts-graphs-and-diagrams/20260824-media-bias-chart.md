@@ -3,10 +3,10 @@ title: "2026-08-24: “Media Bias Chart”"
 publish: true
 draft: false
 tags:
-  - media
-  - politics
-  - news
   - bias
+  - media
+  - news
+  - politics
 description: chart purporting to map media bias left/right and more/less reliable
 extract: from “most extreme” to “most extreme”
 image_credit: Adfontes Media
