@@ -64,6 +64,7 @@ const config: QuartzConfig = {
       // book_position for pages dropped into a folder whose folder note has one
       Plugin.FolderBookPosition(),
       Plugin.ImageFlag(),
+      Plugin.MovedPages(),
       Plugin.ImageCaption(),
       Plugin.CreatedModifiedDate({
         // "git" sits between frontmatter and filesystem: if a page's own

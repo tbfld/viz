@@ -11,6 +11,9 @@ ERRORS (exit 1, block the deploy):
   empty-link-target      [text]()
   space-in-link-target   [text](a b)
   unexpanded-shorthand   [FB]/path or [INSTA]/path (use the full URL)
+  invalid-frontmatter    YAML header that doesn't parse (e.g. an unquoted title with a
+                         colon: title: art-sci: foo). Quartz stops the whole build on
+                         these, even for unpublished notes, so nothing deploys.
 
 WARNINGS (printed, exit 0 unless --strict):
   stray-wikilink-close   "]]" with no "[["
@@ -29,13 +32,18 @@ import os
 import re
 import sys
 
+try:
+    import yaml  # PyYAML; present on GitHub runners. Without it the header check is skipped.
+except ImportError:
+    yaml = None
+
 SKIP_DIRS = {"templates", "private", ".obsidian"}
 GITHUB = os.environ.get("GITHUB_ACTIONS") == "true"
 
 ERRORS = {
     "unclosed-wikilink", "unresolved-wikilink", "undefined-reference",
     "undefined-footnote", "empty-link-target", "space-in-link-target",
-    "unexpanded-shorthand",
+    "unexpanded-shorthand", "invalid-frontmatter",
 }
 
 
@@ -97,6 +105,17 @@ def lint_file(rel, content, index, out):
     stems, paths, names = index
     text = open(os.path.join(content, rel), encoding="utf-8", errors="replace").read()
     fm, body = split_frontmatter(text)
+    # Quartz aborts the whole build on a header it can't parse, drafts and
+    # unpublished notes included, so this check comes before the skip below.
+    if fm and yaml is not None:
+        try:
+            yaml.safe_load(re.sub(r"\A---[ \t]*\r?\n|\r?\n---[ \t]*(?:\r?\n|\Z)\Z", "", fm))
+        except yaml.YAMLError as e:
+            mark = getattr(e, "problem_mark", None)
+            line = (mark.line + 2) if mark else 1
+            detail = (getattr(e, "problem", "") or "invalid YAML").strip()
+            out.append((os.path.join(os.path.basename(content), rel).replace(os.sep, "/"), line,
+                        "invalid-frontmatter", f"{detail} (quote the value if it contains a colon)"))
     if re.search(r"^\s*draft:\s*true\b", fm, re.I | re.M) or re.search(r"^\s*publish:\s*(false|preview)\b", fm, re.I | re.M):
         return
     path = os.path.join(os.path.basename(content), rel).replace(os.sep, "/")

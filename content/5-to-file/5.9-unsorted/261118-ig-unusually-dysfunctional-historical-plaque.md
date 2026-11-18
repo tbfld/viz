@@ -1,17 +1,23 @@
 ---
-title: "Unusually dysfunctional historical plaque"
+title: An unusually dysfunctional historical plaque — Ian Curtis’s home
 publish: true
 draft: false
-tags: []
-description:
-extract: "Unusually dysfunctional historical plaque"
-image_credit:
-created: 2026-11-18 15:09
-updated: 2026-11-18 15:09
+tags:
+  - UK
+  - history
+  - music
+  - memorial
+  - graphics
+description: Peter Saville–designed historical plaque on Ian Curtis’s old house
+extract: Unusually dysfunctional historical plaque
+image_credit: Sarah Steele
+created: 2026-11-18-Wed-10:17am
+updated: 2026-11-18-Wed-11:25am
 republished:
 aliases: []
 ig_media_id: "18123514702945494"
-disabled rules: [yaml-title]
+disabled rules:
+  - yaml-title
 ---
 
 Unusually dysfunctional historical plaque

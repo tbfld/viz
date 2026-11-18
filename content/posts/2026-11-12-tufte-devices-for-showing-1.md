@@ -13,7 +13,7 @@ description: Part 1 of an essay about Edward Tufte
 extract: "“In many ways Tufte is a non-scholar’s idea of a scholar: opinionated, obsessive, lecturing, hectoring, a man of big ideas.”"
 image_credit: Ted Byfield
 created: 2026-11-12-Thu-4:23pm
-updated: 2026-11-12-Thu-8:27pm
+updated: 2026-11-18-Wed-10:21am
 republished:
 aliases: []
 disabled rules:

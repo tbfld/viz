@@ -1,5 +1,5 @@
 ---
-title: "Forward viewlines": vehicular sightline comparison
+title: "Forward viewlines: vehicular sightline comparison"
 publish: true
 draft: false
 tags:
@@ -14,7 +14,7 @@ description: 2023 chart attributed to the civil engineer Myles Russell
 extract: "Forward viewlines"
 image_credit: Myles Russell streetsafp.ca
 created: 2026-11-13-Fri-4:41pm
-updated: 2026-11-13-Fri-4:53pm
+updated: 2026-11-18-Wed-11:40am
 republished:
 aliases: []
 ig_media_id: "17972630489960069"

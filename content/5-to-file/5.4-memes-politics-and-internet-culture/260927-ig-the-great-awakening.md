@@ -3,7 +3,7 @@ title: "2026-09-27: The Great Awakening map"
 publish: true
 draft: false
 tags:
-  - conspiraxcy
+  - conspiracy
   - diagram
   - everything
   - paranoia
@@ -12,7 +12,7 @@ description: trendy redpilled everything chart
 extract: '"We are using our collective consciousness to manifest the Optimal Timeline Reality for Earth"'
 image_credit: Champ Parinya, 2018
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-11-Wed-2:27pm
+updated: 2026-11-18-Wed-11:59am
 republished:
 aliases: []
 ig_media_id: "18088244222300588"

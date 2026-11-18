@@ -1,5 +1,5 @@
 ---
-title: art-sci: polarized filters 
+title: "art-sci: polarized filters" 
 publish: true
 draft: false
 tags:
@@ -11,7 +11,7 @@ tags:
   - vision
 description: an elegant demo of an unintuitive effect of polariation
 extract: "Polarized filter art-sci"
-image_credit: @moebio/Xitter 2022
+image_credit: "@moebio/Xitter 2022"
 created: 2026-11-13-Fri-4:40pm
 updated: 2026-11-13-Fri-5:0pm
 republished:
