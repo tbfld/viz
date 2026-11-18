@@ -12,7 +12,7 @@ description:
 extract: "More: a fine example of transparent spacekitsch."
 image_credit: NASA
 created: 2026-10-15-Thu-12:25pm
-updated: 2026-10-15-Thu-2:41pm
+updated: 2026-11-16-Mon-11:50am
 republished:
 aliases: []
 ig_media_id: "17998002321033448"
@@ -21,7 +21,7 @@ disabled rules:
 ---
 *See also:* [Promo image for a 14" (35.56cm) transparent globe manufactured by Farquhar Transparent Globes](https://viz.counter.ink/5-to-file/5.1-maps-globes-and-projections/261014-ig-promo-image-for-a-14-35)
 
-*See also:* [Adding to that last post about the Faquhar globe](https://viz.counter.ink/5-to-file/5.1-maps-globes-and-projections/261015-ig-adding-to-that-last-post-about)
+*See also:* [Adding to that last post about the Farquhar globe](https://viz.counter.ink/5-to-file/5.1-maps-globes-and-projections/261015-ig-adding-to-that-last-post-about)
 
 *See also:* [A kitschy illustration in this planetary/face iconographic tradition by the fabulous Boris Artzybasheff](https://viz.counter.ink/5-to-file/5.1-maps-globes-and-projections/261015-ig-a-kitschy-illustration-in-this-planetary)
 

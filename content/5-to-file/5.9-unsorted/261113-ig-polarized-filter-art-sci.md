@@ -12,8 +12,8 @@ tags:
 description: an elegant demo of an unintuitive effect of polariation
 extract: "Polarized filter art-sci"
 image_credit: @moebio/Xitter 2022
-created: 2026-11-13 15:27
-updated: 2026-11-13 15:27
+created: 2026-11-13-Fri-4:40pm
+updated: 2026-11-13-Fri-5:0pm
 republished:
 aliases: []
 ig_media_id: "18117117683118737"

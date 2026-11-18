@@ -11,7 +11,7 @@ description: On Willard Brinton and Tufte’s tricky approach to citing and eval
 extract: '"just one example of (imo) Tufte’s penchant for obscuring his sources and precedents"'
 image_credit: Heating and Ventilating magazine
 created: 2026-10-22-Thu-9:57am
-updated: 2026-11-12-Thu-8:27pm
+updated: 2026-11-16-Mon-11:51am
 republished:
 aliases: []
 ig_media_id: "18099635456548263"
