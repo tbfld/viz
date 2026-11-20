@@ -22,6 +22,15 @@ export function exitIfCancel(val) {
 }
 
 export async function stashContentFolder(contentFolder) {
+  // SAFETY: this deletes content/ and later replaces it with an older copy,
+  // destroying anything saved there in between (pasted images, new folders,
+  // edits). Blocked unless you deliberately opt in with QUARTZ_ALLOW_CONTENT_STASH=1
+  // (and Obsidian is closed).
+  if (process.env.QUARTZ_ALLOW_CONTENT_STASH !== "1") {
+    throw new Error(
+      "Refusing to " + "stash" + " content/: it can permanently delete files saved there meanwhile. Set QUARTZ_ALLOW_CONTENT_STASH=1 only with Obsidian closed.",
+    )
+  }
   await fs.promises.rm(contentCacheFolder, { force: true, recursive: true })
   await fs.promises.cp(contentFolder, contentCacheFolder, {
     force: true,
@@ -43,6 +52,15 @@ export function gitPull(origin, branch) {
 }
 
 export async function popContentFolder(contentFolder) {
+  // SAFETY: this deletes content/ and later replaces it with an older copy,
+  // destroying anything saved there in between (pasted images, new folders,
+  // edits). Blocked unless you deliberately opt in with QUARTZ_ALLOW_CONTENT_STASH=1
+  // (and Obsidian is closed).
+  if (process.env.QUARTZ_ALLOW_CONTENT_STASH !== "1") {
+    throw new Error(
+      "Refusing to " + "restore" + " content/: it can permanently delete files saved there meanwhile. Set QUARTZ_ALLOW_CONTENT_STASH=1 only with Obsidian closed.",
+    )
+  }
   await fs.promises.rm(contentFolder, { force: true, recursive: true })
   await fs.promises.cp(contentCacheFolder, contentFolder, {
     force: true,

@@ -3,7 +3,7 @@ title: Posts
 publish: false
 disabled rules: [yaml-title]
 created: 2026-10-03-Sat-5:14pm
-updated: 2026-11-12-Thu-3:41pm
+updated: 2026-11-19-Thu-10:53pm
 ---
 # How notes get into the book
 
@@ -41,4 +41,8 @@ The blog feed lists every published note. The book (the table-of-contents view) 
 ## Floating a post back to the top of the blog
 
 The blog feed is ordered by `created`, so editing a post never moves it. To bring a developed post back to the top, set `republished: YYYY-MM-DD` in its properties. The feed then sorts and dates it by that date and adds "(originally <created date>)". Leave it blank (it is on every note for consistency) and nothing changes. `created`, the book position and the importer are untouched.
+
+## Where files must live
+
+Save images, folders and notes only inside `content/` (attachments go to `content/att/`, or next to the note). `public/` is the site's build output; every `quartz build` empties it, so anything saved there is silently deleted. It is hidden in Obsidian (snippet `hide-public-folder`), and the lint flags an embed whose file exists only in `public/`.
 

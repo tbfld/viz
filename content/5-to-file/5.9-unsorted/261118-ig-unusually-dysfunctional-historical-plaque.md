@@ -12,7 +12,7 @@ description: Peter Saville–designed historical plaque on Ian Curtis’s old ho
 extract: Unusually dysfunctional historical plaque
 image_credit: Sarah Steele
 created: 2026-11-18-Wed-10:17am
-updated: 2026-11-18-Wed-11:25am
+updated: 2026-11-18-Wed-12:43pm
 republished:
 aliases: []
 ig_media_id: "18123514702945494"
@@ -21,6 +21,8 @@ disabled rules:
 ---
 
 Unusually dysfunctional historical plaque
+
+(cf. [[261118-ig-unusually-functional-headstone]])
 
 On the front of 77 Barton Street in Macclesfield, where Ian Curtis lived, worked, and died. Photo: Sarah Steele, in the FB group Joy Division Fan Club, 18 May 2024 https://www.facebook.com/groups/23844787597/posts/10163510968257598/
 

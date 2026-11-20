@@ -140,7 +140,14 @@ def lint_file(rel, content, index, out):
         for m in re.finditer(r"!?\[\[([^\]\n]*)\]\]", work):
             name = re.split(r"[|#^]", m.group(1))[0]
             if name.strip() and not resolves(name, stems, paths, names):
-                add(i, "unresolved-wikilink", m.group(0)[:100])
+                hint = ""
+                # a file that exists only in public/ (the build output, emptied by every
+                # build) is a common cause: say so instead of just "unresolved"
+                pub = os.path.join(os.path.dirname(os.path.abspath(content)), "public")
+                base = os.path.basename(name.strip())
+                if base and os.path.isdir(pub) and any(base in fs for _, _, fs in os.walk(pub)):
+                    hint = "  <- file is only in public/ (build output, wiped by every build); move it into content/"
+                add(i, "unresolved-wikilink", m.group(0)[:100] + hint)
         work = re.sub(r"!?\[\[[^\]\n]*\]\]", lambda m: " " * len(m.group(0)), work)
         if "[[" in work:
             add(i, "unclosed-wikilink", l.strip()[:100])

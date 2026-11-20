@@ -14,3 +14,6 @@ __pycache__
 
 # hand-made backup copies (e.g. foo.ts_BU-250212-1041)
 *_BU-*
+
+# Local preview output (hidden from Obsidian; see local-preview script)
+.site/

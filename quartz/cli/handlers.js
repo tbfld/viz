@@ -511,6 +511,17 @@ export async function handleRestore(argv) {
  * @param {*} argv arguments for `sync`
  */
 export async function handleSync(argv) {
+  // DISABLED on purpose. `quartz sync` copies content/ aside, deletes it, pulls,
+  // then deletes it again and restores the old copy. Anything Obsidian saves
+  // into content/ in between (pasted images, new folders, edits) is destroyed
+  // with no trash and no commit. Use the qublish script (plain git) instead.
+  console.error(
+    chalk.red(
+      "`quartz sync` is disabled in this repo because it can permanently delete files created in content/ while it runs. Use the qublish script (plain git) to sync.",
+    ),
+  )
+  process.exit(1)
+  // eslint-disable-next-line no-unreachable
   const contentFolder = path.join(cwd, argv.directory)
   console.log(chalk.bgGreen.black(`\n Quartz v${version} \n`))
   console.log("Backing up your content")

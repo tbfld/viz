@@ -12,7 +12,7 @@ description: this is where I put survivor bias memes, refs, gags, etc
 extract: none
 image_credit: various
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-11-Wed-6:46pm
+updated: 2026-11-19-Thu-4:19pm
 republished:
 aliases: []
 ig_media_id: "18094251575387221"
@@ -30,4 +30,6 @@ From https://digitalculturesandarts.ch/simon-strick-faschisierung-fluchtlinie-de
 More:
 
 ![[18099691313037169-1.jpg]]
+
+![[17900496813564410-1.jpg]] — *Originally posted on [Instagram](https://www.instagram.com/p/DcbVHZ3EULv/).*
 
