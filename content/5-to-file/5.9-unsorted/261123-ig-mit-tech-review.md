@@ -1,17 +1,22 @@
 ---
-title: "MIT Tech Review"
+title: MIT Tech Review
 publish: true
 draft: false
-tags: []
-description:
-extract: "MIT Tech Review"
-image_credit:
-created: 2026-11-23 15:32
-updated: 2026-11-23 15:32
+tags:
+  - AI
+  - time
+  - software
+  - progress
+description: early 2026 graph describing aspects of AI advance 2020(?)–2026
+extract: “Measurements above 16 hrs are unreliable with our current task suite”
+image_credit: MIT Technology Review
+created: 2026-11-23-Mon-11:10am
+updated: 2026-11-23-Mon-11:21am
 republished:
 aliases: []
 ig_media_id: "18044250995839077"
-disabled rules: [yaml-title]
+disabled rules:
+  - yaml-title
 ---
 
 MIT Tech Review

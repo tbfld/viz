@@ -1,17 +1,22 @@
 ---
-title: "Unusual circular domino theory"
+title: Unusual circular domino theory
 publish: true
 draft: false
-tags: []
-description:
-extract: "Unusual circular domino theory"
-image_credit:
-created: 2026-11-23 15:40
-updated: 2026-11-23 15:40
+tags:
+  - circle
+  - politics
+  - discourse
+  - government
+description: screenshot > Robert reich xeet > (n.d.)
+extract: “how to destroy public services a step by step guide”
+image_credit: unknown
+created: 2026-11-23-Mon-11:10am
+updated: 2026-11-23-Mon-11:23am
 republished:
 aliases: []
 ig_media_id: "17870915136693891"
-disabled rules: [yaml-title]
+disabled rules:
+  - yaml-title
 ---
 
 Unusual circular domino theory

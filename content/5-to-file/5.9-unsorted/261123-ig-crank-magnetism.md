@@ -1,17 +1,22 @@
 ---
-title: "\"crank magnetism\""
+title: '"crank magnetism"'
 publish: true
 draft: false
-tags: []
-description:
-extract: "\"crank magnetism\""
-image_credit:
-created: 2026-11-23 15:48
-updated: 2026-11-23 15:48
+tags:
+  - politics
+  - conspiracy
+  - science
+  - pseudoscience
+description: “the phenomenon where belief in one type of conspiracy or pseudoscience attracts multiple types”
+extract: '"crank magnetism"'
+image_credit: Jonathan N. Stea
+created: 2026-11-23-Mon-11:10am
+updated: 2026-11-23-Mon-11:19am
 republished:
 aliases: []
 ig_media_id: "18120964181100076"
-disabled rules: [yaml-title]
+disabled rules:
+  - yaml-title
 ---
 
 "crank magnetism"

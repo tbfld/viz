@@ -8,9 +8,9 @@ tags:
   - stone
 description: a quick meditation on an unusual headstone design
 extract: “the ambivalence of headstone — both a memorial silence and a noisier informational medium”
-image_credit:
+image_credit: Wayne Bollin
 created: 2026-11-18-Wed-10:17am
-updated: 2026-11-19-Thu-4:11pm
+updated: 2026-11-23-Mon-11:26am
 republished:
 aliases: []
 ig_media_id: "17910187011656862"

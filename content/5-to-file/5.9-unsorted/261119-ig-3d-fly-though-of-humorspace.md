@@ -1,17 +1,21 @@
 ---
-title: "3D fly-though of humorspace"
+title: 3D fly-though of humorspace
 publish: true
 draft: false
-tags: []
-description:
-extract: "3D fly-though of humorspace"
-image_credit:
-created: 2026-11-19 21:06
-updated: 2026-11-19 21:06
+tags:
+  - humor
+  - 3D
+  - video
+description: video flying through (really around) a heatmappish 3D rendering of humor as a space
+extract: “disparagement humor... stand-up comedy... gelotophobia”
+image_credit: unknown
+created: 2026-11-20-Fri-2:46am
+updated: 2026-11-23-Mon-11:25am
 republished:
 aliases: []
 ig_media_id: "18121810007074053"
-disabled rules: [yaml-title]
+disabled rules:
+  - yaml-title
 ---
 
 3D fly-though of humorspace

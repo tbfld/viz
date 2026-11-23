@@ -1,17 +1,18 @@
 ---
-title: "Any sufficiently formal analysis is indistinguishable from a conclusio…"
+title: Any sufficiently formal analysis is indistinguishable from a conclusio…
 publish: true
 draft: false
 tags: []
-description:
-extract: "Any sufficiently formal analysis is indistinguishable from a conclusion"
-image_credit:
-created: 2026-11-23 15:35
-updated: 2026-11-23 15:35
+description: a decision tree that always ends in death
+extract: “choosing your path”
+image_credit: JAVIRROYO
+created: 2026-11-23-Mon-11:10am
+updated: 2026-11-23-Mon-11:23am
 republished:
 aliases: []
 ig_media_id: "18000277983107754"
-disabled rules: [yaml-title]
+disabled rules:
+  - yaml-title
 ---
 
 Any sufficiently formal analysis is indistinguishable from a conclusion
