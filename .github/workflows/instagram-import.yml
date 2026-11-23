@@ -2,9 +2,11 @@ name: Import new Instagram posts
 
 on:
   schedule:
-    # Every 6 hours. First run after setup will start backfilling the
-    # whole history automatically, in batches (see IG_MAX_PER_RUN).
-    - cron: "17 */6 * * *"
+    # Every 30 minutes. GitHub skips or delays some scheduled runs under
+    # load (the old 6-hourly schedule was observed running ~2x/day), so a
+    # short interval keeps the typical wait for a new IG post to about an
+    # hour. Runs that find nothing new commit nothing.
+    - cron: "7,37 * * * *"
   workflow_dispatch: {}
 
 permissions:
