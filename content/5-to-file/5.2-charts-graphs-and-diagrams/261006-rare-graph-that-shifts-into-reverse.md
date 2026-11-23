@@ -11,7 +11,7 @@ description: unusual graph in which the x-axis value goes in reverse, so to spea
 extract: The visual pun is cute, but the graph itself is an immanent critique, which is even rarer.
 image_credit: NYT
 created: 2026-10-15-Thu-12:36pm
-updated: 2026-11-10-Tue-9:15pm
+updated: 2026-11-23-Mon-1:33pm
 republished:
 aliases: []
 ig_media_id: "18110817113521287"
