@@ -5,10 +5,10 @@ draft: false
 tags:
   - cars
   - economics
-  - nyt
+  - NYT
   - time
 description: unusual graph in which the x-axis value goes in reverse, so to speak
-extract: "Rare graph that “shifts into reverse,” from the NYT 2010-05-02. The visual pun is cute, but the graph itself is an immanent critique, which is even rarer. #nyt"
+extract: The visual pun is cute, but the graph itself is an immanent critique, which is even rarer.
 image_credit: NYT
 created: 2026-10-15-Thu-12:36pm
 updated: 2026-11-10-Tue-9:15pm

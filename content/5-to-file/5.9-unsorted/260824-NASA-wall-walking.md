@@ -10,7 +10,7 @@ tags:
   - gravity
   - grid
   - dance
-  - nyc
+  - NYC
   - 1970s
   - 1960s
   - performance

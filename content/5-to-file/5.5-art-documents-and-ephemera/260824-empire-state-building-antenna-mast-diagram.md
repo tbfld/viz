@@ -5,11 +5,11 @@ draft: false
 tags:
   - architecture
   - broadcast
-  - nyc
+  - NYC
   - radio
   - skyscraper
   - spectrum
-  - tv
+  - TV
 description: which TV and radio stations broadcast from where on the mast
 extract: “From 1967, a list of TV and radio stations’ space on the Empire State Building antenna mast”
 image_credit: Broadcast Engineering magazine

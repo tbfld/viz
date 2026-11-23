@@ -7,8 +7,8 @@ tags:
   - baseball
   - interactive
   - multiples
-  - nyt
-  - pov
+  - NYT
+  - POV
   - sports
   - time
 description: screenshot from the NYT’s 2010 interactive story “Mariano Rivera, King of the Closers”

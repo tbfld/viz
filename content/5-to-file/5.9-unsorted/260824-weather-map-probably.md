@@ -1,17 +1,21 @@
 ---
-title: "2026-08-24: Instagram post"
+title: Maybe a weather map?
 publish: true
 draft: false
-tags: []
-description:
-extract: ""
-image_credit:
-created: 2026-08-24 16:51
-updated: 2026-08-24 16:51
+tags:
+  - weather
+  - map
+  - cartography
+description: extremely low-res global map of unknown origin and significanxe
+extract: none
+image_credit: unknown
+created: 2026-11-11-Wed-7:48pm
+updated: 2026-11-23-Mon-1:4pm
 republished:
 aliases: []
 ig_media_id: "18082895831291008"
-disabled rules: [yaml-title]
+disabled rules:
+  - yaml-title
 ---
 
 ![[18082895831291008-thumb.jpg]]
