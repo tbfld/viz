@@ -44,5 +44,5 @@ The blog feed is ordered by `created`, so editing a post never moves it. To brin
 
 ## Where files must live
 
-Save images, folders and notes only inside `content/` (attachments go to `content/att/`, or next to the note). `public/` is the site's build output; every `quartz build` empties it, so anything saved there is silently deleted. It is hidden in Obsidian (snippet `hide-public-folder`), and the lint flags an embed whose file exists only in `public/`.
+Save images, folders and notes only inside `content/` (attachments go to `content/att/`, or next to the note). `public/` is the site's build output; every `quartz build` empties it, so anything saved there is silently deleted. The local preview now builds into the hidden folder `.site/` instead (Obsidian ignores dot-folders, so each image is visible only once and "Reveal in Finder" can't land in a copy); only the GitHub deploy still builds into `public/`. Delete any old local `public/` folder. The lint flags an embed whose file exists only in `public/`.
 
