@@ -1,5 +1,5 @@
 ---
-title: "2026-08-24: Instagram post"
+title: Technical Aesthetics magazine (USSR, 1964–1992)
 publish: true
 draft: false
 tags:
