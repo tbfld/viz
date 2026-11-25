@@ -13,7 +13,7 @@ description: haphazard collection of Technical Aesthetics covers (Jun 1982 ~ Feb
 extract: Technical Aesthetics (Soviet magazine), Nov 1989 / техническая эстетика 11/1989
 image_credit: техническая эстетика
 created: 2026-11-11-Wed-7:48pm
-updated: 2026-11-23-Mon-6:13pm
+updated: 2026-11-24-Tue-6:44pm
 republished:
 aliases: []
 ig_media_id: "17956652478197071"

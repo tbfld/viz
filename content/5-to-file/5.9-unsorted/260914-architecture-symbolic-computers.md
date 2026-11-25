@@ -1,5 +1,5 @@
 ---
-title: "2026-09-14: Instagram post"
+title: The Architecture of Symbolic Computers
 publish: true
 draft: false
 tags:
@@ -11,11 +11,11 @@ tags:
   - time
   - history
   - religion
-description:
-extract: ""
-image_credit:
+description: whatever that means
+extract: “eschatological architecture”
+image_credit: unknown
 created: 2026-11-11-Wed-7:48pm
-updated: 2026-11-23-Mon-12:34pm
+updated: 2026-11-24-Tue-6:46pm
 republished:
 aliases: []
 ig_media_id: "18126357344498044"
